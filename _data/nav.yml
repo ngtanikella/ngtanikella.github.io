@@ -1,14 +1,12 @@
 - name: "CONTACT"
   link: "/contact"
 
-- name: "EXPERIENCE"
-  link: "/experience"
 
-- name: "TALKS"
-  link: "/talks"
 
-# - name: "PUBLICATIONS"
-#   link: "/publications"
+
+
+ - name: "PUBLICATIONS"
+   link: "/publications"
 
 - name: "CV"
   link: "/CV"

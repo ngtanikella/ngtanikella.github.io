@@ -4,7 +4,7 @@ layout: default
 permalink: /publications
 ---
 
-| <a href="{{ site.google_scholar_url }}" target="_blank" style="text-align:center; display:block"><i class="ai ai-google-scholar-square ai-3x"></i></a> |
+
 
 {% for publication in site.data.papers %}
 

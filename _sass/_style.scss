@@ -309,44 +309,84 @@ a .publication-title {
 }
 
 /* Mobile */
-
 @media (max-width: 800px) {
   .container {
     max-width: $med-width;
     transition: 0.3s ease all;
   }
-
   .body-container {
     max-width: $med-width;
     transition: 0.3s ease all;
-    padding-top: 100px; // a bit more space on mobile
+    padding-top: 100px;
   }
-
-  /* allow header to wrap if needed */
   .nav-inner {
     flex-wrap: wrap;
+    justify-content: center;
   }
-
   .publication-picture {
     max-width: 80%;
     margin: 10px 10% 20px 10%;
   }
-
   .publication-text {
     max-width: 80%;
     margin: 10px 10% 20px 10%;
   }
+  .profile-picture {
+    float: none !important;
+    display: block;
+    margin: 10px auto;
+    max-width: 150px;
+  }
+  .experience-picture {
+    float: none !important;
+    display: block;
+    margin: 0 auto 10px auto;
+    max-width: 80px;
+  }
+  .experience-box {
+    overflow: hidden;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+  p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
 }
-
 @media (max-width: 650px) {
   .container {
-    max-width: 80%;
+    max-width: 90%;
   }
   .body-container {
-    max-width: 80%;
+    max-width: 90%;
   }
 }
-
+@media (max-width: 480px) {
+  .container {
+    max-width: 95%;
+    padding: 0 8px;
+  }
+  .body-container {
+    max-width: 95%;
+  }
+  .profile-picture {
+    max-width: 120px;
+  }
+  nav ul li {
+    font-size: 0.75em;
+    margin: 2px 3px;
+  }
+}
 @media (max-width: 580px) {
   .footer {
     height: 30px;

@@ -15,13 +15,12 @@ I completed my Ph.D. in Mechanical Engineering at <img src="{{site.url}}{{site.b
 During my Ph.D., I worked as a Graduate Research Intern at <img src="{{site.url}}{{site.baseurl}}/images/experience/ornl.png" alt="Oak Ridge National Laboratory" class="inline-logo">[Oak Ridge National Laboratory](https://www.ornl.gov/){:target="_blank"}, where I resolved critical ink stability issues for Direct Ink Writing (DIW) and Digital Light Processing (DLP) printing.
 [I also mentored senior year students with their capstone projects.](https://ngtanikella.github.io/mentoring). 
 
-Previously, I was a Graduate Research Assistant at <img src="{{site.url}}{{site.baseurl}}/images/experience/mtu.png" alt="Michigan Technological University" class="inline-logo">[Michigan Technological University](https://www.mtu.edu/){:target="_blank"}, where I worked on open-source 3D printing, material characterization for Fused Filament Fabrication (FFF), and developed novel composites from recycled and waste materials. [I also led rapid-response manufacturing efforts during the COVID-19 crisis and spearheaded the design of an open-source ventilator published in HardwareX.](https://doi.org/10.1016/j.ohx.2020.e00131)
+I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both from <img src="{{site.url}}{{site.baseurl}}/images/experience/mtu.png" alt="Michigan Technological University" class="inline-logo">[Michigan Technological University](https://www.mtu.edu/){:target="_blank"}, where I worked on open-source 3D printing, material characterization for Fused Filament Fabrication (FFF), and developed novel composites from recycled and waste materials. [I also led rapid-response manufacturing efforts during the COVID-19 crisis and spearheaded the design of an open-source ventilator published in HardwareX.](https://doi.org/10.1016/j.ohx.2020.e00131)
 
-I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both from [Michigan Technological University](https://www.mtu.edu/){:target="_blank"}.
-
+<!-- 
 ## PUBLICATIONS
 
-<!-- For a more complete list, please check my <a href="{{ site.google_scholar_url }}" target="_blank">Google Scholar</a> page. -->
+For a more complete list, please check my <a href="{{ site.google_scholar_url }}" target="_blank">Google Scholar</a> page.
 
 {% for publication in site.data.papers %}
 
@@ -30,3 +29,4 @@ I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both f
 {% endfor %}
 
 <p>&nbsp;</p>
+-->

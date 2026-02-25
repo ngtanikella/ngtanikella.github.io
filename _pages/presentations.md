@@ -7,12 +7,13 @@ permalink: /presentations
 
 
 # PRESENTATIONS
+<div class="experience-box" markdown="1">
 _2025_
 
 ### Ph.D. Defense — Hemp Reinforcement for Improved Strength of Wood Sodium Silicate Composites for Additive Manufacturing
 
 **University of Idaho, Moscow, Idaho**
-<div class="experience-box" markdown="1">
+
 <img src="{{site.url}}{{site.baseurl}}/images/presentations/Defense.jpg" alt="Ph.D. Defense" style="max-width:100%; border:1px solid #ccc;">
 
 

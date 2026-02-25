@@ -41,7 +41,7 @@ I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both f
 
   <figure class="collage-item">
     <img src="{{site.url}}{{site.baseurl}}/images/collage/DinoDNA.gif" alt="DinoDNA">
-    <figcaption>Hidden Dinosaur DNA</figcaption>
+    <figcaption>Dinosaur DNA</figcaption>
   </figure>
 
   <figure class="collage-item">

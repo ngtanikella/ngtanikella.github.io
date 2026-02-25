@@ -1,464 +1,110 @@
 - title: Optimizing Wood–Hemp–Sodium Silicate Composites for Strength, Extrudability, and Cost in Additive Manufacturing Applications
-  image: 2025_sv4d20.gif
-  authors: Chun-Han Yao, Yiming Xie, <b>Vikram Voleti</b>, Huaizu Jiang, Varun Jampani
-  # venue: <a href="https://neurips.cc/Conferences/2023" target="_blank">NeurIPS 2022</a>
-  number_link: 5
-  link1:
-    url: https://sv4d20.github.io/
-    display: Project
-  link2:
-    url: https://arxiv.org/abs/2503.16396
-    display: arXiv
-  link3:
-    url: https://www.youtube.com/watch?v=dtqj-s50ynU
-    display: Video
-  link4:
-    url: https://stability.ai/news/stable-video-4d-20-new-upgrades-for-high-fidelity-novel-views-and-4d-generation-from-a-single-video
-    display: Stability
-  link5:
-    url: https://huggingface.co/stabilityai/sv4d2.0
-    display: HuggingFace
-
-- title: Stable Virtual Camera - Generative View Synthesis with Diffusion Models
-  image: 2025_svc.gif
-  authors: Jensen Zhou, Hang Gao, <b>Vikram Voleti</b>, Aaryaman Vasishta, Chun-Han Yao, Mark Boss, Philip Torr, Christian Rupprecht, Varun Jampani
-  # venue: <a href="https://neurips.cc/Conferences/2023" target="_blank">NeurIPS 2022</a>
-  number_link: 5
-  link1:
-    url: https://stable-virtual-camera.github.io/
-    display: Project
-  link2:
-    url: https://arxiv.org/abs/2503.14489
-    display: arXiv
-  link3:
-    url: https://www.youtube.com/channel/UCLLlVDcS7nNenT_zzO3OPxQ
-    display: Video
-  link4:
-    url: https://stability.ai/news/introducing-stable-virtual-camera-multi-view-video-generation-with-3d-camera-control
-    display: Stability
-  link5:
-    url: https://huggingface.co/stabilityai/stable-virtual-camera
-    display: HuggingFace
-
-- title: SV4D - Dynamic 3D Content Generation with Multi-Frame and Multi-View Consistency
-  image: 2024_sv4d.gif
-  authors: Yiming Xie, Chun-Han Yao, <b>Vikram Voleti</b>, Huaizu Jiang, Varun Jampani
-  venue: <a href="https://iclr.cc/virtual/2025/poster/28061" target="_blank">ICLR 2025</a>
-  number_link: 6
-  link1:
-    url: https://sv4d.github.io
-    display: Project
-  link2:
-    url: https://arxiv.org/abs/2407.17470
-    display: arXiv
-  link3:
-    url: https://www.youtube.com/watch?v=RBP8vdAWTgk
-    display: Video
-  link4:
-    url: https://stability.ai/news/stable-video-4d
-    display: Stability
-  link5:
-    url: https://huggingface.co/stabilityai/sv4d
-    display: HuggingFace
-  link6:
-    url: https://iclr.cc/virtual/2025/poster/28061
-    display: ICLR 2025
-
-- title: HouseCrafter - Lifting Floorplans to 3D Scenes with 2D Diffusion Model
-  image: 2024_housecrafter.gif
-  authors: Hieu T Nguyen, Yiwen Chen, <b>Vikram Voleti</b>, Varun Jampani, Huaizu Jiang
-  # venue: <a href="https://neurips.cc/Conferences/2023" target="_blank">NeurIPS 2022</a>
+  image: Optimizing.webp
+  authors: <b>Nagendra G. Tanikella</b>, Michael Maughan
+  venue: Sustainability, 2025
   number_link: 1
   link1:
-    url: https://arxiv.org/abs/2406.20077
-    display: arXiv
-
-- title: SV3D - Novel multi-view synthesis and 3D generation from a single image using latent video diffusion
-  image: 2024_sv3d.gif
-  authors: <b>Vikram Voleti</b>, Chun-Han Yao, Mark Boss, Adam Letts, David Pankratz, Dmitry Tochilkin, Christian Laforte, Robin Rombach, Varun Jampani
-  venue: <a href="https://eccv2024.ecva.net/" target="_blank">ECCV 2024</a> Oral!
-  number_link: 5
-  link1:
-    url: https://sv3d.github.io
-    display: Project
-  link2:
-    url: https://arxiv.org/abs/2403.12008
-    display: arXiv
-  link3:
-    url: https://www.youtube.com/watch?v=Zqw4-1LcfWg
-    display: Video
-  link4:
-    url: https://stability.ai/news/introducing-stable-video-3d
-    display: Stability
-  link5:
-    url: https://huggingface.co/stabilityai/sv3d
-    display: HuggingFace
-
-- title: (SVD) Stable video diffusion - Scaling latent video diffusion models to large datasets
-  image: 2023_svd.gif
-  authors: Andreas Blattmann, Tim Dockhorn, Sumith Kulal, Daniel Mendelevitch, Maciej Kilian, Dominik Lorenz, Yam Levi, Zion English, <b>Vikram Voleti</b>, Adam Letts, Varun Jampani, Robin Rombach
-  # venue: <a href="https://neurips.cc/Conferences/2023" target="_blank">NeurIPS 2022</a>
-  number_link: 3
-  link1:
-    url: https://arxiv.org/abs/2311.15127
-    display: arXiv
-  link2:
-    url: https://stability.ai/news/stable-video-diffusion-open-ai-video-model
-    display: Stability
-  link3:
-    url: https://huggingface.co/docs/diffusers/main/en/using-diffusers/svd
-    display: HuggingFace
-
-- title: Multi-Resolution Continuous Normalizing Flows
-  image: 2021d_NeurIPS2021_MRCNF.png
-#   description: <ul><li>Making a differentiable simulator, using it for self-supervised physics estimation from video</li></ul>
-  authors: <b>Vikram Voleti</b>, Chris Finlay, Adam Oberman, Christopher Pal
-  venue: Annals of Mathematics and Artificial Intelligence, 2024
-  number_link: 2
-  link1:
-    url: https://arxiv.org/abs/2106.08462
-    display: arXiv
-  link2:
-    url: https://link.springer.com/article/10.1007/s10472-024-09939-5
-    display: Springer
-
-- title: Objaverse-XL - A Universe of 10M+ 3D Objects
-  image: 2023_objaversexl.png
-  authors: Matt Deitke, Ruoshi Liu, Matthew Wallingford, Huong Ngo, Oscar Michel, Aditya Kusupati, Alan Fan, Christian Laforte, <b>Vikram Voleti</b>, Samir Yitzhak Gadre, Eli VanderBilt, Aniruddha Kembhavi, Carl Vondrick, Georgia Gkioxari, Kiana Ehsani, Ludwig Schmidt, Ali Farhadi
-  venue: <a href="https://neurips.cc/Conferences/2023" target="_blank">NeurIPS 2023</a>
-  number_link: 3
-  link1:
-    url: https://arxiv.org/abs/2307.05663
-    display: arXiv
-  link2:
-    url: https://objaverse.allenai.org/
-    display: Website
-  link3:
-    url: https://github.com/allenai/objaverse-xl
-    display: GitHub
-
-- title: Are Diffusion Models Vision-And-Language Reasoners?
-  image: 2023_diffusionitm.png
-  authors: Benno Krojer, Elinor Poole-Dayan, <b>Vikram Voleti</b>, Christopher Pal, Siva Reddy
-  venue: <a href="https://neurips.cc/Conferences/2023" target="_blank">NeurIPS 2023</a>
-  number_link: 1
-  link1:
-    url: https://arxiv.org/abs/2305.16397
-    display: arXiv
-
-- title: threestudio - a modular framework for diffusion-guided 3D generation
-  image: 2023_threestudio.png
-  authors: Ying-Tian Liu, Yuan-Chen Guo, <b>Vikram Voleti</b>, Ruizhi Shao, Chia-Hao Chen, Guan Luo, Zixin Zou, Chen Wang, Christian Laforte, Yan-Pei Cao, Song-Hai Zhang
-  venue: <a href="https://iccv2023.thecvf.com/" target="_blank">ICCV 2023</a> <a href="https://ai3dcc.github.io/" target="_blank">workshop</a>
-  number_link: 3
-  link1:
-    url: https://github.com/threestudio-project/threestudio
-    display: GitHub
-  link2:
-    url: https://cg.cs.tsinghua.edu.cn/threestudio/ICCV2023_AI3DCC_threestudio.pdf
-    display: PDF
-  link3:
-    url: 20231006_threestudio.pdf
+    url: "Optimizing Wood–Hemp–Sodium Silicate Composites for Strength, Extrudability, and Cost in Additive Manufacturing Applications.pdf"
     display: pdf
 
-- title: PhD Thesis - Conditional Generative Modeling for Images, 3D Animations, and Video
-  image: 2023_UdeM.jpg
-  authors: <b>Vikram Voleti</b>
-  number_link: 3
-  link1:
-    url: https://docs.google.com/presentation/d/1TOhPpjHXGR5OOGsxIATl6ldBm2LDuf11Uwro2_V_aLI/edit?usp=sharing
-    display: slides
-  link2:
-    url: https://arxiv.org/abs/2310.13157
-    display: arXiv
-  link3:
-    url: https://papyrus.bib.umontreal.ca/xmlui/handle/1866/32123
-    display: University of Montreal
-
-- title: Score-based Diffusion Models in Function Space
-  image: 2023_func.png
-  authors: Jae Hyun Lim, Nikola B. Kovachki, Ricardo Baptista, Christopher Beckham, Kamyar Azizzadenesheli, Jean Kossaifi, <b>Vikram Voleti</b>, Jiaming Song, Karsten Kreis, Jan Kautz, Christopher Pal, Arash Vahdat, Anima Anandkumar
-  # venue: <a href="https://neurips.cc/Conferences/2023" target="_blank">NeurIPS 2023</a>
+- title: Extrudability and Mechanical Properties of Wood–Sodium Silicate Composites with Hemp Fiber Reinforcement for Additive Manufacturing
+  image: Extrudability.png
+  authors: <b>Nagendra G. Tanikella</b>, Michael Maughan
+  venue: Polymers, 2024
   number_link: 1
   link1:
-    url: https://arxiv.org/abs/2302.07400
-    display: arXiv
+    url: "Extrudability and Mechanical Properties of Wood–Sodium Silicate Composites with Hemp Fiber Reinforcement for Additive Manufacturing.pdf"
+    display: pdf
 
-- title: (MCVD) Masked Conditional Video Diffusion for Prediction, Generation, and Interpolation
-  image: 2022a_MCVD.gif
-#   description: <ul><li>Making a differentiable simulator, using it for self-supervised physics estimation from video</li></ul>
-  authors: <b>Vikram Voleti</b>, Alexia Jolicoeur-Martineau, Christopher Pal
-  venue: <a href="https://neurips.cc/Conferences/2022" target="_blank">NeurIPS 2022</a>
-  number_link: 5
-  link1:
-    url: https://arxiv.org/abs/2205.09853
-    display: arXiv
-  link2:
-    url: https://mask-cond-video-diffusion.github.io/
-    display: Project
-  link3:
-    url: https://github.com/voletiv/mcvd-pytorch
-    display: Code
-  link4:
-    url: ../presentations/2022a_MCVD_Poster.png
-    display: Poster
-  link5:
-    url: https://docs.google.com/presentation/d/1HVcg-WGN76R7uIgj_dcIdxaQ2gp2ft7yuwqtKbfZKwI/edit?usp=sharing
-    display: slides
-
-- title: Score-based Denoising Diffusion with Non-Isotropic Gaussian Noise Models
-  image: 2022d_NIDDPM.png
-#   description: <ul><li>Making a differentiable simulator, using it for self-supervised physics estimation from video</li></ul>
-  authors: <b>Vikram Voleti</b>, Christopher Pal, Adam Oberman
-  venue: <a href="https://neurips.cc/Conferences/2022" target="_blank">NeurIPS 2022</a> <a href="https://score-based-methods-workshop.github.io/" target="_blank">Workshop on Score-Based Methods</a>
-  number_link: 2
-  link1:
-    url: https://arxiv.org/abs/2210.12254
-    display: arXiv
-  link2:
-    url: ../presentations/2022d_NIDDPM_Poster.png
-    display: Poster
-
-- title: SMPL-IK - Learned Morphology-Aware Inverse Kinematics for AI Driven Artistic Workflows
-  image: 2022c_SMPLIK.gif
-#   description: <ul><li>Making a differentiable simulator, using it for self-supervised physics estimation from video</li></ul>
-  authors: <b>Vikram Voleti</b>, Boris N. Oreshkin, Florent Bocquelet, Félix G. Harvey, Louis-Simon Ménard, Christopher Pal
-  venue: <a href="https://sa2022.siggraph.org/en/" target="_blank">SIGGRAPH Asia 2022</a>
-  number_link: 3
-  link1:
-    url: https://arxiv.org/abs/2208.08274
-    display: arXiv
-  link2:
-    url: https://docs.google.com/presentation/d/1pyiol1HvLY5WP4Pm0bLGvxaimKAX1_uIH-q36DeFgeM/edit?usp=sharing
-    display: slides
-  link3:
-    url: https://www.youtube.com/watch?v=FixF406owB4
-    display: video
-
-- title: FairCal - Fairness Calibration for Face Verification
-  image: 2021j_ICLR2022_FairCal.png
-#   description: <ul><li>Using calibration to improve FPR for facial recognition across minority groups</li></ul>
-  authors: Tiago Salvador, Stephanie Cairns, <b>Vikram Voleti</b>, Noah Marshall, Adam Oberman
-  venue: <a href="https://iclr.cc/Conferences/2022" target="_blank">ICLR 2022</a>
-  number_link: 3
-  link1:
-    url: https://arxiv.org/abs/2106.03761
-    display: arXiv
-  link2:
-    url: ../presentations/2021j_ICLR2022_FairCal_poster.pdf
-    display: poster
-  link3:
-    url: https://openreview.net/forum?id=nRj0NcmSuxb
-    display: OpenReview
-
-- title: Plankton-FL - Exploration of Federated Learning for Privacy-Preserving Training of Deep Neural Networks for Phytoplankton Classification
-  image: 2022f_PlanktonFL.png
-  authors: Daniel Zhang, <b>Vikram Voleti</b>, Alexander Wong, Jason Deglint
-  venue: <a href="https://cvis2022.github.io/" target="_blank">CVIS 2022</a>
+- title: "Conceptual Design and Rationale for a New Agrivoltaics Concept: Pasture-Raised Rabbits and Solar Farming"
+  image: Rabbit.png
+  authors: Alexis Pascaris, <b>Nagendra G. Tanikella</b>, Laurie Burnham, Joshua M. Pearce
+  venue: Sustainability, 2022
   number_link: 1
   link1:
-    url: https://arxiv.org/abs/2212.08990
-    display: arXiv
+    url: "Conceptual Design and Rationale for a New Agrivoltaics Concept Pasture-Raised Rabbits and Solar Farming.pdf"
+    display: pdf
 
-- title: Generative Models of Brain Dynamics - A Review
-  image: 2022b_Brain.png
-  authors: Mahta Ramezanian Panahi, Germán Abrevaya, Jean-Christophe Gagnon-Audet, <b>Vikram Voleti</b>, Irina Rish, Guillaume Dumas
-  venue: <a href="https://www.frontiersin.org/articles/10.3389/frai.2022.807406/full" target="_blank">Frontiers of Artificial Intelligence</a>
+- title: Technical Pathways for Distributed Recycling of Polymer Composites for Distributed Manufacturing - Windshield Wiper Blades
+  image: Windshield.jpg
+  authors: Samantha C. Dertinger, Nicole Gallup, <b>Nagendra G. Tanikella</b>, Marzio Grasso, Samireh Vahid, Peter J.S. Foot, Joshua M. Pearce
+  venue: Resources, Conservation and Recycling, 2020
   number_link: 1
   link1:
-    url: https://arxiv.org/abs/2112.12147
-    display: arXiv
+    url: "Technical pathways for distributed recycling of polymer composites for distributed manufacturing Windshield wiper blades.pdf"
+    display: pdf
 
-- title: Towards Generating Large Synthetic Phytoplankton Datasets for Efficient Monitoring of Harmful Algal Blooms
-  image: 2022e_HAB.png
-  authors: Nitpreet Bamra, <b>Vikram Voleti</b>, Alexander Wong, Jason Deglint
-  venue: <a href="https://aaai.org/Symposia/Fall/fss22.php" target="_blank">AAAI 2022 Fall Symposium</a>
+- title: Partially RepRapable Automated Open Source Bag Valve Mask-Based Ventilator
+  image: Ventilator.jpg
+  authors: Aliaksei Petsiuk, <b>Nagendra G. Tanikella</b>, Samantha Dertinger, Adam Pringle, Shane Oberloier, Joshua M. Pearce
+  venue: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7417990/" target="_blank">HardwareX, 2020</a>
+  number_link: 2
+  link1:
+    url: "Partially RepRapable automated open source bag valve mask-based ventilator.pdf"
+    display: pdf
+  link2:
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC7417990/
+    display: PMC
+
+- title: Potential of Distributed Recycling from Hybrid Manufacturing of 3-D Printing and Injection Molding of Stamp Sand and Acrylonitrile Styrene Acrylate Waste Composite
+  image: ASA.jpg
+  authors: Theresa K. Meyer, <b>Nagendra G. Tanikella</b>, Matthew J. Reich, Joshua M. Pearce
+  venue: Sustainable Materials and Technologies, 2020
   number_link: 1
   link1:
-    url: https://arxiv.org/abs/2208.02332
-    display: arXiv
+    url: "Potential of distributed recycling from hybrid manufacturing of 3-D printing and injection molding of stamp sand and acrylonitrile styrene acrylate waste composite.pdf"
+    display: pdf
 
-- title: SALT - Sea lice Adaptive Lattice Tracking--An Unsupervised Approach to Generate an Improved Ocean Model
-  image: 2022g_SALT.png
-  authors: Ju An Park, <b>Vikram Voleti</b>, Kathryn E Thomas, Alexander Wong, Jason L Deglint
-  venue: Pre-print
+- title: Parametric Nasopharyngeal Swab for Sampling COVID-19 and Other Respiratory Viruses - Open Source Design, SLA 3-D Printing and UV Curing System
+  image: Nasal.jpg
+  authors: Adam Pringle, Shane Oberloier, <b>Nagendra G. Tanikella</b>, Joshua M. Pearce
+  venue: HardwareX, 2020
   number_link: 1
   link1:
-    url: https://arxiv.org/abs/2106.13202
-    display: arXiv
+    url: "Parametric nasopharyngeal swab for sampling COVID-19 and other respiratory viruses Open source design, SLA 3-D printing and UV curing system.pdf"
+    display: pdf
 
-- title: Improving Continuous Normalizing Flows using a Multi-Resolution Framework
-  image: 2021d_NeurIPS2021_MRCNF.png
-  authors: <b>Vikram Voleti</b>, Chris Finlay, Adam Oberman, Christopher Pal
-  venue: <a href="https://invertibleworkshop.github.io/" target="_blank">INNF+ @ ICML 2021</a>
+- title: Open Source High-Temperature RepRap for 3-D Printing Heat-Sterilizable PPE and Other Applications
+  image: High_temp.jpg
+  authors: <b>Nagendra G. Tanikella</b>, Joshua M. Pearce
+  venue: HardwareX, 2020
   number_link: 1
   link1:
-    url: https://openreview.net/forum?id=XzNsBgj68_L
-    display: OpenReview
-
-- title: gradSim - Differentiable simulation for system identification and visuomotor control
-  image: 2021b_ICML2021_gradSim.png
-#   description: <ul><li>Making a differentiable simulator, using it for self-supervised physics estimation from video</li></ul>
-  authors: Krishna Murthy Jatavallabhula, Miles Macklin, Florian Golemo, <b>Vikram Voleti</b>, Linda Petrini, Martin Weiss, Breandan Considine, Jérôme Parent-Lévesque, Kevin Xie, Kenny Erleben, Liam Paull, Florian Shkurti, Derek Nowrouzezahrai, Sanja Fidler
-  venue: <a href="https://iclr.cc/Conferences/2021" target="_blank">ICLR 2021</a>
-  number_link: 4
-  link1:
-    url: https://arxiv.org/abs/2104.02646
-    display: arXiv
-  link2:
-    url: https://gradsim.github.io
-    display: website
-  link3:
-    url: https://openreview.net/forum?id=c_E8kFWfhp0
-    display: OpenReview
-  link4:
-    url: 2020g_ICLR2021_gradSim.pdf
+    url: "Open source high-temperature RepRap for 3-D printing heat-sterilizable PPE and other applications.pdf"
     display: pdf
 
-- title: Frustratingly Easy Uncertainty Estimation for Distribution Shift
-  image: 2021f_NeurIPS2021_Calibration.png
-#   description: <ul><li>Using a post-hoc calibration method to improve predictive uncertainty</li></ul>
-  authors: Tiago Salvador, <b>Vikram Voleti</b>, Alexander Iannantuono, Adam Oberman
-  venue: Pre-print
+- title: Towards Distributed Recycling with Additive Manufacturing of PET Flake Feedstocks
+  image: PET.webp
+  authors: Helen A. Little, <b>Nagendra G. Tanikella</b>, Matthew J. Reich, Matthew J. Fiedler, Samantha L. Snabes, Joshua M. Pearce
+  venue: Materials, 2020
   number_link: 1
   link1:
-    url: https://arxiv.org/abs/2106.03762
-    display: arXiv
-
-- title: Accounting for Variance in Machine Learning Benchmarks
-  image: 2021a_MLSys2021_Variance_in_ML_Benchmarks.png
-#   description: <ul><li>Exhaustive case study on variance in ML benchmarks</li></ul>
-  authors: Xavier Bouthillier, Pierre Delaunay, Mirko Bronzi, Assya Trofimov, Brennan Nichyporuk, Justin Szeto, Naz Sepah, Edward Raff, Kanika Madan, <b>Vikram Voleti</b>, Samira Ebrahimi Kahou, Vincent Michalski, Dmitriy Serdyuk, Tal Arbel, Chris Pal, Gaël Varoquaux, Pascal Vincent
-  venue: <a href="https://mlsys.org/Conferences/2021" target="_blank">MLSys 2021</a>
-  number_link: 2
-  link1:
-    url: https://arxiv.org/abs/2103.03098
-    display: arXiv
-  link2:
-    url: 2021a_MLSys2021_Variance_in_ML_Benchmarks.pdf
+    url: "Towards Distributed Recycling with Additive Manufacturing of PET Flake Feedstocks .pdf"
     display: pdf
 
-# \item \label{gradsim2020MAIS}
-# % Krishna Murthy Jatavallabhula, Miles Macklin, Florian Golemo, \underline{Vikram Voleti}, Linda Petrini, Martin Weiss, Breandan Considine, Jérôme Parent-Lévesque, Kevin Xie, Kenny Erleben, Liam Paull, Florian Shkurti, Sanja Fidler, Derek Nowrouzezahrai,
-# K. M. Jatavallabhula, M. Macklin, F. Golemo, \underline{V. Voleti}, L. Petrini, M. Weiss, B. Considine, J. Parent-Lévesque, K. Xie, K. Erleben, L. Paull, F. Shkurti, S. Fidler, D. Nowrouzezahrai,
-# ``Introducing GradSim: Differentiable Simulation for Self-Supervised Parameter Estimation from Video'' - \textit{MAIS 2020}
-
-- title: Learning to Combine Top-Down and Bottom-Up Signals in Recurrent Neural Networks with Attention over Modules
-  image: 2020a_ICML2020_BRIM.png
-#   description: <ul><li>Exploration of deep recurrent neural net architectures in which bottom-up and top-down signals are dynamically combined using attention</li></ul>
-  authors: Sarthak Mittal, Alex Lamb, Anirudh Goyal, <b>Vikram Voleti</b>, Murray Shanahan, Guillaume Lajoie, Michael Mozer, Yoshua Bengio
-  venue: <a href="https://icml.cc/Conferences/2020" target="_blank">ICML 2020</a>
-  number_link: 2
+- title: Mechanical Properties and Applications of Recycled Polycarbonate Particle Material Extrusion-Based Additive Manufacturing
+  image: PC.png
+  authors: Matthew J. Reich, Aubrey L. Woern, <b>Nagendra G. Tanikella</b>, Joshua M. Pearce
+  venue: Materials, 2019
+  number_link: 1
   link1:
-    url: https://arxiv.org/abs/2006.16981
-    display: arXiv
-  link2:
-    url: 2020a_ICML2020_BRIM.pdf
+    url: "Mechanical Properties and Applications of Recycled Polycarbonate Particle Material Extrusion-Based Additive Manufacturing.pdf"
     display: pdf
 
-- title: Simple Video Generation using Neural ODEs
-  image: 2019e_NeurIPSW_EncODEDec.png
-#   description: <ul><li>Using NeuralODEs to model latent dynamics for video generation</li></ul>
-  authors: <b>Vikram Voleti</b>, David Kanaa, Samira Kahou, Christopher Pal
-  venue: <a href="https://neurips.cc/Conferences/2019" target="_blank">NeurIPS 2019</a> Workshop on <a href="https://sites.google.com/view/neurips2019lire/home?authuser=0" target="_blank">Learning with Rich Experience</a>
-  number_link: 2
+- title: Tensile Strength of Commercial Polymer Materials for Fused Filament Fabrication 3-D Printing
+  image: Tensile.jpg
+  authors: <b>Nagendra G. Tanikella</b>, Ben Wittbrodt, Joshua M. Pearce
+  venue: Additive Manufacturing, 2017
+  number_link: 1
   link1:
-    url: https://arxiv.org/abs/2109.03292
-    display: arXiv
-  link2:
-    url: ../presentations/20191213_Vancouver_NeurIPSW_EncODEDec.pdf
-    display: poster
-
-# - title: Conditional Group Normalization: An Empirical Study
-#   image: 2019a_ICMLW_CGN.png
-#   description: <ul><li>Comparing the performance of conditional generative models with different normalization techniques</li></ul>
-#   authors: Vincent Michalski, Vikram Voleti, Samira Kahou, Anthony Ortiz, Pascal Vincent, Christopher Pal, Doina Precup
-#   venue: <a href="https://neurips.cc/Conferences/2018">NeurIPS 2019</a>
-#   number_link: 1
-#   link1:
-#     url: 2019b_NeurIPS_CGN.pdf
-#     display: paper
-
-- title: Comparing Normalization in Conditional Computation Tasks
-  image: 2019a_ICMLW_CGN.png
-#   description: <ul><li>Comparing the performance of conditional generative models with different normalization techniques</li></ul>
-  authors: Vincent Michalski, <b>Vikram Voleti</b>, Samira Kahou, Anthony Ortiz, Pascal Vincent, Christopher Pal, Doina Precup
-  venue: <a href="https://icml.cc/Conferences/2019" target="_blank">ICML 2019</a> Workshop on <a href="https://sites.google.com/view/icml2019-generalization" target="_blank">Understanding and Improving Generalization in Deep Learning</a>
-  number_link: 2
-  link1:
-    url: 2019a_ICMLW_CGN.pdf
+    url: "Tensile strength of commercial polymer materials for fused filament fabrication 3D printing.pdf"
     display: pdf
-  link2:
-    url: ../presentations/20190614_LongBeach_ICML_Workshop_CGN.pdf
-    display: poster
 
-- title: Cross-Language Speech Dependent Lip-Synchronization
-  image: 2018d_ICASSP.png
-  description: <ul><li>Video generation to morph lip movements of speakers to match new audio</li></ul>
-  authors: Abhishek Jha, <b>Vikram Voleti</b>, Vinay P. Namboodiri, C. V. Jawahar
-  venue: <a href="https://2019.ieeeicassp.org/" target="_blank">ICASSP 2019</a>
-  number_link: 2
+- title: Viability of Distributed Manufacturing of Bicycle Components with 3-D Printing
+  image: pedal.jpg
+  authors: <b>Nagendra G. Tanikella</b>, Joshua M. Pearce
+  venue: 2017
+  number_link: 1
   link1:
-    url: 2018d_ICASSP_VisDub.pdf
+    url: "viability of Distributed Manufacturing of Bicycle components with 3-D printing.pdf"
     display: pdf
-  link2:
-    url: ../presentations/20190517_Brighton_ICASSP_Cross_Language_Speech_Dependent_Lip_Synchronization.pdf
-    display: poster
-
-# - title: Cross-Language Speech Dependent Lip-Synchronization
-#   image: 2018b_CVPRW.png
-#   description: <ul><li>Video generation to morph lip movements of speakers to match new audio</li></ul>
-#   authors: Abhishek Jha, Vikram Voleti, Vinay P. Namboodiri, C. V. Jawahar
-#   venue: <a href="https://wacv19.wacv.net/ target="_blank"" target="_blank">WACV 2019</a>
-#   number_link: 1
-#   link1:
-#     url: 2018c_WACV_VisDub.pdf
-#     display: pdf
-
-- title: Lip-Synchronization for Dubbed Instructional Videos
-  image: 2018b_CVPRW.png
-  # description: <ul><li>Video generation to morph lip movements of speakers to match new audio</li></ul>
-  authors: <b>Vikram Voleti</b>, Abhishek Jha, Vinay P. Namboodiri, C. V. Jawahar
-  venue: <a href="http://cvpr2018.thecvf.com/program/workshops" target="_blank">CVPR 2018</a> Workshop (<a href="http://fiver.eecs.umich.edu" target="_blank">FIVER</a>)
-  number_link: 2
-  link1:
-    url: 2018b_CVPRW_VisDub.pdf
-    display: pdf
-  link2:
-    url: http://fiver.eecs.umich.edu/#abstracts
-    display: url
-
-# - title: Carry-Free Implementations of Arithmetic Operations in FPGA
-#   image: 2013_leuven.png
-#   description: <ul><li>Design and implementation of addition, subtraction, multiplication using Carry-Free Logic</li>
-#                <li>Developed, tested and verified the modules in Verilog, and simulated circuits in Xilinx</li></ul>
-#   authors: V. Voleti
-#   venue: 24th National Conference on Communications, NCC 2018 (under review)
-#   number_link: 1
-#   link1:
-#     url: 2018a_NCC.pdf
-#     display: pdf
-
-# - title: Simple Real-Time Pattern Recognition for Industrial Automation
-#   image: 2017_ICIDE.jpg
-#   description: <ul><li>Optimization and implemention of vision and learning algorithms for faster pattern recognition</li></ul>
-#   authors: <b>Vikram Voleti</b>, P. Mohan, S. Gupta, J. Iqbal
-#   venue: International Conference on Industrial Design Engineering, ICIDE 2017
-#   number_link: 1
-#   link1:
-#     url: 2017_ICIDE.pdf
-#     display: pdf
-
-- title: A Multimodal Approach for Image De-fencing and Depth Inpainting
-  image: 2015_ICAPR.png
-  # description: <ul><li>Elimination of fence-like occlusions, inpainting of images using RGB-D data</li></ul>
-  authors: S. Jonna, <b>Vikram Voleti</b>, R. R. Sahay
-  venue: International Conference on Advances in Pattern Recognition, ICAPR 2015
-  number_link: 2
-  link1:
-    url: 2015_ICAPR.pdf
-    display: pdf
-  link2:
-    url: http://ieeexplore.ieee.org/document/7050696/
-    display: IEEE page
-

@@ -1,6 +1,6 @@
 ---
 title: Nagendra Tanikella's CV
-layout: default
+layout: wide
 permalink: /CV
 ---
 
@@ -15,7 +15,3 @@ permalink: /CV
   style="width: 100%; height: calc(100vh - 160px); border: none;"
   loading="lazy">
 </iframe>
-
-<script>
-  document.querySelector('.body-container').style.maxWidth = '90%';
-</script>

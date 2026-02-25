@@ -1,5 +1,5 @@
 ---
-title: Vikram Voleti's publications
+title: Nagendra Tanikella's publications
 layout: default
 permalink: /publications
 ---

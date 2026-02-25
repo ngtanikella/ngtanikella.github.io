@@ -1,10 +1,10 @@
 ---
-title: Vikram Voleti's CV
+title: Nagendra Tanikella's CV
 layout: default
 permalink: /CV
 ---
 
-<iframe src="https://voletiv.github.io/docs/cv/Vikram_Voleti_CV.pdf"
+<iframe src="https://ngtanikella.github.io/docs/cv/CV_Nagendra_Tanikella.pdf"
     width="100%"
     height="1000px"
     scrolling="auto">

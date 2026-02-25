@@ -1,5 +1,5 @@
 ---
-title: Vikram Voleti's contact details
+title: Nagendra Tanikella's contact details
 layout: default
 type: contact
 permalink: /contact
@@ -9,7 +9,7 @@ permalink: /contact
 
 ## Contact
 
-<i class="fa fa-envelope"></i> vikram dot voleti at gmail dot com
+<i class="fa fa-envelope"></i> ngtanike@mtu.edu
 
 ---
 
@@ -24,9 +24,5 @@ permalink: /contact
 <!-- [<i class="fa fa-facebook"></i> Facebook](https://www.facebook.com/{{ site.facebook_username }}){:target="_blank"} -->
 
 ---
-
-### Movie review blog:
-
-[<i class="fa fa-wordpress"></i> {{ site.wordpress_username }}.wordpress.com](https://{{ site.wordpress_username }}.wordpress.com){:target="_blank"}
 
 </div>

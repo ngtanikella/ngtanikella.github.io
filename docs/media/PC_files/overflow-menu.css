@@ -1,0 +1,93 @@
+.overflow-menu > .menu_submenu {
+	overflow: visible;
+	max-width: none;
+}
+
+.overflow-menu .menu_submenu .menu_item {
+	width: 100%;
+	max-width: none;
+}
+
+.overflow-menu .in {
+	box-shadow: inset 5px 0px 0 0 #fc0;
+}
+
+.overflow-menu .menu_item .menu_link {
+	width: 100%;
+}
+
+.overflow-menu .menu_item-yellow,
+.overflow-menu .menu_item-yellow .menu_link {
+	background: transparent;
+}
+
+.dark .overflow-menu .menu_item-yellow:last-of-type .menu_link,
+.dark .overflow-menu .menu_item-yellow:last-of-type .menu_link:visited {
+  color: #fff;
+}
+
+.dark .overflow-menu .menu_item-yellow:last-of-type:hover .menu_link{
+	color: #000;
+}
+
+.overflow-menu .menu_submenu .menu_item .menu_link {
+	display: block;
+	text-align: left;
+}
+
+.overflow-menu .menu_item.menu_item .menu_submenu {
+	display: none;
+	transform: translateX(-99%);
+	transform: translateX(calc(-100% + 2px));
+	top: 0;
+}
+
+.overflow-menu .menu_submenu > .menu_item a {
+	text-decoration: none;
+}
+
+.overflow-menu .menu_submenu > .menu_item a:hover {
+	text-decoration: underline;
+}
+
+.overflow-menu .menu_item .arrow::after {
+	visibility: visible;
+	transform: rotate(135deg);
+}
+
+.overflow-menu .menu_item .arrow::after {
+	visibility: visible;
+	transform: rotate(135deg);
+}
+
+.overflow-menu .menu_item:hover .arrow::after,
+.overflow-menu .menu_item.active .arrow::after {
+	transform: rotate(-45deg);
+}
+
+.overflow-menu .menu_item a:focus,
+.overflow-menu .menu_item button:focus {
+	outline-color: #000;
+}
+
+.overflow-menu .menu_item.menu_has-submenu:hover {
+	background-color: #eee;
+}
+
+.overflow-menu .menu_has-submenu .menu_submenu {
+	border-top-width: 1px;
+}
+
+.overflow-menu.active .menu_submenu,
+.overflow-menu .menu_item.menu_item:hover > .menu_submenu,
+.overflow-menu .menu_item.menu_item.active > .menu_submenu {
+	display: block;
+	box-shadow: none;
+	background-color: #eee;
+}
+
+.dark .overflow-menu.active .menu_submenu, 
+.dark .overflow-menu .menu_item.menu_item:hover > .menu_submenu, 
+.dark .overflow-menu .menu_item.menu_item.active > .menu_submenu {
+	background-color: rgb(var(--black))
+}

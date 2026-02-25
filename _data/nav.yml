@@ -1,12 +1,14 @@
 - name: "CONTACT"
   link: "/contact"
-
 - name: "PUBLICATIONS"
   link: "/publications"
-
+- name: "PRESENTATIONS"
+  link: "/presentations"
+- name: "MENTORING"
+  link: "/mentoring"
+- name: "MEDIA"
+  link: "/media"
 - name: "CV"
   link: "/CV"
-
 - name: "HOME"
   link: "/"
-

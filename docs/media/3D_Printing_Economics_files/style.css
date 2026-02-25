@@ -1,0 +1,270 @@
+/*
+Theme Name: Michigan Tech Theme
+Theme URI: https://blogs.mtu.edu/
+Description: WordPress theme designed for use by University departments.
+Version: 2022
+Author: University Marketing and Communications
+Author URI: https://www.mtu.edu/umc/
+Text Domain: mtu
+Requires PHP: 7.3
+Requires at least: 5.9
+Tags: black, white, yellow, gold
+*/
+#wpadminbar {
+    position: fixed;
+}
+
+.multi-media_content > :last-child {
+    margin-bottom: 0;
+}
+
+.taxonomy-description {
+    margin-top: -0.75rem;
+}
+
+@media only screen and (min-width: 650px) {
+    body {
+        --wp--preset--font-size--larger: 2.6em;
+        --wp--preset--font-size--largest: 3.2em;
+    }
+}
+
+table.fixed {
+    table-layout: fixed;
+}
+
+pre.wp-block-preformatted {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.entry-title {
+    margin-top: 0;
+    line-height: 1.5;
+}
+
+.padding-top-0x {
+    padding-top: 0 !important;
+}
+
+.entry-summary p:last-child {
+    margin-bottom: 0;
+}
+
+.wp-block-cover h2 {
+    margin: 0;
+    font-weight: 200;
+    font-size: 1.7rem;
+}
+
+/* We only want the p tag that follows a `.feature` heading to get margin-top. */
+.wp-block-cover h2 + p {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+@media (min-width: 880px) {
+    .wp-block-cover h2 {
+        font-size: 3rem;
+    }
+}
+
+.post + .post::before {
+    display: block;
+    margin: 2rem 0;
+    border-top: 1px solid #bfbfbf;
+    content: "";
+}
+
+.sidebar-nobox select,
+.sidebar select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #777;
+}
+
+@media screen and (min-device-pixel-ratio: 0) {
+    select {
+        background-image: url(https://www.mtu.edu/mtu_resources/images/n/arrow-down-black.svg);
+        background-repeat: no-repeat;
+        background-position: right 1ch center;
+        background-size: 0.75em 0.75em;
+        appearance: none;
+    }
+}
+
+.wp-widget > ul,
+.wp-widget > ol,
+.wp-widget_nav_menu .menu {
+    padding-inline-start: 0;
+    list-style-type: none;
+}
+
+.wp-block-latest-posts__list li + li,
+.wp-widget_nav_menu .menu li + li {
+    margin-top: 0.8rem;
+}
+
+.widget img,
+.wp-caption {
+    max-width: 100%;
+}
+
+.wp-caption-text {
+    font-size: 0.87rem;
+    line-height: 1.5;
+}
+
+.wp-widget_media_image figure {
+    margin: 0;
+}
+
+.wp-widget_recent_entries .post-date {
+    font-style: italic;
+}
+
+.wp-widget_recent_entries .post-date::before {
+    white-space: nowrap;
+    content: " - ";
+}
+
+.wp-widget_rss .rss-date {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.87rem;
+}
+
+.wp-block-rss.wp-block-rss {
+    padding-inline-start: 0;
+    list-style-type: none;
+}
+
+.wp-block-rss__item.wp-block-rss__item.wp-block-rss__item {
+    width: 100%;
+}
+
+.wp-block-rss__item + .wp-block-rss__item {
+    margin-top: 1rem;
+}
+
+.wp-block-rss__item-author,
+.wp-block-rss__item-publish-date {
+    display: inline;
+    font-size: 0.87rem;
+}
+
+.wp-block-rss__item-author + .wp-block-rss__item-excerpt,
+.wp-block-rss__item-publish-date + .wp-block-rss__item-excerpt {
+    margin-top: 0.5rem;
+}
+
+.wp-widget_rss cite::before {
+    white-space: nowrap;
+    content: " - ";
+}
+
+.wp-block-rss__item-excerpt::before,
+.wp-widget_rss .rssSummary::before {
+    content: "\201C";
+}
+
+.wp-block-rss__item-excerpt::after,
+.wp-widget_rss .rssSummary::after {
+    content: "\201D";
+}
+
+.sidebar-content p:last-child {
+    margin-bottom: 0;
+}
+
+#nav-push {
+    padding-top: 0;
+    padding-top: var(--mtu-header-height, 0);
+}
+
+.menu,
+.nav-bar .menu_submenu,
+.tech-links-menu,
+.offscreen-nav .menu_submenu {
+    padding-inline-start: 0;
+}
+
+/* Fix: Video.js clipping the new header. */
+.nav {
+    z-index: 10;
+}
+
+#wp-calendar {
+    width: 100%;
+    table-layout: fixed;
+}
+
+#wp-calendar caption {
+    font-size: 1.2em;
+}
+
+#wp-calendar th {
+    text-align: center;
+    border: 1px solid #bfbfbf;
+    border-right: 0;
+    border-left: 0;
+}
+
+.wp-calendar-nav {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+}
+
+#wp-calendar td {
+    padding: 0;
+    line-height: 2;
+    text-align: center;
+}
+
+#wp-calendar a {
+    display: block;
+    font-weight: bold;
+}
+
+#wp-calendar a:hover {
+    color: #fff;
+    text-decoration: none;
+    background-color: #315196;
+}
+
+.sidebar-content .wp-block-buttons {
+    padding-inline-start: 0;
+}
+
+.sidebar-content .wp-block-audio {
+    max-width: 100%;
+    margin: 0;
+}
+
+.full-width figure.middle {
+    margin-bottom: 1.25rem;
+}
+
+.full-width p img {
+    margin: 0;
+    vertical-align: middle;
+}
+.block-editor-block-list__layout::selection {
+        color: #fff;
+        background-color: #2271b1;
+}
+@media screen and (max-width: 450px){
+	.alignleft, .alignright {
+  float: left;
+  display: flex;
+  margin: 0 auto;
+  float: unset;
+}
+
+figure.caption.left, figure.caption.right {
+  margin: 0 auto;
+  margin-bottom: 1.25rem;
+  margin-top: 1.5rem;
+}
+}

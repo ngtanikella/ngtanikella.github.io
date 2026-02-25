@@ -4,18 +4,6 @@ layout: default
 permalink: /CV
 ---
 
-<style>
-  .body-container:has(.cv-page) {
-    max-width: 90% !important;
-  }
-  /* Fallback for browsers that don't support :has() */
-  .cv-page iframe {
-    min-height: 80vh;
-  }
-</style>
-
-<div class="cv-page">
-
 <p style="margin: 10px 0 16px 0;">
   <a href="{{site.url}}{{site.baseurl}}/docs/cv/CV_Nagendra_Tanikella.pdf" target="_blank" rel="noopener">
     Download full CV (PDF)
@@ -28,4 +16,6 @@ permalink: /CV
   loading="lazy">
 </iframe>
 
-</div>
+<script>
+  document.querySelector('.body-container').style.maxWidth = '90%';
+</script>

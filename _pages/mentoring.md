@@ -51,3 +51,12 @@ I have mentored 9 capstone projects with over 40 students across three years at 
 </a>
 
 </div>
+
+
+### My undergraduate capstone (Formula Hybrid race car) — experience I draw on while mentoring
+
+As the Technical Lead of my undergraduate capstone team, I led the complete design and build of a formula-style hybrid vehicle from scratch under SAE competition constraints. This was a full vehicle integration effort involving conceptual architecture, detailed design, fabrication, and assembly.
+
+<div class="experience-box" markdown="1"> <a href="{{site.url}}{{site.baseurl}}/images/Mentoring/MyCapstone.jpg" target="_blank"> <img src="{{site.url}}{{site.baseurl}}/images/Mentoring/MyCapstone.jpg" alt="Formula Hybrid Vehicle" style="max-width:100%; border:1px solid #ccc;"> </a> </div>
+
+This hands-on experience strongly informs how I mentor capstone teams today. I emphasize clarity, early integration thinking, design-for-manufacturability, and structured technical reviews to help students move from concept to fully realized physical systems.

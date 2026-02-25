@@ -168,7 +168,10 @@ ul li span {
   float: left;
   width: 400px;
 }
-
+.social-icon-logo {
+  height: 2.5em;   /* roughly matches ai-3x */
+  vertical-align: middle;
+}
 /* Center icon table */
 .icon-table {
   display: table;

@@ -353,24 +353,49 @@ a .fa-github:hover {
 }
 
 /* Footer */
-.footer-inner {
+/* Fixed footer bar */
+.footer{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+
+  background-color: $footer-bg;               // "bar" color
+  border-top: 2px solid darken(#ffffff, 20%); // bar line like header
+  padding: 10px 0;
+
+  font-size: $footer-font-size;
+  color: $text;
+}
+
+/* Footer layout */
+.footer-inner{
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
 }
 
-.footer-text {
+.footer-text{
   margin: 0;
   color: $text;
 }
 
-.footer-icons {
+/* Icons row */
+.footer-icons{
   display: flex;
+  align-items: center;
   gap: 12px;
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+/* 30% bigger icons */
+.footer i{
+  font-size: 2.6em;   // was ~2em; this is ~30% bigger
+  line-height: 1;
 }
 
 /* Footer social icons — brand colors */
@@ -384,6 +409,9 @@ a .fa-github:hover {
   color: #4285F4;
 }
 
+body{
+  padding-bottom: 70px; // ensures content doesn't hide behind footer bar
+}
 /* Mobile */
 @media (max-width: 800px) {
   .container {
@@ -493,7 +521,12 @@ a .fa-github:hover {
     height: 30px;
   }
 }
-
+@media (max-width: 480px){
+  .footer-inner{
+    flex-direction: column;
+    gap: 6px;
+  }
+}
 /* Buttons */
 
 button,

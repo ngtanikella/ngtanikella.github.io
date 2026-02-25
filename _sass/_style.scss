@@ -22,17 +22,20 @@ html {
   overflow-x: hidden;   /* prevent horizontal scroll */
 }
 
-header {
-  /* ... */
-}
-
 body {
   margin: 0;
   font-family: "Lato", "IBM Plex Sans", "Open Sans", sans-serif;
   font-size: $body-font-size;
   color: $text;
   background: $bg;
-  height: 100%;
+  min-height: 100%;
+}
+
+/* Sticky-footer layout (footer at bottom of page, not viewport) */
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -146,15 +149,12 @@ h1, h2, h3, h4, h5, h6 {
   margin: auto;
 }
 
-/* Space for the fixed navbar */
+/* Main content area should grow to push footer to bottom */
 .body-container {
+  flex: 1;                 /* KEY for sticky footer */
   max-width: 50%;
   margin: auto;
-  padding-top: 80px; // increased so content isn't hidden behind navbar
-}
-
-.wrapper {
-  min-height: 100%;
+  padding-top: 80px;       /* space for fixed header */
 }
 
 /* Date */
@@ -251,16 +251,15 @@ a .publication-title {
   clear: both;
 }
 
-
 /* Collage grid: ALWAYS 3 columns */
-.collage-grid{
+.collage-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 14px;
   margin-top: 12px;
 }
 
-.collage-item{
+.collage-item {
   margin: 0;
   background: #fff;
   border: 1px solid #ddd;
@@ -270,14 +269,14 @@ a .publication-title {
 }
 
 /* Uniform image height; crop to fit */
-.collage-item img{
+.collage-item img {
   width: 100%;
-  height: 180px;      /* <-- change this height as you like */
-  object-fit: cover;  /* crops so everything looks uniform */
+  height: 180px;
+  object-fit: cover;
   display: block;
 }
 
-.collage-item figcaption{
+.collage-item figcaption {
   padding: 8px 10px;
   font-size: 0.9em;
   color: $text;
@@ -309,81 +308,38 @@ a .publication-title {
   }
 }
 
-/* Social */
+/* Social / icon colors (icons keep brand colors, not link green) */
+a .ai-google-scholar-square { color: #4285F4; }
+a .fa-linkedin { color: #0A66C2; }
+a .fa-github { color: #333333; }
 
-/* Brand colors for social icons — override the green link color */
-a .ai-google-scholar-square {
-  color: #4285F4;  /* Google blue */
-}
-a .fa-linkedin {
-  color: #0A66C2;  /* LinkedIn blue */
-}
-a .fa-github {
-  color: #333333;  /* GitHub dark */
-}
-a .ai-google-scholar-square:hover {
-  color: darken(#4285F4, 15%);
-}
-a .fa-linkedin:hover {
-  color: darken(#0A66C2, 15%);
-}
-a .fa-github:hover {
-  color: #000000;
-}
+a .ai-google-scholar-square:hover { color: darken(#4285F4, 15%); }
+a .fa-linkedin:hover { color: darken(#0A66C2, 15%); }
+a .fa-github:hover { color: #000000; }
 
-/* Social icon row (markdown table with icons) */
-.social-icons {
-  text-align: center;
-  margin: 10px auto;
-}
-.social-icons a {
-  display: inline-block;
-  margin: 0 12px;
-}
-
-.contact {
-  font-size: $contact-font-size;
-  line-height: 200%;
-  color: $text;
-}
-
-.contact i {
-  font-size: 2em;
-  margin-right: 2px;
-}
-
-/* Footer */
-/* Fixed footer bar */
-.footer{
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 99;
-
-  background-color: $footer-bg;               // "bar" color
-  border-top: 2px solid darken(#ffffff, 20%); // bar line like header
+/* Footer (sticky footer bar, NOT fixed to viewport) */
+.footer {
+  background-color: $footer-bg;
+  border-top: 2px solid darken(#ffffff, 20%);
   padding: 10px 0;
-
   font-size: $footer-font-size;
   color: $text;
 }
 
-/* Footer layout */
-.footer-inner{
+.footer-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
 }
 
-.footer-text{
+.footer-text {
   margin: 0;
   color: $text;
 }
 
 /* Icons row */
-.footer-icons{
+.footer-icons {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -392,143 +348,109 @@ a .fa-github:hover {
   list-style: none;
 }
 
-/* 30% bigger icons */
-.footer i{
-  font-size: 2.6em;   // was ~2em; this is ~30% bigger
+/* ~30% bigger icons */
+.footer i {
+  font-size: 2.6em;
   line-height: 1;
 }
 
 /* Footer social icons — brand colors */
-.footer .fa-github {
-  color: #333333;
-}
-.footer .fa-linkedin {
-  color: #0A66C2;
-}
-.footer .ai-google-scholar-square {
-  color: #4285F4;
-}
+.footer .fa-github { color: #333333; }
+.footer .fa-linkedin { color: #0A66C2; }
+.footer .ai-google-scholar-square { color: #4285F4; }
 
-body{
-  padding-bottom: 70px; // ensures content doesn't hide behind footer bar
-}
 /* Mobile */
 @media (max-width: 800px) {
   .container {
     max-width: $med-width;
     transition: 0.3s ease all;
   }
+
   .body-container {
     max-width: $med-width;
     transition: 0.3s ease all;
-    padding-top: 120px;  /* more space since nav wraps to 2 rows */
+    padding-top: 120px; /* more space since nav wraps to 2 rows */
   }
+
   .nav-inner {
     flex-wrap: wrap;
     justify-content: center;
   }
-  /* THIS is the key fix — the ul of nav links must also wrap */
+
   .navbar-ul {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 4px 10px;  /* tighter spacing on mobile */
+    gap: 4px 10px;
   }
+
   .navbar-ul a {
     padding: 4px 6px;
     font-size: 0.85em;
   }
+
   #author-name {
     font-size: 18px !important;
   }
-  .publication-picture {
-    max-width: 80%;
-    margin: 10px 10% 20px 10%;
-  }
-  .publication-text {
-    max-width: 80%;
-    margin: 10px 10% 20px 10%;
-  }
-  .profile-picture {
-    float: none !important;
-    display: block;
-    margin: 10px auto;
-    max-width: 150px;
-  }
-  .experience-picture {
-    float: none !important;
-    display: block;
-    margin: 0 auto 10px auto;
-    max-width: 80px;
-  }
-  .experience-box {
-    overflow: hidden;
-  }
-  img {
+
+  img, video {
     max-width: 100%;
     height: auto;
   }
-  video {
-    max-width: 100%;
-    height: auto;
-  }
+
   table {
     display: block;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
+
   p {
     word-wrap: break-word;
     overflow-wrap: break-word;
   }
-  /* Social icon row — keep icons visible */
+
   .ai-3x {
     font-size: 2em;
   }
 }
+
 @media (max-width: 650px) {
-  .container {
-    max-width: 90%;
-  }
-  .body-container {
-    max-width: 90%;
-  }
+  .container { max-width: 90%; }
+  .body-container { max-width: 90%; }
 }
+
 @media (max-width: 480px) {
   .container {
     max-width: 95%;
     padding: 0 8px;
   }
+
   .body-container {
     max-width: 95%;
-    padding-top: 140px;  /* nav wraps even more on tiny screens */
+    padding-top: 140px;
   }
-  .profile-picture {
-    max-width: 120px;
-  }
+
   .navbar-ul a {
     padding: 3px 4px;
     font-size: 0.75em;
   }
+
   #author-name {
     font-size: 16px !important;
   }
+
   .name-logo {
     height: 18px;
   }
 }
-@media (max-width: 580px) {
-  .footer {
-    height: 30px;
-  }
-}
-@media (max-width: 480px){
-  .footer-inner{
+
+@media (max-width: 480px) {
+  .footer-inner {
     flex-direction: column;
     gap: 6px;
   }
 }
-/* Buttons */
 
+/* Buttons */
 button,
 [role="button"] {
   padding: 3px;

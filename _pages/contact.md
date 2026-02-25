@@ -9,7 +9,7 @@ permalink: /contact
 
 ## Contact
 
-<i class="fa fa-envelope"></i> ngtanike@mtu.edu
+[<i class="fa fa-envelope"></i> ngtanike@mtu.edu](mailto:tani7947@vandals.uidaho.edu)
 
 ---
 

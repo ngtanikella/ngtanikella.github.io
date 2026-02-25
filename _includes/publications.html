@@ -1,15 +1,37 @@
 <div class="publications">
 
-{% if publication.link1.url contains '://' %}
-<a href="{{ publication.link1.url }}" target="_blank"><div class="publication-title">{{ publication.title }}</div></a>
-{% else %}
-<a href="{{site.url}}{{site.baseurl}}/docs/publications/{{ publication.link1.url }}" target="_blank"><div class="publication-title">{{ publication.title }}</div></a>
+{% assign doi_url = publication.doi | default: "" %}
+{% if doi_url != "" and doi_url contains "doi.org" == false %}
+  {% assign doi_url = "https://doi.org/" | append: doi_url %}
 {% endif %}
 
-{% if publication.link1.url contains '://' %}
-<a href="{{ publication.link1.url }}" target="_blank"><img class="publication-picture" src="{{site.url}}{{site.baseurl}}/images/publications/{{ publication.image }}" alt="NOT FOUND" /></a>
+{% assign pdf_url = publication.link1.url | default: "" %}
+{% unless pdf_url contains "://" %}
+  {% assign pdf_url = site.url | append: site.baseurl | append: "/docs/publications/" | append: pdf_url %}
+{% endunless %}
+
+{% if doi_url != "" %}
+  <a href="{{ doi_url }}" target="_blank" rel="noopener">
+    <div class="publication-title">{{ publication.title }}</div>
+  </a>
 {% else %}
-<a href="{{site.url}}{{site.baseurl}}/docs/publications/{{ publication.link1.url }}" target="_blank"><img class="publication-picture" src="{{site.url}}{{site.baseurl}}/images/publications/{{ publication.image }}" alt="NOT FOUND" /></a>
+  <a href="{{ pdf_url }}" target="_blank" rel="noopener">
+    <div class="publication-title">{{ publication.title }}</div>
+  </a>
+{% endif %}
+
+{% if doi_url != "" %}
+  <a href="{{ doi_url }}" target="_blank" rel="noopener">
+    <img class="publication-picture"
+         src="{{site.url}}{{site.baseurl}}/images/publications/{{ publication.image }}"
+         alt="{{ publication.title }}" />
+  </a>
+{% else %}
+  <a href="{{ pdf_url }}" target="_blank" rel="noopener">
+    <img class="publication-picture"
+         src="{{site.url}}{{site.baseurl}}/images/publications/{{ publication.image }}"
+         alt="{{ publication.title }}" />
+  </a>
 {% endif %}
 
 <div class="publication-text">

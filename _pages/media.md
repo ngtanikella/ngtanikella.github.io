@@ -14,6 +14,8 @@ permalink: /media
 
 ### Open Source Ventilator Demonstration
 
+Low cost open-source ventilator developed during COVID-19, in May-June 2020.
+
 <video width="100%" controls>
   <source src="{{site.url}}{{site.baseurl}}/images/Media/Ventilator.mp4" type="video/mp4">
   Your browser does not support the video tag.
@@ -29,7 +31,7 @@ permalink: /media
 
 ### Open-Source Cerberus 3D Printer for PEKK
 
-Dr. Joshua Pearce's new open-source Cerberus can 3D print PEKK for sub-$1000.
+New open-source Cerberus can 3D print PEKK for sub-$1000.
 
 [Original Article — 3D Printing Industry](https://3dprintingindustry.com/news/dr-joshua-pearces-new-open-source-cerberus-can-3d-print-pekk-for-sub-1000-176595/){:target="_blank"} |
 [Archived Copy]({{site.url}}{{site.baseurl}}/docs/media/Cerberus.html){:target="_blank"}
@@ -38,9 +40,9 @@ Dr. Joshua Pearce's new open-source Cerberus can 3D print PEKK for sub-$1000.
 
 <div class="experience-box" markdown="1">
 
-### Idahome Magazine Feature
+### Innovation Blooms on Idaho Campuses
 
-Featured in Idahome Magazine.
+Printimber project featured in Idahome Magazine.
 
 [Original Article — Issuu](https://issuu.com/idahome/docs/idahome_volume_5_issue_1_for_issuu/s/42704739){:target="_blank"} |
 [Archived Copy]({{site.url}}{{site.baseurl}}/docs/media/Innovation.html){:target="_blank"}

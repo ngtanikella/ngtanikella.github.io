@@ -21,4 +21,3 @@ permalink: /publications
 {% include publications.html %}
 
 {% endfor %}
-

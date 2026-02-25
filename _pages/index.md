@@ -21,7 +21,7 @@ I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both f
 
 ## PUBLICATIONS
 
-# For a more complete list, please check my <a href="{{ site.google_scholar_url }}" target="_blank">Google Scholar</a> page.
+<!-- For a more complete list, please check my <a href="{{ site.google_scholar_url }}" target="_blank">Google Scholar</a> page. -->
 
 {% for publication in site.data.papers %}
 

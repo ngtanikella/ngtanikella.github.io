@@ -10,7 +10,7 @@ permalink: /mentoring
 
 ## Capstone Student Projects
 
-I have mentored 9 capstone projects with over 40 students across three years at the University of Idaho, providing hands-on training in Design for Manufacturing (DfM), prototyping, and technical communication.
+I have mentored 9 capstone projects with over 40 students across three years at the University of Idaho, providing hands-on training in Design for Manufacturing (DfM), prototyping, and technical communication. Some student project posters:
 
 <div class="experience-box" markdown="1">
 

@@ -41,7 +41,7 @@ _Click image to view full size_
 
 ### American Institute of Architecture Students (AIAS) Conference
 
-**Poster Presentation**
+**Project Presentation**
 
 <a href="{{site.url}}{{site.baseurl}}/images/presentations/AIAS_poster.jpg" target="_blank">
 <img src="{{site.url}}{{site.baseurl}}/images/presentations/AIAS_poster.jpg" alt="AIAS Poster" style="max-width:100%; border:1px solid #ccc;">

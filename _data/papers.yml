@@ -1,8 +1,8 @@
-- title: Optimizing Wood–Hemp–Sodium Silicate Composites for Strength, Extrudability, and Cost in Additive Manufacturing Applications
+- title: "Optimizing Wood–Hemp–Sodium Silicate Composites for Strength, Extrudability, and Cost in Additive Manufacturing Applications"
   image: Optimizing.webp
-  authors: <b>Nagendra G. Tanikella</b>, Armando G. McDonald, Michael R. Maughan 
-  venue: Materials, 2026
-  doi: "https://doi.org/10.3390/ma19020357"   # <-- replace with real DOI
+  authors: "<b>Nagendra G. Tanikella</b>, Armando G. McDonald, Michael R. Maughan"
+  venue: "Materials, 2026"
+  doi: "https://doi.org/10.3390/ma19020357"
   number_link: 1
   link1:
     url: "Optimizing Wood–Hemp–Sodium Silicate Composites for Strength, Extrudability, and Cost in Additive Manufacturing Applications.pdf"
@@ -11,7 +11,7 @@
 - title: Extrudability and Mechanical Properties of Wood–Sodium Silicate Composites with Hemp Fiber Reinforcement for Additive Manufacturing
   image: Extrudability.png
   authors: <b>Nagendra G. Tanikella</b>,  Alexandra M. Lehman-Chong, Armando G. McDonald, Michael R. Maughan 
-  venue: Polymers, 2025
+  venue: "Polymers, 2025"
   doi: "https://doi.org/10.3390/polym17182478"
   number_link: 1
   link1:
@@ -20,26 +20,19 @@
 
 - title: "Conceptual Design and Rationale for a New Agrivoltaics Concept: Pasture-Raised Rabbits and Solar Farming"
   image: Rabbit.png
-  authors: Alexis Pascaris, <b>Nagendra G. Tanikella</b>, Laurie Burnham, Joshua M. Pearce
-  venue: Sustainability, 2022
+  authors: William Lytle, Theresa K. Meyer, <b>Nagendra G. Tanikella</b>, Laurie Burnham, Julie Engel, Chelsea Schelly, Joshua M. Pearce
+  venue: "Journal of Cleaner Production, 2021"
+  doi: "https://doi.org/10.1016/j.jclepro.2020.124476"
   number_link: 1
   link1:
     url: "Conceptual Design and Rationale for a New Agrivoltaics Concept Pasture-Raised Rabbits and Solar Farming.pdf"
     display: pdf
 
-- title: Technical Pathways for Distributed Recycling of Polymer Composites for Distributed Manufacturing - Windshield Wiper Blades
-  image: Windshield.jpg
-  authors: Samantha C. Dertinger, Nicole Gallup, <b>Nagendra G. Tanikella</b>, Marzio Grasso, Samireh Vahid, Peter J.S. Foot, Joshua M. Pearce
-  venue: Resources, Conservation and Recycling, 2020
-  number_link: 1
-  link1:
-    url: "Technical pathways for distributed recycling of polymer composites for distributed manufacturing Windshield wiper blades.pdf"
-    display: pdf
-
 - title: Partially RepRapable Automated Open Source Bag Valve Mask-Based Ventilator
   image: Ventilator.jpg
   authors: Aliaksei Petsiuk, <b>Nagendra G. Tanikella</b>, Samantha Dertinger, Adam Pringle, Shane Oberloier, Joshua M. Pearce
-  venue: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7417990/" target="_blank">HardwareX, 2020</a>
+  venue: "HardwareX, 2020"
+  doi: "https://doi.org/10.1016/j.ohx.2020.e00131"
   number_link: 2
   link1:
     url: "Partially RepRapable automated open source bag valve mask-based ventilator.pdf"
@@ -48,65 +41,82 @@
     url: https://pmc.ncbi.nlm.nih.gov/articles/PMC7417990/
     display: PMC
 
-- title: Potential of Distributed Recycling from Hybrid Manufacturing of 3-D Printing and Injection Molding of Stamp Sand and Acrylonitrile Styrene Acrylate Waste Composite
-  image: ASA.jpg
-  authors: Theresa K. Meyer, <b>Nagendra G. Tanikella</b>, Matthew J. Reich, Joshua M. Pearce
-  venue: Sustainable Materials and Technologies, 2020
-  number_link: 1
-  link1:
-    url: "Potential of distributed recycling from hybrid manufacturing of 3-D printing and injection molding of stamp sand and acrylonitrile styrene acrylate waste composite.pdf"
-    display: pdf
-
-- title: Parametric Nasopharyngeal Swab for Sampling COVID-19 and Other Respiratory Viruses - Open Source Design, SLA 3-D Printing and UV Curing System
-  image: Nasal.jpg
-  authors: Adam Pringle, Shane Oberloier, <b>Nagendra G. Tanikella</b>, Joshua M. Pearce
-  venue: HardwareX, 2020
-  number_link: 1
-  link1:
-    url: "Parametric nasopharyngeal swab for sampling COVID-19 and other respiratory viruses Open source design, SLA 3-D printing and UV curing system.pdf"
-    display: pdf
-
 - title: Open Source High-Temperature RepRap for 3-D Printing Heat-Sterilizable PPE and Other Applications
   image: High_temp.jpg
-  authors: <b>Nagendra G. Tanikella</b>, Joshua M. Pearce
-  venue: HardwareX, 2020
+  authors: Noah G. Skrzypczak, <b>Nagendra G. Tanikella</b>, Joshua M. Pearce
+  venue: "HardwareX, 2020"
+  doi: "https://doi.org/10.1016/j.ohx.2020.e00130"
   number_link: 1
   link1:
     url: "Open source high-temperature RepRap for 3-D printing heat-sterilizable PPE and other applications.pdf"
     display: pdf
 
+- title: Parametric Nasopharyngeal Swab for Sampling COVID-19 and Other Respiratory Viruses - Open Source Design, SLA 3-D Printing and UV Curing System
+  image: Nasal.jpg
+  authors: Nicole Gallup, Adam M. Pringle, Shane Oberloier, <b>Nagendra G. Tanikella</b>, Joshua M. Pearce
+  venue: "HardwareX, 2020"
+  doi: "https://doi.org/10.1016/j.ohx.2020.e00135"
+  number_link: 1
+  link1:
+    url: "Parametric nasopharyngeal swab for sampling COVID-19 and other respiratory viruses Open source design, SLA 3-D printing and UV curing system.pdf"
+    display: pdf
+
 - title: Towards Distributed Recycling with Additive Manufacturing of PET Flake Feedstocks
   image: PET.webp
   authors: Helen A. Little, <b>Nagendra G. Tanikella</b>, Matthew J. Reich, Matthew J. Fiedler, Samantha L. Snabes, Joshua M. Pearce
-  venue: Materials, 2020
+  venue: "Materials, 2020"
+  doi: "https://doi.org/10.3390/ma13194273"
   number_link: 1
   link1:
     url: "Towards Distributed Recycling with Additive Manufacturing of PET Flake Feedstocks .pdf"
     display: pdf
 
+- title: Potential of Distributed Recycling from Hybrid Manufacturing of 3-D Printing and Injection Molding of Stamp Sand and Acrylonitrile Styrene Acrylate Waste Composite
+  image: ASA.jpg
+  authors: Theresa K. Meyer, <b>Nagendra G. Tanikella</b>, Matthew J. Reich, Joshua M. Pearce
+  venue: "Sustainable Materials and Technologies, 2020"
+  doi: "https://doi.org/10.1016/j.susmat.2020.e00169"
+  number_link: 1
+  link1:
+    url: "Potential of distributed recycling from hybrid manufacturing of 3-D printing and injection molding of stamp sand and acrylonitrile styrene acrylate waste composite.pdf"
+    display: pdf
+
+- title: Technical Pathways for Distributed Recycling of Polymer Composites for Distributed Manufacturing - Windshield Wiper Blades
+  image: Windshield.jpg
+  authors: Samantha C. Dertinger, Nicole Gallup, <b>Nagendra G. Tanikella</b>, Marzio Grasso, Samireh Vahid, Peter J.S. Foot, Joshua M. Pearce
+  venue: "Resources, Conservation and Recycling, 2020"
+  doi: "https://doi.org/10.1016/j.resconrec.2020.104810"
+  number_link: 1
+  link1:
+    url: "Technical pathways for distributed recycling of polymer composites for distributed manufacturing Windshield wiper blades.pdf"
+    display: pdf
+
 - title: Mechanical Properties and Applications of Recycled Polycarbonate Particle Material Extrusion-Based Additive Manufacturing
   image: PC.png
   authors: Matthew J. Reich, Aubrey L. Woern, <b>Nagendra G. Tanikella</b>, Joshua M. Pearce
-  venue: Materials, 2019
+  venue: "Materials, 2019"
+  doi: "https://doi.org/10.3390/ma12101642"
   number_link: 1
   link1:
     url: "Mechanical Properties and Applications of Recycled Polycarbonate Particle Material Extrusion-Based Additive Manufacturing.pdf"
     display: pdf
 
-- title: Tensile Strength of Commercial Polymer Materials for Fused Filament Fabrication 3-D Printing
-  image: Tensile.jpg
-  authors: <b>Nagendra G. Tanikella</b>, Ben Wittbrodt, Joshua M. Pearce
-  venue: Additive Manufacturing, 2017
-  number_link: 1
-  link1:
-    url: "Tensile strength of commercial polymer materials for fused filament fabrication 3D printing.pdf"
-    display: pdf
-
 - title: Viability of Distributed Manufacturing of Bicycle Components with 3-D Printing
   image: pedal.jpg
   authors: <b>Nagendra G. Tanikella</b>, Joshua M. Pearce
-  venue: 2017
+  venue: "Journal of Humanitarian Engineering, 2017"
+  doi: "https://hal.science/hal-02113455/document"
   number_link: 1
   link1:
     url: "viability of Distributed Manufacturing of Bicycle components with 3-D printing.pdf"
+    display: pdf
+
+- title: Tensile Strength of Commercial Polymer Materials for Fused Filament Fabrication 3-D Printing
+  image: Tensile.jpg
+  authors: <b>Nagendra G. Tanikella</b>, Ben Wittbrodt, Joshua M. Pearce
+  venue: "Additive Manufacturing, 2017"
+  doi: "https://doi.org/10.1016/j.addma.2017.03.005"
+  number_link: 1
+  link1:
+    url: "Tensile strength of commercial polymer materials for fused filament fabrication 3D printing.pdf"
     display: pdf

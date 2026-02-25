@@ -1,159 +1,187 @@
 @import "vars";
 
-$bg: #ffffff;
-$text: #289c01;
-$navbar-bg: #6b4802;
-$footer-bg: #eeeeee;
-$accent: #289c01; // example
+/* =========================
+   THEME COLORS
+   ========================= */
+$bg: #ffffff;          // page background
+$text: #111111;        // small/body text (black)
+$accent: #289c01;      // green accents (titles/headings/links/name)
+$navbar-bg: #6b4802;   // navbar background
+$footer-bg: #eeeeee;   // footer background
+
 /*
  * Basic
  */
 
 html {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    overflow:scroll;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: scroll;
 }
 
 header {
-    /* ... */
+  /* ... */
 }
 
 body {
-    margin: 0;
-    font-family: "Lato", "IBM Plex Sans", "Open Sans", sans-serif;
-    // font-weight: light;
-    font-size: $body-font-size;
-    color: #444444;
-    height: 100%;
+  margin: 0;
+  font-family: "Lato", "IBM Plex Sans", "Open Sans", sans-serif;
+  font-size: $body-font-size;
+  color: $text;
+  background: $bg;
+  height: 100%;
 }
 
 a {
-    text-decoration: none;
-    color: $accent;
+  text-decoration: none;
+  color: $accent;
 }
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 p {
-    text-align: justify;
+  text-align: justify;
+  color: $text;
+}
+
+/* Headings / titles should be green */
+h1, h2, h3, h4, h5, h6 {
+  color: $accent;
 }
 
 /*
- * Navbar
+ * Navbar / Header (fixed)
  */
 
-/* Fix top */
 .fixed-top {
-    // display: inline-block;
-    position: fixed;
-    z-index: 99;
-    top: 0;
-    // left: 50%;
-    margin: 0; /* Negative half of height. */
-    // margin-left: 50px;
-    width: 100%;
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  margin: 0;
+  width: 100%;
 }
 
-#author-name {
-    font-size: ($author-font-size - 2px);
-    // font-weight: bold;
-    color: #289c01;
-    //text-shadow: 1px 1px 1px #000000;
-    // display: inline-block;
-    margin: -10px 0px 0px 0px;
-}
+/* Navbar wrapper */
 .navbar {
-    width: 100%;
-    height: 20px;
-    background-color: #ffedae;
-    margin: 0;
-    padding: 25px 0px 15px 0px;
-    border-bottom: 2px solid darken(#ffffff, 20%);
+  width: 100%;
+  background-color: $navbar-bg;
+  margin: 0;
+  border-bottom: 2px solid darken(#ffffff, 20%);
+  padding: 12px 0;
 }
-.navbar {
+
+/* Inner container flex alignment */
+.nav-inner {
   display: flex;
-  align-items: center;       // vertically centers tabs
+  align-items: center;
   justify-content: space-between;
-  height: auto;              // don't force 20px
-  padding: 14px 0;           // consistent vertical padding
+  gap: 16px;
 }
 
+/* Name (logo + text) */
+#author-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: $accent;
+  font-size: ($author-font-size - 2px);
+  line-height: 1.1;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+}
+
+.name-text {
+  color: $accent;
+}
+
+.name-logo {
+  height: 24px;
+  width: auto;
+  display: inline-block;
+}
+
+/* Nav tabs */
 .navbar-ul {
   display: flex;
   align-items: center;
-  gap: 16px;                 // spacing between tabs
+  gap: 16px;
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
 .nav-list {
-  list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.navbar a {
+.navbar-ul a {
   display: inline-flex;
   align-items: center;
+  padding: 6px 8px;
   line-height: 1;
-  padding: 8px 10px;
-}
-.alignable {
-    display: inline-block;
-    font-weight: bold;
+  font-weight: bold;
+  color: $accent;
 }
 
-body { color: $text; background: $bg; }
-.navbar { background-color: $navbar-bg; }
-.footer { background-color: $footer-bg; }
-a { color: $accent; }
+/* Legacy classes (neutralize floats so they don't break layout) */
+.alignable {
+  display: inline-block;
+  font-weight: bold;
+}
+.pull-left,
+.pull-right {
+  float: none !important;
+}
 
 /* Divs */
 
 .container {
-    max-width: 60%;
-    margin: auto;
+  max-width: 60%;
+  margin: auto;
 }
 
+/* Space for the fixed navbar */
 .body-container {
-    max-width: 50%;
-    margin: auto;
-    padding-top: 60px;
+  max-width: 50%;
+  margin: auto;
+  padding-top: 80px; // increased so content isn't hidden behind navbar
 }
 
 .wrapper {
-    min-height: 100%;
+  min-height: 100%;
 }
 
 /* Date */
 
 .date-text {
-    float: left;
-    width: 4px;
+  float: left;
+  width: 4px;
 }
 
 ul li span {
-    float: left;
-    width: 400px;
+  float: left;
+  width: 400px;
 }
 
+/* Center icon table */
 .icon-table {
-    display: table;   /* Allow the centering to work */
-    margin: 0 auto;
+  display: table;
+  margin: 0 auto;
 }
 
 ul#horizontal-list {
-    min-width: 696px;
-    list-style: none;
-    padding-top: 20px;
+  min-width: 696px;
+  list-style: none;
+  padding-top: 20px;
 }
 
 ul#horizontal-list li {
-    display: inline;
+  display: inline;
 }
 
 .inline-logo {
@@ -169,43 +197,51 @@ ul#horizontal-list li {
 /* Publications */
 
 .publications {
-    min-height: 60px;
-    width: 100%;
-    // padding-bottom: 10px;
-    margin-bottom: 10px;
-    background-color: #ffffff;
-    border: 1px solid darken(#ffffff, 50%);
-    box-shadow: 2px 2px 5px gray;
-    blockquote {
-        border-color: #ddd;
-        border-color: rgba(0,0,0,.15);
-    }
+  min-height: 60px;
+  width: 100%;
+  margin-bottom: 10px;
+  background-color: #ffffff;
+  border: 1px solid darken(#ffffff, 50%);
+  box-shadow: 2px 2px 5px gray;
+
+  blockquote {
+    border-color: #ddd;
+    border-color: rgba(0, 0, 0, 0.15);
+  }
 }
 
 .publication-title {
-    margin: 20px 20px 20px 20px;
-    // margin-bottom: 10px;
-    font-size: $publication-title-font-size;
-    font-weight: bold;
+  margin: 20px 20px 20px 20px;
+  font-size: $publication-title-font-size;
+  font-weight: bold;
+  color: $accent;
+}
+
+a .publication-title {
+  color: $accent;
 }
 
 .publication-picture {
-    object-fit: cover;
-    display: block;
-    position: relative;
-    max-height: 30%;
-    max-width: 15%;
-    float: left;
-    padding: 2px;
-    border: 1px solid darken(#ffffff, 20%);
-    border-radius: 10px;
-    overflow: hidden;
-    margin: 0px 20px 10px 20px;
+  object-fit: cover;
+  display: block;
+  position: relative;
+  max-height: 30%;
+  max-width: 15%;
+  float: left;
+  padding: 2px;
+  border: 1px solid darken(#ffffff, 20%);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0px 20px 10px 20px;
 }
 
 .publication-text {
-    // margin-left: 24%;
-    margin: 0px 20px 20px 25%;
+  margin: 0px 20px 20px 25%;
+  color: $text;
+
+  p, em {
+    color: $text;
+  }
 }
 
 .publications::after {
@@ -214,131 +250,120 @@ ul#horizontal-list li {
   clear: both;
 }
 
-// .publication-links {
-//     margin: 0px 0px 5px 0px;
-// }
-
 /* Experience */
 
 .experience-box {
-    width: 100%;
-    padding: 0px 10px 0px 10px;
-    margin-bottom: 20px;
-    background-color: #ffffff;
-    border: 1px solid darken(#ffffff, 50%);
-    box-shadow: 2px 2px 5px gray;
-    blockquote {
-        border-color: #ddd;
-        border-color: rgba(0,0,0,.15);
-      }
+  width: 100%;
+  padding: 0px 10px 0px 10px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  border: 1px solid darken(#ffffff, 50%);
+  box-shadow: 2px 2px 5px gray;
+
+  blockquote {
+    border-color: #ddd;
+    border-color: rgba(0, 0, 0, 0.15);
+  }
+
+  /* ensure normal text stays black */
+  p, li, span, div {
+    color: $text;
+  }
+
+  /* headings in experience stay green */
+  h1, h2, h3, h4, h5, h6 {
+    color: $accent;
+  }
 }
 
 /* Social */
 
 .contact {
-    font-size: $contact-font-size;
-    line-height: 200%;
+  font-size: $contact-font-size;
+  line-height: 200%;
+  color: $text;
 }
 
 .contact i {
-    font-size: 2em;
-    margin-right: 2px
+  font-size: 2em;
+  margin-right: 2px;
 }
 
 /* Footer */
 
 .footer {
-    font-size: $footer-font-size;
-    /* Set the fixed height of the footer here */
-    height: 20px;
-    margin: 100px 0px 10px 0px;
-    border-top: 1px solid darken(#ffffff, 20%);
-    // border-radius: 4px;
-    // @include box-shadow(0 1px 1px rgba(0,0,0,.05));
-    padding: 0px 0px 25px 0px;
-    background-color: #eeeeee;
-    // border-top: 1px solid transparent;
+  font-size: $footer-font-size;
+  height: 20px;
+  margin: 100px 0px 10px 0px;
+  border-top: 1px solid darken(#ffffff, 20%);
+  padding: 0px 0px 25px 0px;
+  background-color: $footer-bg;
+  color: $text;
 }
 
 .footer i {
-    font-size: 2em;
-    padding-top: 7px;
-    margin-left: 2px;
-    margin-bottom: 5px;
+  font-size: 2em;
+  padding-top: 7px;
+  margin-left: 2px;
+  margin-bottom: 5px;
 }
 
 /* Mobile */
 
 @media (max-width: 800px) {
-    .container {
-        max-width: $med-width;
-        transition: 0.3s ease all;
-    }
-    #author-name {
-        font-size: $author-media-font-size;
-        font-weight: bold;
-    }
-    .body-container {
-        max-width: $med-width;
-        transition: 0.3s ease all;
-        padding-top: 90px;
-    }
-    .navbar {
-        height: 70px;
-        padding: 20px 0px 0px 0px;
-    }
-    .nav-list {
-        // width: 30%;
-        margin: 0px 0px 0px 20px;
-        // background-color: #eeeeee;
-        // border: 1px solid darken(#ffffff, 20%);
-    }
-    .publication-picture {
-        max-width: 80%;
-        margin: 10px 10% 20px 10%;
-    }
-    .publication-text {
-        max-width: 80%;
-        margin: 10px 10% 20px 10%;
-    }
+  .container {
+    max-width: $med-width;
+    transition: 0.3s ease all;
+  }
+
+  .body-container {
+    max-width: $med-width;
+    transition: 0.3s ease all;
+    padding-top: 100px; // a bit more space on mobile
+  }
+
+  /* allow header to wrap if needed */
+  .nav-inner {
+    flex-wrap: wrap;
+  }
+
+  .publication-picture {
+    max-width: 80%;
+    margin: 10px 10% 20px 10%;
+  }
+
+  .publication-text {
+    max-width: 80%;
+    margin: 10px 10% 20px 10%;
+  }
 }
 
 @media (max-width: 650px) {
-    .container {
-        max-width: 80%;
-    }
-    .body-container {
-        max-width: 80%;
-    }
-    .navbar-ul {
-        margin-top: 5px;
-    }
+  .container {
+    max-width: 80%;
+  }
+  .body-container {
+    max-width: 80%;
+  }
 }
 
 @media (max-width: 580px) {
-    #author-name {
-        display: inline-block;
-    }
-    .footer {
-        height: 30px;
-    }
+  .footer {
+    height: 30px;
+  }
 }
 
-@media (max-width: 340px) {
-    .navbar {
-        height: 90px;
-    }
-}
+/* Buttons */
 
 button,
 [role="button"] {
-    padding: 3px;
-    border: 1px solid #CCC;
+  padding: 3px;
+  border: 1px solid #ccc;
 }
 
 button[aria-pressed="true"],
 [role="button"][aria-pressed="true"] {
-    border: 2px solid #000;
+  border: 2px solid #000;
 }
 
 @import "typography";

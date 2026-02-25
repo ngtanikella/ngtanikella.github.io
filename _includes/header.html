@@ -1,23 +1,20 @@
 <div class="fixed-top">
-    <div class="navbar">
-        <div class="container">
-            <a id="author-name" class="alignable pull-left" href="{{ site.url }}{{ site.baseurl }}">
-                <img class="name-logo" src="{{ site.url }}{{ site.baseurl }}/images/nticon_sparse.png" alt="NT logo">
-                {{ site.title }}
-            </a>
-            <ul class="alignable pull-right navbar-ul">
-                {% for page in site.data.nav %}
-                    {% if page.name == "CV" %}
-                        <li class="alignable pull-right nav-list"><a href="{{ site.url }}{{ site.baseurl }}{{ page.link }}">{{ page.name }}</a>
-                    {% else %}
-                        <li class="alignable pull-right nav-list"><a href="{{ site.url }}{{ site.baseurl }}{{ page.link }}">{{ page.name }}</a>
-                    {% endif %}
-                    {% if forloop.first == false %}
-                        <!-- | -->
-                    {% endif %}
-                        </li>
-                {% endfor %}
-            </ul>
-        </div>
+  <div class="navbar">
+    <div class="container nav-inner">
+      <a id="author-name" href="{{ site.url }}{{ site.baseurl }}">
+        <img class="name-logo" src="{{ site.url }}{{ site.baseurl }}/images/nticon_sparse.png" alt="NT logo">
+        <span class="name-text">{{ site.title }}</span>
+      </a>
+
+      <ul class="navbar-ul">
+        {% for page in site.data.nav %}
+          {% if page.name != "Home" %}
+            <li class="nav-list">
+              <a href="{{ site.url }}{{ site.baseurl }}{{ page.link }}">{{ page.name }}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
     </div>
+  </div>
 </div>

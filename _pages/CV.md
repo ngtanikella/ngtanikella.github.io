@@ -12,6 +12,6 @@ permalink: /CV
 
 <iframe
   src="{{site.url}}{{site.baseurl}}/docs/cv/CV_Nagendra_Tanikella.pdf"
-  style="width: 100%; height: calc(100vh - 220px); border: none;"
+  style="width: 100%; height: calc(100vh - 160px); border: none;"
   loading="lazy">
 </iframe>

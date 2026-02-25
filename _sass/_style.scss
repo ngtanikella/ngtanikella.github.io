@@ -59,7 +59,7 @@ p {
 }
 
 #author-name {
-    font-size: $author-font-size;
+    font-size: ($author-font-size - 2px);
     // font-weight: bold;
     color: #289c01;
     //text-shadow: 1px 1px 1px #000000;

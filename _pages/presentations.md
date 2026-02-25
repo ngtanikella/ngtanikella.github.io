@@ -9,7 +9,7 @@ permalink: /presentations
 # PRESENTATIONS
 
 <div class="experience-box" markdown="1">
-[<img class="experience-picture" src="{{site.url}}{{site.baseurl}}/images/experience/uidaho.png">](https://www.uidaho.edu/){:target="_blank"}
+[<img class="experience-picture" src="{{site.url}}{{site.baseurl}}/images/presentations/Defense.jpg" alt="Ph.D. Defense">]({{site.url}}{{site.baseurl}}/images/presentations/Defense.jpg){:target="_blank"}
 
 _2025_
 

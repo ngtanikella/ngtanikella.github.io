@@ -1,7 +1,8 @@
 - title: Optimizing Wood–Hemp–Sodium Silicate Composites for Strength, Extrudability, and Cost in Additive Manufacturing Applications
   image: Optimizing.webp
-  authors: <b>Nagendra G. Tanikella</b>, Michael Maughan
-  venue: Sustainability, 2025
+  authors: <b>Nagendra G. Tanikella</b>, Armando G. McDonald, Michael R. Maughan 
+  venue: Materials, 2026
+  doi: "https://doi.org/10.3390/ma19020357"   # <-- replace with real DOI
   number_link: 1
   link1:
     url: "Optimizing Wood–Hemp–Sodium Silicate Composites for Strength, Extrudability, and Cost in Additive Manufacturing Applications.pdf"
@@ -9,8 +10,9 @@
 
 - title: Extrudability and Mechanical Properties of Wood–Sodium Silicate Composites with Hemp Fiber Reinforcement for Additive Manufacturing
   image: Extrudability.png
-  authors: <b>Nagendra G. Tanikella</b>, Michael Maughan
-  venue: Polymers, 2024
+  authors: <b>Nagendra G. Tanikella</b>,  Alexandra M. Lehman-Chong, Armando G. McDonald, Michael R. Maughan 
+  venue: Polymers, 2025
+  doi: "https://doi.org/10.3390/polym17182478"
   number_link: 1
   link1:
     url: "Extrudability and Mechanical Properties of Wood–Sodium Silicate Composites with Hemp Fiber Reinforcement for Additive Manufacturing.pdf"

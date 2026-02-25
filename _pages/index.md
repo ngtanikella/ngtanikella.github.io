@@ -9,9 +9,9 @@ permalink: /
 <!-- <br/> -->
 
 <img class="profile-picture" src="{{site.url}}{{site.baseurl}}/images/profile-picture/nagendra.jpg" />
-# One sentence summary
-I have expertise in material characterization, additive manufacturing, and statistical analysis, and I am passioante about sustainabile additive manufacturing.
-
+## One sentence summary
+I combine expertise in material characterization, design & fabrication, and statistical analysis to advance sustainable additive manufacturing.
+## About me
 I completed my Ph.D. in Mechanical Engineering at <img src="{{site.url}}{{site.baseurl}}/images/experience/uidaho.png" alt="University of Idaho" class="inline-logo">[University of Idaho](https://www.uidaho.edu/){:target="_blank"}, specializing in additive manufacturing, polymer composites, and Design for Manufacturing (DfM). My research focused on bio-based composite materials for large-scale 3D printing, including wood-sodium silicate composites and hemp-fiber-reinforced materials for construction applications.
 
 During my Ph.D., I worked as a Graduate Research Intern at <img src="{{site.url}}{{site.baseurl}}/images/experience/ornl.png" alt="Oak Ridge National Laboratory" class="inline-logo">[Oak Ridge National Laboratory](https://www.ornl.gov/){:target="_blank"}, where I resolved critical ink stability issues for Direct Ink Writing (DIW) and Digital Light Processing (DLP) printing.

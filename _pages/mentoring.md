@@ -53,10 +53,11 @@ I have mentored 9 capstone projects with over 40 students across three years at 
 </div>
 
 
-### My undergraduate capstone (Formula Hybrid race car) — experience I draw on while mentoring
+### My undergraduate capstone (Formula Hybrid race car)
+<div class="experience-box" markdown="1"> 
+As the Technical Lead of my undergraduate capstone team, I led the complete design and build of a formula-style hybrid vehicle from scratch under SAE competition constraints. This was a full vehicle integration effort involving conceptual architecture, detailed design, fabrication, and assembly. The team competed at the SAE Formula Hybrid Competition at New Hampshire Motor Speedway, USA. The team placed 9th internationally among 12 teams and won the “Fan’s Favorite Car” award, as India’s first-ever entry in the competition.
 
-As the Technical Lead of my undergraduate capstone team, I led the complete design and build of a formula-style hybrid vehicle from scratch under SAE competition constraints. This was a full vehicle integration effort involving conceptual architecture, detailed design, fabrication, and assembly.
-
-<div class="experience-box" markdown="1"> <a href="{{site.url}}{{site.baseurl}}/images/Mentoring/MyCapstone.jpg" target="_blank"> <img src="{{site.url}}{{site.baseurl}}/images/Mentoring/MyCapstone.jpg" alt="Formula Hybrid Vehicle" style="max-width:100%; border:1px solid #ccc;"> </a> </div>
+<a href="{{site.url}}{{site.baseurl}}/images/Mentoring/MyCapstone.jpg" target="_blank"> <img src="{{site.url}}{{site.baseurl}}/images/Mentoring/MyCapstone.jpg" alt="Formula Hybrid Vehicle" style="max-width:100%; border:1px solid #ccc;"> </a> 
 
 This hands-on experience strongly informs how I mentor capstone teams today. I emphasize clarity, early integration thinking, design-for-manufacturability, and structured technical reviews to help students move from concept to fully realized physical systems.
+</div>

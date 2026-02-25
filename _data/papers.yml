@@ -7,6 +7,9 @@
   link1:
     url: "Optimizing Wood–Hemp–Sodium Silicate Composites for Strength, Extrudability, and Cost in Additive Manufacturing Applications.pdf"
     display: pdf
+  link2:
+    url: "Ashby_interactive_WFT.html"
+    display: Interactive Ashby Tool
 
 - title: Extrudability and Mechanical Properties of Wood–Sodium Silicate Composites with Hemp Fiber Reinforcement for Additive Manufacturing
   image: Extrudability.png

@@ -353,22 +353,24 @@ a .fa-github:hover {
 }
 
 /* Footer */
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
 
-.footer {
-  font-size: $footer-font-size;
-  height: 20px;
-  margin: 100px 0px 10px 0px;
-  border-top: 1px solid darken(#ffffff, 20%);
-  padding: 0px 0px 25px 0px;
-  background-color: $footer-bg;
+.footer-text {
+  margin: 0;
   color: $text;
 }
 
-.footer i {
-  font-size: 2em;
-  padding-top: 7px;
-  margin-left: 2px;
-  margin-bottom: 5px;
+.footer-icons {
+  display: flex;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 /* Footer social icons — brand colors */

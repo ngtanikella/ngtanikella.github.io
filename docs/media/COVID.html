@@ -1,0 +1,1179 @@
+<!DOCTYPE HTML><html lang="en">
+   <head>
+      <meta itemprop="inLanguage" content="en-US">
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="robots" content="max-image-preview: large">
+      <meta name="description" content="In his guest blog, engineer Joshua Pearce shares how his lab developed a high-temperature 3D printer, a firefighter mask and a printable, emergency-use ventilator in response to COVID-19.">
+      <meta name="keywords" content="coronavirus, open source, engineering">
+      <title>Guest Blog: MTU Releases Three New Open-source Tools for COVID-19 | Unscripted Research Blog</title>
+      
+
+
+<link type="text/css" rel="stylesheet" href="//www.mtu.edu/mtu_resources/styles/n/normalize.css" />
+<link type="text/css" rel="stylesheet" href="//www.mtu.edu/mtu_resources/styles/n/base.css" />
+<link type="text/css" rel="stylesheet" href="//www.mtu.edu/mtu_resources/styles/n/pubs.css" />
+
+<!--[if lte IE 9]>
+	<script src="/_resources/js/html5.js"></script><![endif]-->
+
+<!-- this is the headcode include -->
+<link rel="stylesheet" href="/_resources/css/oustyles.css" />
+
+<link href="//www.mtu.edu/mtu_resources/styles/n/print.css" type="text/css" rel="stylesheet" media="print" />
+
+<script>
+dataLayer = [{
+'internalExternal' : 'external'
+}];
+</script>
+<script>/**
+ * +------------------------------------------------------------------------+
+ * | Global Settings                                                        |
+ * +------------------------------------------------------------------------+
+ */
+(function() {
+	// TODO: Fix if the user has switched their system preferences. 
+	// Only set cookie in settings page.	
+	function setFontSize(value) {
+		if (value) {
+			document.documentElement.classList.remove(window.mtuFontSize);
+			document.documentElement.classList.add(value);
+			window.mtuFontSize = value;
+		}
+	}
+
+	function setReducedMotion(value) {
+		if (value) {
+			document.documentElement.classList.add("reduce-animations");
+		} else {
+			document.documentElement.classList.remove("reduce-animations");
+		}
+	}
+
+	function setTheme(value) {
+		if (value) {
+			document.documentElement.classList.remove(window.mtuTheme);
+			document.documentElement.classList.add(value);
+			window.mtuTheme = value;
+		}
+	}
+	
+	const animQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+	const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+	let mtuAnimations;
+	let mtuFontSize;
+	let mtuTheme;
+
+	try {
+		mtuAnimations = localStorage.getItem("mtuAnimations");
+		mtuFontSize = localStorage.getItem("mtuFontSize");
+		mtuTheme = localStorage.getItem("mtuTheme");
+	} catch (error) {
+		console.error(error);
+		return;
+	}
+
+	setFontSize(mtuFontSize);
+	setReducedMotion(mtuAnimations === "reduced" || animQuery.matches);
+
+	if (mtuTheme === "system") {
+		mtuTheme = darkQuery.matches ? "dark" : "light";
+	}
+
+	if (mtuTheme === "dark") {
+		const link = document.createElement("link");
+		link.href = "/mtu_resources/assets/css/app-dark.css";
+		link.rel = "stylesheet";
+		link.type = "text/css";
+
+		document.head.append(link);
+	}
+
+	setTheme(mtuTheme);
+})();
+
+/**
+ * +------------------------------------------------------------------------+
+ * | Global Header and Navigation                                           |
+ * +------------------------------------------------------------------------+
+ */
+(function() {
+	function adjustNav() {
+		let navBar = document.querySelector('.nav-bar');
+		if (navBar) {
+			let navCount = navBar.querySelectorAll('.menu_item').length;
+			let height = navBar.clientHeight;	
+
+			if (height > 50) {
+			  navBar.style.setProperty('--navCount', navCount);
+			  navBar.classList.add('nav-tall');
+			} else {
+			  navBar.style.removeProperty('--navCount');
+			  navBar.classList.remove('nav-tall');
+			}	
+		}
+	}
+	
+	// Adjust header height right away.
+	adjustNav();
+	
+	// Re-adjust header height as content loads.
+	window.addEventListener("DOMContentLoaded", adjustNav);
+	window.addEventListener("load", adjustNav);
+	
+	// Setting up some space for items after the nav to be seen.
+	function onResize() {
+		let header = document.querySelector(".nav, .mtu-nav");
+		let headerHeight;
+		
+		if (header) {
+			headerHeight = header.clientHeight + "px";
+			document.documentElement.style.setProperty("--mtu-header-height", headerHeight);
+		}
+	}
+	
+	// Create --mtu-header-height now.
+	onResize();
+	
+	// Update --mtu-header-height on load.
+	window.addEventListener("DOMContentLoaded", onResize);
+	window.addEventListener("load", onResize);
+	
+	// Update --mtu-header-height on resize.
+	let frameId;
+	window.addEventListener("resize", function() {
+		// Debounce the resize event.
+		if (frameId) {
+			window.cancelAnimationFrame(frameId);
+		}
+		
+		frameId = window.requestAnimationFrame(onResize);
+	});
+})();
+
+/**
+ * Defers execution of the given function until after jQuery is loaded.
+ */
+function defer(fn) {
+	if (window.jsSet) {
+		fn();
+		return;
+	}
+	
+	setTimeout(function() {
+		defer(fn);
+	}, 100);
+}
+</script><link rel="preload" as="image" imagesrcset="https://www.mtu.edu/unscripted/2020/09/images/c19res-pearce-3dprinter-banner450.jpg 450w, https://www.mtu.edu/unscripted/2020/09/images/c19res-pearce-3dprinter-banner800.jpg 800w, https://www.mtu.edu/unscripted/2020/09/images/c19res-pearce-3dprinter-banner1200.jpg 1200w, " imagesizes="(max-width: 1599px) 100vw, 1600px">
+      <link rel="canonical" href="https://www.mtu.edu/unscripted/2020/09/guest-blog-mtu-releases-three-new-opensource-tools-for-covid19.html">
+      <meta property="mtu:ou_content_type" content="news">
+      <meta property="mtu:ou_content_id" content="4882af0e-19fd-42ff-90de-38ba6e721eb3">
+      <meta property="og:title" content="Guest Blog: MTU Releases Three New Open-source Tools for COVID-19">
+      <meta property="og:description" content="In his guest blog, engineer Joshua Pearce shares how his lab developed a high-temperature 3D printer, a firefighter mask and a printable, emergency-use ventilator in response to COVID-19.">
+      <meta property="og:type" content="article">
+      <meta property="og:url" content="https://www.mtu.edu/unscripted/2020/09/guest-blog-mtu-releases-three-new-opensource-tools-for-covid19.html">
+      <meta property="og:site_name" content="Michigan Technological University">
+      <meta property="fb:pages" content="5652694310">
+      <meta property="article:published_time" content="2020-09-21T18:29:00-5:00">
+      <meta property="article:modified_time" content="2025-03-24T08:33:35-05:00">
+      <meta property="article:tag" content="coronavirus, open source, engineering">
+      <meta property="article:publisher" content="https://www.facebook.com/michigantech/">
+      <meta property="article:content_tier" content="free">
+      <meta name="author" content="Joshua Pearce">
+      <meta property="og:image" content="https://www.mtu.edu/unscripted/2020/09/images/c19res-pearce-3dprinter-banner1200.jpg">
+      <meta property="og:image:alt" content="Cerberus is a three-headed, high-temperature 3D printer. ">
+      <meta property="og:image:height" content="540">
+      <meta property="og:image:width" content="1200">
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:site" content="@michigantech">
+      <meta name="twitter:creator" content="@michigantech">
+      <meta name="twitter:title" content="Guest Blog: MTU Releases Three New Open-source Tools for COVID-19">
+      <meta name="twitter:url" content="https://www.mtu.edu/unscripted/2020/09/guest-blog-mtu-releases-three-new-opensource-tools-for-covid19.html">
+      <meta name="twitter:description" content="In his guest blog, engineer Joshua Pearce shares how his lab developed a high-temperature 3D printer, a firefighter mask and a printable, emergency-use ventilator in response to COVID-19.">
+      <meta name="twitter:image" content="https://www.mtu.edu/unscripted/2020/09/images/c19res-pearce-3dprinter-banner1200.jpg">
+      <meta name="twitter:image:alt" content="Cerberus is a three-headed, high-temperature 3D printer. "><script type="application/ld+json">
+			{
+			  "@context": "https://schema.org",
+			  "@type": "NewsArticle",
+			  "name": "Guest Blog: MTU Releases Three New Open-source Tools for COVID-19",
+			  "headline": "Guest Blog: MTU Releases Three New Open-source Tools for COVID-19",
+			  "description": "In his guest blog, engineer Joshua Pearce shares how his lab developed a high-temperature 3D printer, a firefighter mask and a printable, emergency-use ventilator in response to COVID-19.",
+			  "inLanguage": "en",
+			  "speakable":{
+			  	"@type": "SpeakableSpecification",
+				"xPath": [
+					"/html/head/title",
+					"/html/head/meta[@name='description']/@content"
+				]},
+			  "keywords": ["coronavirus"," open source"," engineering"],
+			
+			  "image": [
+				"https://www.mtu.edu/mtu_resources/php/ou/images/crop.php?width=400&height=400&quality=80&path=//www.mtu.edu/unscripted/2020/09/images/c19res-pearce-3dprinter-banner1200.jpg",
+				"https://www.mtu.edu/mtu_resources/php/ou/images/crop.php?width=400&height=300&quality=80&path=//www.mtu.edu/unscripted/2020/09/images/c19res-pearce-3dprinter-banner1200.jpg",
+				"https://www.mtu.edu/mtu_resources/php/ou/images/crop.php?width=800&height=450&quality=80&path=//www.mtu.edu/unscripted/2020/09/images/c19res-pearce-3dprinter-banner1200.jpg",
+				"https://www.mtu.edu/unscripted/2020/09/images/c19res-pearce-3dprinter-banner1200.jpg"
+			   ],
+			
+			  "datePublished": "2020-09-21T18:29:00-5:00",
+			  "dateModified": "2025-03-24T08:33:35-05:00",
+			  
+			  "author": [{"@type":"Person","name":"Joshua Pearce"}],
+			  "publisher":[{
+				"@type": "CollegeOrUniversity",
+				"name": "Michigan Technological University",
+				"url": "https://www.mtu.edu",
+				"sameAs": [
+					"https://www.facebook.com/michigantech/",
+					"https://twitter.com/MichiganTech",
+					"https://www.linkedin.com/school/michigan-technological-university/",
+					"https://www.instagram.com/michigantech/",
+					"https://www.youtube.com/michigantech"
+				],
+				"logo": {
+				  "@type": "ImageObject",
+				  "url": "https://www.mtu.edu/images/michigan-tech-logo-gold.jpg"
+				}
+			  }]
+			}
+    	</script>
+      <script>
+window.dataLayer = window.dataLayer || [];
+if(window.devicePixelRatio > 1.5) {
+	dataLayer.push({'retina':'true'});
+} else {
+	dataLayer.push({'retina':'false'});
+}
+let theme = localStorage.getItem('mtuTheme') || 'light';
+let animations = localStorage.getItem('mtuAnimations') || 'no-preference';
+let fontSize = localStorage.getItem('mtuFontSize') || 'font-normal';
+
+dataLayer.push({'themes':theme,'animations':animations,'font_size':fontSize});
+dataLayer.push({'internalExternal' : 'external'});
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://gtm-tagging-1.mtu.edu/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K6W7S4L9');</script>
+<!-- End Google Tag Manager -->
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="preload" as="style">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" /></head>
+   <body>
+      <div aria-atomic="true" aria-live="polite" class="sr-only" id="sr-announcements" role="status"></div>
+      <div class="stick"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0.49803921568627" /><feFuncG type="table" tableValues="0 0.49803921568627" /><feFuncB type="table" tableValues="0 0.49803921568627" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.27843137254902" /><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.64705882352941" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.78039215686275 1" /><feFuncG type="table" tableValues="0 0.94901960784314" /><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.44705882352941 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.098039215686275 1" /><feFuncG type="table" tableValues="0 0.66274509803922" /><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg>
+
+<section aria-label="skip links">
+    <div class="skip-links" id="skip">
+        <a href="#main">Skip to page content</a>
+        <a href="#mtu-footer">Skip to footer navigation</a>
+    </div>
+</section>
+
+<header class="mtu-nav">
+    <div class="pre-nav-wrapper background-black">
+        <div class="pre-nav">
+            <button class="mobile-menu-button hide-for-desktop"
+                    data-inactive>
+                <span class="mobile-button-text">Menu</span>
+            </button>
+
+            <div class="pre-nav-logo">
+                <a class="pre-nav-logo-link" href="https://www.mtu.edu">
+                    <img alt="Michigan Tech Logo"
+                         class="pre-nav-logo-image"
+                         src="https://www.mtu.edu/mtu_resources/images/logos/michigan-tech-logo-full-yellow.svg"
+                         width="255"
+                         height="45" />
+                </a>
+            </div>
+
+            <div class="audience-search display-audience show-for-desktop">
+                <div class="audience-wrapper show-for-desktop">
+                    <ul aria-label="Audiences"
+                        class="audience-nav">
+                        <li class="menu_item">
+                                <a class="menu_link"
+									aria-label="Request Information from Michigan Tech"
+                                   href="/request/index.html">
+                                    Request Info
+                                </a>
+                            </li><li class="menu_item">
+                                <a class="menu_link"
+									aria-label="Visit Michigan Tech"
+                                   href="/visit/index.html">
+                                    Visit
+                                </a>
+                            </li><li class="menu_item">
+                                <a class="menu_link"
+									aria-label="Apply to Michigan Tech"
+                                   href="/apply/index.html">
+                                    Apply
+                                </a>
+                            </li> 
+                        
+                        <li class="menu_item resources-links tech-links">
+                                        <div class="menu_link">
+                                            Resources for You
+                                        </div>
+                                        
+                                        <button aria-label="Open sub-menu"
+                                                class="submenu-button arrow"></button>
+                                        
+                                        <ul class="tech-links-menu menu_submenu">
+                                        
+                                            <li class="submenu_item">
+                                                    <a
+                                                       href="/future/index.html">
+                                                        Prospective Students
+                                                    </a>
+                                                </li><li class="submenu_item">
+                                                    <a
+                                                       href="/admissions/enroll/index.html">
+                                                        Admitted Students
+                                                    </a>
+                                                </li><li class="submenu_item">
+                                                    <a
+                                                       href="/current/index.html">
+                                                        Current Students
+                                                    </a>
+                                                </li><li class="submenu_item">
+                                                    <a
+                                                       href="/faculty-staff/index.html">
+                                                        Faculty and Staff
+                                                    </a>
+                                                </li><li class="submenu_item">
+                                                    <a
+                                                       href="/alumni/index.html">
+                                                        Alumni and Friends
+                                                    </a>
+                                                </li><li class="submenu_item">
+                                                    <a
+                                                       href="/admissions/connect/parents/index.html">
+                                                        Parents and Family
+                                                    </a>
+                                                </li><li class="submenu_item">
+                                                    <a
+                                                       href="/industry/index.html">
+                                                        Industry/Partners
+                                                    </a>
+                                                </li> 
+                                            
+                                        </ul>
+                                    </li>
+                        
+                        <li class="menu_item tech-links">
+                            <div class="menu_link">
+                                Tech Links
+                            </div>
+
+                            <button aria-label="Open sub-menu"
+                                    class="submenu-button arrow"></button>
+
+                            <ul class="tech-links-menu menu_submenu">
+    <li class="submenu_item">
+        <a class="link-az" href="/a2z/index.html">
+            A to Z
+        </a>
+    </li>
+
+    <li class="submenu_item">
+        <a class="link-directory" href="/directory/">
+            Campus Directory
+        </a>
+    </li>
+
+    <li class="submenu_item">
+        <a class="link-canvas" href="https://mtu.instructure.com/">
+            Canvas
+        </a>
+    </li>
+
+    <li class="submenu_item">
+        <a class="link-concur" href="https://sso.mtu.edu/cas/idp/profile/SAML2/Unsolicited/SSO?providerId=https%3A%2F%2Fwww.concursolutions.com">
+            Concur
+        </a>
+    </li>
+
+    <li class="submenu_item">
+        <a class="link-email" href="https://mail.google.com/a/mtu.edu/">
+            Email
+        </a>
+    </li>
+    
+    <li class="submenu_item">
+        <a class="link-mymt" href="https://www.mtu.edu/experience/">
+            Experience
+        </a>
+    </li>
+
+    <li class="submenu_item">
+        <a class="link-sds" href="https://www.mtu.edu/sds/">
+            Safety Data Sheets
+        </a>
+    </li>
+    
+    <li class="submenu_item">
+        <a class="link-settings" href="/site-settings/index.html">
+            Website Settings
+        </a>
+    </li>
+</ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Google Tag Manager (noscript) -->
+<noscript aria-hidden="true"><iframe src="https://gtm-tagging-1.mtu.edu/ns.html?id=GTM-K6W7S4L9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="desktop-search-bar search-bar show-for-desktop">
+		<form action="https://www.mtu.edu/search/" class="search-fields invisible">
+				<label for="desktop-search">
+					Search
+				</label>
+	
+			<input class="search-text"
+				id="desktop-search"
+				name="q"
+				type="search" />
+	
+			<button class="search-clear">
+				Clear Search Input
+			</button>
+	
+			<label for="search-options" hidden>
+				Search Category
+			</label>
+	
+			<select class="search-options" id="search-options">
+				<option value="mtu">
+					Michigan Tech
+				</option>
+				 
+				<option data-action="https://www.mtu.edu/unscripted/" data-name="s" value="site">
+					This Site
+				</option>
+								<option data-action="https://www.mtu.edu/majors/" value="programs">
+					Programs
+				</option>
+			</select>
+	
+			<button class="search-button" type="submit">
+				Go
+			</button>
+		</form>
+	
+		<button aria-expanded="false" class="search-toggle-button">
+			Open Search
+		</button>
+	</div>
+	            </div>
+        </div>
+    </div>
+
+   <nav class="nav-bar show-for-desktop">
+      <ul class="menu" aria-label="Main Navigation">
+      <li class="menu_item menu_has-submenu"><div class="menu_link">News Sites</div><button class="submenu-button arrow" aria-expanded="false" aria-label="News Sites sub-menu"></button>
+<ul class="menu_submenu"><li class="submenu_item"><a class="submenu_link" href="/news/"><span>Michigan Tech News</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/stories/"><span>Stories from Husky Nation</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/unscripted/"><span>Unscripted Research Blog</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/magazine/"><span>Michigan Tech Magazine</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="https://michigantechhuskies.com/archives"><span>Michigan Tech Athletics</span></a>
+</li></ul>
+</li><li class="menu_item"><a href="/news/archives/?newssite=unscripted" class="menu_link">Archives</a>
+</li><li class="menu_item"><a href="/unscripted/about/" class="menu_link">About</a>
+</li><li class="menu_item menu_has-submenu"><div class="menu_link">Resources</div><button class="submenu-button arrow" aria-expanded="false" aria-label="Resources sub-menu"></button>
+<ul class="menu_submenu"><li class="submenu_item"><a class="submenu_link" href="/research/"><span>Vice President for Research Office</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/research/about/areas/"><span>Research Areas</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="https://events.mtu.edu/"><span>Events Calendar</span></a>
+</li></ul>
+</li><li class="menu_item menu_has-submenu menu_item-yellow"><a href="/news/subscribe/?type=Nav%20Link" class="menu_link">Subscribe</a><button class="submenu-button arrow" aria-expanded="false" aria-label="Subscribe sub-menu"></button>
+<ul class="menu_submenu"><li class="submenu_item"><a class="submenu_link" href="/news/subscribe/"><span>Emails</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="https://apple.news/TtYc8xrvmSFiZvoFrkYd5qg"><span>Apple News</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="https://news.google.com/s/CBIw97nJkyo"><span>Google News</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/news/subscribe/feeds/"><span>RSS Feeds</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/social/"><span>Social Media</span></a>
+</li></ul>
+</li>      </ul>
+   </nav>
+
+    <nav class="offscreen-nav invisible">
+      <div class="mobile-search-bar search-bar">
+	<form action="https://www.mtu.edu/search/">
+		<label for="mobile-search"
+			   hidden>
+			Search
+		</label>
+
+		<input class="search-text"
+			   id="mobile-search"
+			   name="q"
+			   placeholder="Search"
+			   type="search" />
+
+		<button class="search-clear">
+			Clear Search Input
+		</button>
+
+		<label for="mobile-search-options"
+			   hidden>
+			Search Category
+		</label>
+
+		<select class="search-options"
+				id="mobile-search-options">
+			<option value="mtu">
+				Michigan Tech
+			</option>
+
+			 
+			<option data-action="https://www.mtu.edu/unscripted/" data-name="s" value="site">
+				This Site
+			</option>
+			
+			<option data-action="https://www.mtu.edu/majors"
+					value="programs">
+				Programs
+			</option>
+		</select>
+
+		<button class="search-button"
+				type="submit">
+			Search
+		</button>
+	</form>
+</div>
+        
+
+        <ul class="menu"
+            aria-label="Main Navigation">
+
+           
+            <li class="menu_item menu_has-submenu"><div class="menu_link">News Sites</div><button class="submenu-button arrow" aria-expanded="false" aria-label="News Sites sub-menu"></button>
+<ul class="menu_submenu"><li class="submenu_item"><a class="submenu_link" href="/news/"><span>Michigan Tech News</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/stories/"><span>Stories from Husky Nation</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/unscripted/"><span>Unscripted Research Blog</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/magazine/"><span>Michigan Tech Magazine</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="https://michigantechhuskies.com/archives"><span>Michigan Tech Athletics</span></a>
+</li></ul>
+</li><li class="menu_item"><a href="/news/archives/?newssite=unscripted" class="menu_link">Archives</a>
+</li><li class="menu_item"><a href="/unscripted/about/" class="menu_link">About</a>
+</li><li class="menu_item menu_has-submenu"><div class="menu_link">Resources</div><button class="submenu-button arrow" aria-expanded="false" aria-label="Resources sub-menu"></button>
+<ul class="menu_submenu"><li class="submenu_item"><a class="submenu_link" href="/research/"><span>Vice President for Research Office</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/research/about/areas/"><span>Research Areas</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="https://events.mtu.edu/"><span>Events Calendar</span></a>
+</li></ul>
+</li><li class="menu_item menu_has-submenu menu_item-yellow"><a href="/news/subscribe/?type=Nav%20Link" class="menu_link">Subscribe</a><button class="submenu-button arrow" aria-expanded="false" aria-label="Subscribe sub-menu"></button>
+<ul class="menu_submenu"><li class="submenu_item"><a class="submenu_link" href="/news/subscribe/"><span>Emails</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="https://apple.news/TtYc8xrvmSFiZvoFrkYd5qg"><span>Apple News</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="https://news.google.com/s/CBIw97nJkyo"><span>Google News</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/news/subscribe/feeds/"><span>RSS Feeds</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/social/"><span>Social Media</span></a>
+</li></ul>
+</li>    
+            <li class="menu_item menu_has-submenu menu_item-black">
+                <div class="menu_link">
+				Connect with Us                </div>
+
+                <button aria-label="Open sub-menu"
+                        class="submenu-button arrow"></button>
+
+                <ul class="tech-links-menu menu_submenu">
+                    <li class="submenu_item">
+                            <a class="submenu_link"
+							   aria-label="Request Information from Michigan Tech"
+                               href="/request/index.html">
+                                Request Info
+                            </a>
+                        </li><li class="submenu_item">
+                            <a class="submenu_link"
+							   aria-label="Visit Michigan Tech"
+                               href="/visit/index.html">
+                                Visit
+                            </a>
+                        </li><li class="submenu_item">
+                            <a class="submenu_link"
+							   aria-label="Apply to Michigan Tech"
+                               href="/apply/index.html">
+                                Apply
+                            </a>
+                        </li> 
+                </ul>
+            </li>
+            
+            <li class="menu_item menu_has-submenu menu_item-black">
+                                        <div class="menu_link">
+                                            Resources for You
+                                        </div>
+                                        
+                                        <button aria-label="Open sub-menu"
+                                                class="submenu-button arrow"></button>
+                                        
+                                        <ul class="tech-links-menu menu_submenu">
+                                        
+                                            <li class="submenu_item">
+                                                    <a class="submenu_link"
+                                                       href="/future/index.html">
+                                                        Prospective Students
+                                                    </a>
+                                                </li><li class="submenu_item">
+                                                    <a class="submenu_link"
+                                                       href="/admissions/enroll/index.html">
+                                                        Admitted Students
+                                                    </a>
+                                                </li><li class="submenu_item">
+                                                    <a class="submenu_link"
+                                                       href="/current/index.html">
+                                                        Current Students
+                                                    </a>
+                                                </li><li class="submenu_item">
+                                                    <a class="submenu_link"
+                                                       href="/faculty-staff/index.html">
+                                                        Faculty and Staff
+                                                    </a>
+                                                </li><li class="submenu_item">
+                                                    <a class="submenu_link"
+                                                       href="/alumni/index.html">
+                                                        Alumni and Friends
+                                                    </a>
+                                                </li><li class="submenu_item">
+                                                    <a class="submenu_link"
+                                                       href="/admissions/connect/parents/index.html">
+                                                        Parents and Family
+                                                    </a>
+                                                </li><li class="submenu_item">
+                                                    <a class="submenu_link"
+                                                       href="/industry/index.html">
+                                                        Industry/Partners
+                                                    </a>
+                                                </li> 
+                                            
+                                        </ul>
+                                    </li>
+
+            <li class="menu_item menu_has-submenu menu_item-black">
+                <div class="menu_link">
+                    Tech Links
+                </div>
+
+                <button aria-label="Open sub-menu"
+                        class="submenu-button arrow"></button>
+
+                <ul class="tech-links-menu menu_submenu">
+    <li class="submenu_item">
+        <a class="link-az" href="/a2z/index.html">
+            A to Z
+        </a>
+    </li>
+    
+    <li class="submenu_item">
+        <a class="link-directory" href="/directory/">
+            Campus Directory
+        </a>
+    </li>
+
+    <li class="submenu_item">
+        <a class="link-canvas" href="https://mtu.instructure.com/">
+            Canvas
+        </a>
+    </li>
+    
+    <li class="submenu_item">
+        <a class="link-concur" href="https://sso.mtu.edu/cas/idp/profile/SAML2/Unsolicited/SSO?providerId=https%3A%2F%2Fwww.concursolutions.com">
+            Concur
+        </a>
+    </li>
+
+    <li class="submenu_item">
+        <a class="link-email" href="https://mail.google.com/a/mtu.edu/">
+            Email
+        </a>
+    </li>
+    
+    <li class="submenu_item">
+        <a class="link-mymt" href="https://www.mtu.edu/experience/">
+            Experience
+        </a>
+    </li>
+
+    <li class="submenu_item">
+        <a class="link-sds" href="https://www.mtu.edu/sds/">
+            Safety Data Sheets
+        </a>
+    </li>
+    
+    <li class="submenu_item">
+        <a class="link-settings" href="/site-settings/index.html">
+            Website Settings
+        </a>
+    </li>
+</ul>
+            </li>
+        </ul>
+    </nav>
+</header>         <section class="background-light-gray" aria-label="Site Title">
+            <div class="site-title-wrapper">
+               <div class="site-title">
+                  <div class="title"><span><a href="/unscripted/">Unscripted Research Blog</a></span></div>
+               </div>
+               </div>
+         </section>
+         <div id="main" role="main" class="main">
+            <section id="media" aria-label="featured media">
+               <div class="section-padding--bottom">
+                  <header class="row row--wide">
+                     <h1 class="section-padding hero__header">Guest Blog: MTU Releases Three New Open-source Tools for COVID-19</h1>
+                     <div class="hero"><button aria-expanded="false" id="js-info-button" class="js-info-trigger hero__info-button" aria-label="Image Caption"></button><div id="prev" class="prev" style="display: none;"></div>
+                        <div class="hero__image hero__image--background"><img class="hero__image-inside" src="https://www.mtu.edu/unscripted/2020/09/images/c19res-pearce-3dprinter-banner800.jpg" srcset="https://www.mtu.edu/unscripted/2020/09/images/c19res-pearce-3dprinter-banner450.jpg 450w, https://www.mtu.edu/unscripted/2020/09/images/c19res-pearce-3dprinter-banner800.jpg 800w, https://www.mtu.edu/unscripted/2020/09/images/c19res-pearce-3dprinter-banner1200.jpg 1200w, " sizes="(max-width: 480px) 450px,             (max-width: 830px) 800px,             (max-width: 1230px) 1200px" alt="Cerberus is a three-headed, high-temperature 3D printer. "></div>
+                        <div id="next" class="next" style="display: none;"></div>
+                        <div class="slide hide" id="slide-1"><a data-fancybox-group="gallery" class="fancybox" href="/unscripted/2020/09/images/c19res-pearce-3dprinter-banner1200.jpg" title="Large groups of makers, engineers, and medical professionals are already collaborating to make open-source solutions that can be reproduced and assembled locally worldwide, including 3D printers like Cerberus that can print at high temperatures. Credit: Joshua Pearce"><img loading="lazy" src="/unscripted/2020/09/images/c19res-pearce-3dprinter-banner1200.jpg" title="Large groups of makers, engineers, and medical professionals are already collaborating to make open-source solutions that can be reproduced and assembled locally worldwide, including 3D printers like Cerberus that can print at high temperatures. Credit: Joshua Pearce" alt="Cerberus is a three-headed, high-temperature 3D printer. "></a></div>
+                        <div class="hero__social hero__social--right">
+                           <div class="hide"><svg xmlns="http://www.w3.org/2000/svg">
+                                 <symbol id="facebook" viewBox="-200 -200 2200 2200">
+                                    <path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759H734V905H479V609h255V391q0-186 104-288.5T1115 0q147 0 228 12z"/>
+                                 </symbol>
+                                 <symbol id="linkedin" viewBox="-80 -50 575 575">
+                                    <path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/>
+                                 </symbol>
+                                 <symbol id="google-plus" viewBox="-240 -240 2300 2300">
+                                    <path d="M1181 913q0 208-87 370.5t-248 254-369 91.5q-149 0-285-58t-234-156-156-234-58-285 58-285 156-234 234-156 285-58q286 0 491 192L769 546Q652 433 477 433q-123 0-227.5 62T84 663.5 23 896t61 232.5T249.5 1297t227.5 62q83 0 152.5-23t114.5-57.5 78.5-78.5 49-83 21.5-74H477V791h692q12 63 12 122zm867-122v210h-209v209h-210v-209h-209V791h209V582h210v209h209z"/>
+                                 </symbol>
+                                 <symbol id="instagram" viewBox="-200 -200 2200 2200">
+                                    <path d="M1490 1426V778h-135q20 63 20 131 0 126-64 232.5T1137 1310t-240 62q-197 0-337-135.5T420 909q0-68 20-131H299v648q0 26 17.5 43.5T360 1487h1069q25 0 43-17.5t18-43.5zm-284-533q0-124-90.5-211.5T897 594q-127 0-217.5 87.5T589 893t90.5 211.5T897 1192q128 0 218.5-87.5T1206 893zm284-360V368q0-28-20-48.5t-49-20.5h-174q-29 0-49 20.5t-20 48.5v165q0 29 20 49t49 20h174q29 0 49-20t20-49zm174-208v1142q0 81-58 139t-139 58H325q-81 0-139-58t-58-139V325q0-81 58-139t139-58h1142q81 0 139 58t58 139z"/>
+                                 </symbol>
+                                 <symbol id="twitter" viewBox="-200 -200 2200 2200">
+                                    <path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5T1369.5 1125 1185 1335.5t-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5T285 1033q33 5 61 5 43 0 85-11-112-23-185.5-111.5T172 710v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5T884 653q-8-38-8-74 0-134 94.5-228.5T1199 256q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/>
+                                 </symbol>
+                                 <symbol id="envelope" viewBox="0 -50 512 600">
+                                    <path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/>
+                                 </symbol>
+                                 <symbol id="print" viewBox="-50 0 600 512">
+                                    <title id="print-title">print</title>
+                                    <path d="M464 192h-16V81.941a24 24 0 0 0-7.029-16.97L383.029 7.029A24 24 0 0 0 366.059 0H88C74.745 0 64 10.745 64 24v168H48c-26.51 0-48 21.49-48 48v132c0 6.627 5.373 12 12 12h52v104c0 13.255 10.745 24 24 24h336c13.255 0 24-10.745 24-24V384h52c6.627 0 12-5.373 12-12V240c0-26.51-21.49-48-48-48zm-80 256H128v-96h256v96zM128 224V64h192v40c0 13.2 10.8 24 24 24h40v96H128zm304 72c-13.254 0-24-10.746-24-24s10.746-24 24-24 24 10.746 24 24-10.746 24-24 24z"/>
+                                 </symbol>
+                                 <symbol id="camera" viewBox="0 0 512 512">
+                                    <path d="M512 144v288c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V144c0-26.5 21.5-48 48-48h88l12.3-32.9c7-18.7 24.9-31.1 44.9-31.1h125.5c20 0 37.9 12.4 44.9 31.1L376 96h88c26.5 0 48 21.5 48 48zM376 288c0-66.2-53.8-120-120-120s-120 53.8-120 120 53.8 120 120 120 120-53.8 120-120zm-32 0c0 48.5-39.5 88-88 88s-88-39.5-88-88 39.5-88 88-88 88 39.5 88 88z"/>
+                                 </symbol></svg></div>
+                           <div class="socialpubs-menu">
+                              <div class="socialpubs-menu__header">Share this story:</div>
+                              <ul class="socialpubs-menu__list socialpubs-menu--horizontal">
+                                 <li class="socialpubs-menu__list-item facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=https://www.mtu.edu/unscripted/2020/09/guest-blog-mtu-releases-three-new-opensource-tools-for-covid19.html" aria-label="Share on Facebook"><svg class="icon icon--white facebook">
+                                          <desc>Share on Facebook</desc>
+                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use></svg></a></li>
+                                 <li class="socialpubs-menu__list-item twitter"><a href="https://twitter.com/intent/tweet?text=Guest%20Blog%3A%20MTU%20Releases%20Three%20New%20Open-source%20Tools%20for%20COVID-19%20%40MichiganTech%20https://www.mtu.edu/unscripted/2020/09/guest-blog-mtu-releases-three-new-opensource-tools-for-covid19.html" aria-label="Share on Twitter"><svg class="icon icon--white twitter">
+                                          <desc>Share on Twitter</desc>
+                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use></svg></a></li>
+                                 <li class="socialpubs-menu__list-item linkedin"><a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.mtu.edu/unscripted/2020/09/guest-blog-mtu-releases-three-new-opensource-tools-for-covid19.html&amp;title=Guest%20Blog%3A%20MTU%20Releases%20Three%20New%20Open-source%20Tools%20for%20COVID-19&amp;source=Michigan%20Tech" aria-label="Share on LinkedIn"><svg class="icon icon--white linkedin">
+                                          <desc>Share on LinkedIn</desc>
+                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use></svg></a></li>
+                                 <li class="socialpubs-menu__list-item envelope"><a href="mailto:?subject=Guest%20Blog%3A%20MTU%20Releases%20Three%20New%20Open-source%20Tools%20for%20COVID-19&amp;body=https://www.mtu.edu/unscripted/2020/09/guest-blog-mtu-releases-three-new-opensource-tools-for-covid19.html" aria-label="Share via Email"><svg class="icon icon--white envelope">
+                                          <desc>Share via Email</desc>
+                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#envelope"></use></svg></a></li>
+                              </ul>
+                           </div>
+                        </div>
+                        <div class="hero__info">
+                           <div id="js-info-content" class="hero__info-content">
+                              <div class="hero__info-content-inside">Large groups of makers, engineers, and medical professionals are already collaborating
+                                 to make open-source solutions that can be reproduced and assembled locally worldwide,
+                                 including 3D printers like Cerberus that can print at high temperatures. Credit: Joshua
+                                 Pearce
+                                 <div class="js-info-trigger hero__info-content__close-button" title="Close Caption">×</div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="hero__info-wrapper">
+                        <div class="hero__byline">
+                           <div class="hero__byline__author">By Joshua Pearce</div>
+                           <div class="hero__byline__published">
+                              						Published <time datetime="2020-09-21T18:29:00-5:00">6:29 p.m., September 21, 2020</time></div>
+                        </div>
+                        <div class="hero__details">
+                           <div class="hero__byline__tags">Category: <a class="gold-underline" href="/news/archives/?category=Science+and+Engineering">Science And Engineering</a></div>
+                           <div class="hero__comments"><a class="disqus-comment-count gold-underline" data-disqus-identifier="4882af0e-19fd-42ff-90de-38ba6e721eb3" href="https://www.mtu.edu/unscripted/2020/09/guest-blog-mtu-releases-three-new-opensource-tools-for-covid19.html#disqus_thread">Comments (0)</a><script id="dsq-count-scr" src="//mtunews.disqus.com/count.js" async></script></div>
+                           <div class="hero__doi right">DOI: <a class="gold-underline" href="https://www.sciencedirect.com/science/article/pii/S2468067220300390?via%3Dihub">10.1016/j.ohx.2020.e00130</a></div>
+                        </div>
+                     </div>
+                  </header>
+               </div>
+            </section>
+            <section id="news" class="news row" aria-label="story">
+               <div class="full-width">
+                  <div id="content">
+                     <article id="content_body" aria-label="story content">
+                        <p class="preview">In his guest blog, engineer Joshua Pearce shares how his lab developed a high-temperature
+                           3D printer, a firefighter mask and a printable, emergency-use ventilator in response
+                           to COVID-19.</p>
+                        <p>There is a desperate need for low-cost hardware to deal with COVID-19 all over the
+                           world. Today, with the evolution of digital manufacturing technologies such as 3D
+                           printers and circuit milling systems, humanity can share designs with others who can
+                           then replicate medical-grade devices for the cost of locally sourced materials.</p>
+                        
+                        <p>When we began these studies last spring, personal protection equipment (PPE) was in
+                           short supply, most PPE was one-time use and disposable, adding to problems with plastic
+                           waste, and the demand for hospital equipment was greater than supply. <a href="https://www.appropedia.org/Category:MOST">Michigan Technological University’s Open Sustainability Technology (MOST) Lab</a> developed three new tools to help.</p>
+                        
+                        <div class="caption-wrapper">
+                           <figure class="caption left"><img loading="lazy" src="/unscripted/2020/09/images/c19res-pearce-papr-vertical400.jpg" alt="3D printed firefighter mask" data-caption="Firefighters use powered air-purifying particulate respirators (PAPR) and 3D printed versions help first responders sanitize their gear without single-use masks. Credit: Joshua Pearce" />
+                              <figcaption>
+                                 <td>Firefighters use powered air-purifying particulate respirators (PAPR) and 3D printed
+                                    versions help first responders sanitize their gear without single-use masks. Credit:
+                                    Joshua Pearce</td>
+                              </figcaption>
+                           </figure>
+                        </div>
+                        
+                        
+                        <h2>3D Printing Can Take the Heat</h2>
+                        
+                        <p>We fast-tracked a low-cost, high-temperature 3D printer. Many makers all over the
+                           world have been using 3D printers to manufacture PPE, but normally these are used
+                           once and thrown away. Thermal sterilization is generally avoided for 3D-printed components
+                           because of their relatively low deformation and melting temperatures. The polymers
+                           required for high-temperature, heat-sterilizable components for COVID-19 and other
+                           applications demanded a 3D printer that could take the heat.</p>
+                        
+                        <p>There are several high-temp printers on the market, but their high costs make them
+                           inaccessible for full home-based distributed manufacturing required during pandemic
+                           lockdowns. MOST developed the <a href="https://doi.org/10.1016/j.ohx.2020.e00130">Cerberus</a> — an open-source, three-headed, self-replicating rapid prototyper (RepRap) for less
+                           than $1,000.&nbsp;</p>
+                        
+                        <div class="inline-aside right right-outside">
+                           <h2 class="aside-heading">&nbsp;Read More</h2>
+                           <td>
+                              
+                              <p>Noah G. Skrzypczak, Nagendra G. Tanikella, Joshua M. Pearce.&nbsp;"<a href="https://doi.org/10.1016/j.ohx.2020.e00130">Open source high-temperature RepRap for 3-D printing heat-sterilizable PPE and other
+                                    applications</a>"&nbsp;in HardwareX.&nbsp;</p>
+                              </td>
+                        </div>
+                        
+                        
+                        <p>Here are the specs:</p>
+                        
+                        <ul>
+                           
+                           <li>200 degree Celsius-capable heated bed</li>
+                           
+                           <li>500 degree Celsius-capable hot end</li>
+                           
+                           <li>isolated heated chamber with 1 kilowatt space heater core with mains voltage chamber
+                              and bed heating for rapid start</li>
+                           
+                           <li>prints polyetherketoneketone (PEKK) and polyetherimide (PEI, ULTEM) with tensile strengths
+                              of 77.5 and 80.5 MPa, respectively</li>
+                           </ul>
+                        
+                        <p>We showed we could make open-source face masks in PEKK that would not warp using home-accessible,
+                           oven-based sterilization. That means the PPE can be reused.</p>
+                        
+                        <h2>Firefighting COVID-19</h2>
+                        
+                        <p>Firefighters and other first responders wanted to use their existing equipment for
+                           respiration during the pandemic without using single-use masks. MOST developed an
+                           open-source kit to convert a self-contained breathing apparatus into a powered air-purifying
+                           particulate respirator (PAPR). The <a href="https://doi.org/10.1016/j.ohx.2020.e00129">open-source PAPR</a> can be fabricated with a low-cost open-source 3D printer and widely available components
+                           for under $150, replacing commercial conversion kits (saving 85%) or proprietary PAPRs
+                           (saving over 90%).</p>
+                        
+                        <div class="inline-aside right right-outside">
+                           <h2 class="aside-heading">&nbsp;Read More</h2>
+                           <td>
+                              
+                              <p>Benjamin R. Hubbard and Joshua M. Pearce. <a href="https://doi.org/10.1016/j.ohx.2020.e00129">“Conversion of Self-Contained Breathing Apparatus Mask to Open Source Powered Air-Purifying
+                                    Particulate Respirator for Fire Fighter COVID-19 Response”</a> in HardwareX.</p>
+                              </td>
+                        </div>
+                        
+                        
+                        <p>The parametric designs allow for adaptation to other core components and can be custom
+                           fit specifically to firefighter equipment, including their suspenders.</p>
+                        
+                        <p>The open-source PAPR has controllable airflow and its design enables breathing even
+                           if the fan is disconnected or if the battery dies. We tested for airflow as a function
+                           of battery life and it met National Institute for Occupational Safety and Health (NIOSH)
+                           airflow requirements for four hours, which is 300% over expected regular use.</p>
+                        
+                        <div class="caption-wrapper">
+                           <figure class="caption left"><a href="/unscripted/2020/09/images/c19res-pearce-bvm-vertical1200.jpg" class="fancybox" data-fancybox-group="gallery" data-caption="Portable and 3D-printed tools, like this bag valve mask (BVM) compression system, could help communities respond to future pandemic disruptions and shortages. Credit: Joshua Pearce"><img height="337" width="399" loading="lazy" src="/unscripted/2020/09/images/c19res-pearce-bvm-vertical400.jpg" alt="3D printed breathing apparatus" data-caption="Portable and 3D-printed tools, like this bag valve mask (BVM) compression system, could help communities respond to future pandemic disruptions and shortages. Credit: Joshua Pearce" /></a>
+                              <figcaption>
+                                 <td>Portable and 3D-printed tools, like this bag valve mask (BVM) compression system,
+                                    could help communities respond to future pandemic disruptions and shortages. Credit:
+                                    Joshua Pearce</td>
+                              </figcaption>
+                           </figure>
+                        </div>
+                        
+                        
+                        <h2>3D-printed Ventilators</h2>
+                        
+                        <p>One of the greatest worries during the pandemic was running short of <a href="https://doi.org/10.12688/f1000research.22942.2">ventilators</a> for COVID-19 patients. MOST developed a simple and easy to build portable automated
+                           bag valve mask (BVM) compression system, which can serve as a temporary emergency
+                           ventilator during acute shortages and supply chain disruptions.</p>
+                        
+                        <p>The resuscitation system is based on the open-source Arduino controller and 3D-printable
+                           parametric component-based structure. The <a href="https://doi.org/10.1016/j.ohx.2020.e00131">open-source 3D-printable ventilator</a> costs less than $170, which makes it affordable for replication by makers around
+                           the world.&nbsp;</p>
+                        
+                        <p>Here are the device specs:</p>
+                        
+                        <ul>
+                           
+                           <li>controlled breathing mode with tidal volumes from 100 to 800 milliliters, breathing
+                              rates from 5 to 40 breaths per minute, and inspiratory-to-expiratory ratio from 1:1
+                              to 1:4</li>
+                           
+                           <li>The system is designed for reliability and scalability of measurement circuits through
+                              the use of the serial peripheral interface and has the ability to connect additional
+                              hardware due to the object-oriented algorithmic approach.</li>
+                           
+                           <li>Experimental results after testing on an artificial lung for peak inspiratory pressure
+                              (PIP), respiratory rate (RR), positive end-expiratory pressure (PEEP), tidal volume,
+                              proximal pressure, and lung pressure demonstrate repeatability and accuracy exceeding
+                              human capabilities in BVM-based manual ventilation.</li>
+                           </ul>
+                        
+                        <div class="inline-aside right right-outside">
+                           <h2 class="aside-heading">&nbsp;Read More</h2>
+                           <td>
+                              
+                              <p>Aliaksei Petsiuk, Nagendra G. Tanikella, Samantha Dertinger, Adam Pringle, Shane Oberloier,
+                                 Joshua M. Pearce. <a href="https://doi.org/10.1016/j.ohx.2020.e00131">“Partially RepRapable Automated Open Source Bag Valve Mask-based Ventilator”</a> in HardwareX.</p>
+                              </td>
+                        </div>
+                        
+                        
+                        <p>Future work is necessary to further develop and test the system to make it acceptable
+                           to use in clinical environments outside of emergencies like the pandemic.</p>
+                        
+                        <p>The nature of these designs is such that desired features are relatively easy to add
+                           with the test using protocols and parametric design files provided. Our hope is that
+                           such devices can be built upon by others to achieve full regulatory approval in all
+                           countries to ensure humanity is prepared for the next pandemic. Large groups of makers,
+                           engineers, and medical professionals are already collaborating to make open-source
+                           solutions that can be reproduced and assembled locally worldwide. We are happy to
+                           be a small part of it.</p>
+                        <div class="clearer"></div>
+                        <p class="small clearer margin-top-2x"><em>Michigan Technological University is an R1 public research university founded in 1885 in Houghton, and is home to nearly 7,500 students from more than 60 countries around the world. Consistently ranked among the best universities in the country for return on investment, Michigan's flagship technological university offers more than 185 <a href="/admissions/academics/majors/index.html">undergraduate</a> and <a href="/gradschool/programs/degrees/index.html">graduate</a> degree programs in science and technology, engineering, computing, forestry, business, health professions, humanities, mathematics, social sciences, and the arts. The rural campus is situated just miles from Lake Superior in Michigan's Upper Peninsula, offering year-round opportunities for outdoor adventure.</em></p></article>
+                  </div>
+                  <div class="row">
+                     <hr>
+                     <div class="small-stories"> <h2 class="sr-only">Related Stories</h2><ul class="related-stories nobullets"><li class="small-story-wrapper">
+							<a href="/unscripted/2020/03/mtu-engineering-team-joins-opensource-ventilator-movement.html"><div id="story-1" class="small-story">
+								<div class="box-cover"><img loading="lazy" alt="Using distributed technologies like 3D printing and circuit milling systems, makers around the world hope to build an open-source ventilator." src="//www.mtu.edu/unscripted/2020/03/images/3-d-printer-banner450.jpg" /></div><div class="article-date">March 20, 2020</div></div>
+							MTU Engineering Team Joins Open-source Ventilator Movement</a>
+						   </li>
+<li class="small-story-wrapper">
+							<a href="/news/2020/12/opensource-maker-mover-and-shaker-takes-shareeverything-philosophy-to-the-mainstream.html"><div id="story-2" class="small-story">
+								<div class="box-cover"><img loading="lazy" alt="Open-source meta: a creative commons photo of a 3D metal printer. In his newest book, Joshua Pearce shows people new to the open source and maker communities how they can start making and sharing to save money, save the planet, and have fun." src="//www.mtu.edu/news/2020/12/images/pearce-open-source-metal-3d-printer-banner450.jpg" /></div><div class="article-date">December 04, 2020</div></div>
+							Open-Source Maker, Mover and Shaker Takes Share-Everything Philosophy to the Mainstream</a>
+						   </li>
+<li class="small-story-wrapper">
+							<a href="/news/2021/02/shining-a-light-on-the-true-value-of-solar-power.html"><div id="story-3" class="small-story">
+								<div class="box-cover"><img loading="lazy" alt=""Customers with solar distributed generation are making it so utility companies donâ€™t have to make as many infrastructure investments, while at the same time solar shaves down peak demands when electricity is the most expensive," says Joshua Pearce, Richard Witte Endowed Professor of Materials Science and Engineering and professor of electrical and computer engineering at Michigan Technological University." src="//www.mtu.edu/news/2021/02/images/lanse-solar-panel-value-photovoltaic-banner450.jpg" /></div><div class="article-date">February 08, 2021</div></div>
+							Shining a Light on the True Value of Solar Power</a>
+						   </li>
+<li class="small-story-wrapper">
+							<a href="/unscripted/2021/02/guest-blog-librarians-still-want-your-books.html"><div id="story-4" class="small-story">
+								<div class="box-cover"><img loading="lazy" alt="The Opie and Van Pelt Library's archive contains many bound treasures. Preserving today's publications has digital assistance. Credit: Nick Adrian" src="//www.mtu.edu/unscripted/2021/02/images/digital-commons-books-library-2-banner450.jpg" /></div><div class="article-date">February 22, 2021</div></div>
+							Guest Blog: Librarians (Still) Want Your Books</a>
+						   </li>
+</div></div>
+                     <div id="comment-wrap">
+                        <p id="comment-button" class="center"><a class="button-blank middle">Comments</a></p>
+                        <div id="comment-holder" style="display:none;">
+                           <div id="disqus_thread"></div><script>
+								var mtu_page_identifier = '4882af0e-19fd-42ff-90de-38ba6e721eb3';
+								
+								/**
+								* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+								* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+								*/
+
+								var disqus_config = function () {
+								this.page.url = 'https://www.mtu.edu/unscripted/2020/09/guest-blog-mtu-releases-three-new-opensource-tools-for-covid19.html'; // Replace PAGE_URL with your page's canonical URL variable
+								this.page.identifier = '4882af0e-19fd-42ff-90de-38ba6e721eb3'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+								};
+
+								//removed the function from here and put it into pubs.js. Added a click listener on comment-button. 
+							</script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript></div>
+                     </div>
+                  </div><script src="https://www.mtu.edu/mtu_resources/script/n/pubs-new.js"></script></div>
+            </section>
+            <div class="popover popover--banner hidden" aria-expanded="false" data-start="09/01/2018" data-end="01/01/2028">
+<div class="popover__open-wrapper"><button class="popover__open-button"> Subscribe </button></div>
+<div class="popover__content-wrapper">
+<div class="popover__content"><button class="popopen__close-button" aria-label="close ×">&times;</button>
+<h2 class="h5-like padding-bottom text-center">Subscribe to Michigan Tech News</h2>
+<div class="middle" style="max-width: 700px;"><form class="signup-form__form padding-bottom" action="/news/subscribe/index.html" method="get"><label class="signup-form__email-label" for="email-popover"><span class="show-for-sr">Email</span> <input name="type" type="hidden" value="Popover" /><input id="email-popover" class="signup-form__email-field" name="email" type="text" placeholder="Email" /> </label> <button class="signup-form__button" type="submit">Sign Up</button></form></div>
+</div>
+</div>
+</div></div>
+         <div class="push"></div>
+      </div>
+      <footer xmlns:xlink="http://www.w3.org/1999/xlink" id="mtu-footer" class="mtu-footer">
+   <div class="footer__pre-nav-wrapper">
+      <ul class="no-bullet footer__pre-nav row">
+         <li class="footer-button"><a aria-label="Request Information from Michigan Tech" href="/request/index.html">Request Information</a></li>
+         <li class="footer-button"><a aria-label="Schedule a Visit at Michigan Tech" href="/visit/index.html">Schedule a Visit</a></li>
+         <li class="footer-button-give"><a aria-label="Give to Michigan Tech" href="/giving/index.html">Give</a></li>
+         <li class="footer-button-apply"><a aria-label="Apply to Michigan Tech" href="/apply/index.html">Apply</a></li>
+      </ul>
+   </div>
+   <div class="footer row">
+      <div class="footer-menu">
+         <h2 class="footer-menu__title">Admissions</h2>
+         <ul class="no-bullet">
+            <li><a href="/admissions/index.html">Undergraduate Admissions</a></li>
+            <li><a href="/gradschool/index.html">Graduate Admissions</a></li>
+            <li><a href="/globalcampus/index.html">Global Campus</a></li>
+            <li><a aria-label="Request Information from Michigan Tech" href="/request/index.html" class="footer-rfi">Request Information</a></li>
+            <li><a aria-label="Schedule a Visit to Michigan Tech" href="/visit/index.html" class="footer-visit">Schedule a Visit</a></li>
+            <li><a aria-label="Apply to Michigan Tech" href="/apply/index.html" class="footer-apply">Apply</a></li>
+            <li><a aria-label="Virtual Tours of Michigan Tech" href="/virtual-tours/index.html">Virtual Tours</a></li>
+         </ul>
+      </div>
+      <div class="footer-menu">
+         <h2 class="footer-menu__title">Study and Live</h2>
+         <ul class="no-bullet">
+            <li><a href="/academics/">Academics</a></li>
+            <li><a href="/majors/index.html">Degrees / Majors</a></li>
+            <li><a href="/library/index.html">Library</a></li>
+            <li><a href="https://www.michigantechhuskies.com/">Athletics</a></li>
+            <li><a href="/tour/index.html">Campus and Beyond</a></li>
+            <li><a href="https://events.mtu.edu/">Events Calendar</a></li>
+            <li><a href="https://michigantechrecreation.com/index.aspx">Recreation</a></li>
+         </ul>
+      </div>
+      <div class="footer-menu">
+         <h2 class="footer-menu__title">Campus Info</h2>
+         <ul class="no-bullet">
+            <li><a href="/about/index.html">About Michigan Tech</a></li>
+            <li><a href="/provost/accreditation/index.html" aria-label="University Accreditation">Accreditation</a></li>
+            <li><a href="https://map.mtu.edu/">Campus Map</a></li>
+            <li><a href="/jobs/index.html">Jobs at Michigan Tech</a></li>
+            <li><a href="/news/index.html">News</a></li>
+            <li><a href="https://www.mtu.edu/syp/">Summer Youth Programs</a></li>
+            <li><a href="/webcams/index.html">Webcams</a></li>
+         </ul>
+      </div>
+      <div class="footer-menu">
+         <h2 class="footer-menu__title">Policies and Safety</h2>
+         <ul class="no-bullet">
+            <li><a href="/title-ix/resources/campus-safety/index.html" aria-label="Campus Safety Information and Resources">Campus Safety Information</a></li>
+            <li><a href="/emergencycontacts/index.html">Emergency Contact Information</a></li>
+            <li><a href="/deanofstudents/concern/index.html">Report a Concern</a></li>
+            <li><a href="/publicsafety/index.html">Public Safety / Police Services</a></li>
+            <li><a href="/student-affairs/interests/student-disclosure/index.html">Student Disclosures</a></li>
+            <li><a href="/title-ix/index.html">Title IX</a></li>
+            <li><a href="/policy/policies/index.html">University Policies</a></li>
+         </ul>
+      </div>
+   </div>
+   <div class="row footer__contact">
+      <div class="footer__contact-info"><style>
+				.footer__pre-nav, .footer__pre-nav li:nth-of-type(1), .footer__pre-nav li:nth-of-type(2), .footer__pre-nav li:nth-of-type(3), .footer__pre-nav li:nth-of-type(4) {
+					display: none;
+				}
+			</style><h2><a class="text-gold underline-on-hover" href="/umc/services/media/">News and Media Relations</a></h2><div class="footer__contact-info-address">Administration Building G20<br />													1400 Townsend Drive, Houghton, Michigan 49931-1295</div><div><ul class="bar-separator no-bullet"><li class="phone"><a href="tel:9064872354">906-487-2354</a></li><li class="fax"><a href="tel:9064873553">906-487-3553</a></li><li class="email"><a href="mailto:umc@mtu.edu">umc@mtu.edu</a></li></ul></div><ul class="social-medium center"><li><a class="facebook" href="https://www.facebook.com/michigantech/" target="_blank">Facebook</a></li><li><a class="instagram" href="https://www.instagram.com/michigantech/" target="_blank">Instagram</a></li><li><a class="snapchat" href="https://www.snapchat.com/add/michigan_tech?locale=en-US" target="_blank">Snapchat</a></li><li><a class="twitter" href="https://x.com/MichiganTech" target="_blank">Twitter</a></li><li><a class="linkedin" href="https://www.linkedin.com/school/michigan-technological-university/" target="_blank">Linkedin</a></li><li><a class="youtube" href="https://www.youtube.com/michigantech" target="_blank">Youtube</a></li></ul></div>
+      <div class="footer__contact-social">
+         <div class="mtu-logo logo"><a href="/" class="mtu-logo mtu-logo-footer"><img src="//www.mtu.edu/mtu_resources/images/logos/michigan-tech-logo-fullname-solid-old.svg" height="132" width="200" alt="Michigan Technological University" loading="lazy"></a></div>
+      </div>
+   </div>
+   <div class="footer__post-info row">
+      <div>
+         <ul class="bar-separator no-bullet aside">
+            <li><a href="/accessibility/index.html">Accessibility</a></li>
+            <li><a href="/eo-compliance/equal-opportunity-hiring/index.html">Equal Opportunity</a></li>
+            <li><a href="mailto:webmaster@mtu.edu">Email the Webmaster</a></li>
+         </ul>
+      </div>
+      <div>
+         <ul class="bar-separator no-bullet">
+            <li><a href="/tomorrowneeds/index.html"><strong>Tomorrow Needs Michigan Tech</strong></a></li>
+            <li><span id="directedit">©</span>
+               2026 <a href="https://www.mtu.edu">Michigan Technological University</a></li>
+         </ul>
+      </div>
+   </div>
+</footer>
+
+<!--[if (!IE)|(gt IE 8)]><!--> 
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+	<script>window.jQuery || document.write('<script src="https://www.mtu.edu/mtu_resources/script/n/jquery.js"><\/script>')</script> 
+<!--<![endif]-->
+
+<!--[if lte IE 8]>
+	<script src="https://www.mtu.edu/mtu_resources/script/n/jquery-ie.js"></script>
+<![endif]-->
+
+<script src="https://www.mtu.edu/mtu_resources/assets/js/app.js"></script>
+<script src="https://www.mtu.edu/mtu_resources/script/n/pubs.js"></script>
+<script>
+            var OUC = OUC || {};
+            OUC.globalProps = OUC.globalProps || {};
+            OUC.props = OUC.props || {};
+            
+            
+                OUC.globalProps['path'] = "/unscripted/2020/09/guest-blog-mtu-releases-three-new-opensource-tools-for-covid19.html";
+                OUC.globalProps['domain'] = "https://www.mtu.edu";
+                OUC.globalProps['index-file'] = "index";
+                OUC.globalProps['extension'] = "html";
+            
+            var key;
+            for (key in OUC.globalProps) {
+            OUC.props[key] = OUC.globalProps[key];
+            }
+        </script>
+      <script>
+	$(function(){
+		var $domain      = OUC.globalProps['domain'];
+		var $currentPage = OUC.globalProps['path'];
+		var $extension   = OUC.globalProps['extension'];
+		var $indexFile   = OUC.globalProps['index-file'];
+		
+		$currentPage = $domain + $currentPage.replace(/index\.\w+/i, '');
+		
+		
+		$('.leftnav .sublinks ul li').each(function(index, anchorTag){
+
+			$link =  $("> a", this).attr('href');
+			$link = $domain+$link.replace(/index\.\w+/i, '');
+			var $count1 = ($link.match(/\//g) || []).length;
+			
+			// check if link matches current page
+			/*if ($currentPage.includes($link) && $count1 > 4)
+			{
+				$(this).addClass('active');
+				// break out of the loop
+				return false;
+			}*/
+		});
+
+		$('.category-nav-bar > li.main-nav-item').each(function(index, anchorTag){
+
+			$link =  $("a", this).attr('href');
+			if($link) {
+				$link = $domain+$link.replace(/index\.\w+/i, '');
+			}
+			// check if link matches current page
+			if ($currentPage.includes($link))
+			{
+				$(this).addClass('in');
+				// break out of the loop
+				return false;
+			}
+		});
+	});
+</script>
+<div id="hidden" style="display:none;"><a id="de" href="https://a.cms.omniupdate.com/11/?skin=oucampus&amp;account=MTU&amp;site=www&amp;action=de&amp;path=/unscripted/2020/09/guest-blog-mtu-releases-three-new-opensource-tools-for-covid19.pcf">©</a></div>
+   </body>
+</html>

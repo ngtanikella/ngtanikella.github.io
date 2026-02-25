@@ -1,12 +1,16 @@
 <footer class="footer">
-    <div class="container">
-        <p class="alignable pull-left">Nagendra Tanikella
-        <ul class="alignable pull-right navbar-ul">
-        <li class="alignable pull-right nav-list"><a href="https://github.com/{{ site.github_username }}"><i class="fa fa-github"></i></a></li>
-        <li class="alignable pull-right nav-list"><a href="https://linkedin.com/in/{{ site.linkedin_username }}"><i class="fa fa-linkedin"></i></a></li>
-        <li class="alignable pull-right nav-list"><a href="{{ site.google_scholar_url }}"><i class="ai ai-google-scholar-square"></i></a></li>
-        </ul>
-    </div>
+  <div class="container footer-inner">
+    <p class="footer-text">
+      © {{ "now" | date: "%Y" }} Nagendra Tanikella.
+      Some materials may be subject to publisher copyright.
+    </p>
+
+    <ul class="footer-icons">
+      <li><a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener"><i class="fa fa-github"></i></a></li>
+      <li><a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank" rel="noopener"><i class="fa fa-linkedin"></i></a></li>
+      <li><a href="{{ site.google_scholar_url }}" target="_blank" rel="noopener"><i class="ai ai-google-scholar-square"></i></a></li>
+    </ul>
+  </div>
 </footer>
 
 {% include script.html %}

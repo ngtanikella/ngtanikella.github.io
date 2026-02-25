@@ -9,7 +9,7 @@ permalink: /presentations
 # PRESENTATIONS
 
 <div class="experience-box" markdown="1">
-[<img class="experience-picture" src="{{site.url}}{{site.baseurl}}/images/presentations/Defense.jpg" alt="Ph.D. Defense">]({{site.url}}{{site.baseurl}}/images/presentations/Defense.jpg){:target="_blank"}
+[<img class="experience-picture" src="{{site.url}}{{site.baseurl}}/images/presentations/Defense.jpg" alt="Ph.D. Defense">]({{site.url}}{{site.baseurl}}/images/presentations/Defense.jpg) style="max-width:100%; border:1px solid #ccc;"> {:target="_blank"}
 
 _2025_
 

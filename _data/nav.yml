@@ -1,12 +1,8 @@
 - name: "CONTACT"
   link: "/contact"
 
-
-
-
-
- - name: "PUBLICATIONS"
-   link: "/publications"
+- name: "PUBLICATIONS"
+  link: "/publications"
 
 - name: "CV"
   link: "/CV"

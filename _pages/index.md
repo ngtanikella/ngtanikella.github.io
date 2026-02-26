@@ -22,6 +22,21 @@ I also mentored senior year students with their [Capstone projects.](https://ngt
 I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both from <img src="{{site.url}}{{site.baseurl}}/images/experience/mtu.png" alt="Michigan Technological University" class="inline-logo">[Michigan Technological University](https://www.mtu.edu/){:target="_blank"}, where I worked on open-source 3D printing, material characterization for Fused Filament Fabrication (FFF), and developed novel composites from recycled and waste materials. I also led rapid-response manufacturing efforts during the COVID-19 crisis and designed an [open-source ventilator.](https://doi.org/10.1016/j.ohx.2020.e00131)
 
 ---
+## News
+
+<div class="news-box" role="region" aria-label="News">
+  <ul class="news-list">
+    {% assign sorted_news = site.data.news | sort: "date" | reverse %}
+    {% for item in sorted_news %}
+      <li class="news-item">
+        <span class="news-date">{{ item.date }}</span>
+        <span class="news-text">{{ item.news }}</span>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+---
 
 <style>
   /* Click-to-open modal (no JS) */
@@ -80,6 +95,43 @@ I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both f
   .modal-text {
     margin: 0;
   }
+  /* News (scrollable) */
+.news-box{
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 14px;
+  padding: 0.9rem 1rem;
+  max-height: 9.5rem;          /* ~2–3 items visible */
+  overflow-y: auto;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.news-list{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.news-item{
+  display: grid;
+  grid-template-columns: 10.5rem 1fr;
+  gap: 0.75rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.news-item:last-child{
+  border-bottom: none;
+}
+
+.news-date{
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.news-text a{
+  text-decoration: underline;
+}
 </style>
 
 ## Projects & Builds
@@ -204,8 +256,8 @@ I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both f
     <p class="modal-text">
       Collaboration between an <img src="{{site.url}}{{site.baseurl}}/docs/cv/Logos/Auburn.png" alt="Auburn University" class="inline-logo"> <a href="https://www.auburn.edu/" target="_blank" rel="noopener">Auburn University</a> chemistry graduate student,
       <a href="https://www.linkedin.com/in/lucilacarias011694/" target="_blank" rel="noopener">Lucila Carias</a>,
-      me, and <img src="{{site.url}}{{site.baseurl}}/images/experience/uidaho.png" alt="University of Idaho" class="inline-logo"> <a href="https://www.uidaho.edu/" target="_blank" rel="noopener">University of Idaho</a> graduate students
-      <a href="https://www.linkedin.com/in/japneet-kukal-08aa82261/" target="_blank" rel="noopener">Japneet Kukal</a>
+      and <img src="{{site.url}}{{site.baseurl}}/images/experience/uidaho.png" alt="University of Idaho" class="inline-logo"> <a href="https://www.uidaho.edu/" target="_blank" rel="noopener">University of Idaho</a> graduate students, me,
+      <a href="https://www.linkedin.com/in/japneet-kukal-08aa82261/" target="_blank" rel="noopener">Japneet Kukal</a>,
       and
       <a href="https://www.linkedin.com/in/robert-carne-651968139/" target="_blank" rel="noopener">Robert Carne</a>
       to validate a bio-based resin for the
@@ -375,7 +427,7 @@ I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both f
     <p class="modal-text">
       Twin-screw extruder, with <img src="{{site.url}}{{site.baseurl}}/images/experience/uidaho.png" alt="University of Idaho" class="inline-logo">
 <a href="https://www.uidaho.edu/" target="_blank" rel="noopener">University of Idaho</a> graduate students
-      <a href="https://www.linkedin.com/in/danielrevard/" target="_blank" rel="noopener">Daniel Revard</a>
+      <a href="https://www.linkedin.com/in/danielrevard/" target="_blank" rel="noopener">Daniel Revard</a>, me,
       and
       <a href="https://www.linkedin.com/in/robert-carne-651968139/" target="_blank" rel="noopener">Robert Carne</a>.
     </p>

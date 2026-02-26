@@ -202,15 +202,14 @@ I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both f
     <img class="modal-img" src="{{site.url}}{{site.baseurl}}/images/collage/Bioresin.jpg" alt="Bioresin collaboration (full image)">
     <h3 class="modal-title" id="modal-bioresin-title">Bioresin collaboration</h3>
     <p class="modal-text">
-      Collaboration between an Auburn University chemistry graduate student,
+      Collaboration between an <img src="{{site.url}}{{site.baseurl}}/docs/cv/Logos/Auburn.png" alt="Auburn University" class="inline-logo">[Auburn University](https://www.auburn.edu/){:target="_blank"} chemistry graduate student,
       <a href="https://www.linkedin.com/in/lucilacarias011694/" target="_blank" rel="noopener">Lucila Carias</a>,
-      me, and University of Idaho graduate students
+      me, and <img src="{{site.url}}{{site.baseurl}}/images/experience/uidaho.png" alt="University of Idaho" class="inline-logo">[University of Idaho](https://www.uidaho.edu/){:target="_blank"} graduate students
       <a href="https://www.linkedin.com/in/japneet-kukal-08aa82261/" target="_blank" rel="noopener">Japneet Kukal</a>
       and
       <a href="https://www.linkedin.com/in/robert-carne-651968139/" target="_blank" rel="noopener">Robert Carne</a>
       to validate a bio-based resin for the
-      <a href="https://printimber.org/" target="_blank" rel="noopener">Printimber</a>
-      project.
+      <a href="https://printimber.org/" target="_blank" rel="noopener">Printimber</a> project.
     </p>
   </div>
 </div>
@@ -222,7 +221,7 @@ I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both f
     <img class="modal-img" src="{{site.url}}{{site.baseurl}}/images/collage/Ceramic_DIW.gif" alt="Ceramic DIW (full image)">
     <h3 class="modal-title" id="modal-ceramic-diw-title">Ceramic DIW</h3>
     <p class="modal-text">
-      Direct Ink Writing (DIW) of a ceramic formulation, highlighting extrusion stability, layer stacking, and shape retention during print.
+      Direct Ink Writing (DIW) of a zeolite ceramic formulation, at <img src="{{site.url}}{{site.baseurl}}/images/experience/ornl.png" alt="Oak Ridge National Laboratory" class="inline-logo">[Oak Ridge National Laboratory](https://www.ornl.gov/){:target="_blank"}.
     </p>
   </div>
 </div>
@@ -234,7 +233,7 @@ I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both f
     <img class="modal-img" src="{{site.url}}{{site.baseurl}}/images/collage/DeltaPrinter.jpg" alt="Delta Printer (full image)">
     <h3 class="modal-title" id="modal-delta-printer-title">Delta Printer</h3>
     <p class="modal-text">
-      A delta-style 3D printer build focused on motion kinematics, rigidity, and repeatability—optimized for rapid prototyping and iteration.
+      A delta-style 3D printer build in class, as part of course taught by <a href="https://www.eng.uwo.ca/electrical/faculty/pearce_j/index.html" target="_blank" rel="noopener">Dr. Joshua Pearce</a>.
     </p>
   </div>
 </div>
@@ -246,7 +245,7 @@ I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both f
     <img class="modal-img" src="{{site.url}}{{site.baseurl}}/images/collage/DinoDNA.gif" alt="Dinosaur DNA (full image)">
     <h3 class="modal-title" id="modal-dinodna-title">Dinosaur DNA</h3>
     <p class="modal-text">
-      A fun visualization/build that blends design-for-print with storytelling—used to explore geometry, print constraints, and finishing workflows.
+      A fun CNC machined container that can be inserted in to a hollowed-out Barbasol can to recreate Dino DNA holder, as seen in the movie "Jurassic Park".
     </p>
   </div>
 </div>
@@ -258,7 +257,7 @@ I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both f
     <img class="modal-img" src="{{site.url}}{{site.baseurl}}/images/collage/Dissertation_cover.jpg" alt="Dissertation cover (full image)">
     <h3 class="modal-title" id="modal-dissertation-title">Dissertation cover</h3>
     <p class="modal-text">
-      Cover artwork for my Ph.D. dissertation, summarizing my research direction in additive manufacturing and bio-based composite materials.
+      Cover artwork for my Ph.D. dissertation, 3D printed TPU base, with a wood-sodium silicate composite panel insert, and short hemp fibers, hemp hurd, and hemp rope within the circular hodlers. Part of the <a href="https://printimber.org/" target="_blank" rel="noopener">Printimber</a> project.
     </p>
   </div>
 </div>

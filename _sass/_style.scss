@@ -211,15 +211,6 @@ ul#horizontal-list li {
   object-fit: contain;
 }
 
-/* Profile picture on homepage */
-.profile-picture {
-  width: 150px;
-  height: auto;
-  border-radius: 50%;
-  float: right;
-  margin: 0 0 10px 20px;
-}
-
 /* Publications */
 
 .publications {
@@ -417,9 +408,21 @@ a .fa-github:hover { color: #000000; }
     font-size: 18px !important;
   }
 
-  img:not(.social-icon-logo):not(.inline-logo):not(.profile-picture):not(.name-logo), video {
+  img:not(.social-icon-logo):not(.inline-logo):not(.publication-picture), video {
     max-width: 100%;
     height: auto;
+  }
+
+  /* Stack publication layout on mobile */
+  .publication-picture {
+    float: none;
+    display: block;
+    max-width: 40%;
+    margin: 10px auto;
+  }
+
+  .publication-text {
+    margin: 0 10px 20px 10px;
   }
 
   table {
@@ -443,13 +446,6 @@ a .fa-github:hover { color: #000000; }
 
   .social-icons {
     gap: 8px;
-  }
-
-  .profile-picture {
-    width: 120px;
-    float: none;
-    display: block;
-    margin: 0 auto 10px auto;
   }
 }
 
@@ -490,8 +486,8 @@ a .fa-github:hover { color: #000000; }
     gap: 6px;
   }
 
-  .profile-picture {
-    width: 100px;
+  .publication-picture {
+    max-width: 50%;
   }
 
   .footer-inner {

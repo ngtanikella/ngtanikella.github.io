@@ -202,9 +202,9 @@ I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both f
     <img class="modal-img" src="{{site.url}}{{site.baseurl}}/images/collage/Bioresin.jpg" alt="Bioresin collaboration (full image)">
     <h3 class="modal-title" id="modal-bioresin-title">Bioresin collaboration</h3>
     <p class="modal-text">
-      Collaboration between an <img src="{{site.url}}{{site.baseurl}}/docs/cv/Logos/Auburn.png" alt="Auburn University" class="inline-logo">[Auburn University](https://www.auburn.edu/){:target="_blank"} chemistry graduate student,
+      Collaboration between an <img src="{{site.url}}{{site.baseurl}}/docs/cv/Logos/Auburn.png" alt="Auburn University" class="inline-logo"> <a href="[https://www.auburn.edu/" target="_blank" rel="noopener">Auburn University</a> chemistry graduate student,
       <a href="https://www.linkedin.com/in/lucilacarias011694/" target="_blank" rel="noopener">Lucila Carias</a>,
-      me, and <img src="{{site.url}}{{site.baseurl}}/images/experience/uidaho.png" alt="University of Idaho" class="inline-logo">[University of Idaho](https://www.uidaho.edu/){:target="_blank"} graduate students
+      me, and <img src="{{site.url}}{{site.baseurl}}/images/experience/uidaho.png" alt="University of Idaho" class="inline-logo"> <a href="https://www.uidaho.edu/" target="_blank" rel="noopener">University of Idaho</a> graduate students
       <a href="https://www.linkedin.com/in/japneet-kukal-08aa82261/" target="_blank" rel="noopener">Japneet Kukal</a>
       and
       <a href="https://www.linkedin.com/in/robert-carne-651968139/" target="_blank" rel="noopener">Robert Carne</a>
@@ -281,7 +281,7 @@ I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both f
     <img class="modal-img" src="{{site.url}}{{site.baseurl}}/images/collage/FHSAE.jpg" alt="FHSAE competition (full image)">
     <h3 class="modal-title" id="modal-fhsae-title">FHSAE competition</h3>
     <p class="modal-text">
-      Formula hybrid SAE vehicle, built for my capstone project at <img src="{{site.url}}{{site.baseurl}}/docs/cv/Logos/NMIT.jpeg" alt="NMIT" class="inline-logo">[NMIT, India](https://nitte.edu.in/nmit/){:target="_blank"}.
+      Formula hybrid SAE vehicle, built for my capstone project at <img src="{{site.url}}{{site.baseurl}}/docs/cv/Logos/NMIT.jpeg" alt="NMIT" class="inline-logo"><a href="https://nitte.edu.in/nmit/" target="_blank" rel="noopener">NMIT, India</a>.
     </p>
   </div>
 </div>
@@ -361,7 +361,7 @@ I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both f
     <p class="modal-text">
       Tensile testing setup for the study
       <a href="https://doi.org/10.1016/j.addma.2017.03.005" target="_blank" rel="noopener">
-        “Tensile strength of commercial polymer materials for fused filament fabrication 3D printing” .
+        “Tensile strength of commercial polymer materials for fused filament fabrication 3D printing”</a>.
     </p>
   </div>
 </div>

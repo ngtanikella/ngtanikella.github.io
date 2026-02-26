@@ -169,7 +169,10 @@ ul li span {
   width: 400px;
 }
 .social-icon-logo {
-  height: 2.5em;   /* roughly matches ai-3x */
+  height: 2.5em !important;   /* roughly matches ai-3x */
+  width: auto !important;
+  max-width: none !important;
+  display: inline-block !important;
   vertical-align: middle;
 }
 /* Center icon table */
@@ -395,7 +398,7 @@ a .fa-github:hover { color: #000000; }
     font-size: 18px !important;
   }
 
-  img, video {
+  img:not(.social-icon-logo):not(.inline-logo), video {
     max-width: 100%;
     height: auto;
   }

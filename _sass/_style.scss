@@ -169,11 +169,21 @@ ul li span {
   width: 400px;
 }
 .social-icon-logo {
-  height: 2.5em !important;   /* roughly matches ai-3x */
+  height: 2.5em !important;
   width: auto !important;
   max-width: none !important;
   display: inline-block !important;
   vertical-align: middle;
+}
+
+/* Social icons row — flexbox for proper wrapping */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 10px auto;
 }
 /* Center icon table */
 .icon-table {
@@ -417,6 +427,14 @@ a .fa-github:hover { color: #000000; }
   .ai-3x {
     font-size: 2em;
   }
+
+  .social-icon-logo {
+    height: 1.8em !important;
+  }
+
+  .social-icons {
+    gap: 8px;
+  }
 }
 
 @media (max-width: 650px) {
@@ -446,6 +464,14 @@ a .fa-github:hover { color: #000000; }
 
   .name-logo {
     height: 18px;
+  }
+
+  .social-icon-logo {
+    height: 1.5em !important;
+  }
+
+  .social-icons {
+    gap: 6px;
   }
 }
 

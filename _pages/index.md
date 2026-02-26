@@ -221,7 +221,7 @@ I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both f
     <img class="modal-img" src="{{site.url}}{{site.baseurl}}/images/collage/Ceramic_DIW.gif" alt="Ceramic DIW (full image)">
     <h3 class="modal-title" id="modal-ceramic-diw-title">Ceramic DIW</h3>
     <p class="modal-text">
-      Direct Ink Writing (DIW) of a zeolite ceramic formulation, at <img src="{{site.url}}{{site.baseurl}}/images/experience/ornl.png" alt="Oak Ridge National Laboratory" class="inline-logo">[Oak Ridge National Laboratory](https://www.ornl.gov/){:target="_blank"}.
+      Direct Ink Writing (DIW) of a zeolite ceramic formulation, at <img src="{{site.url}}{{site.baseurl}}/images/experience/ornl.png" alt="Oak Ridge National Laboratory" class="inline-logo"> <a href="https://www.ornl.gov/" target="_blank" rel="noopener">Oak Ridge National Laboratory</a>.
     </p>
   </div>
 </div>
@@ -233,7 +233,7 @@ I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both f
     <img class="modal-img" src="{{site.url}}{{site.baseurl}}/images/collage/DeltaPrinter.jpg" alt="Delta Printer (full image)">
     <h3 class="modal-title" id="modal-delta-printer-title">Delta Printer</h3>
     <p class="modal-text">
-      A delta-style 3D printer build in class, as part of course taught by <a href="https://www.eng.uwo.ca/electrical/faculty/pearce_j/index.html" target="_blank" rel="noopener">Dr. Joshua Pearce</a>.
+      A delta-style 3D printer built in class, as part of the course taught by <a href="https://www.eng.uwo.ca/electrical/faculty/pearce_j/index.html" target="_blank" rel="noopener">Dr. Joshua Pearce</a>.
     </p>
   </div>
 </div>
@@ -245,7 +245,7 @@ I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both f
     <img class="modal-img" src="{{site.url}}{{site.baseurl}}/images/collage/DinoDNA.gif" alt="Dinosaur DNA (full image)">
     <h3 class="modal-title" id="modal-dinodna-title">Dinosaur DNA</h3>
     <p class="modal-text">
-      A fun CNC machined container that can be inserted in to a hollowed-out Barbasol can to recreate Dino DNA holder, as seen in the movie "Jurassic Park".
+      A fun CNC-machined container that can be inserted in to a hollowed-out Barbasol can to recreate "Dinosaur DNA holder", as seen in the movie "Jurassic Park".
     </p>
   </div>
 </div>
@@ -257,7 +257,7 @@ I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both f
     <img class="modal-img" src="{{site.url}}{{site.baseurl}}/images/collage/Dissertation_cover.jpg" alt="Dissertation cover (full image)">
     <h3 class="modal-title" id="modal-dissertation-title">Dissertation cover</h3>
     <p class="modal-text">
-      Cover artwork for my Ph.D. dissertation, 3D printed TPU base, with a wood-sodium silicate composite panel insert, and short hemp fibers, hemp hurd, and hemp rope within the circular hodlers. Part of the <a href="https://printimber.org/" target="_blank" rel="noopener">Printimber</a> project.
+      Cover artwork for my Ph.D. dissertation featuring a 3D-printed TPU base integrated with a wood–sodium silicate composite panel insert. The circular holders contain short hemp fibers, hemp hurd, and hemp rope.
     </p>
   </div>
 </div>
@@ -269,7 +269,7 @@ I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both f
     <img class="modal-img" src="{{site.url}}{{site.baseurl}}/images/collage/Extruder_die.jpg" alt="Extruder die (full image)">
     <h3 class="modal-title" id="modal-extruder-die-title">Extruder die</h3>
     <p class="modal-text">
-      Custom die design for compounding/extrusion—tuned to control flow, reduce dead zones, and improve consistency for downstream printing.
+      Custom die design for processing continous hemp fibers, part of the <a href="https://printimber.org/" target="_blank" rel="noopener">Printimber</a> project. .
     </p>
   </div>
 </div>
@@ -281,7 +281,7 @@ I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both f
     <img class="modal-img" src="{{site.url}}{{site.baseurl}}/images/collage/FHSAE.jpg" alt="FHSAE competition (full image)">
     <h3 class="modal-title" id="modal-fhsae-title">FHSAE competition</h3>
     <p class="modal-text">
-      Formula SAE experience—systems thinking, manufacturing under constraints, and rapid problem-solving in a competitive engineering environment.
+      Formula hybrid SAE vehicle, built for my capstone project at <img src="{{site.url}}{{site.baseurl}}/docs/cv/Logos/NMIT.jpeg" alt="NMIT" class="inline-logo">[NMIT, India](https://nitte.edu.in/nmit/){:target="_blank"}.
     </p>
   </div>
 </div>
@@ -293,7 +293,7 @@ I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both f
     <img class="modal-img" src="{{site.url}}{{site.baseurl}}/images/collage/First_print.jpg" alt="First 3D print (Kindle cover) (full image)">
     <h3 class="modal-title" id="modal-first-print-title">First 3Dprint (Kindle cover)</h3>
     <p class="modal-text">
-      My first successful 3D print: a custom Kindle cover—an early lesson in tolerances, fit, and iterative design.
+      My first 3D print: a custom Kindle cover at <a href="https://www.eng.uwo.ca/electrical/faculty/pearce_j/index.html" target="_blank" rel="noopener">Dr. Joshua Pearce</a>'s lab.
     </p>
   </div>
 </div>
@@ -305,7 +305,7 @@ I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both f
     <img class="modal-img" src="{{site.url}}{{site.baseurl}}/images/collage/Gigabot_Cooling.png" alt="Gigabot cooling system (full image)">
     <h3 class="modal-title" id="modal-gigabot-cooling-title">Gigabot cooling system</h3>
     <p class="modal-text">
-      Cooling system upgrade for a large-format printer to improve thermal control, reduce warping, and increase print reliability.
+      Cooling system upgrade for <a href="https://re3d.org/" target="_blank" rel="noopener">Re3D's</a> Gigabot printer.
     </p>
   </div>
 </div>
@@ -317,7 +317,10 @@ I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both f
     <img class="modal-img" src="{{site.url}}{{site.baseurl}}/images/collage/McMesin_bending.jpg" alt="Flexural testing (full image)">
     <h3 class="modal-title" id="modal-flexural-testing-title">Flexural testing</h3>
     <p class="modal-text">
-      Flexural testing setup used to quantify stiffness, strength, and failure behavior—supporting material screening and process optimization.
+      Flexural testing setup for the study
+      <a href="https://doi.org/10.3390/polym17182478" target="_blank" rel="noopener">
+        “Extrudability and Mechanical Properties of Wood–Sodium Silicate Composites with Hemp Fiber Reinforcement for Additive Manufacturing”
+      </a>.
     </p>
   </div>
 </div>
@@ -326,10 +329,13 @@ I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both f
   <a href="#" class="modal-overlay" aria-label="Close"></a>
   <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-monster-book-title">
     <a href="#" class="modal-close" aria-label="Close">&times;</a>
-    <img class="modal-img" src="{{site.url}}{{site.baseurl}}/images/collage/Monster_Book_of_Monsters.jpg" alt="Monster Book of Monsters (full image)">
+    <video class="modal-media" controls playsinline preload="metadata">
+      <source src="{{site.url}}{{site.baseurl}}/images/collage/monsterbook.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
     <h3 class="modal-title" id="modal-monster-book-title">Monster Book of Monsters</h3>
     <p class="modal-text">
-      A detailed print-and-finish build that pushed surface quality, assembly, and post-processing—proof that engineering can be playful.
+      A book cover with a simple mechanism that keeps it shut, unless you “stroke the spine, of course".
     </p>
   </div>
 </div>
@@ -341,7 +347,7 @@ I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both f
     <img class="modal-img" src="{{site.url}}{{site.baseurl}}/images/collage/Nagendra.jpg" alt="Lulzbot 3D printer (full image)">
     <h3 class="modal-title" id="modal-lulzbot-title">Lulzbot 3Dprinter</h3>
     <p class="modal-text">
-      Hands-on experience with FFF hardware, tuning, and troubleshooting—used for everything from prototyping to materials experimentation.
+      Me, with the <a href="https://lulzbot.com/" target="_blank" rel="noopener">Lulzbot</a> TAZ printer.
     </p>
   </div>
 </div>
@@ -353,7 +359,9 @@ I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both f
     <img class="modal-img" src="{{site.url}}{{site.baseurl}}/images/collage/Tensile2.jpg" alt="Tensile test setup (full image)">
     <h3 class="modal-title" id="modal-tensile-title">Tensile test setup</h3>
     <p class="modal-text">
-      Tensile testing workflow for printed/composite specimens—used to measure strength, modulus, and process–property relationships.
+      Tensile testing setup for the study
+      <a href="https://doi.org/10.1016/j.addma.2017.03.005" target="_blank" rel="noopener">
+        “Tensile strength of commercial polymer materials for fused filament fabrication 3D printing” .
     </p>
   </div>
 </div>
@@ -365,7 +373,10 @@ I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both f
     <img class="modal-img" src="{{site.url}}{{site.baseurl}}/images/collage/Twin_Screw.jpg" alt="Twin screw extruder (full image)">
     <h3 class="modal-title" id="modal-twin-screw-title">Twin screw extruder</h3>
     <p class="modal-text">
-      Twin-screw compounding for polymer/composite development—focused on dispersion, repeatability, and scalable feedstock production.
+      Twin-screw extruder, with <img src="{{site.url}}{{site.baseurl}}/images/experience/uidaho.png" alt="University of Idaho" class="inline-logo">[University of Idaho](https://www.uidaho.edu/){:target="_blank"} graduate students
+      <a href="https://www.linkedin.com/in/danielrevard/" target="_blank" rel="noopener">Daniel Revard</a>
+      and
+      <a href="https://www.linkedin.com/in/robert-carne-651968139/" target="_blank" rel="noopener">Robert Carne</a>.
     </p>
   </div>
 </div>
@@ -377,7 +388,7 @@ I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both f
     <img class="modal-img" src="{{site.url}}{{site.baseurl}}/images/collage/X_ray_CT.jpg" alt="X-ray CT scanning (full image)">
     <h3 class="modal-title" id="modal-xray-ct-title">X-ray CT scanning</h3>
     <p class="modal-text">
-      X-ray computed tomography (CT) for non-destructive evaluation—used to quantify porosity, defects, and internal structure in printed parts.
+      X-ray computed tomography (CT) for density and porosity evaluation of hemp reinforced wood-sodium silicate composites.
     </p>
   </div>
 </div>

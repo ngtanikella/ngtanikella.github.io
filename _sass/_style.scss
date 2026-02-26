@@ -408,7 +408,7 @@ a .fa-github:hover { color: #000000; }
     font-size: 18px !important;
   }
 
-  img:not(.social-icon-logo):not(.inline-logo):not(.publication-picture), video {
+  img:not(.social-icon-logo):not(.inline-logo):not(.publication-picture):not(.name-logo):not(.profile-picture), video {
     max-width: 100%;
     height: auto;
   }

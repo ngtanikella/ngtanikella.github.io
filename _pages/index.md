@@ -319,7 +319,7 @@ I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both f
     <p class="modal-text">
       Flexural testing setup for the study
       <a href="https://doi.org/10.3390/polym17182478" target="_blank" rel="noopener">
-        “Extrudability and Mechanical Properties of Wood–Sodium Silicate Composites with Hemp Fiber Reinforcement for Additive Manufacturing”
+        “Extrudability and Mechanical Properties of Wood-Sodium Silicate Composites with Hemp Fiber Reinforcement for Additive Manufacturing”
       </a>.
     </p>
   </div>
@@ -335,7 +335,7 @@ I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both f
     </video>
     <h3 class="modal-title" id="modal-monster-book-title">Monster Book of Monsters</h3>
     <p class="modal-text">
-      A book cover with a simple mechanism that keeps it shut, unless you “stroke the spine, of course".
+      A book cover with a simple mechanism that keeps it shut, unless you "stroke the spine, of course".
     </p>
   </div>
 </div>

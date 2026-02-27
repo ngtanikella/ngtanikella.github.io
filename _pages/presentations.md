@@ -10,7 +10,7 @@ permalink: /presentations
 <div class="experience-box" markdown="1">
 _2025_
 
-### Ph.D. Defense — Hemp Reinforcement for Improved Strength of Wood Sodium Silicate Composites for Additive Manufacturing
+### Ph.D. Defense - Hemp Reinforcement for Improved Strength of Wood Sodium Silicate Composites for Additive Manufacturing
 
 **University of Idaho, Moscow, Idaho**
 
@@ -23,9 +23,9 @@ _2025_
 
 <div class="experience-box" markdown="1">
 _2025_
-### American Institute of Architecture Students (AIAS) Conference
+### <a href="https://www.aias.org/" target="_blank" rel="noopener">American Institute of Architecture Students (AIAS)</a> Conference
 
-**Project Presentation**
+**Project Presentation**: <a href="https://www.linkedin.com/in/dylanporth/" target="_blank" rel="noopener">Dylan Porth</a>, me, and <a href="https://www.linkedin.com/in/dylan-willard-345320170/" target="_blank" rel="noopener">Dylan Willard</a>
 
 <a href="{{site.url}}{{site.baseurl}}/images/presentations/AIAS_poster.jpg" target="_blank">
 <img src="{{site.url}}{{site.baseurl}}/images/presentations/AIAS_poster.jpg" alt="AIAS Poster" style="max-width:100%; border:1px solid #ccc;">
@@ -36,7 +36,7 @@ _2025_
 </div>
 <div class="experience-box" markdown="1">
 _2023_
-### Printimber — Wood-Based Composites for Additive Manufacturing
+### <a href="https://printimber.org/" target="_blank" rel="noopener">Printimber</a> - Hemp Fiber Reinforcement of Wood-Sodium Silicate Composites
 
 **Poster Presentation**
 

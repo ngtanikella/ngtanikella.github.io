@@ -79,54 +79,85 @@
   row-gap: 6px;
 }
 
-/* Uniform "left - middle .... date" alignment within a section */
-.cv-entry-header-uniform {
-  display: grid;
-  grid-template-columns: max-content max-content 1fr max-content;
-  column-gap: 10px;
-  align-items: baseline;
+/* =========================
+   Aligned entries using dl/dt/dd (like Expertise)
+   dt = left label, dd = middle+date row
+   ========================= */
 
-  /* critical: allow the middle column to use available space instead of wrapping early */
+.cv-rows {
+  /* dt/dd grid: left column auto-sizes to longest label */
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: 12px;
+  row-gap: 8px;
+  margin: 0;
+}
+
+.cv-rows dt,
+.cv-rows dd {
+  margin: 0; /* reset browser defaults */
+}
+
+/* Left label column */
+.cv-rows dt {
+  white-space: nowrap;
   min-width: 0;
 }
 
-.cv-entry-left {
-  white-space: nowrap;  /* keeps institution/codes from breaking early */
+/* Right column contains middle text + date */
+.cv-rows dd {
+  display: grid;
+  grid-template-columns: 1fr max-content; /* middle | date */
+  column-gap: 12px;
+  align-items: baseline;
+  min-width: 0;
 }
 
-.cv-entry-dash {
-  white-space: nowrap;
+/* Dash between left and middle (keep your small dash) */
+.cv-rows dt::after {
+  content: " -";
 }
 
-.cv-entry-mid {
-  min-width: 0;         /* critical for grid text sizing */
-  text-align: left;
-  white-space: normal;  /* wraps only when truly needed */
+/* Middle text */
+.cv-rows .cv-mid {
   font-weight: 600;
   color: #111;
+  text-align: left;
+  min-width: 0;
 }
 
-/* Keep dates on one line, right side */
-.cv-entry-date {
+/* Date right-aligned */
+.cv-rows .cv-date {
   white-space: nowrap;
+  text-align: right;
+  font-size: 0.9em;
+  color: #666;
+  font-weight: 600;
 }
 
-/* Mobile: stack cleanly */
+/* Optional: keep logos aligned nicely */
+.cv-rows .inline-logo {
+  margin-right: 4px;
+}
+
+/* Mobile: stack middle/date underneath label */
 @media (max-width: 800px) {
-  .cv-entry-header-uniform {
+  .cv-rows {
     grid-template-columns: 1fr;
+    row-gap: 10px;
+  }
+
+  .cv-rows dt::after {
+    content: ""; /* drop dash in dt on mobile */
+  }
+
+  .cv-rows dd {
+    grid-template-columns: 1fr; /* middle then date */
     row-gap: 2px;
   }
 
-  .cv-entry-left,
-  .cv-entry-dash,
-  .cv-entry-mid,
-  .cv-entry-date {
-    white-space: normal;
-  }
-
-  .cv-entry-dash {
-    display: none; /* optional: hide dash on mobile */
+  .cv-rows .cv-date {
+    text-align: left;
   }
 }
 

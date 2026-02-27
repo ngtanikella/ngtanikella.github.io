@@ -1,6 +1,6 @@
 ---
 title: Nagendra Tanikella's CV
-layout: wide
+layout: default
 permalink: /CV
 ---
 
@@ -11,7 +11,6 @@ permalink: /CV
 </p>
 
 <div class="cv-layout">
-
   <div class="cv-content">
 
     <!-- PROFESSIONAL PROFILES -->
@@ -20,7 +19,6 @@ permalink: /CV
         <div class="cv-section-heading">
           <h2 class="cv-section-title">Professional Profiles</h2>
         </div>
-
         <div class="cv-section-body">
           <table class="social-icons-table">
             <tr>
@@ -44,7 +42,6 @@ permalink: /CV
         <div class="cv-section-heading">
           <h2 class="cv-section-title">Expertise</h2>
         </div>
-
         <div class="cv-section-body">
           <div class="cv-entry">
             <p><strong>Materials Science:</strong> Polymer &amp; ceramic composites, natural fiber reinforcement, rheology, and material characterization.</p>
@@ -64,38 +61,58 @@ permalink: /CV
         <div class="cv-section-heading">
           <h2 class="cv-section-title">Education</h2>
         </div>
-
         <div class="cv-section-body">
+
           <div class="cv-entry">
             <div class="cv-entry-header">
-              <span class="cv-entry-title"><img src="{{site.url}}{{site.baseurl}}/images/experience/uidaho.png" alt="University of Idaho" class="inline-logo"> University of Idaho</span>
-              <span class="cv-entry-date">December 2025</span>
+              <span class="cv-entry-title">
+                <img src="{{site.url}}{{site.baseurl}}/images/experience/uidaho.png" alt="University of Idaho" class="inline-logo">
+                University of Idaho
+              </span>
+              <span class="cv-entry-meta">
+                <span class="cv-entry-degree"><strong>Ph.D.</strong> Mechanical Engineering</span>
+                <span class="cv-entry-date">December 2025</span>
+              </span>
             </div>
-            <p><strong>Ph.D.</strong> Mechanical Engineering</p>
             <p class="cv-detail">Thesis: Hemp reinforcement for improved strength of Wood Sodium Silicate composites for additive manufacturing</p>
           </div>
 
           <div class="cv-entry">
             <div class="cv-entry-header">
-              <span class="cv-entry-title"><img src="{{site.url}}{{site.baseurl}}/images/experience/mtu.png" alt="Michigan Technological University" class="inline-logo"> Michigan Technological University</span>
-              <span class="cv-entry-date">December 2021</span>
+              <span class="cv-entry-title">
+                <img src="{{site.url}}{{site.baseurl}}/images/experience/mtu.png" alt="Michigan Technological University" class="inline-logo">
+                Michigan Technological University
+              </span>
+              <span class="cv-entry-meta">
+                <span class="cv-entry-degree"><strong>M.E.</strong> Material Science</span>
+                <span class="cv-entry-date">December 2021</span>
+              </span>
             </div>
-            <p><strong>M.E.</strong> Material Science</p>
+
             <div class="cv-entry-header">
               <span class="cv-entry-title"></span>
-              <span class="cv-entry-date">August 2016</span>
+              <span class="cv-entry-meta">
+                <span class="cv-entry-degree"><strong>M.S.</strong> Mechanical Engineering</span>
+                <span class="cv-entry-date">August 2016</span>
+              </span>
             </div>
-            <p><strong>M.S.</strong> Mechanical Engineering</p>
+
             <p class="cv-detail">Thesis: Mechanical testing of fused filament 3-D printed components for distributed manufacturing</p>
           </div>
 
           <div class="cv-entry">
             <div class="cv-entry-header">
-              <span class="cv-entry-title"><img src="{{site.url}}{{site.baseurl}}/docs/cv/Logos/NMIT.jpeg" alt="NMIT" class="inline-logo"> NMIT, Bangalore, India</span>
-              <span class="cv-entry-date">August 2014</span>
+              <span class="cv-entry-title">
+                <img src="{{site.url}}{{site.baseurl}}/docs/cv/Logos/NMIT.jpeg" alt="NMIT" class="inline-logo">
+                NMIT, Bangalore, India
+              </span>
+              <span class="cv-entry-meta">
+                <span class="cv-entry-degree"><strong>B.E.</strong> Mechanical Engineering</span>
+                <span class="cv-entry-date">August 2014</span>
+              </span>
             </div>
-            <p><strong>B.E.</strong> Mechanical Engineering</p>
           </div>
+
         </div>
       </div>
     </section>
@@ -108,11 +125,14 @@ permalink: /CV
         <div class="cv-section-heading">
           <h2 class="cv-section-title">Research Experience</h2>
         </div>
-
         <div class="cv-section-body">
+
           <div class="cv-entry">
             <div class="cv-entry-header">
-              <span class="cv-entry-title"><img src="{{site.url}}{{site.baseurl}}/images/experience/uidaho.png" alt="University of Idaho" class="inline-logo"> <strong>University of Idaho</strong> — Graduate Research Assistant</span>
+              <span class="cv-entry-title">
+                <img src="{{site.url}}{{site.baseurl}}/images/experience/uidaho.png" alt="University of Idaho" class="inline-logo">
+                <strong>University of Idaho</strong> — Graduate Research Assistant
+              </span>
               <span class="cv-entry-date">June 2022 – Present</span>
             </div>
             <ul class="cv-bullets">
@@ -125,7 +145,10 @@ permalink: /CV
 
           <div class="cv-entry">
             <div class="cv-entry-header">
-              <span class="cv-entry-title"><img src="{{site.url}}{{site.baseurl}}/images/experience/ornl.png" alt="Oak Ridge National Laboratory" class="inline-logo"> <strong>Oak Ridge National Laboratory</strong> — Research Intern</span>
+              <span class="cv-entry-title">
+                <img src="{{site.url}}{{site.baseurl}}/images/experience/ornl.png" alt="Oak Ridge National Laboratory" class="inline-logo">
+                <strong>Oak Ridge National Laboratory</strong> — Research Intern
+              </span>
               <span class="cv-entry-date">May 2024 – August 2024</span>
             </div>
             <ul class="cv-bullets">
@@ -137,7 +160,10 @@ permalink: /CV
 
           <div class="cv-entry">
             <div class="cv-entry-header">
-              <span class="cv-entry-title"><img src="{{site.url}}{{site.baseurl}}/images/experience/mtu.png" alt="Michigan Technological University" class="inline-logo"> <strong>Michigan Technological University</strong> — Graduate Research Assistant</span>
+              <span class="cv-entry-title">
+                <img src="{{site.url}}{{site.baseurl}}/images/experience/mtu.png" alt="Michigan Technological University" class="inline-logo">
+                <strong>Michigan Technological University</strong> — Graduate Research Assistant
+              </span>
               <span class="cv-entry-date">April 2016 – May 2022</span>
             </div>
             <ul class="cv-bullets">
@@ -149,6 +175,7 @@ permalink: /CV
               <li>Developed a novel composite via injection molding from waste Acrylonitrile Styrene Acrylate (ASA) and hazardous stamp sand (40% mass) that achieved a tensile strength comparable to virgin ABS, offering a remediation strategy for 500M tons of toxic waste.</li>
             </ul>
           </div>
+
         </div>
       </div>
     </section>
@@ -161,8 +188,8 @@ permalink: /CV
         <div class="cv-section-heading">
           <h2 class="cv-section-title">Teaching &amp; Mentoring</h2>
         </div>
-
         <div class="cv-section-body">
+
           <div class="cv-entry">
             <div class="cv-entry-header">
               <span class="cv-entry-title"><strong>ME 4240 / ME 4260 — Capstone Mentoring</strong></span>
@@ -199,6 +226,7 @@ permalink: /CV
               <li>Coached prospective students on the basics of 3-D printing and mechanical design. Provided hands-on learning experience with 3-D printers and CAD projects (2020–2021)</li>
             </ul>
           </div>
+
         </div>
       </div>
     </section>
@@ -211,7 +239,6 @@ permalink: /CV
         <div class="cv-section-heading">
           <h2 class="cv-section-title">Publications</h2>
         </div>
-
         <div class="cv-section-body">
           <div class="cv-entry">
             <ol class="cv-pub-list">
@@ -239,7 +266,7 @@ permalink: /CV
               <li><a href="https://doi.org/10.3390/ma13194273" target="_blank">Towards distributed recycling with additive manufacturing of PET flake feedstocks</a> (2020)<br>
               <span class="cv-authors">HA Little, <strong>NG Tanikella</strong>, MJ Reich, MJ Fiedler, SL Snabes, JM Pearce. <em>Materials</em> 13 (19), 4273</span></li>
 
-              <li><a href="https://doi.org/10.1016/j.susmat.2020.e00169" target="_blank">Potential of distributed recycling from hybrid manufacturing of 3-D printing and injection molding of stamp sand and acrylonitrile styrene acrylate waste composite</a> (2020)<br>
+              <li><a href="https://doi.org/10.1016/j.susmat.2020.e00169" target="_blank">Potential of distributed recycling from hybrid manufacturing of 3-D printing and injection molding of stamp sand and acrylonitrile styrene acrylylate waste composite</a> (2020)<br>
               <span class="cv-authors">TK Meyer, <strong>NG Tanikella</strong>, MJ Reich, JM Pearce. <em>Sustainable Materials and Technologies</em> 25, e00169</span></li>
 
               <li><a href="https://doi.org/10.1016/j.resconrec.2020.104810" target="_blank">Technical pathways for distributed recycling of polymer composites for distributed manufacturing: Windshield wiper blades</a> (2020)<br>
@@ -267,7 +294,6 @@ permalink: /CV
         <div class="cv-section-heading">
           <h2 class="cv-section-title">Skills</h2>
         </div>
-
         <div class="cv-section-body">
           <div class="cv-entry">
             <h4>Material Characterization</h4>
@@ -291,7 +317,6 @@ permalink: /CV
         <div class="cv-section-heading">
           <h2 class="cv-section-title">Service &amp; Outreach</h2>
         </div>
-
         <div class="cv-section-body">
           <div class="cv-entry">
             <h4>Peer Review</h4>
@@ -312,7 +337,6 @@ permalink: /CV
         <div class="cv-section-heading">
           <h2 class="cv-section-title">References</h2>
         </div>
-
         <div class="cv-section-body">
           <div class="cv-references-grid">
             <div class="cv-ref">

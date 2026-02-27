@@ -1,33 +1,19 @@
 /* =========================
-   CV PAGE — sticky per-section title (no TOC)
+   CV PAGE — default layout
+   Sticky per-section title (no TOC)
    ========================= */
 
-/* IMPORTANT:
-   position: sticky will NOT work if any ancestor has:
-   - overflow: hidden / auto / scroll
-   - transform: translateZ(0) / any transform
-   We can’t control all site-wide containers here, but we can make
-   CV-specific wrappers safe.
-*/
-.cv-layout,
-.cv-content,
-.cv-section,
-.cv-section-grid,
-.cv-section-heading,
-.cv-section-body {
-  overflow: visible;
-}
-
-/* Layout wrapper */
+/* Make sure sticky can work */
 .cv-layout {
-  display: block;     /* no sidebar nav */
+  display: block;
+  overflow: visible; /* sticky needs this */
 }
 
 .cv-content {
   width: 100%;
 }
 
-/* 2-column section layout: title left, content right */
+/* 2-column per-section grid: title left, content right */
 .cv-section-grid {
   display: grid;
   grid-template-columns: 220px 1fr;
@@ -35,20 +21,19 @@
   align-items: start;
 }
 
-/* Left column */
 .cv-section-heading {
   min-width: 0;
 }
 
-/* Sticky section title */
 .cv-section-title {
   margin: 0;
   position: sticky;
-  top: 90px;          /* adjust if your header height differs */
+  top: 96px; /* below fixed navbar + some breathing room */
   align-self: start;
+  z-index: 2;
 }
 
-/* Right column */
+/* Right column content only */
 .cv-section-body {
   min-width: 0;
 }
@@ -60,10 +45,13 @@
   margin: 24px 0;
 }
 
-/* ---------------------------------
-   Entries (jobs, degrees, etc.)
----------------------------------- */
+/* Tighter, cleaner text spacing in CV area */
+.cv-section-body p {
+  margin: 0 0 6px 0;
+  text-align: left;
+}
 
+/* Individual entries (jobs, degrees) */
 .cv-entry {
   margin-bottom: 18px;
 }
@@ -72,56 +60,44 @@
   margin-bottom: 0;
 }
 
-/* Tighten default paragraph spacing inside entries */
-.cv-entry p {
-  margin: 6px 0;
-}
-
-/* Header row within an entry (title left, meta right) */
+/* Title + Date on one line (desktop) */
 .cv-entry-header {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  flex-wrap: nowrap;     /* IMPORTANT: keep one line on desktop */
   gap: 12px;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
-/* Left side text */
 .cv-entry-title {
+  min-width: 0;          /* allow shrinking instead of wrapping the date */
   font-size: 1em;
   color: #111;
-  min-width: 0;
 }
 
-/* Right-side meta (degree + date on same row when used) */
-.cv-entry-meta {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 14px;
-  white-space: nowrap;
-}
-
-.cv-entry-degree {
-  font-size: 0.95em;
-  color: #222;
-}
-
-/* Date styling */
-.cv-entry-date {
-  font-size: 0.88em;
-  color: #666;
+.cv-entry-role {
   font-weight: 600;
-  white-space: nowrap;
+  color: #111;
 }
 
-/* Thesis/details */
+.cv-entry-date {
+  flex: 0 0 auto;
+  font-size: 0.9em;
+  color: #666;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+/* Thesis / small detail line */
 .cv-detail {
+  margin: 4px 0 0 0;
   font-size: 0.92em;
   color: #555;
   font-style: italic;
 }
 
-/* Bullet points */
+/* Bullets in CV */
 .cv-bullets {
   margin: 8px 0 0 0;
   padding-left: 20px;
@@ -133,7 +109,7 @@
   line-height: 1.5;
 }
 
-/* Publications list */
+/* Publication list */
 .cv-pub-list {
   margin: 0;
   padding-left: 24px;
@@ -173,34 +149,25 @@
   margin-top: 0;
 }
 
-/* ---------------------------------
-   Mobile: stacked layout + sticky title at top
----------------------------------- */
+/* ---- Mobile: single column; section title becomes sticky at top ---- */
 @media (max-width: 800px) {
   .cv-section-grid {
     grid-template-columns: 1fr;
     row-gap: 12px;
   }
 
-  /* On mobile, sticky title becomes a top "section header" bar */
   .cv-section-title {
-    top: 120px; /* adjust if mobile header height differs */
+    top: 120px; /* below wrapped mobile navbar */
     z-index: 50;
     padding: 8px 0;
     background: #fff;
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   }
 
-  /* Entry headers stack */
+  /* On mobile, it’s fine if title/date wrap */
   .cv-entry-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2px;
-  }
-
-  .cv-entry-meta {
-    white-space: normal; /* allow wrap on small screens */
-    gap: 10px;
+    flex-wrap: wrap;
+    gap: 4px 10px;
   }
 
   .cv-references-grid {

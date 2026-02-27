@@ -19,6 +19,7 @@ permalink: /CV
         <div class="cv-section-heading">
           <h2 class="cv-section-title">Professional Profiles</h2>
         </div>
+
         <div class="cv-section-body">
           <table class="social-icons-table">
             <tr>
@@ -42,6 +43,7 @@ permalink: /CV
         <div class="cv-section-heading">
           <h2 class="cv-section-title">Expertise</h2>
         </div>
+
         <div class="cv-section-body">
           <div class="cv-entry">
             <p><strong>Materials Science:</strong> Polymer &amp; ceramic composites, natural fiber reinforcement, rheology, and material characterization.</p>
@@ -61,18 +63,16 @@ permalink: /CV
         <div class="cv-section-heading">
           <h2 class="cv-section-title">Education</h2>
         </div>
+
         <div class="cv-section-body">
 
           <div class="cv-entry">
             <div class="cv-entry-header">
               <span class="cv-entry-title">
                 <img src="{{site.url}}{{site.baseurl}}/images/experience/uidaho.png" alt="University of Idaho" class="inline-logo">
-                University of Idaho
+                University of Idaho — <span class="cv-entry-role">Ph.D. Mechanical Engineering</span>
               </span>
-              <span class="cv-entry-meta">
-                <span class="cv-entry-degree"><strong>Ph.D.</strong> Mechanical Engineering</span>
-                <span class="cv-entry-date">December 2025</span>
-              </span>
+              <span class="cv-entry-date">December 2025</span>
             </div>
             <p class="cv-detail">Thesis: Hemp reinforcement for improved strength of Wood Sodium Silicate composites for additive manufacturing</p>
           </div>
@@ -81,22 +81,20 @@ permalink: /CV
             <div class="cv-entry-header">
               <span class="cv-entry-title">
                 <img src="{{site.url}}{{site.baseurl}}/images/experience/mtu.png" alt="Michigan Technological University" class="inline-logo">
-                Michigan Technological University
+                Michigan Technological University — <span class="cv-entry-role">M.E. Materials Science</span>
               </span>
-              <span class="cv-entry-meta">
-                <span class="cv-entry-degree"><strong>M.E.</strong> Material Science</span>
-                <span class="cv-entry-date">December 2021</span>
-              </span>
+              <span class="cv-entry-date">December 2021</span>
             </div>
+          </div>
 
+          <div class="cv-entry">
             <div class="cv-entry-header">
-              <span class="cv-entry-title"></span>
-              <span class="cv-entry-meta">
-                <span class="cv-entry-degree"><strong>M.S.</strong> Mechanical Engineering</span>
-                <span class="cv-entry-date">August 2016</span>
+              <span class="cv-entry-title">
+                <img src="{{site.url}}{{site.baseurl}}/images/experience/mtu.png" alt="Michigan Technological University" class="inline-logo">
+                Michigan Technological University — <span class="cv-entry-role">M.S. Mechanical Engineering</span>
               </span>
+              <span class="cv-entry-date">August 2016</span>
             </div>
-
             <p class="cv-detail">Thesis: Mechanical testing of fused filament 3-D printed components for distributed manufacturing</p>
           </div>
 
@@ -104,12 +102,9 @@ permalink: /CV
             <div class="cv-entry-header">
               <span class="cv-entry-title">
                 <img src="{{site.url}}{{site.baseurl}}/docs/cv/Logos/NMIT.jpeg" alt="NMIT" class="inline-logo">
-                NMIT, Bangalore, India
+                NMIT, Bangalore, India — <span class="cv-entry-role">B.E. Mechanical Engineering</span>
               </span>
-              <span class="cv-entry-meta">
-                <span class="cv-entry-degree"><strong>B.E.</strong> Mechanical Engineering</span>
-                <span class="cv-entry-date">August 2014</span>
-              </span>
+              <span class="cv-entry-date">August 2014</span>
             </div>
           </div>
 
@@ -125,6 +120,7 @@ permalink: /CV
         <div class="cv-section-heading">
           <h2 class="cv-section-title">Research Experience</h2>
         </div>
+
         <div class="cv-section-body">
 
           <div class="cv-entry">
@@ -188,6 +184,7 @@ permalink: /CV
         <div class="cv-section-heading">
           <h2 class="cv-section-title">Teaching &amp; Mentoring</h2>
         </div>
+
         <div class="cv-section-body">
 
           <div class="cv-entry">
@@ -239,46 +236,47 @@ permalink: /CV
         <div class="cv-section-heading">
           <h2 class="cv-section-title">Publications</h2>
         </div>
+
         <div class="cv-section-body">
           <div class="cv-entry">
             <ol class="cv-pub-list">
               <li>Development of continuous natural-fiber reinforcement in thermoset additive manufacturing <em>(In preparation)</em><br>
               <span class="cv-authors"><strong>NG Tanikella</strong>, AG McDonald, MR Maughan.</span></li>
 
-              <li><a href="https://doi.org/10.3390/ma19020357" target="_blank">Optimizing Wood-Hemp-Sodium Silicate Composites for Strength, Extrudability, and Cost in Additive Manufacturing Applications</a> (2026)<br>
+              <li><a href="https://doi.org/10.3390/ma19020357" target="_blank" rel="noopener">Optimizing Wood-Hemp-Sodium Silicate Composites for Strength, Extrudability, and Cost in Additive Manufacturing Applications</a> (2026)<br>
               <span class="cv-authors"><strong>NG Tanikella</strong>, AG McDonald, MR Maughan. <em>Materials</em> 19 (2), 357</span></li>
 
-              <li><a href="https://doi.org/10.3390/polym17182478" target="_blank">Extrudability and mechanical properties of wood-sodium silicate composites with hemp fiber reinforcement for 3D printing</a> (2025)<br>
+              <li><a href="https://doi.org/10.3390/polym17182478" target="_blank" rel="noopener">Extrudability and mechanical properties of wood-sodium silicate composites with hemp fiber reinforcement for 3D printing</a> (2025)<br>
               <span class="cv-authors"><strong>NG Tanikella</strong>, AM Lehman-Chong, AG McDonald, MR Maughan. <em>Polymers</em> 17(18), 2478</span></li>
 
-              <li><a href="https://doi.org/10.1016/j.jclepro.2020.124476" target="_blank">Conceptual Design and Rationale for a New Agrivoltaics Concept: Pasture-Raised Rabbits and Solar Farming</a> (2021)<br>
+              <li><a href="https://doi.org/10.1016/j.jclepro.2020.124476" target="_blank" rel="noopener">Conceptual Design and Rationale for a New Agrivoltaics Concept: Pasture-Raised Rabbits and Solar Farming</a> (2021)<br>
               <span class="cv-authors">W Lytle, TK Meyer, <strong>NG Tanikella</strong>, L Burnham, J Engel, C Schelly, ... <em>Journal of Cleaner Production</em> 282, 124476</span></li>
 
-              <li><a href="https://doi.org/10.1016/j.ohx.2020.e00131" target="_blank">Partially RepRapable automated open-source bag valve mask-based ventilator</a> (2020)<br>
+              <li><a href="https://doi.org/10.1016/j.ohx.2020.e00131" target="_blank" rel="noopener">Partially RepRapable automated open-source bag valve mask-based ventilator</a> (2020)<br>
               <span class="cv-authors">A Petsiuk, <strong>NG Tanikella</strong>, S Dertinger, A Pringle, S Oberloier, JM Pearce. <em>HardwareX</em> 8, e00131</span></li>
 
-              <li><a href="https://doi.org/10.1016/j.ohx.2020.e00130" target="_blank">Open source high-temperature RepRap for 3-D printing heat-sterilizable PPE and other applications</a> (2020)<br>
+              <li><a href="https://doi.org/10.1016/j.ohx.2020.e00130" target="_blank" rel="noopener">Open source high-temperature RepRap for 3-D printing heat-sterilizable PPE and other applications</a> (2020)<br>
               <span class="cv-authors">NG Skrzypczak, <strong>NG Tanikella</strong>, JM Pearce. <em>HardwareX</em> 8, e00130</span></li>
 
-              <li><a href="https://doi.org/10.1016/j.ohx.2020.e00135" target="_blank">Parametric nasopharyngeal swab for sampling COVID-19 and other respiratory viruses: Open-source design, SLA 3-D printing and UV curing system</a> (2020)<br>
+              <li><a href="https://doi.org/10.1016/j.ohx.2020.e00135" target="_blank" rel="noopener">Parametric nasopharyngeal swab for sampling COVID-19 and other respiratory viruses: Open-source design, SLA 3-D printing and UV curing system</a> (2020)<br>
               <span class="cv-authors">N Gallup, AM Pringle, S Oberloier, <strong>NG Tanikella</strong>, JM Pearce. <em>HardwareX</em> 8, e00135</span></li>
 
-              <li><a href="https://doi.org/10.3390/ma13194273" target="_blank">Towards distributed recycling with additive manufacturing of PET flake feedstocks</a> (2020)<br>
+              <li><a href="https://doi.org/10.3390/ma13194273" target="_blank" rel="noopener">Towards distributed recycling with additive manufacturing of PET flake feedstocks</a> (2020)<br>
               <span class="cv-authors">HA Little, <strong>NG Tanikella</strong>, MJ Reich, MJ Fiedler, SL Snabes, JM Pearce. <em>Materials</em> 13 (19), 4273</span></li>
 
-              <li><a href="https://doi.org/10.1016/j.susmat.2020.e00169" target="_blank">Potential of distributed recycling from hybrid manufacturing of 3-D printing and injection molding of stamp sand and acrylonitrile styrene acrylylate waste composite</a> (2020)<br>
+              <li><a href="https://doi.org/10.1016/j.susmat.2020.e00169" target="_blank" rel="noopener">Potential of distributed recycling from hybrid manufacturing of 3-D printing and injection molding of stamp sand and acrylonitrile styrene acrylate waste composite</a> (2020)<br>
               <span class="cv-authors">TK Meyer, <strong>NG Tanikella</strong>, MJ Reich, JM Pearce. <em>Sustainable Materials and Technologies</em> 25, e00169</span></li>
 
-              <li><a href="https://doi.org/10.1016/j.resconrec.2020.104810" target="_blank">Technical pathways for distributed recycling of polymer composites for distributed manufacturing: Windshield wiper blades</a> (2020)<br>
+              <li><a href="https://doi.org/10.1016/j.resconrec.2020.104810" target="_blank" rel="noopener">Technical pathways for distributed recycling of polymer composites for distributed manufacturing: Windshield wiper blades</a> (2020)<br>
               <span class="cv-authors">SC Dertinger, N Gallup, <strong>NG Tanikella</strong>, M Grasso, S Vahid, PJS Foot, ... <em>Resources, Conservation and Recycling</em> 157, 104810</span></li>
 
-              <li><a href="https://doi.org/10.3390/ma12101642" target="_blank">Mechanical properties and applications of recycled polycarbonate particle material extrusion-based additive manufacturing</a> (2019)<br>
+              <li><a href="https://doi.org/10.3390/ma12101642" target="_blank" rel="noopener">Mechanical properties and applications of recycled polycarbonate particle material extrusion-based additive manufacturing</a> (2019)<br>
               <span class="cv-authors">MJ Reich, AL Woern, <strong>NG Tanikella</strong>, JM Pearce. <em>Materials</em> 12 (10), 1642</span></li>
 
-              <li><a href="https://hal.science/hal-02113455/document" target="_blank">Viability of distributed manufacturing of bicycle components with 3-D printing</a> (2017)<br>
+              <li><a href="https://hal.science/hal-02113455/document" target="_blank" rel="noopener">Viability of distributed manufacturing of bicycle components with 3-D printing</a> (2017)<br>
               <span class="cv-authors"><strong>NG Tanikella</strong>, J Gershenson, B Savonen, JM Pearce. <em>Journal of Humanitarian Engineering</em></span></li>
 
-              <li><a href="https://doi.org/10.1016/j.addma.2017.03.005" target="_blank">Tensile strength of commercial polymer materials for fused filament fabrication 3D printing</a> (2017)<br>
+              <li><a href="https://doi.org/10.1016/j.addma.2017.03.005" target="_blank" rel="noopener">Tensile strength of commercial polymer materials for fused filament fabrication 3D printing</a> (2017)<br>
               <span class="cv-authors"><strong>NG Tanikella</strong>, B Wittbrodt, JM Pearce. <em>Additive Manufacturing</em> 15, 40-47</span></li>
             </ol>
           </div>
@@ -294,6 +292,7 @@ permalink: /CV
         <div class="cv-section-heading">
           <h2 class="cv-section-title">Skills</h2>
         </div>
+
         <div class="cv-section-body">
           <div class="cv-entry">
             <h4>Material Characterization</h4>
@@ -317,6 +316,7 @@ permalink: /CV
         <div class="cv-section-heading">
           <h2 class="cv-section-title">Service &amp; Outreach</h2>
         </div>
+
         <div class="cv-section-body">
           <div class="cv-entry">
             <h4>Peer Review</h4>
@@ -337,6 +337,7 @@ permalink: /CV
         <div class="cv-section-heading">
           <h2 class="cv-section-title">References</h2>
         </div>
+
         <div class="cv-section-body">
           <div class="cv-references-grid">
             <div class="cv-ref">

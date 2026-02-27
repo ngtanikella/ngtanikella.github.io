@@ -66,176 +66,186 @@ permalink: /CV
 
     <hr class="cv-divider">
 
-    <!-- EDUCATION -->
-    <section id="education" class="cv-section">
-      <div class="cv-section-grid">
-        <div class="cv-section-heading">
-          <h2 class="cv-section-title">Education</h2>
+<!-- EDUCATION -->
+<section id="education" class="cv-section">
+  <div class="cv-section-grid">
+    <div class="cv-section-heading">
+      <h2 class="cv-section-title">Education</h2>
+    </div>
+
+    <div class="cv-section-body">
+
+      <div class="cv-entry">
+        <div class="cv-entry-header cv-entry-header-3col">
+          <span class="cv-entry-left">
+            <img src="{{site.url}}{{site.baseurl}}/images/experience/uidaho.png" alt="University of Idaho" class="inline-logo">
+            University of Idaho
+          </span>
+          <span class="cv-entry-mid">- Ph.D. Mechanical Engineering</span>
+          <span class="cv-entry-date">December 2025</span>
         </div>
+        <p class="cv-detail">Thesis: Hemp reinforcement for improved strength of Wood Sodium Silicate composites for additive manufacturing</p>
+      </div>
 
-        <div class="cv-section-body">
-
-          <div class="cv-entry">
-            <div class="cv-entry-header">
-              <span class="cv-entry-title">
-                <img src="{{site.url}}{{site.baseurl}}/images/experience/uidaho.png" alt="University of Idaho" class="inline-logo">
-                University of Idaho - <span class="cv-entry-role">Ph.D. Mechanical Engineering</span>
-              </span>
-              <span class="cv-entry-date">December 2025</span>
-            </div>
-            <p class="cv-detail">Thesis: Hemp reinforcement for improved strength of Wood Sodium Silicate composites for additive manufacturing</p>
-          </div>
-
-          <div class="cv-entry">
-            <div class="cv-entry-header">
-              <span class="cv-entry-title">
-                <img src="{{site.url}}{{site.baseurl}}/images/experience/mtu.png" alt="Michigan Technological University" class="inline-logo">
-                Michigan Technological University - <span class="cv-entry-role">M.E. Materials Science</span>
-              </span>
-              <span class="cv-entry-date">December 2021</span>
-            </div>
-          </div>
-
-          <div class="cv-entry">
-            <div class="cv-entry-header">
-              <span class="cv-entry-title">
-                <img src="{{site.url}}{{site.baseurl}}/images/experience/mtu.png" alt="Michigan Technological University" class="inline-logo">
-                Michigan Technological University - <span class="cv-entry-role">M.S. Mechanical Engineering</span>
-              </span>
-              <span class="cv-entry-date">August 2016</span>
-            </div>
-            <p class="cv-detail">Thesis: Mechanical testing of fused filament 3-D printed components for distributed manufacturing</p>
-          </div>
-
-          <div class="cv-entry">
-            <div class="cv-entry-header">
-              <span class="cv-entry-title">
-                <img src="{{site.url}}{{site.baseurl}}/docs/cv/Logos/NMIT.jpeg" alt="NMIT" class="inline-logo">
-                NMIT, Bangalore, India - <span class="cv-entry-role">B.E. Mechanical Engineering</span>
-              </span>
-              <span class="cv-entry-date">August 2014</span>
-            </div>
-          </div>
-
+      <div class="cv-entry">
+        <div class="cv-entry-header cv-entry-header-3col">
+          <span class="cv-entry-left">
+            <img src="{{site.url}}{{site.baseurl}}/images/experience/mtu.png" alt="Michigan Technological University" class="inline-logo">
+            Michigan Technological University
+          </span>
+          <span class="cv-entry-mid">- M.E. Materials Science</span>
+          <span class="cv-entry-date">December 2021</span>
         </div>
       </div>
-    </section>
 
-    <hr class="cv-divider">
-
-    <!-- RESEARCH EXPERIENCE -->
-    <section id="research" class="cv-section">
-      <div class="cv-section-grid">
-        <div class="cv-section-heading">
-          <h2 class="cv-section-title">Research Experience</h2>
+      <div class="cv-entry">
+        <div class="cv-entry-header cv-entry-header-3col">
+          <span class="cv-entry-left">
+            <img src="{{site.url}}{{site.baseurl}}/images/experience/mtu.png" alt="Michigan Technological University" class="inline-logo">
+            Michigan Technological University
+          </span>
+          <span class="cv-entry-mid">- M.S. Mechanical Engineering</span>
+          <span class="cv-entry-date">August 2016</span>
         </div>
+        <p class="cv-detail">Thesis: Mechanical testing of fused filament 3-D printed components for distributed manufacturing</p>
+      </div>
 
-        <div class="cv-section-body">
-
-          <div class="cv-entry">
-            <div class="cv-entry-header">
-              <span class="cv-entry-title">
-                <img src="{{site.url}}{{site.baseurl}}/images/experience/uidaho.png" alt="University of Idaho" class="inline-logo">
-                <strong>University of Idaho</strong> - Graduate Research Assistant
-              </span>
-              <span class="cv-entry-date">June 2022 - Present</span>
-            </div>
-            <ul class="cv-bullets">
-              <li>Analyzed mechanical and rheological properties of 80+ wood-sodium silicate composite samples for additive manufacturing, optimized formulation for extrudability, strength, and cost.</li>
-              <li>Engineered a hemp-reinforced wood composite for use in manufactured housing, increasing flexural strength by 32%, and compression strength by 118%.</li>
-              <li>Designed and manufactured (SolidWorks, CNC Mill) a novel extruder system to process continuous fiber, increasing the tensile strength of 3D printed parts by 53%.</li>
-              <li>Collaborated with Forestry and Chemistry departments to identify a sustainable bio-resin for additive manufacturing, conducting material characterization (pycnometer, rheometer, X-ray Tomography, FTIR), successfully identified wood-oil as a viable material.</li>
-            </ul>
-          </div>
-
-          <div class="cv-entry">
-            <div class="cv-entry-header">
-              <span class="cv-entry-title">
-                <img src="{{site.url}}{{site.baseurl}}/images/experience/ornl.png" alt="Oak Ridge National Laboratory" class="inline-logo">
-                <strong>Oak Ridge National Laboratory</strong> - Research Intern
-              </span>
-              <span class="cv-entry-date">May 2024 - August 2024</span>
-            </div>
-            <ul class="cv-bullets">
-              <li>Resolved stability issues for Direct Ink Writing (DIW) and Digital Light Processing (DLP) printing by analyzing the Zeta potential of zeolite and alumina solutions across pH levels, resulting in consistent, defect-free printing.</li>
-              <li>Assessed and optimized curing depths for Blank-C solutions containing up to 34 Vol% zeolite catalysts.</li>
-              <li>Implemented a new inventory system for research materials (Darvan821, PVP, PVA), achieving 100% material availability to eliminate research delays and ensuring full MSDS compliance.</li>
-            </ul>
-          </div>
-
-          <div class="cv-entry">
-            <div class="cv-entry-header">
-              <span class="cv-entry-title">
-                <img src="{{site.url}}{{site.baseurl}}/images/experience/mtu.png" alt="Michigan Technological University" class="inline-logo">
-                <strong>Michigan Technological University</strong> - Graduate Research Assistant
-              </span>
-              <span class="cv-entry-date">April 2016 - May 2022</span>
-            </div>
-            <ul class="cv-bullets">
-              <li>Designed and tested a novel cooling system for Re3D's Gigabot-X 3D printer, resulting in a 30% reduction in print failures and improved quality of 3D-printed components using recycled PET.</li>
-              <li>Authored a comprehensive database for 20+ Fused Filament Fabrication (FFF) materials for Aleph Objects by developing a Design of Experiments (DOE), and a two-step quality control protocol that enhanced functional output.</li>
-              <li>Innovated an open-source ventilator through teamwork with individuals from diverse disciplines, including biology, electronics, and electrical engineering.</li>
-              <li>Led a 4-person team to deliver 100+ face shields during the COVID-19 crisis, managing all project logistics from 24/7 shift scheduling and safety compliance to final product quality assurance.</li>
-              <li>Utilized XRD analysis to identify the crystallinity of Polylactic Acid (PLA)-Graphite composite polymers.</li>
-              <li>Developed a novel composite via injection molding from waste Acrylonitrile Styrene Acrylate (ASA) and hazardous stamp sand (40% mass) that achieved a tensile strength comparable to virgin ABS, offering a remediation strategy for 500M tons of toxic waste.</li>
-            </ul>
-          </div>
-
+      <div class="cv-entry">
+        <div class="cv-entry-header cv-entry-header-3col">
+          <span class="cv-entry-left">
+            <img src="{{site.url}}{{site.baseurl}}/docs/cv/Logos/NMIT.jpeg" alt="NMIT" class="inline-logo">
+            NMIT, Bangalore, India
+          </span>
+          <span class="cv-entry-mid">- B.E. Mechanical Engineering</span>
+          <span class="cv-entry-date">August 2014</span>
         </div>
       </div>
-    </section>
 
-    <hr class="cv-divider">
+    </div>
+  </div>
+</section>
 
-    <!-- TEACHING AND MENTORING -->
-    <section id="teaching" class="cv-section">
-      <div class="cv-section-grid">
-        <div class="cv-section-heading">
-          <h2 class="cv-section-title">Teaching &amp; Mentoring</h2>
+<hr class="cv-divider">
+
+<!-- RESEARCH EXPERIENCE -->
+<section id="research" class="cv-section">
+  <div class="cv-section-grid">
+    <div class="cv-section-heading">
+      <h2 class="cv-section-title">Research Experience</h2>
+    </div>
+
+    <div class="cv-section-body">
+
+      <div class="cv-entry">
+        <div class="cv-entry-header cv-entry-header-3col">
+          <span class="cv-entry-left">
+            <img src="{{site.url}}{{site.baseurl}}/images/experience/uidaho.png" alt="University of Idaho" class="inline-logo">
+            <strong>University of Idaho</strong>
+          </span>
+          <span class="cv-entry-mid">- Graduate Research Assistant</span>
+          <span class="cv-entry-date">June 2022 - Present</span>
         </div>
-
-        <div class="cv-section-body">
-
-          <div class="cv-entry">
-            <div class="cv-entry-header">
-              <span class="cv-entry-title"><strong>ME 4240 / ME 4260 — Capstone Mentoring</strong></span>
-              <span class="cv-entry-date">Fall 2022 – Spring 2025 (6 Semesters)</span>
-            </div>
-            <p>Mentored 9 capstone projects (40+ senior-year students) from concept to completion by providing hands-on training in CAD, Design for Manufacturing (DfM), Laser Cutting, and CNC machining.</p>
-            <ul class="cv-bullets">
-              <li>Provided laser cutting training, administering certification exams to ensure safe and proficient equipment use</li>
-              <li>Trained students on Manual and CNC mill/lathe and supervised safe usage</li>
-              <li>Presented "Introduction to 3D Printing" seminar to senior year mechanical engineering cohort (100+ students), demonstrating safe operation and best practices for additive manufacturing</li>
-              <li>Enforced machine shop safety, PPE compliance and maintenance protocols</li>
-            </ul>
-          </div>
-
-          <div class="cv-entry">
-            <div class="cv-entry-header">
-              <span class="cv-entry-title"><strong>ME 2010, ME 3310 — Statics &amp; Mechanics of Materials</strong></span>
-              <span class="cv-entry-date">Spring 2022 (1 Semester)</span>
-            </div>
-            <p>Led discussion sections for Statics and Mechanics of Materials for 100+ students, focusing on numerical problem solving.</p>
-          </div>
-
-          <div class="cv-entry">
-            <div class="cv-entry-header">
-              <span class="cv-entry-title"><strong>MSE 4777 / MSE 5777 — 3D Printer Assembly</strong></span>
-              <span class="cv-entry-date">Fall 2018 – 2020 (3 Semesters)</span>
-            </div>
-            <p>Trained undergraduate students (class of 60+) with the assembly and troubleshooting of their 3-D Printers.</p>
-          </div>
-
-          <div class="cv-entry">
-            <ul class="cv-bullets">
-              <li>Authored lab reports and developed SOPs for training 10+ peers and students, ensured lab safety rules and regulations (2022–2025)</li>
-              <li>Coached prospective students on the basics of 3-D printing and mechanical design. Provided hands-on learning experience with 3-D printers and CAD projects (2020–2021)</li>
-            </ul>
-          </div>
-
-        </div>
+        <ul class="cv-bullets">
+          <li>Analyzed mechanical and rheological properties of 80+ wood-sodium silicate composite samples for additive manufacturing, optimized formulation for extrudability, strength, and cost.</li>
+          <li>Engineered a hemp-reinforced wood composite for use in manufactured housing, increasing flexural strength by 32%, and compression strength by 118%.</li>
+          <li>Designed and manufactured (SolidWorks, CNC Mill) a novel extruder system to process continuous fiber, increasing the tensile strength of 3D printed parts by 53%.</li>
+          <li>Collaborated with Forestry and Chemistry departments to identify a sustainable bio-resin for additive manufacturing, conducting material characterization (pycnometer, rheometer, X-ray Tomography, FTIR), successfully identified wood-oil as a viable material.</li>
+        </ul>
       </div>
-    </section>
+
+      <div class="cv-entry">
+        <div class="cv-entry-header cv-entry-header-3col">
+          <span class="cv-entry-left">
+            <img src="{{site.url}}{{site.baseurl}}/images/experience/ornl.png" alt="Oak Ridge National Laboratory" class="inline-logo">
+            <strong>Oak Ridge National Laboratory</strong>
+          </span>
+          <span class="cv-entry-mid">- Research Intern</span>
+          <span class="cv-entry-date">May 2024 - August 2024</span>
+        </div>
+        <ul class="cv-bullets">
+          <li>Resolved stability issues for Direct Ink Writing (DIW) and Digital Light Processing (DLP) printing by analyzing the Zeta potential of zeolite and alumina solutions across pH levels, resulting in consistent, defect-free printing.</li>
+          <li>Assessed and optimized curing depths for Blank-C solutions containing up to 34 Vol% zeolite catalysts.</li>
+          <li>Implemented a new inventory system for research materials (Darvan821, PVP, PVA), achieving 100% material availability to eliminate research delays and ensuring full MSDS compliance.</li>
+        </ul>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-entry-header cv-entry-header-3col">
+          <span class="cv-entry-left">
+            <img src="{{site.url}}{{site.baseurl}}/images/experience/mtu.png" alt="Michigan Technological University" class="inline-logo">
+            <strong>Michigan Technological University</strong>
+          </span>
+          <span class="cv-entry-mid">- Graduate Research Assistant</span>
+          <span class="cv-entry-date">April 2016 - May 2022</span>
+        </div>
+        <ul class="cv-bullets">
+          <li>Designed and tested a novel cooling system for Re3D's Gigabot-X 3D printer, resulting in a 30% reduction in print failures and improved quality of 3D-printed components using recycled PET.</li>
+          <li>Authored a comprehensive database for 20+ Fused Filament Fabrication (FFF) materials for Aleph Objects by developing a Design of Experiments (DOE), and a two-step quality control protocol that enhanced functional output.</li>
+          <li>Innovated an open-source ventilator through teamwork with individuals from diverse disciplines, including biology, electronics, and electrical engineering.</li>
+          <li>Led a 4-person team to deliver 100+ face shields during the COVID-19 crisis, managing all project logistics from 24/7 shift scheduling and safety compliance to final product quality assurance.</li>
+          <li>Utilized XRD analysis to identify the crystallinity of Polylactic Acid (PLA)-Graphite composite polymers.</li>
+          <li>Developed a novel composite via injection molding from waste Acrylonitrile Styrene Acrylate (ASA) and hazardous stamp sand (40% mass) that achieved a tensile strength comparable to virgin ABS, offering a remediation strategy for 500M tons of toxic waste.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="cv-divider">
+
+<!-- TEACHING AND MENTORING -->
+<section id="teaching" class="cv-section">
+  <div class="cv-section-grid">
+    <div class="cv-section-heading">
+      <h2 class="cv-section-title">Teaching &amp; Mentoring</h2>
+    </div>
+
+    <div class="cv-section-body">
+
+      <div class="cv-entry">
+        <div class="cv-entry-header cv-entry-header-3col">
+          <span class="cv-entry-left"><strong>ME 4240 / ME 4260</strong></span>
+          <span class="cv-entry-mid">- Capstone Mentoring</span>
+          <span class="cv-entry-date">Fall 2022 – Spring 2025 (6 Semesters)</span>
+        </div>
+        <p>Mentored 9 capstone projects (40+ senior-year students) from concept to completion by providing hands-on training in CAD, Design for Manufacturing (DfM), Laser Cutting, and CNC machining.</p>
+        <ul class="cv-bullets">
+          <li>Provided laser cutting training, administering certification exams to ensure safe and proficient equipment use</li>
+          <li>Trained students on Manual and CNC mill/lathe and supervised safe usage</li>
+          <li>Presented "Introduction to 3D Printing" seminar to senior year mechanical engineering cohort (100+ students), demonstrating safe operation and best practices for additive manufacturing</li>
+          <li>Enforced machine shop safety, PPE compliance and maintenance protocols</li>
+        </ul>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-entry-header cv-entry-header-3col">
+          <span class="cv-entry-left"><strong>ME 2010, ME 3310</strong></span>
+          <span class="cv-entry-mid">- Statics &amp; Mechanics of Materials</span>
+          <span class="cv-entry-date">Spring 2022 (1 Semester)</span>
+        </div>
+        <p>Led discussion sections for Statics and Mechanics of Materials for 100+ students, focusing on numerical problem solving.</p>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-entry-header cv-entry-header-3col">
+          <span class="cv-entry-left"><strong>MSE 4777 / MSE 5777</strong></span>
+          <span class="cv-entry-mid">- 3D Printer Assembly</span>
+          <span class="cv-entry-date">Fall 2018 – 2020 (3 Semesters)</span>
+        </div>
+        <p>Trained undergraduate students (class of 60+) with the assembly and troubleshooting of their 3-D Printers.</p>
+      </div>
+
+      <div class="cv-entry">
+        <ul class="cv-bullets">
+          <li>Authored lab reports and developed SOPs for training 10+ peers and students, ensured lab safety rules and regulations (2022–2025)</li>
+          <li>Coached prospective students on the basics of 3-D printing and mechanical design. Provided hands-on learning experience with 3-D printers and CAD projects (2020–2021)</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
 
     <hr class="cv-divider">
 

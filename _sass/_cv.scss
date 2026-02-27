@@ -79,6 +79,41 @@
   row-gap: 6px;
 }
 
+/* 3-column entry header: left | middle | date (uniform within section) */
+.cv-entry-header-3col {
+  display: grid;
+  grid-template-columns: 1fr 260px max-content; /* middle column is fixed width */
+  column-gap: 12px;
+  align-items: baseline;
+}
+
+.cv-entry-left {
+  min-width: 0;
+}
+
+.cv-entry-mid {
+  white-space: nowrap;
+  font-weight: 600;
+  color: #111;
+}
+
+@media (max-width: 800px) {
+  /* On mobile, allow wrapping */
+  .cv-entry-header-3col {
+    grid-template-columns: 1fr;
+    row-gap: 2px;
+  }
+
+  .cv-entry-mid {
+    white-space: normal;
+  }
+}
+
+
+
+
+
+
 /* Tighter, cleaner text spacing in CV area */
 .cv-section-body p {
   margin: 0 0 6px 0;

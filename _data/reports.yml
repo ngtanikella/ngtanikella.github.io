@@ -13,13 +13,13 @@
     url: https://verso.uidaho.edu/esploro/outputs/doctoral/996869268001851
     display: Dissertation
   link2:
-    url: ../docs/publications/Optimizing Wood–Hemp–Sodium Silicate Composites for Strength, Extrudability, and Cost in Additive Manufacturing Applications.pdf
+    url: /docs/publications/Optimizing Wood-Hemp-Sodium Silicate Composites for Strength, Extrudability, and Cost in Additive Manufacturing Applications.pdf
     display: "Paper: Optimizing Composites"
   link3:
-    url: ../docs/publications/Extrudability and Mechanical Properties of Wood–Sodium Silicate Composites with Hemp Fiber Reinforcement for Additive Manufacturing.pdf
+    url: /docs/publications/Extrudability and Mechanical Properties of Wood-Sodium Silicate Composites with Hemp Fiber Reinforcement for Additive Manufacturing.pdf
     display: "Paper: Extrudability"
   link4:
-    url: ../docs/presentations/Nagendra_Tanikella_Defense.pptx
+    url: /docs/presentations/Nagendra_Tanikella_Defense.pptx
     display: Defense Presentation
 
 - title: "Master's Thesis - Mechanical Testing of Fused Filament 3-D Printed Components for Distributed Manufacturing"
@@ -36,8 +36,8 @@
     url: https://digitalcommons.mtu.edu/etdr/212/
     display: Thesis
   link2:
-    url: ../docs/publications/Tensile strength of commercial polymer materials for fused filament fabrication 3D printing.pdf
+    url: /docs/publications/Tensile strength of commercial polymer materials for fused filament fabrication 3D printing.pdf
     display: "Paper: Tensile Strength"
   link3:
-    url: ../docs/publications/viability of Distributed Manufacturing of Bicycle components with 3-D printing.pdf
+    url: /docs/publications/viability of Distributed Manufacturing of Bicycle components with 3-D printing.pdf
     display: "Paper: Bicycle Components"

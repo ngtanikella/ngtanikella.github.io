@@ -176,14 +176,15 @@ ul li span {
   vertical-align: middle;
 }
 
-/* Social icons row — flexbox for proper wrapping */
+/* Social icons row — 6-column grid */
 .social-icons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
   margin: 10px auto;
+  max-width: 360px;
+  justify-items: center;
+  align-items: center;
 }
 /* Center icon table */
 .icon-table {
@@ -454,7 +455,8 @@ a .fa-github:hover { color: #000000; }
   }
 
   .social-icons {
-    gap: 8px;
+    gap: 12px;
+    max-width: 300px;
   }
 }
 
@@ -492,7 +494,8 @@ a .fa-github:hover { color: #000000; }
   }
 
   .social-icons {
-    gap: 6px;
+    gap: 8px;
+    max-width: 260px;
   }
 
   .publication-picture {

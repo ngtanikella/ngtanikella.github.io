@@ -12,7 +12,7 @@ _2025_
 
 ### Hemp Reinforcement for Improved Strength of Wood Sodium Silicate Composites for Additive Manufacturing
 
-**Ph.D. Defense** [Download Slides (PPTX)]({{site.url}}{{site.baseurl}}/docs/presentations/Nagendra_Tanikella_Defense.pptx){:target="_blank"} [View the page on screen (html)]({{site.url}}{{site.baseurl}}/docs/publications/Ashby_interactive_WFT.html){:target="_blank"}
+**Ph.D. Defense** | [Download Slides (PPTX)]({{site.url}}{{site.baseurl}}/docs/presentations/Nagendra_Tanikella_Defense.pptx){:target="_blank"} | [View the page on screen (html)]({{site.url}}{{site.baseurl}}/docs/publications/Ashby_interactive_WFT.html){:target="_blank"}
 
 <a href="{{site.url}}{{site.baseurl}}/images/presentations/Defense.jpg" target="_blank">
 <img src="{{site.url}}{{site.baseurl}}/images/presentations/Defense.jpg" alt="AIAS Poster" style="max-width:100%; border:1px solid #ccc;">
@@ -40,7 +40,7 @@ _2025_
 _2023_
 ### <a href="https://printimber.org/" target="_blank" rel="noopener">Printimber</a> - Hemp Fiber Reinforcement of Wood-Sodium Silicate Composites
 
-**Poster Presentation** [Download poster (pdf)]({{site.url}}{{site.baseurl}}/docs/presentations/Printimber_poster.pdf){:target="_blank"}
+**Poster Presentation** | [Download poster (pdf)]({{site.url}}{{site.baseurl}}/docs/presentations/Printimber_poster.pdf){:target="_blank"}
 
 <a href="{{site.url}}{{site.baseurl}}/images/presentations/Printimber_poster.jpg" target="_blank">
 <img src="{{site.url}}{{site.baseurl}}/images/presentations/Printimber_poster.jpg" alt="Printimber Poster" style="max-width:100%; border:1px solid #ccc;">

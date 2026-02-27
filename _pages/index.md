@@ -22,7 +22,7 @@ I also mentored senior year students with their [Capstone projects.](https://ngt
 I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both from <img src="{{site.url}}{{site.baseurl}}/images/experience/mtu.png" alt="Michigan Technological University" class="inline-logo">[Michigan Technological University](https://www.mtu.edu/){:target="_blank"}, where I worked on open-source 3D printing, material characterization for Fused Filament Fabrication (FFF), and developed novel composites from recycled and waste materials. I also led rapid-response manufacturing efforts during the COVID-19 crisis and designed an [open-source ventilator.](https://doi.org/10.1016/j.ohx.2020.e00131)
 
 ---
-## News
+## Updates
 
 <div class="news-box" role="region" aria-label="News">
   <ul class="news-list">

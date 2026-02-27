@@ -169,27 +169,31 @@ ul li span {
   width: 400px;
 }
 .social-icon-logo {
-  height: 3.5em !important;
-  width: 3.5em !important;
+  height: 3em !important;
+  width: 3em !important;
   max-width: none !important;
   display: block !important;
   margin: 0 auto;
+  vertical-align: middle;
   object-fit: contain;
 }
 
-/* Social icons row — flexbox for proper wrapping */
-.social-icons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
+/* Social icons table — bordered cells */
+.social-icons-table {
   margin: 10px auto;
+  border-collapse: collapse;
 }
-/* Center icon table */
-.icon-table {
-  display: table;
-  margin: 0 auto;
+
+.social-icons-table td {
+  border: 1px solid darken(#ffffff, 20%);
+  padding: 10px 14px;
+  text-align: center;
+  vertical-align: middle;
+  background: #fff;
+}
+
+.social-icons-table td:hover {
+  background: darken(#ffffff, 5%);
 }
 
 ul#horizontal-list {
@@ -213,7 +217,12 @@ ul#horizontal-list li {
 }
 
 
-
+.modal-media{
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
 
 
 /* Publications */
@@ -449,8 +458,8 @@ a .fa-github:hover { color: #000000; }
     height: 1.8em !important;
   }
 
-  .social-icons {
-    gap: 8px;
+  .social-icons-table td {
+    padding: 8px 10px;
   }
 }
 
@@ -487,8 +496,8 @@ a .fa-github:hover { color: #000000; }
     height: 1.5em !important;
   }
 
-  .social-icons {
-    gap: 6px;
+  .social-icons-table td {
+    padding: 6px 8px;
   }
 
   .publication-picture {

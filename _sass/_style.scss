@@ -439,7 +439,7 @@ a .fa-github:hover { color: #000000; }
     margin: 0 10px 20px 10px;
   }
 
-  table {
+  table:not(.social-icons-table) {
     display: block;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;

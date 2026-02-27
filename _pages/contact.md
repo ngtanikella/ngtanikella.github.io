@@ -29,7 +29,6 @@ permalink: /contact
 
 </div>
 
----
 
 ## Send me a message
 
@@ -63,7 +62,7 @@ permalink: /contact
   <input type="hidden" name="redirect" value="{{site.url}}{{site.baseurl}}/thank-you/">
 </form>
 
-</div>
+
 
 <style>
 .contact-form{

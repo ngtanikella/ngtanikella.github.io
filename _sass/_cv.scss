@@ -160,21 +160,7 @@
     text-align: left;
   }
 }
-/* A row that should span both columns of the dt/dd grid (for bullets/details) */
-.cv-rows dd.cv-span {
-  grid-column: 1 / -1;
-  display: block; /* override dd grid */
-  padding-left: 0;
-}
 
-/* Tighten spacing for span rows */
-.cv-rows dd.cv-span .cv-bullets {
-  margin-top: 6px;
-}
-
-.cv-rows dd.cv-span .cv-detail {
-  margin-top: 6px;
-}
 
 
 

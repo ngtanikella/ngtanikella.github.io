@@ -46,10 +46,19 @@ permalink: /CV
 
         <div class="cv-section-body">
           <div class="cv-entry">
-            <p><strong>Materials Science:</strong> Polymer &amp; ceramic composites, natural fiber reinforcement, rheology, and material characterization.</p>
-            <p><strong>Additive Manufacturing:</strong> DIW, DLP, extrusion 3D printing, and custom open-source hardware design.</p>
-            <p><strong>Statistical Analysis:</strong> Python (statistical modeling, complex visualization) and rigorous experimental design.</p>
-            <p><strong>Leadership:</strong> Undergraduate instruction, capstone team mentorship, and cross-functional project management.</p>
+            dl class="cv-keyvals">
+              dt>Materials Science</dt>
+              <dd>Polymer &amp; ceramic composites, natural fiber reinforcement, rheology, and material characterization.</dd>
+
+              <dt>Additive Manufacturing</dt>
+              <dd>DIW, DLP, extrusion 3D printing, and custom open-source hardware design.</dd>
+
+              <dt>Statistical Analysis</dt>
+              <dd>Python (statistical modeling, complex visualization) and rigorous experimental design.</dd>
+
+              <dt>Leadership</dt>
+              <dd>Undergraduate instruction, capstone team mentorship, and cross-functional project management.</dd>
+            </dl>
           </div>
         </div>
       </div>

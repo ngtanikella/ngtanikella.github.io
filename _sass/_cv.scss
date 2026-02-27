@@ -48,6 +48,37 @@
   margin: 24px 0;
 }
 
+/* Label : value alignment (Expertise section, etc.) */
+.cv-keyvals {
+  display: grid;
+  grid-template-columns: 190px 1fr; /* label width */
+  column-gap: 14px;
+  row-gap: 6px;
+  margin: 0;
+}
+
+.cv-keyvals dt {
+  margin: 0;
+  font-weight: 700;
+  color: #111;
+}
+
+.cv-keyvals dd {
+  margin: 0;
+  color: #111;
+}
+
+/* Add the colon visually (so you don't type it in HTML) */
+.cv-keyvals dt::after {
+  content: ":";
+}
+.cv-keyvals {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: 14px;
+  row-gap: 6px;
+}
+
 /* Tighter, cleaner text spacing in CV area */
 .cv-section-body p {
   margin: 0 0 6px 0;

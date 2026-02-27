@@ -83,7 +83,7 @@ permalink: /CV
             University of Idaho
           </dt>
           <dd>
-            <span class="cv-mid">Ph.D. Mechanical Engineering</span>
+            <span class="cv-mid">          Ph.D. Mechanical Engineering</span>
             <span class="cv-date">December 2025</span>
           </dd>
         </dl>
@@ -124,7 +124,7 @@ permalink: /CV
             NMIT, Bangalore, India
           </dt>
           <dd>
-            <span class="cv-mid">B.E. Mechanical Engineering</span>
+            <span class="cv-mid">         B.E. Mechanical Engineering</span>
             <span class="cv-date">August 2014</span>
           </dd>
         </dl>

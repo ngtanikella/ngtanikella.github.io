@@ -80,54 +80,56 @@
 }
 
 /* =========================
-   Aligned entries using dl/dt/dd (like Expertise)
-   dt = left label, dd = middle+date row
+   Uniform entry alignment (safe, no dl/dt/dd)
+   label (left) defines alignment; middle starts after the widest label
    ========================= */
 
-.cv-rows {
-  /* dt/dd grid: left column auto-sizes to longest label */
+.cv-uniform {
   display: grid;
   grid-template-columns: max-content 1fr;
   column-gap: 12px;
-  row-gap: 8px;
-  margin: 0;
+  row-gap: 12px;
 }
 
-.cv-rows dt,
-.cv-rows dd {
-  margin: 0; /* reset browser defaults */
+/* One entry: header row + optional bullets/details */
+.cv-item {
+  grid-column: 1 / -1;
 }
 
-/* Left label column */
-.cv-rows dt {
-  white-space: nowrap;
-  min-width: 0;
-}
-
-/* Right column contains middle text + date */
-.cv-rows dd {
+/* Header row: left label | right (middle + date) */
+.cv-item-head {
   display: grid;
-  grid-template-columns: 1fr max-content; /* middle | date */
+  grid-template-columns: max-content 1fr;
+  column-gap: 12px;
+  align-items: baseline;
+}
+
+.cv-item-left {
+  white-space: nowrap;
+}
+
+/* Keep your small dash */
+.cv-item-left::after {
+  content: " -";
+}
+
+/* Right side splits into middle text and right-aligned date */
+.cv-item-right {
+  display: grid;
+  grid-template-columns: 1fr max-content;
   column-gap: 12px;
   align-items: baseline;
   min-width: 0;
 }
 
-/* Dash between left and middle (keep your small dash) */
-.cv-rows dt::after {
-  content: " -";
-}
-
-/* Middle text */
-.cv-rows .cv-mid {
+.cv-item-mid {
   font-weight: 600;
   color: #111;
   text-align: left;
   min-width: 0;
 }
 
-/* Date right-aligned */
-.cv-rows .cv-date {
+.cv-item-date {
   white-space: nowrap;
   text-align: right;
   font-size: 0.9em;
@@ -135,32 +137,60 @@
   font-weight: 600;
 }
 
-/* Optional: keep logos aligned nicely */
-.cv-rows .inline-logo {
-  margin-right: 4px;
+/* Body under the header aligns with the right column start */
+.cv-item-body {
+  margin-left: calc(0px); /* no-op; keeps structure clear */
+  padding-left: 0;
 }
 
-/* Mobile: stack middle/date underneath label */
+/* Make the body visually align under the "right column"
+   by adding a left padding equal to (label column + gap).
+   We do this using a CSS variable set per section. */
+.cv-section-body {
+  --cv-label-col: 0px;
+  --cv-label-gap: 12px;
+}
+
+.cv-item-body {
+  padding-left: calc(var(--cv-label-col) + var(--cv-label-gap));
+}
+
+/* Mobile: stack */
 @media (max-width: 800px) {
-  .cv-rows {
+  .cv-uniform {
     grid-template-columns: 1fr;
-    row-gap: 10px;
   }
 
-  .cv-rows dt::after {
-    content: ""; /* drop dash in dt on mobile */
-  }
-
-  .cv-rows dd {
-    grid-template-columns: 1fr; /* middle then date */
+  .cv-item-head {
+    grid-template-columns: 1fr;
     row-gap: 2px;
   }
 
-  .cv-rows .cv-date {
+  .cv-item-left {
+    white-space: normal;
+  }
+
+  .cv-item-left::after {
+    content: ""; /* drop dash on mobile */
+  }
+
+  .cv-item-right {
+    grid-template-columns: 1fr;
+    row-gap: 2px;
+  }
+
+  .cv-item-date {
     text-align: left;
   }
-}
 
+  .cv-item-body {
+    padding-left: 0;
+  }
+}
+/* Tune these 3 numbers once; they control bullet indent per section */
+#education .cv-section-body { --cv-label-col: 320px; }
+#research  .cv-section-body { --cv-label-col: 290px; }
+#teaching  .cv-section-body { --cv-label-col: 170px; }
 
 
 

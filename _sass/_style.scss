@@ -170,10 +170,11 @@ ul li span {
 }
 .social-icon-logo {
   height: 3.5em !important;
-  width: auto !important;
+  width: 3.5em !important;
   max-width: none !important;
-  display: inline-block !important;
-  vertical-align: middle;
+  display: block !important;
+  margin: 0 auto;
+  object-fit: contain;
 }
 
 /* Social icons row — flexbox for proper wrapping */

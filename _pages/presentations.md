@@ -12,8 +12,10 @@ _2025_
 
 ### Hemp Reinforcement for Improved Strength of Wood Sodium Silicate Composites for Additive Manufacturing
 
-**Ph.D. Defense** [Download Slides (PPTX)]({{site.url}}{{site.baseurl}}/docs/presentations/Nagendra_Tanikella_Defense.pptx){:target="_blank"} [View the page on screen (html)]({{site.url}}{{site.baseurl}}/docs/presentations/Nagendra_Tanikella_Defense.pptx){:target="_blank"}
-<img src="{{site.url}}{{site.baseurl}}/docs/publications/Ashby_interactive_WFT.html" alt="Ph.D. Defense" style="max-width:100%; border:1px solid #ccc;">
+**Ph.D. Defense** [Download Slides (PPTX)]({{site.url}}{{site.baseurl}}/docs/presentations/Nagendra_Tanikella_Defense.pptx){:target="_blank"} [View the page on screen (html)]({{site.url}}{{site.baseurl}}/docs/publications/Ashby_interactive_WFT.html){:target="_blank"}
+<a href="{{site.url}}{{site.baseurl}}/images/presentations/Defense.jpg" target="_blank">
+<img src="{{site.url}}{{site.baseurl}}/images/presentations/Defense.jpg" alt="AIAS Poster" style="max-width:100%; border:1px solid #ccc;">
+</a>
 
 
 

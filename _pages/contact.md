@@ -13,23 +13,6 @@ permalink: /contact
 
 ---
 
-[<img src="{{site.url}}{{site.baseurl}}/docs/cv/Logos/Google_Scholar_logo.svg.png" alt="Google Scholar" class="inline-logo"> Google Scholar]({{ site.google_scholar_url }}){:target="_blank"}
-
-[<img src="{{site.url}}{{site.baseurl}}/docs/cv/Logos/Linkedin.png" alt="LinkedIn" class="inline-logo"> LinkedIn](https://linkedin.com/in/{{ site.linkedin_username }}){:target="_blank"}
-
-[<img src="{{site.url}}{{site.baseurl}}/docs/cv/Logos/GitHub.png" alt="GitHub" class="inline-logo"> GitHub](https://github.com/{{ site.github_username }}){:target="_blank"}
-
-[<img src="{{site.url}}{{site.baseurl}}/docs/cv/Logos/wos.jpg" alt="Web of Science" class="inline-logo"> Web of Science](https://www.webofscience.com/wos/author/record/NZO-1270-2025){:target="_blank"}
-
-[<img src="{{site.url}}{{site.baseurl}}/docs/cv/Logos/ORCID.png" alt="ORCID" class="inline-logo"> ORCID](https://orcid.org/0000-0003-1678-1932){:target="_blank"}
-
-[<img src="{{site.url}}{{site.baseurl}}/docs/cv/Logos/Researchgate.jpeg" alt="ResearchGate" class="inline-logo"> ResearchGate](https://www.researchgate.net/profile/Nagendra-Tanikella){:target="_blank"}
-
----
-
-</div>
-
-
 ## Send me a message
 
 <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
@@ -41,17 +24,17 @@ permalink: /contact
   <input type="checkbox" name="botcheck" style="display: none;">
 
   <label>
-    Your Name
+    Your Name*
     <input type="text" name="name" required>
   </label>
 
   <label>
-    Your Email
+    Your Email*
     <input type="email" name="email" required>
   </label>
 
   <label>
-    Message
+    Message*
     <textarea name="message" rows="6" required></textarea>
   </label>
 
@@ -61,8 +44,6 @@ permalink: /contact
   <button type="submit">Send Message</button>
   <input type="hidden" name="redirect" value="{{site.url}}{{site.baseurl}}/thank-you/">
 </form>
-
-
 
 <style>
 .contact-form{
@@ -96,3 +77,19 @@ permalink: /contact
   font-weight: 700;
 }
 </style>
+
+---
+
+[<img src="{{site.url}}{{site.baseurl}}/docs/cv/Logos/Google_Scholar_logo.svg.png" alt="Google Scholar" class="inline-logo"> Google Scholar]({{ site.google_scholar_url }}){:target="_blank"}
+
+[<img src="{{site.url}}{{site.baseurl}}/docs/cv/Logos/Linkedin.png" alt="LinkedIn" class="inline-logo"> LinkedIn](https://linkedin.com/in/{{ site.linkedin_username }}){:target="_blank"}
+
+[<img src="{{site.url}}{{site.baseurl}}/docs/cv/Logos/GitHub.png" alt="GitHub" class="inline-logo"> GitHub](https://github.com/{{ site.github_username }}){:target="_blank"}
+
+[<img src="{{site.url}}{{site.baseurl}}/docs/cv/Logos/wos.jpg" alt="Web of Science" class="inline-logo"> Web of Science](https://www.webofscience.com/wos/author/record/NZO-1270-2025){:target="_blank"}
+
+[<img src="{{site.url}}{{site.baseurl}}/docs/cv/Logos/ORCID.png" alt="ORCID" class="inline-logo"> ORCID](https://orcid.org/0000-0003-1678-1932){:target="_blank"}
+
+[<img src="{{site.url}}{{site.baseurl}}/docs/cv/Logos/Researchgate.jpeg" alt="ResearchGate" class="inline-logo"> ResearchGate](https://www.researchgate.net/profile/Nagendra-Tanikella){:target="_blank"}
+
+</div>

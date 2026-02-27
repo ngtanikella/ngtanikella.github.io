@@ -7,19 +7,19 @@
                <li>Designed novel extruder system for continuous hemp rope processing, achieving 53% increase in tensile strength</li>
                <li>Conducted material characterization using pycnometer, rheometer, X-ray Tomography, and FTIR</li>
                </ul>
-  venue: University of Idaho, Moscow, Idaho
+  venue: University of Idaho, Moscow, Idaho | Advised by <a href="https://www.uidaho.edu/people/m/a/maughan" target="_blank" rel="noopener">Dr. Michael Maughan</a>
   number_link: 4
   link1:
     url: https://verso.uidaho.edu/esploro/outputs/doctoral/996869268001851
     display: Dissertation
   link2:
-    url: ../docs/publications/Optimizing Wood–Hemp–Sodium Silicate Composites for Strength, Extrudability, and Cost in Additive Manufacturing Applications.pdf
+    url: /docs/publications/Optimizing Wood-Hemp-Sodium Silicate Composites for Strength, Extrudability, and Cost in Additive Manufacturing Applications.pdf
     display: "Paper: Optimizing Composites"
   link3:
-    url: ../docs/publications/Extrudability and Mechanical Properties of Wood–Sodium Silicate Composites with Hemp Fiber Reinforcement for Additive Manufacturing.pdf
+    url: /docs/publications/Extrudability and Mechanical Properties of Wood-Sodium Silicate Composites with Hemp Fiber Reinforcement for Additive Manufacturing.pdf
     display: "Paper: Extrudability"
   link4:
-    url: ../docs/presentations/Nagendra_Tanikella_Defense.pptx
+    url: /docs/presentations/Nagendra_Tanikella_Defense.pptx
     display: Defense Presentation
 
 - title: "Master's Thesis - Mechanical Testing of Fused Filament 3-D Printed Components for Distributed Manufacturing"
@@ -30,14 +30,14 @@
                <li>Characterized tensile strength of commercial polymer materials for fused filament fabrication 3D printing</li>
                <li>Explored viability of distributed manufacturing of bicycle components with 3D printing</li>
                </ul>
-  venue: Michigan Technological University, Houghton, Michigan
+  venue: Michigan Technological University, Houghton, Michigan| Advised by <a href="https://www.eng.uwo.ca/electrical/faculty/pearce_j" target="_blank" rel="noopener">Dr. Joshua Pearce</a>
   number_link: 3
   link1:
     url: https://digitalcommons.mtu.edu/etdr/212/
     display: Thesis
   link2:
-    url: ../docs/publications/Tensile strength of commercial polymer materials for fused filament fabrication 3D printing.pdf
+    url: /docs/publications/Tensile strength of commercial polymer materials for fused filament fabrication 3D printing.pdf
     display: "Paper: Tensile Strength"
   link3:
-    url: ../docs/publications/viability of Distributed Manufacturing of Bicycle components with 3-D printing.pdf
+    url: /docs/publications/viability of Distributed Manufacturing of Bicycle components with 3-D printing.pdf
     display: "Paper: Bicycle Components"

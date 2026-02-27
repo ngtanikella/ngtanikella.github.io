@@ -170,25 +170,35 @@ ul li span {
 }
 .social-icon-logo {
   height: 2.5em !important;
-  width: auto !important;
+  width: 2.5em !important;
   max-width: none !important;
-  display: inline-block !important;
-  vertical-align: middle;
+  display: block !important;
+  margin: 0 auto;
+  object-fit: contain;
 }
 
-/* Social icons row — flexbox for proper wrapping */
-.social-icons {
+/* Social icons table — bordered cells */
+.social-icons-table {
+  margin: 10px auto;
+  border-collapse: collapse;
+}
+
+.social-icons-table td {
+  border: 1px solid darken(#ffffff, 20%);
+  padding: 10px 14px;
+  text-align: center;
+  vertical-align: middle;
+  background: #fff;
+}
+
+.social-icons-table td a {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin: 10px auto;
 }
-/* Center icon table */
-.icon-table {
-  display: table;
-  margin: 0 auto;
+
+.social-icons-table td:hover {
+  background: darken(#ffffff, 5%);
 }
 
 ul#horizontal-list {
@@ -210,6 +220,10 @@ ul#horizontal-list li {
   margin: 0 2px;
   object-fit: contain;
 }
+
+
+
+
 
 /* Publications */
 
@@ -425,7 +439,7 @@ a .fa-github:hover { color: #000000; }
     margin: 0 10px 20px 10px;
   }
 
-  table {
+  table:not(.social-icons-table) {
     display: block;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -442,10 +456,11 @@ a .fa-github:hover { color: #000000; }
 
   .social-icon-logo {
     height: 1.8em !important;
+    width: 1.8em !important;
   }
 
-  .social-icons {
-    gap: 8px;
+  .social-icons-table td {
+    padding: 8px 10px;
   }
 }
 
@@ -480,10 +495,11 @@ a .fa-github:hover { color: #000000; }
 
   .social-icon-logo {
     height: 1.5em !important;
+    width: 1.5em !important;
   }
 
-  .social-icons {
-    gap: 6px;
+  .social-icons-table td {
+    padding: 6px 8px;
   }
 
   .publication-picture {

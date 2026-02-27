@@ -1,28 +1,28 @@
-- title: "Optimizing Wood–Hemp–Sodium Silicate Composites for Strength, Extrudability, and Cost in Additive Manufacturing Applications"
+- title: "Optimizing Wood-Hemp-Sodium Silicate Composites for Strength, Extrudability, and Cost in Additive Manufacturing Applications"
   image: Optimizing.webp
   authors: "<b>Nagendra G. Tanikella</b>, Armando G. McDonald, Michael R. Maughan"
   venue: "Materials, 2026"
   doi: "https://doi.org/10.3390/ma19020357"
   number_link: 2
   link1:
-    url: "Optimizing Wood–Hemp–Sodium Silicate Composites for Strength, Extrudability, and Cost in Additive Manufacturing Applications.pdf"
+    url: "Optimizing Wood-Hemp-Sodium Silicate Composites for Strength, Extrudability, and Cost in Additive Manufacturing Applications.pdf"
     display: pdf
   link2:
     url: "Ashby_interactive_WFT.html"
     display: Interactive Ashby Tool
 
-- title: Extrudability and Mechanical Properties of Wood–Sodium Silicate Composites with Hemp Fiber Reinforcement for Additive Manufacturing
-  image: Extrudability.png
+- title: Extrudability and Mechanical Properties of Wood-Sodium Silicate Composites with Hemp Fiber Reinforcement for Additive Manufacturing
+  image: Extrudability.webp
   authors: <b>Nagendra G. Tanikella</b>,  Alexandra M. Lehman-Chong, Armando G. McDonald, Michael R. Maughan 
   venue: "Polymers, 2025"
   doi: "https://doi.org/10.3390/polym17182478"
   number_link: 1
   link1:
-    url: "Extrudability and Mechanical Properties of Wood–Sodium Silicate Composites with Hemp Fiber Reinforcement for Additive Manufacturing.pdf"
+    url: "Extrudability and Mechanical Properties of Wood-Sodium Silicate Composites with Hemp Fiber Reinforcement for Additive Manufacturing.pdf"
     display: pdf
 
 - title: "Conceptual Design and Rationale for a New Agrivoltaics Concept: Pasture-Raised Rabbits and Solar Farming"
-  image: Rabbit.png
+  image: Rabbit.webp
   authors: William Lytle, Theresa K. Meyer, <b>Nagendra G. Tanikella</b>, Laurie Burnham, Julie Engel, Chelsea Schelly, Joshua M. Pearce
   venue: "Journal of Cleaner Production, 2021"
   doi: "https://doi.org/10.1016/j.jclepro.2020.124476"
@@ -95,7 +95,7 @@
     display: pdf
 
 - title: Mechanical Properties and Applications of Recycled Polycarbonate Particle Material Extrusion-Based Additive Manufacturing
-  image: PC.png
+  image: PC.webp
   authors: Matthew J. Reich, Aubrey L. Woern, <b>Nagendra G. Tanikella</b>, Joshua M. Pearce
   venue: "Materials, 2019"
   doi: "https://doi.org/10.3390/ma12101642"

@@ -1,8 +1,10 @@
 <div class="publications">
 
 {% assign doi_url = publication.doi | default: "" %}
-{% if doi_url != "" and doi_url contains "doi.org" == false %}
-  {% assign doi_url = "https://doi.org/" | append: doi_url %}
+{% if doi_url != "" %}
+  {% unless doi_url contains "doi.org" %}
+    {% assign doi_url = "https://doi.org/" | append: doi_url %}
+  {% endunless %}
 {% endif %}
 
 {% assign pdf_url = publication.link1.url | default: "" %}
@@ -190,7 +192,7 @@
 <a href="{{site.url}}{{site.baseurl}}/docs/publications/{{ publication.link5.url }}" target="_blank">{{ publication.link5.display }}</a>
 {% endif %}
 |
-{% if publication.link5.url contains '://' %}
+{% if publication.link6.url contains '://' %}
 <a href="{{ publication.link6.url }}" target="_blank">{{ publication.link6.display }}</a>
 {% else %}
 <a href="{{site.url}}{{site.baseurl}}/docs/publications/{{ publication.link6.url }}" target="_blank">{{ publication.link6.display }}</a>

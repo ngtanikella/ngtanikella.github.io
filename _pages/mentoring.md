@@ -15,7 +15,7 @@ I have mentored 9 capstone projects with over 40 students across three years at 
 <div class="experience-box" markdown="1">
 
 <a href="{{site.url}}{{site.baseurl}}/images/Mentoring/Capstone1.webp" target="_blank">
-<img src="{{site.url}}{{site.baseurl}}/images/Mentoring/Capstone1.pwebp" alt="Capstone Project 1" style="max-width:100%; border:1px solid #ccc; margin-bottom:10px;">
+<img src="{{site.url}}{{site.baseurl}}/images/Mentoring/Capstone1.webp" alt="Capstone Project 1" style="max-width:100%; border:1px solid #ccc; margin-bottom:10px;">
 </a>
 
 </div>

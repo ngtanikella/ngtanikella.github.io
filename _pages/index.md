@@ -237,7 +237,7 @@ I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both f
 
   <figure class="collage-item">
     <a class="collage-link" href="#modal-xray-ct" aria-label="Open X-ray CT scanning">
-      <img loading="lazy" src="{{site.url}}{{site.baseurl}}/images/collage/X_ray_CT.webpjpg" alt="X-ray CT">
+      <img loading="lazy" src="{{site.url}}{{site.baseurl}}/images/collage/X_ray_CT.webp" alt="X-ray CT">
     </a>
     <figcaption>X-ray CT scanning</figcaption>
   </figure>

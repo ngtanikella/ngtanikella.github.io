@@ -12,16 +12,25 @@ permalink: /media
 
 <div class="experience-box" markdown="1">
 
+### Printimber Project Overview
+
+3D printing with bio-based wood composites for sustainable construction.
+
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+  <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://www.youtube.com/embed/54eIyNtNz1k" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+</div>
+
+</div>
+
+<div class="experience-box" markdown="1">
+
 ### Open Source Ventilator Demonstration
 
 Low cost open-source ventilator developed during COVID-19, in May-June 2020.
 
-<video width="100%" controls>
-  <source src="{{site.url}}{{site.baseurl}}/images/Media/Ventilator.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
-[Watch on YouTube](https://www.youtube.com/watch?v=t_JZ2Qv1mHM){:target="_blank"}
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+  <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://www.youtube.com/embed/t_JZ2Qv1mHM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+</div>
 
 </div>
 

@@ -365,7 +365,7 @@ I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both f
   <a href="#" class="modal-overlay" aria-label="Close"></a>
   <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-flexural-testing-title">
     <a href="#" class="modal-close" aria-label="Close">&times;</a>
-    <img loading="lazy" class="modal-img" src="{{site.url}}{{site.baseurl}}/images/collage/McMesin_bending.jpg" alt="Flexural testing (full image)">
+    <img loading="lazy" class="modal-img" src="{{site.url}}{{site.baseurl}}/images/collage/McMesin_bending.webp" alt="Flexural testing (full image)">
     <h3 class="modal-title" id="modal-flexural-testing-title">Flexural testing</h3>
     <p class="modal-text">
       Flexural testing setup for the study

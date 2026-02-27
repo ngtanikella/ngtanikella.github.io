@@ -43,7 +43,7 @@ _2023_
 **Poster Presentation** \| [Download poster (pdf)]({{site.url}}{{site.baseurl}}/docs/presentations/Printimber_poster.pdf){:target="_blank"}
 
 <a href="{{site.url}}{{site.baseurl}}/images/presentations/Printimber_poster.jpg" target="_blank">
-<img src="{{site.url}}{{site.baseurl}}/images/presentations/Printimber_poster.jpg" alt="Printimber Poster" style="max-width:100%; border:1px solid #ccc;">
+<img loading="lazy" src="{{site.url}}{{site.baseurl}}/images/presentations/Printimber_poster.jpg" alt="Printimber Poster" style="max-width:100%; border:1px solid #ccc;">
 </a>
 
 

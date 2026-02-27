@@ -202,7 +202,7 @@ I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both f
 
   <figure class="collage-item">
     <a class="collage-link" href="#modal-flexural-testing" aria-label="Open Flexural testing">
-      <img loading="lazy" src="{{site.url}}{{site.baseurl}}/images/collage/McMesin_bending.jpg" alt="McMesin bending tester">
+      <img loading="lazy" src="{{site.url}}{{site.baseurl}}/images/collage/McMesin_bending.webp" alt="McMesin bending tester">
     </a>
     <figcaption>Flexural testing</figcaption>
   </figure>

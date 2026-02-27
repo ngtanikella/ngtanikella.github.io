@@ -35,7 +35,7 @@ permalink: /contact
 
   <label>
     Message*
-    <textarea name="message" rows="6" required></textarea>
+    <textarea name="message" rows="4" required></textarea>
   </label>
 
   <!-- Optional subject line -->

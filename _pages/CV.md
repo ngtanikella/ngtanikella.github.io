@@ -46,8 +46,8 @@ permalink: /CV
 
         <div class="cv-section-body">
           <div class="cv-entry">
-            dl class="cv-keyvals">
-              dt>Materials Science</dt>
+            <dl class="cv-keyvals">
+              <dt>Materials Science</dt>
               <dd>Polymer &amp; ceramic composites, natural fiber reinforcement, rheology, and material characterization.</dd>
 
               <dt>Additive Manufacturing</dt>
@@ -79,7 +79,7 @@ permalink: /CV
             <div class="cv-entry-header">
               <span class="cv-entry-title">
                 <img src="{{site.url}}{{site.baseurl}}/images/experience/uidaho.png" alt="University of Idaho" class="inline-logo">
-                University of Idaho — <span class="cv-entry-role">Ph.D. Mechanical Engineering</span>
+                University of Idaho - <span class="cv-entry-role">Ph.D. Mechanical Engineering</span>
               </span>
               <span class="cv-entry-date">December 2025</span>
             </div>
@@ -90,7 +90,7 @@ permalink: /CV
             <div class="cv-entry-header">
               <span class="cv-entry-title">
                 <img src="{{site.url}}{{site.baseurl}}/images/experience/mtu.png" alt="Michigan Technological University" class="inline-logo">
-                Michigan Technological University — <span class="cv-entry-role">M.E. Materials Science</span>
+                Michigan Technological University - <span class="cv-entry-role">M.E. Materials Science</span>
               </span>
               <span class="cv-entry-date">December 2021</span>
             </div>
@@ -100,7 +100,7 @@ permalink: /CV
             <div class="cv-entry-header">
               <span class="cv-entry-title">
                 <img src="{{site.url}}{{site.baseurl}}/images/experience/mtu.png" alt="Michigan Technological University" class="inline-logo">
-                Michigan Technological University — <span class="cv-entry-role">M.S. Mechanical Engineering</span>
+                Michigan Technological University - <span class="cv-entry-role">M.S. Mechanical Engineering</span>
               </span>
               <span class="cv-entry-date">August 2016</span>
             </div>
@@ -111,7 +111,7 @@ permalink: /CV
             <div class="cv-entry-header">
               <span class="cv-entry-title">
                 <img src="{{site.url}}{{site.baseurl}}/docs/cv/Logos/NMIT.jpeg" alt="NMIT" class="inline-logo">
-                NMIT, Bangalore, India — <span class="cv-entry-role">B.E. Mechanical Engineering</span>
+                NMIT, Bangalore, India - <span class="cv-entry-role">B.E. Mechanical Engineering</span>
               </span>
               <span class="cv-entry-date">August 2014</span>
             </div>
@@ -136,9 +136,9 @@ permalink: /CV
             <div class="cv-entry-header">
               <span class="cv-entry-title">
                 <img src="{{site.url}}{{site.baseurl}}/images/experience/uidaho.png" alt="University of Idaho" class="inline-logo">
-                <strong>University of Idaho</strong> — Graduate Research Assistant
+                <strong>University of Idaho</strong> - Graduate Research Assistant
               </span>
-              <span class="cv-entry-date">June 2022 – Present</span>
+              <span class="cv-entry-date">June 2022 - Present</span>
             </div>
             <ul class="cv-bullets">
               <li>Analyzed mechanical and rheological properties of 80+ wood-sodium silicate composite samples for additive manufacturing, optimized formulation for extrudability, strength, and cost.</li>
@@ -152,9 +152,9 @@ permalink: /CV
             <div class="cv-entry-header">
               <span class="cv-entry-title">
                 <img src="{{site.url}}{{site.baseurl}}/images/experience/ornl.png" alt="Oak Ridge National Laboratory" class="inline-logo">
-                <strong>Oak Ridge National Laboratory</strong> — Research Intern
+                <strong>Oak Ridge National Laboratory</strong> - Research Intern
               </span>
-              <span class="cv-entry-date">May 2024 – August 2024</span>
+              <span class="cv-entry-date">May 2024 - August 2024</span>
             </div>
             <ul class="cv-bullets">
               <li>Resolved stability issues for Direct Ink Writing (DIW) and Digital Light Processing (DLP) printing by analyzing the Zeta potential of zeolite and alumina solutions across pH levels, resulting in consistent, defect-free printing.</li>
@@ -167,9 +167,9 @@ permalink: /CV
             <div class="cv-entry-header">
               <span class="cv-entry-title">
                 <img src="{{site.url}}{{site.baseurl}}/images/experience/mtu.png" alt="Michigan Technological University" class="inline-logo">
-                <strong>Michigan Technological University</strong> — Graduate Research Assistant
+                <strong>Michigan Technological University</strong> - Graduate Research Assistant
               </span>
-              <span class="cv-entry-date">April 2016 – May 2022</span>
+              <span class="cv-entry-date">April 2016 - May 2022</span>
             </div>
             <ul class="cv-bullets">
               <li>Designed and tested a novel cooling system for Re3D's Gigabot-X 3D printer, resulting in a 30% reduction in print failures and improved quality of 3D-printed components using recycled PET.</li>

@@ -139,7 +139,7 @@ I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both f
 
   <figure class="collage-item">
     <a class="collage-link" href="#modal-bioresin" aria-label="Open Bioresin collaboration">
-      <img loading="lazy" src="{{site.url}}{{site.baseurl}}/images/collage/Bioresin.jpg" alt="Bioresin">
+      <img loading="lazy" src="{{site.url}}{{site.baseurl}}/images/collage/Bioresin.webp" alt="Bioresin">
     </a>
     <figcaption>Bioresin collaboration</figcaption>
   </figure>
@@ -174,7 +174,7 @@ I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both f
 
   <figure class="collage-item">
     <a class="collage-link" href="#modal-extruder-die" aria-label="Open Extruder die">
-      <img loading="lazy" src="{{site.url}}{{site.baseurl}}/images/collage/Extruder_die.jpg" alt="Extruder die">
+      <img loading="lazy" src="{{site.url}}{{site.baseurl}}/images/collage/Extruder_die.webp" alt="Extruder die">
     </a>
     <figcaption>Extruder die</figcaption>
   </figure>
@@ -188,7 +188,7 @@ I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both f
 
   <figure class="collage-item">
     <a class="collage-link" href="#modal-first-print" aria-label="Open First 3D print (Kindle cover)">
-      <img loading="lazy" src="{{site.url}}{{site.baseurl}}/images/collage/First_print.jpg" alt="First print">
+      <img loading="lazy" src="{{site.url}}{{site.baseurl}}/images/collage/First_print.webp" alt="First print">
     </a>
     <figcaption>First 3Dprint (Kindle cover)</figcaption>
   </figure>
@@ -230,14 +230,14 @@ I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both f
 
   <figure class="collage-item">
     <a class="collage-link" href="#modal-twin-screw" aria-label="Open Twin screw extruder">
-      <img loading="lazy" src="{{site.url}}{{site.baseurl}}/images/collage/Twin_Screw.jpg" alt="Twin screw">
+      <img loading="lazy" src="{{site.url}}{{site.baseurl}}/images/collage/Twin_Screw.webp" alt="Twin screw">
     </a>
     <figcaption>Twin screw extruder</figcaption>
   </figure>
 
   <figure class="collage-item">
     <a class="collage-link" href="#modal-xray-ct" aria-label="Open X-ray CT scanning">
-      <img loading="lazy" src="{{site.url}}{{site.baseurl}}/images/collage/X_ray_CT.jpg" alt="X-ray CT">
+      <img loading="lazy" src="{{site.url}}{{site.baseurl}}/images/collage/X_ray_CT.webpjpg" alt="X-ray CT">
     </a>
     <figcaption>X-ray CT scanning</figcaption>
   </figure>
@@ -250,7 +250,7 @@ I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both f
   <a href="#" class="modal-overlay" aria-label="Close"></a>
   <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-bioresin-title">
     <a href="#" class="modal-close" aria-label="Close">&times;</a>
-    <img loading="lazy" class="modal-img" src="{{site.url}}{{site.baseurl}}/images/collage/Bioresin.jpg" alt="Bioresin collaboration (full image)">
+    <img loading="lazy" class="modal-img" src="{{site.url}}{{site.baseurl}}/images/collage/Bioresin.webp" alt="Bioresin collaboration (full image)">
     <h3 class="modal-title" id="modal-bioresin-title">Bioresin collaboration</h3>
     <p class="modal-text">
       Collaboration between an <img src="{{site.url}}{{site.baseurl}}/docs/cv/Logos/Auburn.png" alt="Auburn University" class="inline-logo"> <a href="https://www.auburn.edu/" target="_blank" rel="noopener">Auburn University</a> chemistry graduate student,
@@ -317,7 +317,7 @@ I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both f
   <a href="#" class="modal-overlay" aria-label="Close"></a>
   <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-extruder-die-title">
     <a href="#" class="modal-close" aria-label="Close">&times;</a>
-    <img loading="lazy" class="modal-img" src="{{site.url}}{{site.baseurl}}/images/collage/Extruder_die.jpg" alt="Extruder die (full image)">
+    <img loading="lazy" class="modal-img" src="{{site.url}}{{site.baseurl}}/images/collage/Extruder_die.webp" alt="Extruder die (full image)">
     <h3 class="modal-title" id="modal-extruder-die-title">Extruder die</h3>
     <p class="modal-text">
       Custom die design for processing continous hemp fibers, part of the <a href="https://printimber.org/" target="_blank" rel="noopener">Printimber</a> project.
@@ -341,7 +341,7 @@ I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both f
   <a href="#" class="modal-overlay" aria-label="Close"></a>
   <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-first-print-title">
     <a href="#" class="modal-close" aria-label="Close">&times;</a>
-    <img loading="lazy" class="modal-img" src="{{site.url}}{{site.baseurl}}/images/collage/First_print.jpg" alt="First 3D print (Kindle cover) (full image)">
+    <img loading="lazy" class="modal-img" src="{{site.url}}{{site.baseurl}}/images/collage/First_print.webp" alt="First 3D print (Kindle cover) (full image)">
     <h3 class="modal-title" id="modal-first-print-title">First 3Dprint (Kindle cover)</h3>
     <p class="modal-text">
       My first 3D print: a custom Kindle cover at <a href="https://www.eng.uwo.ca/electrical/faculty/pearce_j/index.html" target="_blank" rel="noopener">Dr. Joshua Pearce</a>'s lab.
@@ -421,7 +421,7 @@ I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both f
   <a href="#" class="modal-overlay" aria-label="Close"></a>
   <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-twin-screw-title">
     <a href="#" class="modal-close" aria-label="Close">&times;</a>
-    <img loading="lazy" class="modal-img" src="{{site.url}}{{site.baseurl}}/images/collage/Twin_Screw.jpg" alt="Twin screw extruder (full image)">
+    <img loading="lazy" class="modal-img" src="{{site.url}}{{site.baseurl}}/images/collage/Twin_Screw.webp" alt="Twin screw extruder (full image)">
     <h3 class="modal-title" id="modal-twin-screw-title">Twin screw extruder</h3>
     <p class="modal-text">
       Twin-screw extruder, with <img src="{{site.url}}{{site.baseurl}}/images/experience/uidaho.png" alt="University of Idaho" class="inline-logo">
@@ -437,7 +437,7 @@ I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both f
   <a href="#" class="modal-overlay" aria-label="Close"></a>
   <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-xray-ct-title">
     <a href="#" class="modal-close" aria-label="Close">&times;</a>
-    <img loading="lazy" class="modal-img" src="{{site.url}}{{site.baseurl}}/images/collage/X_ray_CT.jpg" alt="X-ray CT scanning (full image)">
+    <img loading="lazy" class="modal-img" src="{{site.url}}{{site.baseurl}}/images/collage/X_ray_CT.webp" alt="X-ray CT scanning (full image)">
     <h3 class="modal-title" id="modal-xray-ct-title">X-ray CT scanning</h3>
     <p class="modal-text">
       X-ray computed tomography (CT) for density and porosity evaluation of hemp reinforced wood-sodium silicate composites.

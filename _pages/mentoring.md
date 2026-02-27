@@ -14,40 +14,40 @@ I have mentored 9 capstone projects with over 40 students across three years at 
 
 <div class="experience-box" markdown="1">
 
-<a href="{{site.url}}{{site.baseurl}}/images/Mentoring/Capstone1.png" target="_blank">
-<img src="{{site.url}}{{site.baseurl}}/images/Mentoring/Capstone1.png" alt="Capstone Project 1" style="max-width:100%; border:1px solid #ccc; margin-bottom:10px;">
+<a href="{{site.url}}{{site.baseurl}}/images/Mentoring/Capstone1.webp" target="_blank">
+<img src="{{site.url}}{{site.baseurl}}/images/Mentoring/Capstone1.pwebp" alt="Capstone Project 1" style="max-width:100%; border:1px solid #ccc; margin-bottom:10px;">
 </a>
 
 </div>
 
 <div class="experience-box" markdown="1">
 
-<a href="{{site.url}}{{site.baseurl}}/images/Mentoring/Capstone2.png" target="_blank">
-<img src="{{site.url}}{{site.baseurl}}/images/Mentoring/Capstone2.png" alt="Capstone Project 2" style="max-width:100%; border:1px solid #ccc; margin-bottom:10px;">
+<a href="{{site.url}}{{site.baseurl}}/images/Mentoring/Capstone2.webp" target="_blank">
+<img src="{{site.url}}{{site.baseurl}}/images/Mentoring/Capstone2.webp" alt="Capstone Project 2" style="max-width:100%; border:1px solid #ccc; margin-bottom:10px;">
 </a>
 
 </div>
 
 <div class="experience-box" markdown="1">
 
-<a href="{{site.url}}{{site.baseurl}}/images/Mentoring/Capstone3.png" target="_blank">
-<img loading="lazy" src="{{site.url}}{{site.baseurl}}/images/Mentoring/Capstone3.png" alt="Capstone Project 3" style="max-width:100%; border:1px solid #ccc; margin-bottom:10px;">
+<a href="{{site.url}}{{site.baseurl}}/images/Mentoring/Capstone3.webp" target="_blank">
+<img loading="lazy" src="{{site.url}}{{site.baseurl}}/images/Mentoring/Capstone3.webp" alt="Capstone Project 3" style="max-width:100%; border:1px solid #ccc; margin-bottom:10px;">
 </a>
 
 </div>
 
 <div class="experience-box" markdown="1">
 
-<a href="{{site.url}}{{site.baseurl}}/images/Mentoring/Capstone4.jpg" target="_blank">
-<img loading="lazy" src="{{site.url}}{{site.baseurl}}/images/Mentoring/Capstone4.jpg" alt="Capstone Project 4" style="max-width:100%; border:1px solid #ccc; margin-bottom:10px;">
+<a href="{{site.url}}{{site.baseurl}}/images/Mentoring/Capstone4.webp" target="_blank">
+<img loading="lazy" src="{{site.url}}{{site.baseurl}}/images/Mentoring/Capstone4.webp" alt="Capstone Project 4" style="max-width:100%; border:1px solid #ccc; margin-bottom:10px;">
 </a>
 
 </div>
 
 <div class="experience-box" markdown="1">
 
-<a href="{{site.url}}{{site.baseurl}}/images/Mentoring/Capstone5.jpg" target="_blank">
-<img loading="lazy" src="{{site.url}}{{site.baseurl}}/images/Mentoring/Capstone5.jpg" alt="Capstone Project 5" style="max-width:100%; border:1px solid #ccc; margin-bottom:10px;">
+<a href="{{site.url}}{{site.baseurl}}/images/Mentoring/Capstone5.webp" target="_blank">
+<img loading="lazy" src="{{site.url}}{{site.baseurl}}/images/Mentoring/Capstone5.webp" alt="Capstone Project 5" style="max-width:100%; border:1px solid #ccc; margin-bottom:10px;">
 </a>
 
 </div>

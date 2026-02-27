@@ -139,7 +139,7 @@ permalink: /CV
         <dl class="cv-rows">
           <dt>
             <img src="{{site.url}}{{site.baseurl}}/images/experience/uidaho.png" alt="University of Idaho" class="inline-logo">
-            <strong>University of Idaho</strong>
+            University of Idaho
           </dt>
           <dd>
             <span class="cv-mid">Graduate Research Assistant</span>
@@ -148,7 +148,7 @@ permalink: /CV
 
           <dt>
             <img src="{{site.url}}{{site.baseurl}}/images/experience/ornl.png" alt="Oak Ridge National Laboratory" class="inline-logo">
-            <strong>Oak Ridge National Laboratory</strong>
+            Oak Ridge National Laboratory
           </dt>
           <dd>
             <span class="cv-mid">Research Intern</span>
@@ -157,7 +157,7 @@ permalink: /CV
 
           <dt>
             <img src="{{site.url}}{{site.baseurl}}/images/experience/mtu.png" alt="Michigan Technological University" class="inline-logo">
-            <strong>Michigan Technological University</strong>
+            Michigan Technological University
           </dt>
           <dd>
             <span class="cv-mid">Graduate Research Assistant</span>
@@ -213,22 +213,22 @@ permalink: /CV
 
       <div class="cv-entry">
         <dl class="cv-rows">
-          <dt><strong>ME 4240 / ME 4260</strong></dt>
+          <dt>ME 4240 / ME 4260</dt>
           <dd>
             <span class="cv-mid">Capstone Mentoring</span>
-            <span class="cv-date">Fall 2022 – Spring 2025 (6 Semesters)</span>
+            <span class="cv-date">Fall 2022 - Spring 2025 (6 Semesters)</span>
           </dd>
 
-          <dt><strong>ME 2010, ME 3310</strong></dt>
+          <dt>ME 2010, ME 3310</dt>
           <dd>
             <span class="cv-mid">Statics &amp; Mechanics of Materials</span>
             <span class="cv-date">Spring 2022 (1 Semester)</span>
           </dd>
 
-          <dt><strong>MSE 4777 / MSE 5777</strong></dt>
+          <dt>MSE 4777 / MSE 5777</dt>
           <dd>
             <span class="cv-mid">3D Printer Assembly</span>
-            <span class="cv-date">Fall 2018 – 2020 (3 Semesters)</span>
+            <span class="cv-date">Fall 2018 - 2020 (3 Semesters)</span>
           </dd>
         </dl>
       </div>

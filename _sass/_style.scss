@@ -169,12 +169,11 @@ ul li span {
   width: 400px;
 }
 .social-icon-logo {
-  height: 2.5em !important;
-  width: 2.5em !important;
+  height: 3.5em !important;
+  width: 3.5em !important;
   max-width: none !important;
   display: block !important;
   margin: 0 auto;
-  vertical-align: middle;
   object-fit: contain;
 }
 
@@ -190,6 +189,12 @@ ul li span {
   text-align: center;
   vertical-align: middle;
   background: #fff;
+}
+
+.social-icons-table td a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .social-icons-table td:hover {
@@ -217,12 +222,7 @@ ul#horizontal-list li {
 }
 
 
-.modal-media{
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  display: block;
-}
+
 
 
 /* Publications */

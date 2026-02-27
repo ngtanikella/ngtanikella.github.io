@@ -2,4 +2,4 @@
   news: 'Paper accepted at Materials 2026: <a href="https://doi.org/10.3390/ma19020357" target="_blank" rel="noopener">"Optimizing Wood-Hemp-Sodium Silicate Composites for Strength, Extrudability, and Cost in Additive Manufacturing Applications"</a>.'
 
 - date: November 12, 2025
-  news: Passed my PhD defense, <a href="{{site.url}}{{site.baseurl}}/imadocs/presentations/Nagendra_Tanikella_Defense.pptx" target="_blank" rel="noopener">"Download Slides (PPTX)"</a>.
+  news: Passed my PhD defense, <a href="{{site.url}}{{site.baseurl}}/docs/presentations/Nagendra_Tanikella_Defense.pptx" target="_blank" rel="noopener">"Download Slides (PPTX)"</a>.

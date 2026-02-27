@@ -79,33 +79,54 @@
   row-gap: 6px;
 }
 
-/* 3-column entry header: left | middle | date (uniform within section) */
-.cv-entry-header-3col {
+/* Uniform "left - middle .... date" alignment within a section */
+.cv-entry-header-uniform {
   display: grid;
-  grid-template-columns: 1fr 260px max-content; /* middle column is fixed width */
-  column-gap: 12px;
+  grid-template-columns: max-content max-content 1fr max-content;
+  column-gap: 10px;
   align-items: baseline;
-}
 
-.cv-entry-left {
+  /* critical: allow the middle column to use available space instead of wrapping early */
   min-width: 0;
 }
 
-.cv-entry-mid {
+.cv-entry-left {
+  white-space: nowrap;  /* keeps institution/codes from breaking early */
+}
+
+.cv-entry-dash {
   white-space: nowrap;
+}
+
+.cv-entry-mid {
+  min-width: 0;         /* critical for grid text sizing */
+  text-align: left;
+  white-space: normal;  /* wraps only when truly needed */
   font-weight: 600;
   color: #111;
 }
 
+/* Keep dates on one line, right side */
+.cv-entry-date {
+  white-space: nowrap;
+}
+
+/* Mobile: stack cleanly */
 @media (max-width: 800px) {
-  /* On mobile, allow wrapping */
-  .cv-entry-header-3col {
+  .cv-entry-header-uniform {
     grid-template-columns: 1fr;
     row-gap: 2px;
   }
 
-  .cv-entry-mid {
+  .cv-entry-left,
+  .cv-entry-dash,
+  .cv-entry-mid,
+  .cv-entry-date {
     white-space: normal;
+  }
+
+  .cv-entry-dash {
+    display: none; /* optional: hide dash on mobile */
   }
 }
 

@@ -76,47 +76,51 @@ permalink: /CV
     <div class="cv-section-body">
 
       <div class="cv-entry">
-        <div class="cv-entry-header cv-entry-header-3col">
+        <div class="cv-entry-header cv-entry-header-uniform">
           <span class="cv-entry-left">
             <img src="{{site.url}}{{site.baseurl}}/images/experience/uidaho.png" alt="University of Idaho" class="inline-logo">
             University of Idaho
           </span>
-          <span class="cv-entry-mid">- Ph.D. Mechanical Engineering</span>
+          <span class="cv-entry-dash">-</span>
+          <span class="cv-entry-mid">Ph.D. Mechanical Engineering</span>
           <span class="cv-entry-date">December 2025</span>
         </div>
         <p class="cv-detail">Thesis: Hemp reinforcement for improved strength of Wood Sodium Silicate composites for additive manufacturing</p>
       </div>
 
       <div class="cv-entry">
-        <div class="cv-entry-header cv-entry-header-3col">
+        <div class="cv-entry-header cv-entry-header-uniform">
           <span class="cv-entry-left">
             <img src="{{site.url}}{{site.baseurl}}/images/experience/mtu.png" alt="Michigan Technological University" class="inline-logo">
             Michigan Technological University
           </span>
-          <span class="cv-entry-mid">- M.E. Materials Science</span>
+          <span class="cv-entry-dash">-</span>
+          <span class="cv-entry-mid">M.E. Materials Science</span>
           <span class="cv-entry-date">December 2021</span>
         </div>
       </div>
 
       <div class="cv-entry">
-        <div class="cv-entry-header cv-entry-header-3col">
+        <div class="cv-entry-header cv-entry-header-uniform">
           <span class="cv-entry-left">
             <img src="{{site.url}}{{site.baseurl}}/images/experience/mtu.png" alt="Michigan Technological University" class="inline-logo">
             Michigan Technological University
           </span>
-          <span class="cv-entry-mid">- M.S. Mechanical Engineering</span>
+          <span class="cv-entry-dash">-</span>
+          <span class="cv-entry-mid">M.S. Mechanical Engineering</span>
           <span class="cv-entry-date">August 2016</span>
         </div>
         <p class="cv-detail">Thesis: Mechanical testing of fused filament 3-D printed components for distributed manufacturing</p>
       </div>
 
       <div class="cv-entry">
-        <div class="cv-entry-header cv-entry-header-3col">
+        <div class="cv-entry-header cv-entry-header-uniform">
           <span class="cv-entry-left">
             <img src="{{site.url}}{{site.baseurl}}/docs/cv/Logos/NMIT.jpeg" alt="NMIT" class="inline-logo">
             NMIT, Bangalore, India
           </span>
-          <span class="cv-entry-mid">- B.E. Mechanical Engineering</span>
+          <span class="cv-entry-dash">-</span>
+          <span class="cv-entry-mid">B.E. Mechanical Engineering</span>
           <span class="cv-entry-date">August 2014</span>
         </div>
       </div>
@@ -137,12 +141,13 @@ permalink: /CV
     <div class="cv-section-body">
 
       <div class="cv-entry">
-        <div class="cv-entry-header cv-entry-header-3col">
+        <div class="cv-entry-header cv-entry-header-uniform">
           <span class="cv-entry-left">
             <img src="{{site.url}}{{site.baseurl}}/images/experience/uidaho.png" alt="University of Idaho" class="inline-logo">
             <strong>University of Idaho</strong>
           </span>
-          <span class="cv-entry-mid">- Graduate Research Assistant</span>
+          <span class="cv-entry-dash">-</span>
+          <span class="cv-entry-mid">Graduate Research Assistant</span>
           <span class="cv-entry-date">June 2022 - Present</span>
         </div>
         <ul class="cv-bullets">
@@ -154,12 +159,13 @@ permalink: /CV
       </div>
 
       <div class="cv-entry">
-        <div class="cv-entry-header cv-entry-header-3col">
+        <div class="cv-entry-header cv-entry-header-uniform">
           <span class="cv-entry-left">
             <img src="{{site.url}}{{site.baseurl}}/images/experience/ornl.png" alt="Oak Ridge National Laboratory" class="inline-logo">
             <strong>Oak Ridge National Laboratory</strong>
           </span>
-          <span class="cv-entry-mid">- Research Intern</span>
+          <span class="cv-entry-dash">-</span>
+          <span class="cv-entry-mid">Research Intern</span>
           <span class="cv-entry-date">May 2024 - August 2024</span>
         </div>
         <ul class="cv-bullets">
@@ -170,12 +176,13 @@ permalink: /CV
       </div>
 
       <div class="cv-entry">
-        <div class="cv-entry-header cv-entry-header-3col">
+        <div class="cv-entry-header cv-entry-header-uniform">
           <span class="cv-entry-left">
             <img src="{{site.url}}{{site.baseurl}}/images/experience/mtu.png" alt="Michigan Technological University" class="inline-logo">
             <strong>Michigan Technological University</strong>
           </span>
-          <span class="cv-entry-mid">- Graduate Research Assistant</span>
+          <span class="cv-entry-dash">-</span>
+          <span class="cv-entry-mid">Graduate Research Assistant</span>
           <span class="cv-entry-date">April 2016 - May 2022</span>
         </div>
         <ul class="cv-bullets">
@@ -204,9 +211,10 @@ permalink: /CV
     <div class="cv-section-body">
 
       <div class="cv-entry">
-        <div class="cv-entry-header cv-entry-header-3col">
+        <div class="cv-entry-header cv-entry-header-uniform">
           <span class="cv-entry-left"><strong>ME 4240 / ME 4260</strong></span>
-          <span class="cv-entry-mid">- Capstone Mentoring</span>
+          <span class="cv-entry-dash">-</span>
+          <span class="cv-entry-mid">Capstone Mentoring</span>
           <span class="cv-entry-date">Fall 2022 – Spring 2025 (6 Semesters)</span>
         </div>
         <p>Mentored 9 capstone projects (40+ senior-year students) from concept to completion by providing hands-on training in CAD, Design for Manufacturing (DfM), Laser Cutting, and CNC machining.</p>
@@ -219,18 +227,20 @@ permalink: /CV
       </div>
 
       <div class="cv-entry">
-        <div class="cv-entry-header cv-entry-header-3col">
+        <div class="cv-entry-header cv-entry-header-uniform">
           <span class="cv-entry-left"><strong>ME 2010, ME 3310</strong></span>
-          <span class="cv-entry-mid">- Statics &amp; Mechanics of Materials</span>
+          <span class="cv-entry-dash">-</span>
+          <span class="cv-entry-mid">Statics &amp; Mechanics of Materials</span>
           <span class="cv-entry-date">Spring 2022 (1 Semester)</span>
         </div>
         <p>Led discussion sections for Statics and Mechanics of Materials for 100+ students, focusing on numerical problem solving.</p>
       </div>
 
       <div class="cv-entry">
-        <div class="cv-entry-header cv-entry-header-3col">
+        <div class="cv-entry-header cv-entry-header-uniform">
           <span class="cv-entry-left"><strong>MSE 4777 / MSE 5777</strong></span>
-          <span class="cv-entry-mid">- 3D Printer Assembly</span>
+          <span class="cv-entry-dash">-</span>
+          <span class="cv-entry-mid">3D Printer Assembly</span>
           <span class="cv-entry-date">Fall 2018 – 2020 (3 Semesters)</span>
         </div>
         <p>Trained undergraduate students (class of 60+) with the assembly and troubleshooting of their 3-D Printers.</p>

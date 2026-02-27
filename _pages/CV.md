@@ -336,13 +336,22 @@ permalink: /CV
         <div class="cv-section-body">
           <div class="cv-entry">
             <h4>Material Characterization</h4>
-            <p>Optical Microscopy, SEM, Computed Tomography (CT scan), Image Analysis (ImageJ), Mechanical Testing (Tensile, Flexure, Fatigue, Creep, Nanoindentation, DMA), DSC, TGA, Rheology (caliper, parallel plate, cone and plate), Zeta potential testing</p>
+            <p>Optical Microscopy, SEM, Computed Tomography (CT scan), Image Analysis (ImageJ)<br>
+            Mechanical Testing (Tensile, Flexure, Fatigue, Creep, Nanoindentation, DMA)<br>
+            DSC, TGA<br>
+            Rheology (caliper, parallel plate, cone and plate)<br>
+            Zeta potential testing</p>
 
             <h4>Design, Fabrication &amp; Prototyping</h4>
-            <p>CAD design (SolidWorks, CATIA, NX, Creo), Design for Additive Manufacturing, DfM, Machining (milling, lathe, welding, CNC, laser cutting), 3D Printing (FFF, FGF, SLA, DLP, DIW), Single and twin-screw extrusion, Injection molding</p>
+            <p>CAD (SolidWorks, CATIA), Design for Additive Manufacturing, DfAM <br> 
+            Machining (milling, lathe, welding, CNC, laser cutting)<br> 
+            Additive manufacturing (FFF, FGF, SLA, DLP, DIW)<br> 
+            Single and twin-screw extrusion, Injection molding</p>
 
             <h4>Statistics, Analysis &amp; Writing</h4>
-            <p>Design of Experiments (Minitab, R), MATLAB, Python, Lean Six Sigma: Black Belt certificate, Report/SOP writing, training, journal article writing</p>
+            <p>Design of Experiments (DoE), root-cause analysis, Lean Six Sigma (Black Belt) <br>
+            Minitab, R, MATLAB, Python<br> 
+            Report/SOP writing, journal article writing</p>
           </div>
         </div>
       </div>

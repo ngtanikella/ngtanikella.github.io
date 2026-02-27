@@ -26,8 +26,7 @@ I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both f
 
 <div class="news-box" role="region" aria-label="News">
   <ul class="news-list">
-    {% assign sorted_news = site.data.news | sort: "date" | reverse %}
-    {% for item in sorted_news %}
+    {% for item in site.data.news %}
       <li class="news-item">
         <span class="news-date">{{ item.date }}</span>
         <span class="news-text">{{ item.news }}</span>
@@ -95,7 +94,7 @@ I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both f
   .modal-text {
     margin: 0;
   }
-  /* News (scrollable) */
+/* News (scrollable) */
 .news-box{
   border: 1px solid rgba(0,0,0,0.12);
   border-radius: 14px;

@@ -1,0 +1,212 @@
+/* =========================
+   CV PAGE — sticky left nav + scrolling content
+   ========================= */
+
+.cv-layout {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* Left sidebar nav — sticky */
+.cv-nav {
+  position: sticky;
+  top: 90px; /* below fixed navbar */
+  flex-shrink: 0;
+  width: 180px;
+}
+
+.cv-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cv-nav li {
+  margin-bottom: 4px;
+}
+
+.cv-nav-link {
+  display: block;
+  padding: 6px 12px;
+  font-size: 0.88em;
+  font-weight: 600;
+  color: #555;
+  border-left: 3px solid transparent;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.cv-nav-link:hover,
+.cv-nav-link.active {
+  color: #289c01;
+  border-left-color: #289c01;
+  background: rgba(40, 156, 1, 0.05);
+  text-decoration: none;
+}
+
+/* Right content area */
+.cv-content {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Section spacing */
+.cv-section {
+  scroll-margin-top: 90px; /* offset for fixed navbar */
+  padding-bottom: 8px;
+}
+
+.cv-section-title {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+/* Dividers between sections */
+.cv-divider {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 24px 0;
+}
+
+/* Individual entries (jobs, degrees) */
+.cv-entry {
+  margin-bottom: 20px;
+}
+
+.cv-entry:last-child {
+  margin-bottom: 0;
+}
+
+.cv-entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.cv-entry-title {
+  font-size: 1em;
+  color: #111;
+}
+
+.cv-entry-date {
+  font-size: 0.88em;
+  color: #666;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.cv-detail {
+  font-size: 0.92em;
+  color: #555;
+  font-style: italic;
+}
+
+/* Bullet points in CV */
+.cv-bullets {
+  margin: 8px 0 0 0;
+  padding-left: 20px;
+}
+
+.cv-bullets li {
+  margin-bottom: 6px;
+  font-size: 0.94em;
+  line-height: 1.5;
+}
+
+/* Publication list */
+.cv-pub-list {
+  margin: 0;
+  padding-left: 24px;
+}
+
+.cv-pub-list li {
+  margin-bottom: 14px;
+  font-size: 0.94em;
+  line-height: 1.5;
+}
+
+.cv-authors {
+  font-size: 0.9em;
+  color: #444;
+}
+
+/* References grid */
+.cv-references-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.cv-ref {
+  font-size: 0.94em;
+  line-height: 1.6;
+}
+
+/* Skills sub-headings */
+.cv-section h4 {
+  color: #289c01;
+  margin: 14px 0 4px 0;
+  font-size: 0.95em;
+}
+
+.cv-section h4:first-child {
+  margin-top: 0;
+}
+
+/* ---- Mobile: stack layout ---- */
+@media (max-width: 800px) {
+  .cv-layout {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .cv-nav {
+    position: relative;
+    top: auto;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 10px;
+  }
+
+  .cv-nav ul {
+    display: flex;
+    gap: 4px;
+    white-space: nowrap;
+  }
+
+  .cv-nav-link {
+    border-left: none;
+    border-bottom: 3px solid transparent;
+    padding: 6px 10px;
+    font-size: 0.8em;
+  }
+
+  .cv-nav-link:hover,
+  .cv-nav-link.active {
+    border-left-color: transparent;
+    border-bottom-color: #289c01;
+  }
+
+  .cv-entry-header {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .cv-references-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .cv-nav-link {
+    font-size: 0.75em;
+    padding: 4px 8px;
+  }
+}

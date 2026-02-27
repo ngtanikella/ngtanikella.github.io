@@ -1,76 +1,61 @@
 /* =========================
-   CV PAGE — sticky left nav + scrolling content
+   CV PAGE — sticky per-section title (no TOC)
    ========================= */
 
 .cv-layout {
-  display: flex;
-  gap: 40px;
-  align-items: flex-start;
-  overflow: visible; /* required for position: sticky to work */
+  display: block;      /* no sidebar nav anymore */
+  overflow: visible;   /* required for position: sticky */
 }
 
-/* Left sidebar nav — sticky */
-.cv-nav {
-  position: -webkit-sticky; /* Safari support */
-  position: sticky;
-  top: 90px; /* below fixed navbar */
-  flex-shrink: 0;
-  width: 180px;
-  max-height: calc(100vh - 100px);
-  overflow-y: auto;
-}
-
-.cv-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.cv-nav li {
-  margin-bottom: 4px;
-}
-
-.cv-nav-link {
-  display: block;
-  padding: 6px 12px;
-  font-size: 0.88em;
-  font-weight: 600;
-  color: #555;
-  border-left: 3px solid transparent;
-  transition: all 0.2s ease;
-  text-decoration: none;
-}
-
-.cv-nav-link:hover,
-.cv-nav-link.active {
-  color: #289c01;
-  border-left-color: #289c01;
-  background: rgba(40, 156, 1, 0.05);
-  text-decoration: none;
-}
-
-/* Right content area */
 .cv-content {
-  flex: 1;
-  min-width: 0;
+  width: 100%;
 }
 
-/* Section spacing */
-.cv-section {
-  scroll-margin-top: 90px; /* offset for fixed navbar */
-  padding-bottom: 8px;
+/* 2-column section layout: title left, content right */
+.cv-section-grid {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  column-gap: 40px;
+  align-items: start;
+}
+
+.cv-section-heading {
+  /* left column */
 }
 
 .cv-section-title {
-  margin-top: 0;
-  margin-bottom: 16px;
+  margin: 0;
+  position: sticky;
+  top: 90px;           /* below fixed navbar */
+  align-self: start;
 }
 
-/* Dividers between sections */
+/* right column: content only (no titles here) */
+.cv-section-body {
+  min-width: 0;
+}
+
+/* keep your existing divider style */
 .cv-divider {
   border: none;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   margin: 24px 0;
+}
+
+/* ---- Mobile: no TOC; title sticks at top while reading ---- */
+@media (max-width: 800px) {
+  .cv-section-grid {
+    grid-template-columns: 1fr;
+    row-gap: 12px;
+  }
+
+  .cv-section-title {
+    top: 120px;       /* below wrapped mobile navbar */
+    z-index: 50;
+    padding: 8px 0;
+    background: #fff; /* prevents text underneath showing through */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
 }
 
 /* Individual entries (jobs, degrees) */

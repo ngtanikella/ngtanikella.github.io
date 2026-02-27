@@ -8,7 +8,7 @@ permalink: /media
 
 # MEDIA COVERAGE
 
-## Video
+## Videos
 
 <div class="experience-box" markdown="1">
 

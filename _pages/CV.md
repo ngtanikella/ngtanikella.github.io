@@ -229,10 +229,8 @@ permalink: /CV
     <div class="cv-section-heading">
       <h2 class="cv-section-title">Teaching &amp; Mentoring</h2>
     </div>
-
     <div class="cv-section-body">
       <div class="cv-entry cv-uniform">
-
         <div class="cv-item">
           <div class="cv-item-head">
             <div class="cv-item-left">ME 4240 / ME 4260</div>
@@ -251,7 +249,6 @@ permalink: /CV
             </ul>
           </div>
         </div>
-
         <div class="cv-item">
           <div class="cv-item-head">
             <div class="cv-item-left">ME 2010, ME 3310</div>
@@ -265,19 +262,16 @@ permalink: /CV
           </div>
         </div>
       </div>
-
       <div class="cv-item">
           <div class="cv-item-body">Authored lab reports and developed SOPs for training 10+ peers and students, ensured lab safety rules and regulations</div>
           <div class="cv-item-right"><div class="cv-item-date">2022-2025</div></div>
       </div>
-      
       <div class="cv-item">
-          <div class="cv-item-head" style="font-size: 0.92em;"> Provided hands-on learning experience with 3-D printers and CAD projects</div>
+        <div class="cv-item-head" style="font-size: 0.92em;">
+          <div class="cv-item-left" style="white-space:normal;">Provided hands-on learning experience with 3-D printers and CAD projects</div>
           <div class="cv-item-right"><div class="cv-item-date">2020-2021</div></div>
+        </div>
       </div>
-
-      </div>
-
     </div>
   </div>
 </section>

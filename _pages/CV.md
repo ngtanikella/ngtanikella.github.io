@@ -285,7 +285,7 @@ permalink: /CV
       </div>
 
 
-      <div class="cv-item">
+      <div class="cv-item" style="margin-top: 12px;">
         <div class="cv-item-body">Coached prospective students on the basics of 3-D printing and mechanical design. Provided hands-on learning experience with 3-D printers and CAD projects</div>
         <div class="cv-item-right"><div class="cv-item-date">2020-2021</div></div>
       </div>  

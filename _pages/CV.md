@@ -396,7 +396,8 @@ permalink: /CV
             <p>23 manuscripts reviewed for <em>Progress in Additive Manufacturing</em>, <em>Discover Applied Sciences</em>, <em>Scientific Reports</em>, and <em>Multiscale and Multidisciplinary Modeling, Experiments and Design</em></p>
 
             <h4>Outreach</h4>
-            <p>Taught polymers deformation at Pullman High School (2023–2025); organized educational activities at Michigan Tech Summer Youth Program (2020–2021)</p>
+            <p>Taught polymers deformation at Pullman High School (2023–2025)</p>
+            <p>organized educational activities at Michigan Tech Summer Youth Program (2020–2021)</p>
           </div>
         </div>
       </div>

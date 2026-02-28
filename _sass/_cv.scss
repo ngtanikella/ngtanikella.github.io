@@ -51,7 +51,7 @@
 /* Label : value alignment (Expertise section, etc.) */
 .cv-keyvals {
   display: grid;
-  grid-template-columns: 190px 1fr; /* label width */
+  grid-template-columns: max-content 1fr;
   column-gap: 14px;
   row-gap: 6px;
   margin: 0;
@@ -72,16 +72,11 @@
 .cv-keyvals dt::after {
   content: ":";
 }
-.cv-keyvals {
-  display: grid;
-  grid-template-columns: max-content 1fr;
-  column-gap: 14px;
-  row-gap: 6px;
-}
 
 /* =========================
-   Uniform entry alignment (safe, no dl/dt/dd)
-   label (left) defines alignment; middle starts after the widest label
+   Uniform entry alignment using subgrid
+   All left labels share one max-content column,
+   so middle headings and dates align across items.
    ========================= */
 
 .cv-uniform {
@@ -91,30 +86,35 @@
   row-gap: 12px;
 }
 
-/* One entry: header row + optional bullets/details */
+/* Each entry spans both columns and inherits them via subgrid */
 .cv-item {
   grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+  row-gap: 0;
 }
 
-/* Header row: left label | right (middle + date) */
+/* Header row inherits parent columns via subgrid */
 .cv-item-head {
+  grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: max-content 1fr;
-  column-gap: 12px;
+  grid-template-columns: subgrid;
   align-items: baseline;
 }
 
 .cv-item-left {
+  grid-column: 1;
   white-space: nowrap;
 }
 
-/* Keep your small dash */
+/* Small dash separator after the left label */
 .cv-item-left::after {
-  content: " -";
+  content: " —";
 }
 
 /* Right side splits into middle text and right-aligned date */
 .cv-item-right {
+  grid-column: 2;
   display: grid;
   grid-template-columns: 1fr max-content;
   column-gap: 12px;
@@ -137,31 +137,24 @@
   font-weight: 600;
 }
 
-/* Body under the header aligns with the right column start */
+/* Body under the header aligns with the right (second) column via subgrid */
 .cv-item-body {
-  margin-left: calc(0px); /* no-op; keeps structure clear */
+  grid-column: 2;
   padding-left: 0;
 }
 
-/* Make the body visually align under the "right column"
-   by adding a left padding equal to (label column + gap).
-   We do this using a CSS variable set per section. */
-.cv-section-body {
-  --cv-label-col: 0px;
-  --cv-label-gap: 12px;
-}
-
-.cv-item-body {
-  padding-left: calc(var(--cv-label-col) + var(--cv-label-gap));
-}
-
-/* Mobile: stack */
+/* Mobile: stack everything */
 @media (max-width: 800px) {
   .cv-uniform {
     grid-template-columns: 1fr;
   }
 
+  .cv-item {
+    display: block;
+  }
+
   .cv-item-head {
+    display: grid;
     grid-template-columns: 1fr;
     row-gap: 2px;
   }
@@ -187,14 +180,6 @@
     padding-left: 0;
   }
 }
-/* Tune these 3 numbers once; they control bullet indent per section */
-#education .cv-section-body { --cv-label-col: 320px; }
-#research  .cv-section-body { --cv-label-col: 290px; }
-#teaching  .cv-section-body { --cv-label-col: 170px; }
-
-
-
-
 
 /* Tighter, cleaner text spacing in CV area */
 .cv-section-body p {
@@ -300,6 +285,12 @@
   margin-top: 0;
 }
 
+/* Skills line spacing — each <p> gets vertical breathing room
+   similar to the row-gap in the Expertise section */
+#skills .cv-entry p {
+  margin-bottom: 6px;
+}
+
 /* ---- Mobile: single column; section title becomes sticky at top ---- */
 @media (max-width: 800px) {
   .cv-section-grid {
@@ -315,7 +306,7 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   }
 
-  /* On mobile, it’s fine if title/date wrap */
+  /* On mobile, it's fine if title/date wrap */
   .cv-entry-header {
     flex-wrap: wrap;
     gap: 4px 10px;

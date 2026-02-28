@@ -143,7 +143,6 @@ permalink: /CV
 <hr class="cv-divider">
 
 <!-- RESEARCH EXPERIENCE -->
-<!-- RESEARCH EXPERIENCE -->
 <section id="research" class="cv-section">
   <div class="cv-section-grid">
     <div class="cv-section-heading">
@@ -224,9 +223,6 @@ permalink: /CV
 
 <hr class="cv-divider">
 
-<hr class="cv-divider">
-
-<!-- TEACHING AND MENTORING -->
 <!-- TEACHING AND MENTORING -->
 <section id="teaching" class="cv-section">
   <div class="cv-section-grid">
@@ -363,22 +359,22 @@ permalink: /CV
         <div class="cv-section-body">
           <div class="cv-entry">
             <h4>Material Characterization</h4>
-            <p>Optical Microscopy, SEM, Computed Tomography (CT scan), Image Analysis (ImageJ)<br>
-            Mechanical Testing (Tensile, Flexure, Fatigue, Creep, Nanoindentation, DMA)<br>
-            DSC, TGA<br>
-            Rheology (caliper, parallel plate, cone and plate)<br>
-            Zeta potential testing</p>
+            <p>Optical Microscopy, SEM, Computed Tomography (CT scan), Image Analysis (ImageJ)</p>
+            <p>Mechanical Testing (Tensile, Flexure, Fatigue, Creep, Nanoindentation, DMA)</p>
+            <p>DSC, TGA</p>
+            <p>Rheology (caliper, parallel plate, cone and plate)</p>
+            <p>Zeta potential testing</p>
 
             <h4>Design, Fabrication &amp; Prototyping</h4>
-            <p>CAD (SolidWorks, CATIA), Design for Additive Manufacturing, DfAM <br> 
-            Machining (milling, lathe, welding, CNC, laser cutting)<br> 
-            Additive manufacturing (FFF, FGF, SLA, DLP, DIW)<br> 
-            Single and twin-screw extrusion, Injection molding</p>
+            <p>CAD (SolidWorks, CATIA), Design for Additive Manufacturing, DfAM</p>
+            <p>Machining (milling, lathe, welding, CNC, laser cutting)</p>
+            <p>Additive manufacturing (FFF, FGF, SLA, DLP, DIW)</p>
+            <p>Single and twin-screw extrusion, Injection molding</p>
 
             <h4>Statistics, Analysis &amp; Writing</h4>
-            <p>Design of Experiments (DoE), root-cause analysis, Lean Six Sigma (Black Belt) <br>
-            Minitab, R, MATLAB, Python<br> 
-            Report/SOP writing, journal article writing</p>
+            <p>Design of Experiments (DoE), root-cause analysis, Lean Six Sigma (Black Belt)</p>
+            <p>Minitab, R, MATLAB, Python</p>
+            <p>Report/SOP writing, journal article writing</p>
           </div>
         </div>
       </div>

@@ -280,10 +280,16 @@ permalink: /CV
 
       </div>
 
-      <div class="cv-entry">
-        <ul class="cv-bullets">
-          <li>Authored lab reports and developed SOPs for training 10+ peers and students, ensured lab safety rules and regulations (2022–2025)</li>
-          <li>Coached prospective students on the basics of 3-D printing and mechanical design. Provided hands-on learning experience with 3-D printers and CAD projects (2020–2021)</li>
+      <div class="cv-item">
+        <ul class="cv-item-body">
+          <p>Authored lab reports and developed SOPs for training 10+ peers and students, ensured lab safety rules and regulations (2022–2025)</p>
+          <div class="cv-item-date">2022-2025</div>
+        </ul>
+      </div>
+      <div class="cv-item">
+        <ul class="cv-item-body">
+          <p>Coached prospective students on the basics of 3-D printing and mechanical design. Provided hands-on learning experience with 3-D printers and CAD projects (2022–2025)</p>
+          <div class="cv-item-date">2020-2021</div>
         </ul>
       </div>
 

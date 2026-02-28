@@ -277,18 +277,17 @@ permalink: /CV
             <p>Trained undergraduate students (class of 60+) with the assembly and troubleshooting of their 3-D Printers.</p>
           </div>
         </div>
-      
-
-        <div class="cv-item">
-          <div class="cv-item-body">Authored lab reports and developed SOPs for training 10+ peers and students, ensured lab safety rules and regulations</div>
-          <div class="cv-item-right"><div class="cv-item-date">2022-2025</div></div>
-        </div>
-
-        <div class="cv-item">
-          div class="cv-item-body">Coached prospective students on the basics of 3-D printing and mechanical design. Provided hands-on learning experience with 3-D printers and CAD projects</div>
-          <div class="cv-item-right"><div class="cv-item-date">2020-2021</div></div>
-        </div>
       </div>
+
+      <div class="cv-item">
+        <div class="cv-item-body">Authored lab reports and developed SOPs for training 10+ peers and students, ensured lab safety rules and regulations</div>
+        <div class="cv-item-right"><div class="cv-item-date">2022-2025</div></div>
+      </div>
+
+      <div class="cv-item">
+        div class="cv-item-body">Coached prospective students on the basics of 3-D printing and mechanical design. Provided hands-on learning experience with 3-D printers and CAD projects</div>
+        <div class="cv-item-right"><div class="cv-item-date">2020-2021</div></div>
+      </div>  
     </div>
   </div>
 </section>

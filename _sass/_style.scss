@@ -2,24 +2,24 @@
 
 /* =========================
    THEME COLORS
+   (Single source of truth — do NOT redefine in vars.scss)
    ========================= */
-$bg: #ffffff;          // page background
-$text: #111111;        // small/body text (black)
-$accent: #289c01;      // green accents (titles/headings/links/name)
-$navbar-bg: #6b4802;   // navbar background
-$footer-bg: #eeeeee;   // footer background
+$bg:        #ffffff;
+$text:      #111111;
+$accent:    #289c01;   /* green — titles, headings, links, name */
+$navbar-bg: #6b4802;
+$footer-bg: #eeeeee;
 
-/*
- * Basic
- */
-
+/* =========================
+   Base reset
+   ========================= */
 html {
   height: 100%;
   width: 100%;
   margin: 0;
   padding: 0;
-  overflow-y: scroll;   /* always show vertical scrollbar — prevents layout shift between pages */
-  overflow-x: hidden;   /* prevent horizontal scroll */
+  overflow-y: scroll;   /* prevent layout shift between pages */
+  overflow-x: hidden;
 }
 
 body {
@@ -31,19 +31,20 @@ body {
   min-height: 100%;
 }
 
-/* Sticky-footer layout (footer at bottom of page, not viewport) */
+/* Sticky-footer wrapper */
 .wrapper {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
+/* =========================
+   Links & text
+   ========================= */
 a {
   text-decoration: none;
   color: $accent;
-}
-a:hover {
-  text-decoration: underline;
+  &:hover { text-decoration: underline; }
 }
 
 p {
@@ -51,33 +52,29 @@ p {
   color: $text;
 }
 
-/* Headings / titles should be green */
 h1, h2, h3, h4, h5, h6 {
   color: $accent;
 }
 
-/*
- * Navbar / Header (fixed)
- */
-
+/* =========================
+   Navbar (fixed)
+   ========================= */
 .fixed-top {
   position: fixed;
   z-index: 99;
   top: 0;
-  margin: 0;
   width: 100%;
+  margin: 0;
 }
 
-/* Navbar wrapper */
 .navbar {
   width: 100%;
   background-color: $navbar-bg;
   margin: 0;
-  border-bottom: 2px solid darken(#ffffff, 20%);
+  border-bottom: 2px solid darken(#fff, 20%);
   padding: 12px 0;
 }
 
-/* Inner container flex alignment */
 .nav-inner {
   display: flex;
   align-items: center;
@@ -85,7 +82,6 @@ h1, h2, h3, h4, h5, h6 {
   gap: 16px;
 }
 
-/* Name (logo + text) */
 #author-name {
   display: inline-flex;
   align-items: center;
@@ -98,9 +94,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
 }
 
-.name-text {
-  color: $accent;
-}
+.name-text { color: $accent; }
 
 .name-logo {
   height: 24px;
@@ -116,6 +110,15 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
   list-style: none;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 8px;
+    line-height: 1;
+    font-weight: bold;
+    color: $accent;
+  }
 }
 
 .nav-list {
@@ -123,94 +126,25 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
 }
 
-.navbar-ul a {
-  display: inline-flex;
-  align-items: center;
-  padding: 6px 8px;
-  line-height: 1;
-  font-weight: bold;
-  color: $accent;
-}
-
-/* Legacy classes (neutralize floats so they don't break layout) */
-.alignable {
-  display: inline-block;
-  font-weight: bold;
-}
-.pull-left,
-.pull-right {
-  float: none !important;
-}
-
-/* Divs */
-
+/* =========================
+   Layout containers
+   ========================= */
 .container {
   max-width: 60%;
   margin: auto;
 }
 
-/* Main content area should grow to push footer to bottom */
+/* Main content — grows to push footer down */
 .body-container {
-  flex: 1;                 /* KEY for sticky footer */
+  flex: 1;
   max-width: 50%;
   margin: auto;
-  padding-top: 80px;       /* space for fixed header */
+  padding-top: 80px;   /* space for fixed navbar */
 }
 
-/* Date */
-
-.date-text {
-  float: left;
-  width: 4px;
-}
-
-ul li span {
-  float: left;
-  width: 400px;
-}
-.social-icon-logo {
-  height: 2.5em !important;
-  width: 2.5em !important;
-  max-width: none !important;
-  display: block !important;
-  margin: 0 auto;
-  object-fit: contain;
-}
-
-/* Social icons table — bordered cells */
-.social-icons-table {
-  margin: 10px auto;
-  border-collapse: collapse;
-}
-
-.social-icons-table td {
-  border: 1px solid darken(#ffffff, 20%);
-  padding: 10px 14px;
-  text-align: center;
-  vertical-align: middle;
-  background: #fff;
-}
-
-.social-icons-table td a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.social-icons-table td:hover {
-  background: darken(#ffffff, 5%);
-}
-
-ul#horizontal-list {
-  min-width: 696px;
-  list-style: none;
-  padding-top: 20px;
-}
-
-ul#horizontal-list li {
-  display: inline;
-}
-
+/* =========================
+   Inline logo (used beside institution names)
+   ========================= */
 .inline-logo {
   max-height: 1em;
   max-width: 1em;
@@ -221,67 +155,98 @@ ul#horizontal-list li {
   object-fit: contain;
 }
 
+/* =========================
+   Social icons table (CV + Contact)
+   ========================= */
+.social-icon-logo {
+  height: 2.5em !important;
+  width: 2.5em !important;
+  max-width: none !important;
+  display: block !important;
+  margin: 0 auto;
+  object-fit: contain;
+}
 
+.social-icons-table {
+  margin: 10px auto;
+  border-collapse: collapse;
 
+  td {
+    border: 1px solid darken(#fff, 20%);
+    padding: 10px 14px;
+    text-align: center;
+    vertical-align: middle;
+    background: #fff;
 
+    &:hover { background: darken(#fff, 5%); }
 
-/* Publications */
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
 
+/* =========================
+   Social icon brand colors
+   ========================= */
+a .ai-google-scholar-square       { color: #4285F4; }
+a .fa-linkedin                     { color: #0A66C2; }
+a .fa-github                       { color: #333;    }
+a .ai-google-scholar-square:hover  { color: darken(#4285F4, 15%); }
+a .fa-linkedin:hover               { color: darken(#0A66C2, 15%); }
+a .fa-github:hover                 { color: #000;    }
+
+/* =========================
+   Publications page (cards)
+   ========================= */
 .publications {
   min-height: 60px;
   width: 100%;
   margin-bottom: 10px;
-  background-color: #ffffff;
-  border: 1px solid darken(#ffffff, 50%);
+  background-color: #fff;
+  border: 1px solid darken(#fff, 50%);
   box-shadow: 2px 2px 5px gray;
 
-  blockquote {
-    border-color: #ddd;
-    border-color: rgba(0, 0, 0, 0.15);
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
   }
 }
 
 .publication-title {
-  margin: 20px 20px 20px 20px;
+  margin: 20px;
   font-size: $publication-title-font-size;
   font-weight: bold;
   color: $accent;
 }
 
-a .publication-title {
-  color: $accent;
-}
+a .publication-title { color: $accent; }
 
 .publication-picture {
   object-fit: cover;
   display: block;
-  position: relative;
   max-height: 30%;
   max-width: 15%;
   float: left;
   padding: 2px;
-  border: 1px solid darken(#ffffff, 20%);
-  border-radius: 10px;
+  border: 1px solid darken(#fff, 20%);
+  border-radius: 10%;
   overflow: hidden;
-  margin: 0px 20px 10px 20px;
+  margin: 0 20px 10px 20px;
 }
 
 .publication-text {
-  margin: 0px 20px 20px 25%;
+  margin: 0 20px 20px 25%;
   color: $text;
-
-  p, em {
-    color: $text;
-  }
+  p, em { color: $text; }
 }
 
-.publications::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Collage grid: ALWAYS 3 columns */
+/* =========================
+   Collage grid (homepage projects)
+   ========================= */
 .collage-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -296,64 +261,150 @@ a .publication-title {
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.15);
-}
 
-/* Uniform image height; crop to fit */
-.collage-item img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  display: block;
-}
-
-.collage-item figcaption {
-  padding: 8px 10px;
-  font-size: 0.9em;
-  color: $text;
-}
-
-/* Experience */
-
-.experience-box {
-  width: 100%;
-  padding: 0px 10px 0px 10px;
-  margin-bottom: 20px;
-  background-color: #ffffff;
-  border: 1px solid darken(#ffffff, 50%);
-  box-shadow: 2px 2px 5px gray;
-
-  blockquote {
-    border-color: #ddd;
-    border-color: rgba(0, 0, 0, 0.15);
+  img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
   }
 
-  /* ensure normal text stays black */
-  p, li, span, div {
+  figcaption {
+    padding: 8px 10px;
+    font-size: 0.9em;
     color: $text;
   }
-
-  /* headings in experience stay green */
-  h1, h2, h3, h4, h5, h6 {
-    color: $accent;
-  }
 }
 
-/* Social / icon colors (icons keep brand colors, not link green) */
-a .ai-google-scholar-square { color: #4285F4; }
-a .fa-linkedin { color: #0A66C2; }
-a .fa-github { color: #333333; }
+/* Click-to-open modal links */
+.collage-grid .collage-link {
+  display: block;
+  cursor: zoom-in;
+  img { display: block; }
+}
 
-a .ai-google-scholar-square:hover { color: darken(#4285F4, 15%); }
-a .fa-linkedin:hover { color: darken(#0A66C2, 15%); }
-a .fa-github:hover { color: #000000; }
+/* =========================
+   CSS-only modal (no JS)
+   ========================= */
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 9999;
+  &:target { display: block; }
+}
 
-/* Footer (sticky footer bar, NOT fixed to viewport) */
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.82);
+}
+
+.modal-content {
+  position: relative;
+  width: min(980px, 92vw);
+  margin: 5vh auto;
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.25rem 1.25rem 1.5rem;
+  max-height: 90vh;
+  overflow: auto;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.35);
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.85rem;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 1;
+  color: #111;
+  padding: 0.15rem 0.45rem;
+  border-radius: 10px;
+  &:hover { background: rgba(0,0,0,0.06); }
+}
+
+.modal-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.modal-title { margin: 0.9rem 0 0.35rem; }
+.modal-text  { margin: 0; }
+
+/* Video in modal (Monster Book, etc.) */
+.modal-media {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* =========================
+   News feed (scrollable box on homepage)
+   ========================= */
+.news-box {
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 14px;
+  padding: 0.9rem 1rem;
+  max-height: 9.5rem;        /* ~2–3 items visible */
+  overflow-y: auto;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.news-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.news-item {
+  display: grid;
+  grid-template-columns: 10.5rem 1fr;
+  gap: 0.75rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  &:last-child { border-bottom: none; }
+}
+
+.news-date {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.news-text a { text-decoration: underline; }
+
+/* =========================
+   Experience boxes (media, mentoring pages)
+   ========================= */
+.experience-box {
+  width: 100%;
+  padding: 0 10px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid darken(#fff, 50%);
+  box-shadow: 2px 2px 5px gray;
+
+  p, li, span, div { color: $text; }
+  h1, h2, h3, h4, h5, h6 { color: $accent; }
+}
+
+/* =========================
+   Footer
+   ========================= */
 .footer {
   background-color: $footer-bg;
-  border-top: 2px solid darken(#ffffff, 20%);
+  border-top: 2px solid darken(#fff, 20%);
   padding: 10px 0;
   font-size: $footer-font-size;
   color: $text;
+
+  i { font-size: 2.6em; line-height: 1; }
+
+  .fa-github                 { color: #333;    }
+  .fa-linkedin               { color: #0A66C2; }
+  .ai-google-scholar-square  { color: #4285F4; }
 }
 
 .footer-inner {
@@ -368,7 +419,6 @@ a .fa-github:hover { color: #000000; }
   color: $text;
 }
 
-/* Icons row */
 .footer-icons {
   display: flex;
   align-items: center;
@@ -378,141 +428,42 @@ a .fa-github:hover { color: #000000; }
   list-style: none;
 }
 
-/* ~30% bigger icons */
-.footer i {
-  font-size: 2.6em;
-  line-height: 1;
-}
+/* =========================
+   Contact form
+   ========================= */
+.contact-form {
+  max-width: 720px;
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 1rem;
 
-/* Footer social icons — brand colors */
-.footer .fa-github { color: #333333; }
-.footer .fa-linkedin { color: #0A66C2; }
-.footer .ai-google-scholar-square { color: #4285F4; }
-
-/* Mobile */
-@media (max-width: 800px) {
-  .container {
-    max-width: $med-width;
-    transition: 0.3s ease all;
+  label {
+    display: grid;
+    gap: 0.4rem;
+    font-weight: 600;
   }
 
-  .body-container {
-    max-width: $med-width;
-    transition: 0.3s ease all;
-    padding-top: 120px; /* more space since nav wraps to 2 rows */
+  input, textarea {
+    width: 100%;
+    padding: 0.7rem 0.8rem;
+    border: 1px solid rgba(0,0,0,0.18);
+    border-radius: 12px;
+    font: inherit;
   }
 
-  .nav-inner {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .navbar-ul {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 4px 10px;
-  }
-
-  .navbar-ul a {
-    padding: 4px 6px;
-    font-size: 0.85em;
-  }
-
-  #author-name {
-    font-size: 18px !important;
-  }
-
-  img:not(.social-icon-logo):not(.inline-logo):not(.publication-picture):not(.name-logo):not(.profile-picture), video {
-    max-width: 100%;
-    height: auto;
-  }
-
-  /* Stack publication layout on mobile */
-  .publication-picture {
-    float: none;
-    display: block;
-    max-width: 40%;
-    margin: 10px auto;
-  }
-
-  .publication-text {
-    margin: 0 10px 20px 10px;
-  }
-
-  table:not(.social-icons-table) {
-    display: block;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  p {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
-
-  .ai-3x {
-    font-size: 2em;
-  }
-
-  .social-icon-logo {
-    height: 1.8em !important;
-    width: 1.8em !important;
-  }
-
-  .social-icons-table td {
-    padding: 8px 10px;
+  button {
+    width: fit-content;
+    padding: 0.65rem 1rem;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.2);
+    cursor: pointer;
+    font-weight: 700;
   }
 }
 
-@media (max-width: 650px) {
-  .container { max-width: 90%; }
-  .body-container { max-width: 90%; }
-}
-
-@media (max-width: 480px) {
-  .container {
-    max-width: 95%;
-    padding: 0 8px;
-  }
-
-  .body-container {
-    max-width: 95%;
-    padding-top: 140px;
-  }
-
-  .navbar-ul a {
-    padding: 3px 4px;
-    font-size: 0.75em;
-  }
-
-  #author-name {
-    font-size: 16px !important;
-  }
-
-  .name-logo {
-    height: 18px;
-  }
-
-  .social-icon-logo {
-    height: 1.5em !important;
-    width: 1.5em !important;
-  }
-
-  .social-icons-table td {
-    padding: 6px 8px;
-  }
-
-  .publication-picture {
-    max-width: 50%;
-  }
-
-  .footer-inner {
-    flex-direction: column;
-    gap: 6px;
-  }
-}
-
-/* Buttons */
+/* =========================
+   Buttons
+   ========================= */
 button,
 [role="button"] {
   padding: 3px;
@@ -524,6 +475,76 @@ button[aria-pressed="true"],
   border: 2px solid #000;
 }
 
+/* =========================
+   Mobile
+   ========================= */
+@media (max-width: 800px) {
+  .container      { max-width: $med-width; }
+  .body-container { max-width: $med-width; padding-top: 120px; }
+
+  .nav-inner {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .navbar-ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px 10px;
+    a { padding: 4px 6px; font-size: 0.85em; }
+  }
+
+  #author-name { font-size: 18px !important; }
+
+  /* Scale non-icon images */
+  img:not(.social-icon-logo):not(.inline-logo):not(.publication-picture):not(.name-logo):not(.profile-picture),
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .publication-picture {
+    float: none;
+    display: block;
+    max-width: 40%;
+    margin: 10px auto;
+  }
+
+  .publication-text { margin: 0 10px 20px 10px; }
+
+  table:not(.social-icons-table) {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  p { word-wrap: break-word; overflow-wrap: break-word; }
+
+  .social-icon-logo { height: 1.8em !important; width: 1.8em !important; }
+  .social-icons-table td { padding: 8px 10px; }
+}
+
+@media (max-width: 650px) {
+  .container,
+  .body-container { max-width: 90%; }
+}
+
+@media (max-width: 480px) {
+  .container      { max-width: 95%; padding: 0 8px; }
+  .body-container { max-width: 95%; padding-top: 140px; }
+
+  .navbar-ul a   { padding: 3px 4px; font-size: 0.75em; }
+  #author-name   { font-size: 16px !important; }
+  .name-logo     { height: 18px; }
+
+  .social-icon-logo      { height: 1.5em !important; width: 1.5em !important; }
+  .social-icons-table td { padding: 6px 8px; }
+  .publication-picture   { max-width: 50%; }
+
+  .footer-inner { flex-direction: column; gap: 6px; }
+}
+
+/* Partials */
 @import "typography";
 @import "tables";
 @import "cv";

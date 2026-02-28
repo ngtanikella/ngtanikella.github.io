@@ -12,195 +12,45 @@
   {% assign pdf_url = site.url | append: site.baseurl | append: "/docs/publications/" | append: pdf_url %}
 {% endunless %}
 
-{% if doi_url != "" %}
-  <a href="{{ doi_url }}" target="_blank" rel="noopener">
-    <div class="publication-title">{{ publication.title }}</div>
-  </a>
-{% else %}
-  <a href="{{ pdf_url }}" target="_blank" rel="noopener">
-    <div class="publication-title">{{ publication.title }}</div>
-  </a>
-{% endif %}
+{% assign primary_url = doi_url %}
+{% if primary_url == "" %}{% assign primary_url = pdf_url %}{% endif %}
 
-{% if doi_url != "" %}
-  <a href="{{ doi_url }}" target="_blank" rel="noopener">
-    <img class="publication-picture"
-         src="{{site.url}}{{site.baseurl}}/images/publications/{{ publication.image }}"
-         alt="{{ publication.title }}" />
-  </a>
-{% else %}
-  <a href="{{ pdf_url }}" target="_blank" rel="noopener">
-    <img class="publication-picture"
-         src="{{site.url}}{{site.baseurl}}/images/publications/{{ publication.image }}"
-         alt="{{ publication.title }}" />
-  </a>
-{% endif %}
+<!-- Title -->
+<a href="{{ primary_url }}" target="_blank" rel="noopener">
+  <div class="publication-title">{{ publication.title }}</div>
+</a>
 
+<!-- Thumbnail -->
+<a href="{{ primary_url }}" target="_blank" rel="noopener">
+  <img class="publication-picture"
+       src="{{site.url}}{{site.baseurl}}/images/publications/{{ publication.image }}"
+       alt="{{ publication.title }}" />
+</a>
+
+<!-- Description, authors, venue -->
 <div class="publication-text">
+  {% if publication.description %}<p>{{ publication.description }}</p>{% endif %}
+  {% if publication.authors %}<p><em>{{ publication.authors }}</em></p>{% endif %}
+  {% if publication.venue %}<p>{{ publication.venue }}</p>{% endif %}
 
-{% if publication.description %}
-<p>{{ publication.description }}</p>
-{% endif %}
-
-{% if publication.authors %}
-<p><em>{{ publication.authors }}</em></p>
-{% endif %}
-
-{% if publication.venue %}
-<p>{{ publication.venue }}</p>
-{% endif %}
-
-{% if publication.number_link == 1 %}
-<p>
-{% if publication.link1.url contains '://' %}
-<a href="{{ publication.link1.url }}" target="_blank">{{ publication.link1.display }}</a>
-{% else %}
-<a href="{{site.url}}{{site.baseurl}}/docs/publications/{{ publication.link1.url }}" target="_blank">{{ publication.link1.display }}</a>
-{% endif %}
-</p>
-{% endif %}
-
-{% if publication.number_link == 2 %}
-<p>
-{% if publication.link1.url contains '://' %}
-<a href="{{ publication.link1.url }}" target="_blank">{{ publication.link1.display }}</a>
-{% else %}
-<a href="{{site.url}}{{site.baseurl}}/docs/publications/{{ publication.link1.url }}" target="_blank">{{ publication.link1.display }}</a>
-{% endif %}
-|
-{% if publication.link2.url contains '://' %}
-<a href="{{ publication.link2.url }}" target="_blank">{{ publication.link2.display }}</a>
-{% else %}
-<a href="{{site.url}}{{site.baseurl}}/docs/publications/{{ publication.link2.url }}" target="_blank">{{ publication.link2.display }}</a>
-{% endif %}
-</p>
-{% endif %}
-
-{% if publication.number_link == 3 %}
-<p>
-{% if publication.link1.url contains '://' %}
-<a href="{{ publication.link1.url }}" target="_blank">{{ publication.link1.display }}</a>
-{% else %}
-<a href="{{site.url}}{{site.baseurl}}/docs/publications/{{ publication.link1.url }}" target="_blank">{{ publication.link1.display }}</a>
-{% endif %}
-|
-{% if publication.link2.url contains '://' %}
-<a href="{{ publication.link2.url }}" target="_blank">{{ publication.link2.display }}</a>
-{% else %}
-<a href="{{site.url}}{{site.baseurl}}/docs/publications/{{ publication.link2.url }}" target="_blank">{{ publication.link2.display }}</a>
-{% endif %}
-|
-{% if publication.link3.url contains '://' %}
-<a href="{{ publication.link3.url }}" target="_blank">{{ publication.link3.display }}</a>
-{% else %}
-<a href="{{site.url}}{{site.baseurl}}/docs/publications/{{ publication.link3.url }}" target="_blank">{{ publication.link3.display }}</a>
-{% endif %}
-</p>
-{% endif %}
-
-{% if publication.number_link == 4 %}
-<p>
-{% if publication.link1.url contains '://' %}
-<a href="{{ publication.link1.url }}" target="_blank">{{ publication.link1.display }}</a>
-{% else %}
-<a href="{{site.url}}{{site.baseurl}}/docs/publications/{{ publication.link1.url }}" target="_blank">{{ publication.link1.display }}</a>
-{% endif %}
-|
-{% if publication.link2.url contains '://' %}
-<a href="{{ publication.link2.url }}" target="_blank">{{ publication.link2.display }}</a>
-{% else %}
-<a href="{{site.url}}{{site.baseurl}}/docs/publications/{{ publication.link2.url }}" target="_blank">{{ publication.link2.display }}</a>
-{% endif %}
-|
-{% if publication.link3.url contains '://' %}
-<a href="{{ publication.link3.url }}" target="_blank">{{ publication.link3.display }}</a>
-{% else %}
-<a href="{{site.url}}{{site.baseurl}}/docs/publications/{{ publication.link3.url }}" target="_blank">{{ publication.link3.display }}</a>
-{% endif %}
-|
-{% if publication.link4.url contains '://' %}
-<a href="{{ publication.link4.url }}" target="_blank">{{ publication.link4.display }}</a>
-{% else %}
-<a href="{{site.url}}{{site.baseurl}}/docs/publications/{{ publication.link4.url }}" target="_blank">{{ publication.link4.display }}</a>
-{% endif %}
-</p>
-{% endif %}
-
-{% if publication.number_link == 5 %}
-<p>
-{% if publication.link1.url contains '://' %}
-<a href="{{ publication.link1.url }}" target="_blank">{{ publication.link1.display }}</a>
-{% else %}
-<a href="{{site.url}}{{site.baseurl}}/docs/publications/{{ publication.link1.url }}" target="_blank">{{ publication.link1.display }}</a>
-{% endif %}
-|
-{% if publication.link2.url contains '://' %}
-<a href="{{ publication.link2.url }}" target="_blank">{{ publication.link2.display }}</a>
-{% else %}
-<a href="{{site.url}}{{site.baseurl}}/docs/publications/{{ publication.link2.url }}" target="_blank">{{ publication.link2.display }}</a>
-{% endif %}
-|
-{% if publication.link3.url contains '://' %}
-<a href="{{ publication.link3.url }}" target="_blank">{{ publication.link3.display }}</a>
-{% else %}
-<a href="{{site.url}}{{site.baseurl}}/docs/publications/{{ publication.link3.url }}" target="_blank">{{ publication.link3.display }}</a>
-{% endif %}
-|
-{% if publication.link4.url contains '://' %}
-<a href="{{ publication.link4.url }}" target="_blank">{{ publication.link4.display }}</a>
-{% else %}
-<a href="{{site.url}}{{site.baseurl}}/docs/publications/{{ publication.link4.url }}" target="_blank">{{ publication.link4.display }}</a>
-{% endif %}
-|
-{% if publication.link5.url contains '://' %}
-<a href="{{ publication.link5.url }}" target="_blank">{{ publication.link5.display }}</a>
-{% else %}
-<a href="{{site.url}}{{site.baseurl}}/docs/publications/{{ publication.link5.url }}" target="_blank">{{ publication.link5.display }}</a>
-{% endif %}
-</p>
-{% endif %}
-
-{% if publication.number_link == 6 %}
-<p>
-{% if publication.link1.url contains '://' %}
-<a href="{{ publication.link1.url }}" target="_blank">{{ publication.link1.display }}</a>
-{% else %}
-<a href="{{site.url}}{{site.baseurl}}/docs/publications/{{ publication.link1.url }}" target="_blank">{{ publication.link1.display }}</a>
-{% endif %}
-|
-{% if publication.link2.url contains '://' %}
-<a href="{{ publication.link2.url }}" target="_blank">{{ publication.link2.display }}</a>
-{% else %}
-<a href="{{site.url}}{{site.baseurl}}/docs/publications/{{ publication.link2.url }}" target="_blank">{{ publication.link2.display }}</a>
-{% endif %}
-|
-{% if publication.link3.url contains '://' %}
-<a href="{{ publication.link3.url }}" target="_blank">{{ publication.link3.display }}</a>
-{% else %}
-<a href="{{site.url}}{{site.baseurl}}/docs/publications/{{ publication.link3.url }}" target="_blank">{{ publication.link3.display }}</a>
-{% endif %}
-|
-{% if publication.link4.url contains '://' %}
-<a href="{{ publication.link4.url }}" target="_blank">{{ publication.link4.display }}</a>
-{% else %}
-<a href="{{site.url}}{{site.baseurl}}/docs/publications/{{ publication.link4.url }}" target="_blank">{{ publication.link4.display }}</a>
-{% endif %}
-|
-{% if publication.link5.url contains '://' %}
-<a href="{{ publication.link5.url }}" target="_blank">{{ publication.link5.display }}</a>
-{% else %}
-<a href="{{site.url}}{{site.baseurl}}/docs/publications/{{ publication.link5.url }}" target="_blank">{{ publication.link5.display }}</a>
-{% endif %}
-|
-{% if publication.link6.url contains '://' %}
-<a href="{{ publication.link6.url }}" target="_blank">{{ publication.link6.display }}</a>
-{% else %}
-<a href="{{site.url}}{{site.baseurl}}/docs/publications/{{ publication.link6.url }}" target="_blank">{{ publication.link6.display }}</a>
-{% endif %}
-</p>
-{% endif %}
-
+  <!-- Links (1–6, generated by loop) -->
+  {% assign max_links = publication.number_link | default: 0 %}
+  {% if max_links > 0 %}
+  <p>
+    {% for i in (1..max_links) %}
+      {% assign key = "link" | append: i %}
+      {% assign link = publication[key] %}
+      {% if link %}
+        {% if forloop.first == false %} | {% endif %}
+        {% if link.url contains "://" %}
+          <a href="{{ link.url }}" target="_blank">{{ link.display }}</a>
+        {% else %}
+          <a href="{{site.url}}{{site.baseurl}}/docs/publications/{{ link.url }}" target="_blank">{{ link.display }}</a>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </p>
+  {% endif %}
 </div>
 
 </div>
-

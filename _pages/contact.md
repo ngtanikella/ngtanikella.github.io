@@ -45,39 +45,6 @@ permalink: /contact
   <input type="hidden" name="redirect" value="{{site.url}}{{site.baseurl}}/thank-you/">
 </form>
 
-<style>
-.contact-form{
-  max-width: 720px;
-  display: grid;
-  gap: 0.9rem;
-  margin-top: 1rem;
-}
-
-.contact-form label{
-  display: grid;
-  gap: 0.4rem;
-  font-weight: 600;
-}
-
-.contact-form input,
-.contact-form textarea{
-  width: 100%;
-  padding: 0.7rem 0.8rem;
-  border: 1px solid rgba(0,0,0,0.18);
-  border-radius: 12px;
-  font: inherit;
-}
-
-.contact-form button{
-  width: fit-content;
-  padding: 0.65rem 1rem;
-  border-radius: 12px;
-  border: 1px solid rgba(0,0,0,0.2);
-  cursor: pointer;
-  font-weight: 700;
-}
-</style>
-
 ---
 
 [<img src="{{site.url}}{{site.baseurl}}/docs/cv/Logos/Google_Scholar_logo.svg.png" alt="Google Scholar" class="inline-logo"> Google Scholar]({{ site.google_scholar_url }}){:target="_blank"}

@@ -1,21 +1,13 @@
 /*
- * Customization Variables
+ * Site-wide variables
+ * Imported first by _style.scss; available in all partials.
  */
 
-/*$accent: #FF0F00;*/
-$accent: #B30000;
-$image-size: 85px;
+/* Typography */
 $body-font-size: 15px;
 $publication-title-font-size: $body-font-size + 5;
-$author-font-size: 30px;
-$author-media-font-size: 21px;
-$contact-font-size: $body-font-size + 2;
 $footer-font-size: $body-font-size - 1;
 
-/*
- * Build Variables, don't touch
- */
-
+/* Layout breakpoints & widths */
 $max-width: 700px;
 $med-width: 600px;
-$small-width: 480px;

@@ -264,30 +264,27 @@ permalink: /CV
             <p>Led discussion sections for Statics and Mechanics of Materials for 100+ students, focusing on numerical problem solving.</p>
           </div>
         </div>
-
-        <div class="cv-item">
-          <div class="cv-item-head">
-            <div class="cv-item-left">MSE 4777 / MSE 5777</div>
-            <div class="cv-item-right">
-              <div class="cv-item-mid">3D Printer Assembly</div>
-              <div class="cv-item-date">Fall 2018 - 2020 (3 Semesters)</div>
-            </div>
-          </div>
-          <div class="cv-item-body">
-            <p>Trained undergraduate students (class of 60+) with the assembly and troubleshooting of their 3-D Printers.</p>
-          </div>
-        </div>
       </div>
 
       <div class="cv-item">
-        <div class="cv-item-body">Authored lab reports and developed SOPs for training 10+ peers and students, ensured lab safety rules and regulations.</div>
-        <div class="cv-item-right"><div class="cv-item-date">2022-2025</div></div>
+          <div class="cv-item-body">Authored lab reports and developed SOPs for training 10+ peers and students, ensured lab safety rules and regulations</div>
+          <div class="cv-item-right"><div class="cv-item-date">2022-2025</div></div>
+      </div>
+      
+      <div class="cv-item">
+          <div class="cv-item-head"-2px>Coached prospective students on the basics of 3-D printing and mechanical design. Provided hands-on learning experience with 3-D printers and CAD projects</div>
+          <div class="cv-item-right"><div class="cv-item-date">2020-2021</div></div>
       </div>
 
-      <div class="cv-item" style="margin-top: 20px;">
-        <div class="cv-item-body">Coached prospective students on the basics of 3-D printing and mechanical design.</div>
-        <div class="cv-item-right"><div class="cv-item-date">2020-2021</div></div>
-      </div>  
+      </div>
+
+      <div class="cv-entry">
+        <ul class="cv-bullets">
+          <li>Authored lab reports and developed SOPs for training 10+ peers and students, ensured lab safety rules and regulations (2022–2025)</li>
+          <li>Coached prospective students on the basics of 3-D printing and mechanical design. Provided hands-on learning experience with 3-D printers and CAD projects (2020–2021)</li>
+        </ul>
+      </div>
+
     </div>
   </div>
 </section>
@@ -396,8 +393,7 @@ permalink: /CV
             <p>23 manuscripts reviewed for <em>Progress in Additive Manufacturing</em>, <em>Discover Applied Sciences</em>, <em>Scientific Reports</em>, and <em>Multiscale and Multidisciplinary Modeling, Experiments and Design</em></p>
 
             <h4>Outreach</h4>
-            <p>Taught polymers deformation at Pullman High School (2023–2025)</p>
-            <p>organized educational activities at Michigan Tech Summer Youth Program (2020–2021)</p>
+            <p>Taught polymers deformation at Pullman High School (2023–2025); organized educational activities at Michigan Tech Summer Youth Program (2020–2021)</p>
           </div>
         </div>
       </div>

@@ -1,22 +1,18 @@
 /* =========================
-   CV PAGE — default layout
-   Sticky per-section title (no TOC)
+   CV PAGE
+   Two-column layout: sticky section titles left, content right.
    ========================= */
 
-/* Make sure sticky can work */
 .cv-layout {
   display: block;
-  overflow: visible; /* sticky needs this */
+  overflow: visible;   /* required for position:sticky */
 }
-/* CV should not justify text (looks weird and adds odd spacing) */
-.cv-section-body p {
-  text-align: left;
-}
+
 .cv-content {
   width: 100%;
 }
 
-/* 2-column per-section grid: title left, content right */
+/* Two-column section grid: title (200px) | content (rest) */
 .cv-section-grid {
   display: grid;
   grid-template-columns: 200px 1fr;
@@ -24,62 +20,65 @@
   align-items: start;
 }
 
+/* Stretch so sticky title has room to scroll within the full section */
 .cv-section-heading {
   min-width: 0;
-  align-self: stretch; /* let sticky title scroll within the full section height */
+  align-self: stretch;
 }
 
 .cv-section-title {
   margin: 0;
   position: sticky;
-  top: 96px; /* below fixed navbar + some breathing room */
+  top: 96px;           /* below fixed navbar */
   align-self: start;
   z-index: 2;
 }
 
-/* Right column content only */
 .cv-section-body {
   min-width: 0;
 }
 
-/* Divider between sections */
+/* Override justified text — left-align all CV paragraphs */
+.cv-section-body p {
+  margin: 0 0 6px 0;
+  text-align: left;
+}
+
+/* Thin line between sections */
 .cv-divider {
   border: none;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(0,0,0,0.1);
   margin: 24px 0;
 }
 
-/* Label : value alignment (Expertise section, etc.) */
+/* =========================
+   Expertise: label–value pairs (dt/dd grid)
+   ========================= */
 .cv-keyvals {
   display: grid;
   grid-template-columns: max-content 1fr;
   column-gap: 14px;
   row-gap: 6px;
   margin: 0;
-}
 
-.cv-keyvals dt {
-  margin: 0;
-  font-weight: 700;
-  color: #111;
-}
+  dt {
+    margin: 0;
+    font-weight: 700;
+    color: #111;
+    &::after { content: ":"; }  /* visual colon */
+  }
 
-.cv-keyvals dd {
-  margin: 0;
-  color: #111;
-}
-
-/* Add the colon visually (so you don't type it in HTML) */
-.cv-keyvals dt::after {
-  content: ":";
+  dd {
+    margin: 0;
+    color: #111;
+  }
 }
 
 /* =========================
-   Uniform entry alignment using subgrid
-   All left labels share one max-content column,
-   so middle headings and dates align across items.
+   Uniform entry alignment (Education, Research, Teaching)
+   Uses CSS subgrid so ALL left labels share one max-content column.
+   Middle headings and dates align perfectly across items.
    ========================= */
-
 .cv-uniform {
   display: grid;
   grid-template-columns: max-content 1fr;
@@ -87,7 +86,7 @@
   row-gap: 12px;
 }
 
-/* Each entry spans both columns and inherits them via subgrid */
+/* Each item inherits both parent columns */
 .cv-item {
   grid-column: 1 / -1;
   display: grid;
@@ -95,7 +94,7 @@
   row-gap: 0;
 }
 
-/* Header row inherits parent columns via subgrid */
+/* Header row: left label | middle title + date */
 .cv-item-head {
   grid-column: 1 / -1;
   display: grid;
@@ -106,14 +105,10 @@
 .cv-item-left {
   grid-column: 1;
   white-space: nowrap;
+  &::after { content: " -"; }   /* dash separator */
 }
 
-/* Small dash separator after the left label */
-.cv-item-left::after {
-  content: " -";
-}
-
-/* Right side splits into middle text and right-aligned date */
+/* Right side: title fills space, date hugs right edge */
 .cv-item-right {
   grid-column: 2;
   display: grid;
@@ -138,124 +133,48 @@
   font-weight: 600;
 }
 
-/* Body spans full width — only the header line is column-aligned */
+/* Body (bullets, thesis) spans full width under the header */
 .cv-item-body {
   grid-column: 1 / -1;
   padding-left: 0;
 }
 
-/* Mobile: stack everything */
-@media (max-width: 800px) {
-  .cv-uniform {
-    grid-template-columns: 1fr;
-  }
-
-  .cv-item {
-    display: block;
-  }
-
-  .cv-item-head {
-    display: grid;
-    grid-template-columns: 1fr;
-    row-gap: 2px;
-  }
-
-  .cv-item-left {
-    white-space: normal;
-  }
-
-  .cv-item-left::after {
-    content: ""; /* drop dash on mobile */
-  }
-
-  .cv-item-right {
-    grid-template-columns: 1fr;
-    row-gap: 2px;
-  }
-
-  .cv-item-date {
-    text-align: left;
-  }
-
-  .cv-item-body {
-    padding-left: 0;
-  }
-}
-
-/* Tighter, cleaner text spacing in CV area */
-.cv-section-body p {
-  margin: 0 0 6px 0;
-  text-align: left;
-}
-
-/* Individual entries (jobs, degrees) */
+/* =========================
+   CV entry blocks & text elements
+   ========================= */
 .cv-entry {
   margin-bottom: 18px;
+  &:last-child { margin-bottom: 0; }
 }
 
-.cv-entry:last-child {
-  margin-bottom: 0;
-}
-
-/* Title + Date on one line (desktop) */
-.cv-entry-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  flex-wrap: nowrap;     /* IMPORTANT: keep one line on desktop */
-  gap: 12px;
-  margin-bottom: 2px;
-}
-
-.cv-entry-title {
-  min-width: 0;          /* allow shrinking instead of wrapping the date */
-  font-size: 1em;
-  color: #111;
-}
-
-.cv-entry-role {
-  font-weight: 600;
-  color: #111;
-}
-
-.cv-entry-date {
-  flex: 0 0 auto;
-  font-size: 0.9em;
-  color: #666;
-  white-space: nowrap;
-  font-weight: 600;
-}
-
-/* Thesis / small detail line */
 .cv-detail {
-  margin: 4px 0 0 0;
+  margin: 4px 0 0;
   font-size: 0.92em;
   color: #555;
   font-style: italic;
 }
 
-/* Bullets in CV */
 .cv-bullets {
-  margin: 8px 0 0 0;
+  margin: 8px 0 0;
   padding-left: 20px;
+
+  li {
+    margin-bottom: 6px;
+    font-size: 0.94em;
+    line-height: 1.5;
+  }
 }
 
-.cv-bullets li {
-  margin-bottom: 6px;
-  font-size: 0.94em;
-  line-height: 1.5;
-}
-
-/* Publication list */
+/* Numbered publication list (CV page) */
 .cv-pub-list {
   margin: 0;
   padding-left: 24px;
-}
 
-.cv-pub-list li {
-  margin-bottom: 14px;
-  font-size: 0.94em;
-  line-height: 1.5;
+  li {
+    margin-bottom: 14px;
+    font-size: 0.94em;
+    line-height: 1.5;
+  }
 }
 
 .cv-authors {
@@ -263,7 +182,7 @@
   color: #444;
 }
 
-/* References grid */
+/* References: 2-column grid */
 .cv-references-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -275,45 +194,59 @@
   line-height: 1.6;
 }
 
-/* Skills sub-headings */
+/* Skills section */
 .cv-section h4 {
   color: #289c01;
-  margin: 14px 0 4px 0;
+  margin: 14px 0 4px;
   font-size: 0.95em;
+  &:first-child { margin-top: 0; }
 }
 
-.cv-section h4:first-child {
-  margin-top: 0;
-}
-
-/* Skills line spacing — each <p> gets vertical breathing room
-   similar to the row-gap in the Expertise section */
 #skills .cv-entry p {
-  margin-bottom: 6px;
+  margin-bottom: 6px;          /* breathing room between skill lines */
 }
 
-/* ---- Mobile: single column; section title becomes sticky at top ---- */
+/* =========================
+   Mobile: stack to single column
+   ========================= */
 @media (max-width: 800px) {
+  /* Section grid → single column */
   .cv-section-grid {
     grid-template-columns: 1fr;
     row-gap: 12px;
   }
 
   .cv-section-title {
-    top: 120px; /* below wrapped mobile navbar */
+    top: 120px;
     z-index: 50;
     padding: 8px 0;
     background: #fff;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
   }
 
-  /* On mobile, it's fine if title/date wrap */
-  .cv-entry-header {
-    flex-wrap: wrap;
-    gap: 4px 10px;
-  }
+  /* Uniform grid → single column */
+  .cv-uniform { grid-template-columns: 1fr; }
 
-  .cv-references-grid {
+  .cv-item { display: block; }
+
+  .cv-item-head {
+    display: grid;
     grid-template-columns: 1fr;
+    row-gap: 2px;
   }
+
+  .cv-item-left {
+    white-space: normal;
+    &::after { content: ""; }   /* drop dash */
+  }
+
+  .cv-item-right {
+    grid-template-columns: 1fr;
+    row-gap: 2px;
+  }
+
+  .cv-item-date  { text-align: left; }
+  .cv-item-body  { padding-left: 0; }
+
+  .cv-references-grid { grid-template-columns: 1fr; }
 }

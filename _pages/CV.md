@@ -262,7 +262,7 @@ permalink: /CV
           </div>
         </div>
       </div>
-      <div style="display:flex; justify-content:space-between; align-items:baseline; font-size:1.3em; margin-top:12px;">
+      <div style="display:flex; justify-content:space-between; align-items:baseline; font-size:1.1em; margin-top:12px;">
         <div>Authored lab reports and developed SOPs for training 10+ peers and students, ensured lab safety rules and regulations</div>
         <div class="cv-item-date">2022–2025</div>
       </div>

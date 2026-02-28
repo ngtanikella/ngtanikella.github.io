@@ -272,17 +272,10 @@ permalink: /CV
       </div>
       
       <div class="cv-item">
-          <div class="cv-item-head"-2px>Coached prospective students on the basics of 3-D printing and mechanical design. Provided hands-on learning experience with 3-D printers and CAD projects</div>
+          <div class="cv-item-head" style="font-size: 0.92em;"> Provided hands-on learning experience with 3-D printers and CAD projects</div>
           <div class="cv-item-right"><div class="cv-item-date">2020-2021</div></div>
       </div>
 
-      </div>
-
-      <div class="cv-entry">
-        <ul class="cv-bullets">
-          <li>Authored lab reports and developed SOPs for training 10+ peers and students, ensured lab safety rules and regulations (2022–2025)</li>
-          <li>Coached prospective students on the basics of 3-D printing and mechanical design. Provided hands-on learning experience with 3-D printers and CAD projects (2020–2021)</li>
-        </ul>
       </div>
 
     </div>

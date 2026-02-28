@@ -272,11 +272,11 @@ permalink: /CV
                     </div>
                     <!-- Standalone entries outside cv-uniform: use inline flex to
                          push the date to the right edge, matching subgrid date position -->
-                    <div style="display:flex; justify-content:space-between; align-items:baseline; font-size:1.07em; margin-top:12px;">
+                    <div style="display:flex; justify-content:space-between; align-items:baseline; font-size:1em; margin-top:12px;">
                         <div>Authored lab reports and developed SOPs for training 10+ peers and students, ensured lab safety rules and regulations</div>
                         <div class="cv-item-date">2022-2025</div>
                     </div>
-                    <div style="display:flex; justify-content:space-between; align-items:baseline; font-size:1.07em; margin-top:20px;">
+                    <div style="display:flex; justify-content:space-between; align-items:baseline; font-size:1em; margin-top:20px;">
                         <div>Provided hands-on learning experience with 3-D printers and CAD projects</div>
                         <div class="cv-item-date">2020-2021</div>
                     </div>
@@ -375,7 +375,7 @@ permalink: /CV
                         <h4>Peer Review</h4>
                         <p>23 manuscripts reviewed for <em>Progress in Additive Manufacturing</em>, <em>Discover Applied Sciences</em>, <em>Scientific Reports</em>, and <em>Multiscale and Multidisciplinary Modeling, Experiments and Design</em></p>
                         <h4>Outreach</h4>
-                        <p>Taught polymers deformation at Pullman High School (2023–2025); organized educational activities at Michigan Tech Summer Youth Program (2020–2021)</p>
+                        <p>Taught polymers deformation at Pullman High School (2023–2025) <br> Organized educational activities at Michigan Tech Summer Youth Program (2020–2021)</p>
                     </div>
                 </div>
             </div>

@@ -26,6 +26,7 @@
 
 .cv-section-heading {
   min-width: 0;
+  align-self: stretch; /* let sticky title scroll within the full section height */
 }
 
 .cv-section-title {
@@ -109,7 +110,7 @@
 
 /* Small dash separator after the left label */
 .cv-item-left::after {
-  content: " -";
+  content: " —";
 }
 
 /* Right side splits into middle text and right-aligned date */

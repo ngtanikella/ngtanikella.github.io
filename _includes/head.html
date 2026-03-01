@@ -45,9 +45,9 @@
        | escape prevents HTML injection from special characters. -->
   <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
 
-  <!-- Main stylesheet: the compiled CSS from all your .scss files.
+  {% raw %}<!-- Main stylesheet: the compiled CSS from all your .scss files.
        Jekyll compiles _style.scss → css/main.css automatically.
-       {{ site.url }}{{ site.baseurl }} builds the full path to your site. -->
+       {{ site.url }}{{ site.baseurl }} builds the full path to your site. -->{% endraw %}
   <link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/css/main.css">
 
   <!-- Canonical URL: tells search engines this is the "official" URL for this page.

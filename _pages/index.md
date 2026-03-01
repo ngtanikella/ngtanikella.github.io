@@ -15,7 +15,6 @@ permalink: /
 {% include social-icons.html %}
 
 <!-- <br/> is a line break. This one is commented out (inside <!-- -->).
-     Uncomment to add extra vertical space before the profile picture. -->
 <!-- <br/> -->
 
 <!-- Profile picture: floated right by CSS (.profile-picture in typography.scss).

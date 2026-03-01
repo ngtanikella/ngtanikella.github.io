@@ -1,4 +1,4 @@
-<!--
+{% raw %}<!--
   DEFAULT.HTML — Main Page Layout
   ================================
   This is the primary layout template. When a Markdown page has
@@ -11,7 +11,7 @@
   3. Jekyll inserts that HTML where {{ content }} appears below
   4. The result is a complete HTML page with navbar, content, and footer
 
-  {% raw %}{% include filename.html %}{% endraw %} pulls in the contents of a file from
+  {% include filename.html %} pulls in the contents of a file from
   the _includes/ folder. This avoids duplicating code across layouts.
 
   {{ content }} is replaced by the actual page content at build time.
@@ -26,7 +26,7 @@
         footer    → footer.html (copyright, icons)
       analytics   → only in production builds
   </html>
--->
+-->{% endraw %}
 
 <!-- DOCTYPE tells the browser this is an HTML5 document -->
 <!DOCTYPE html>
@@ -50,7 +50,7 @@
         <!-- Navigation bar (fixed to top of viewport) -->
         {% include header.html %}
 
-        <!-- Main content area.
+        {% raw %}<!-- Main content area.
              .body-container: max-width: 50%, centered, with top padding
                               to clear the fixed navbar.
              .content: scoping class for typography.scss styles
@@ -58,7 +58,7 @@
 
              {{ content }} is where Jekyll inserts the page's HTML.
              For example, if CV.md uses "layout: default", the entire
-             CV page HTML appears here. -->
+             CV page HTML appears here. -->{% endraw %}
         <div class="body-container content">
 
             {{ content }}

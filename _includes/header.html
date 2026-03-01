@@ -30,16 +30,16 @@
              the site title on the left and nav links on the right. -->
         <div class="container nav-inner">
 
-            <!-- Site title/logo: clicking this goes to the homepage.
+            {% raw %}<!-- Site title/logo: clicking this goes to the homepage.
                  {{ site.url }}{{ site.baseurl }} builds the full URL to your site root.
-                 These values come from _config.yml. -->
+                 These values come from _config.yml. -->{% endraw %}
             <a id="author-name" href="{{ site.url }}{{ site.baseurl }}">
                 <!-- name-logo: the small NT icon. Change the src path to use
                      a different logo image. Size is controlled by .name-logo in CSS (24px). -->
                 <img class="name-logo" src="{{ site.url }}{{ site.baseurl }}/images/nticon_sparse.png" alt="NT logo">
 
-                <!-- name-text: the site title text from _config.yml (e.g., "Nagendra Tanikella").
-                     {{ site.title }} outputs whatever you set as "title:" in _config.yml. -->
+                {% raw %}<!-- name-text: the site title text from _config.yml (e.g., "Nagendra Tanikella").
+                     {{ site.title }} outputs whatever you set as "title:" in _config.yml. -->{% endraw %}
                 <span class="name-text">{{ site.title }}</span>
             </a>
 
@@ -52,9 +52,9 @@
             <ul class="navbar-ul">
                 {% for page in site.data.nav %}
                     {% if page.name != "Home" %}
-                        <!-- nav-list: each <li> is one navigation tab.
+                        {% raw %}<!-- nav-list: each <li> is one navigation tab.
                              The <a> tag creates a clickable link.
-                             {{ page.link }} is the URL path (e.g., "/CV"). -->
+                             {{ page.link }} is the URL path (e.g., "/CV"). -->{% endraw %}
                         <li class="nav-list">
                             <a href="{{ site.url }}{{ site.baseurl }}{{ page.link }}">{{ page.name }}</a>
                         </li>

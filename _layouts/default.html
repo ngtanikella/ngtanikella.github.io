@@ -11,7 +11,7 @@
   3. Jekyll inserts that HTML where {{ content }} appears below
   4. The result is a complete HTML page with navbar, content, and footer
 
-  {% include filename.html %} pulls in the contents of a file from
+  {% raw %}{% include filename.html %}{% endraw %} pulls in the contents of a file from
   the _includes/ folder. This avoids duplicating code across layouts.
 
   {{ content }} is replaced by the actual page content at build time.

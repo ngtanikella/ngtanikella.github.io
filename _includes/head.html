@@ -1,18 +1,86 @@
+<!--
+  HEAD.HTML — Metadata & External Resources
+  ==========================================
+  This file is included in every page via {% include head.html %} in the
+  layout files (default.html, wide.html). It loads inside the <head> tag,
+  which is invisible to users but tells the browser critical information:
+  what character set to use, the page title, which CSS/fonts to load, etc.
+
+  JEKYLL LIQUID SYNTAX (the {% %} and {{ }} tags):
+  {{ variable }}       → outputs a value (like a variable in a spreadsheet)
+  {% if condition %}   → conditional logic (if/else)
+  {{ value | filter }} → applies a transformation (e.g., strip_html, truncate)
+  site.xxx             → values from _config.yml
+  page.xxx             → values from the current page's front matter (the --- block)
+-->
+
 <head>
 
+  <!-- Character encoding: UTF-8 supports all languages and special characters.
+       Always keep this as the first element inside <head>. -->
   <meta charset="utf-8">
+
+  <!-- Page description for search engines (Google, Bing, etc.).
+       If the page has an excerpt, use it (stripped of HTML, max 160 chars).
+       Otherwise, fall back to the site-wide description from _config.yml.
+       Change 160 → higher number to allow a longer description. -->
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+  <!-- Author meta tag: uses page.author if defined, otherwise your name.
+       | escape converts special characters like & to &amp; for safety. -->
   <meta name="author" content="{% if page.author %}{{ page.author | escape }}{% else %}Nagendra Tanikella{% endif %}">
+
+  <!-- Viewport: tells mobile browsers to use the device's actual width
+       instead of pretending to be a 980px desktop screen.
+       initial-scale=1 means no zoom on load. Remove this → site looks
+       tiny on phones. -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- IE compatibility: tells Internet Explorer to use its latest rendering engine.
+       Safe to keep even though IE is deprecated. -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Page title (shown in the browser tab).
+       Uses the page's title if set, otherwise the site title from _config.yml.
+       | escape prevents HTML injection from special characters. -->
   <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+
+  <!-- Main stylesheet: the compiled CSS from all your .scss files.
+       Jekyll compiles _style.scss → css/main.css automatically.
+       {{ site.url }}{{ site.baseurl }} builds the full path to your site. -->
   <link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/css/main.css">
+
+  <!-- Canonical URL: tells search engines this is the "official" URL for this page.
+       Prevents duplicate content issues if the same page is accessible via
+       multiple URLs. -->
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+
+  <!-- Favicon: the small icon shown in the browser tab next to the page title.
+       Replace nticon.ico with a different .ico file to change it. -->
   <link rel="shortcut icon" type ="image/x-icon" href="{{ site.url }}{{ site.baseurl }}/images/nticon.ico">
+
+  <!-- Font Awesome 4.7: icon library for social media icons (GitHub, LinkedIn, etc.).
+       The "fa fa-github" classes in footer.html and header.html reference this.
+       // before the URL means "use the same protocol as the page" (http or https). -->
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Academicons: icon library for academic services (Google Scholar, ORCID, etc.).
+       The "ai ai-google-scholar-square" class in footer.html references this. -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
+
+  <!-- Google Fonts: loads the Lato, IBM Plex Sans, and Open Sans typefaces.
+       These are referenced in _style.scss → body { font-family: ... }.
+       display=swap tells the browser to show text immediately with a fallback
+       font, then swap to the Google Font once it finishes loading.
+       To add a font: add another <link> here, then add its name to the
+       font-family list in _style.scss. -->
   <link href="https://fonts.googleapis.com/css?family=Lato" type="text/css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans&display=swap' rel='stylesheet'>
+
+  <!-- Google Search Console verification: proves you own this site so Google
+       can show it in search results. Replace the content value with your own
+       verification code from Google Search Console. -->
   <meta name="google-site-verification" content="googlec826cbb9b088e11d" />
+
 </head>

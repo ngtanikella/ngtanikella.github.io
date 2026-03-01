@@ -353,7 +353,7 @@ permalink: /CV
                         <p>Additive manufacturing (FFF, FGF, SLA, DLP, DIW)</p>
                         <p>Single and twin-screw extrusion, Injection molding</p>
                         <h4>Statistics, Analysis &amp; Writing</h4>
-                        <p>Design of Experiments (DoE), root-cause analysis, Lean Six Sigma (Black Belt)</p>
+                        <p>Design of Experiments (DoE), root-cause analysis, <a href="{{site.url}}{{site.baseurl}}/docs/cv/six_sigma.pdf" target="_blank" rel="noopener">Lean Six Sigma (Black Belt)</a></p>
                         <p>Minitab, R, MATLAB, Python</p>
                         <p>Report/SOP writing, journal article writing</p>
                     </div>
@@ -373,7 +373,12 @@ permalink: /CV
                 <div class="cv-section-body">
                     <div class="cv-entry">
                         <h4>Peer Review</h4>
-                        <p>23 manuscripts reviewed for <em>Progress in Additive Manufacturing</em>, <em>Discover Applied Sciences</em>, <em>Scientific Reports</em>, and <em>Multiscale and Multidisciplinary Modeling, Experiments and Design</em></p>
+                        <p>23 manuscripts reviewed for
+                            <a href="{{site.url}}{{site.baseurl}}/docs/cv/Reviewer_Certificate_06_February_2026.pdf" target="_blank" rel="noopener"><em>Progress in Additive Manufacturing</em></a>,
+                            <a href="{{site.url}}{{site.baseurl}}/docs/cv/Reviewer_Certificate_31_July_2025.pdf" target="_blank" rel="noopener"><em>Discover Applied Sciences</em></a>,
+                            <a href="{{site.url}}{{site.baseurl}}/docs/cv/Reviewer_Certificate_17_November_2025.pdf" target="_blank" rel="noopener"><em>Scientific Reports</em></a>, and
+                            <a href="{{site.url}}{{site.baseurl}}/docs/cv/Reviewer_Certificate_05_November_2025.pdf" target="_blank" rel="noopener"><em>Multiscale and Multidisciplinary Modeling, Experiments and Design</em></a>
+                        </p>
                         <h4>Outreach</h4>
                         <p>Taught polymers deformation at Pullman High School (2023–2025) <br> Organized educational activities at Michigan Tech Summer Youth Program (2020–2021)</p>
                     </div>

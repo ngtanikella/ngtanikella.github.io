@@ -1,20 +1,67 @@
-<div class="fixed-top">
-  <div class="navbar">
-    <div class="container nav-inner">
-      <a id="author-name" href="{{ site.url }}{{ site.baseurl }}">
-        <img class="name-logo" src="{{ site.url }}{{ site.baseurl }}/images/nticon_sparse.png" alt="NT logo">
-        <span class="name-text">{{ site.title }}</span>
-      </a>
+<!--
+  HEADER.HTML — Navigation Bar
+  ============================
+  This file creates the fixed navigation bar at the top of every page.
+  It's included via {% include header.html %} in the layout files.
 
-      <ul class="navbar-ul">
-        {% for page in site.data.nav %}
-          {% if page.name != "Home" %}
-            <li class="nav-list">
-              <a href="{{ site.url }}{{ site.baseurl }}{{ page.link }}">{{ page.name }}</a>
-            </li>
-          {% endif %}
-        {% endfor %}
-      </ul>
+  STRUCTURE:
+  .fixed-top          → pins the navbar to the top of the viewport
+    .navbar           → the colored bar itself (brown background)
+      .container.nav-inner → centers content, flexbox layout
+        #author-name  → logo icon + site title (links to homepage)
+        .navbar-ul    → list of navigation links
+
+  The nav links are loaded from _data/nav.yml (a YAML data file).
+  Each entry in nav.yml has a "name" and "link" field.
+  The "Home" link is filtered out ({% if page.name != "Home" %})
+  because the author-name logo already links to the homepage.
+
+  STYLES: Defined in _style.scss under the "Navbar" section.
+-->
+
+<!-- fixed-top: position:fixed keeps this at the top of the viewport
+     even when the user scrolls. z-index:99 ensures it's above content. -->
+<div class="fixed-top">
+
+    <!-- navbar: the brown background bar. Padding and border are in _style.scss. -->
+    <div class="navbar">
+
+        <!-- container nav-inner: limits width to 60% and uses flexbox to place
+             the site title on the left and nav links on the right. -->
+        <div class="container nav-inner">
+
+            <!-- Site title/logo: clicking this goes to the homepage.
+                 {{ site.url }}{{ site.baseurl }} builds the full URL to your site root.
+                 These values come from _config.yml. -->
+            <a id="author-name" href="{{ site.url }}{{ site.baseurl }}">
+                <!-- name-logo: the small NT icon. Change the src path to use
+                     a different logo image. Size is controlled by .name-logo in CSS (24px). -->
+                <img class="name-logo" src="{{ site.url }}{{ site.baseurl }}/images/nticon_sparse.png" alt="NT logo">
+
+                <!-- name-text: the site title text from _config.yml (e.g., "Nagendra Tanikella").
+                     {{ site.title }} outputs whatever you set as "title:" in _config.yml. -->
+                <span class="name-text">{{ site.title }}</span>
+            </a>
+
+            <!-- Navigation links: loaded from _data/nav.yml.
+                 {% for page in site.data.nav %} loops through each item in nav.yml.
+                 Each item should have:
+                   name: "Publications"
+                   link: "/publications"
+                 The "Home" entry is skipped since the logo already links home. -->
+            <ul class="navbar-ul">
+                {% for page in site.data.nav %}
+                    {% if page.name != "Home" %}
+                        <!-- nav-list: each <li> is one navigation tab.
+                             The <a> tag creates a clickable link.
+                             {{ page.link }} is the URL path (e.g., "/CV"). -->
+                        <li class="nav-list">
+                            <a href="{{ site.url }}{{ site.baseurl }}{{ page.link }}">{{ page.name }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
+        </div>
     </div>
-  </div>
 </div>

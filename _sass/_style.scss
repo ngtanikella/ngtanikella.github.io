@@ -1,185 +1,287 @@
+/* =========================
+   MAIN STYLESHEET
+   =========================
+
+   WHAT THIS FILE DOES:
+   This is the master stylesheet. It defines every visual rule for the site:
+   colors, layout, navbar, footer, cards, modals, and responsive breakpoints.
+   At the bottom, it @imports the other .scss partials (typography, tables, cv).
+
+   HOW CSS/SCSS WORKS (quick primer):
+   - A "selector" targets HTML elements:  .class-name { ... }  or  #id { ... }
+   - Inside the braces are "properties":  color: red;  font-size: 16px;
+   - SCSS adds nesting: instead of writing ".parent .child { }", you can write
+     .parent { .child { } } — same result, easier to read.
+   - "&" means "the current selector", so  a { &:hover { } }  compiles to  a:hover { }
+*/
+
+/* Import shared variables ($body-font-size, $max-width, etc.) */
 @import "vars";
 
 /* =========================
    THEME COLORS
-   (Single source of truth — do NOT redefine in vars.scss)
-   ========================= */
+   =========================
+   Single source of truth for every color on the site.
+   Change one line here → the entire site's color scheme updates.
+
+   $bg:        Page background. #ffffff = pure white.
+   $text:      Body text color. #111111 = near-black (softer than pure #000).
+   $accent:    Brand color used for headings, links, nav text, author name.
+               #289c01 = green. Change to any hex color to re-theme the site.
+   $navbar-bg: Navbar background. #6b4802 = dark brown.
+   $footer-bg: Footer background. #eeeeee = light gray.
+*/
 $bg:        #ffffff;
 $text:      #111111;
-$accent:    #289c01;   /* green — titles, headings, links, name */
+$accent:    #289c01;
 $navbar-bg: #6b4802;
 $footer-bg: #eeeeee;
 
 /* =========================
-   Base reset
-   ========================= */
+   BASE RESET
+   =========================
+   Removes default browser margins/padding so the layout starts clean.
+*/
+
 html {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  overflow-y: scroll;   /* prevent layout shift between pages */
-  overflow-x: hidden;
+  height: 100%;              /* Fill the full browser window height */
+  width: 100%;               /* Fill the full browser window width */
+  margin: 0;                 /* Remove default outer spacing */
+  padding: 0;                /* Remove default inner spacing */
+  overflow-y: scroll;        /* Always show vertical scrollbar — prevents
+                                layout from jumping when switching between
+                                pages that do/don't need scrolling */
+  overflow-x: hidden;        /* Hide horizontal scrollbar (no side-scrolling) */
 }
 
 body {
   margin: 0;
   font-family: "Lato", "IBM Plex Sans", "Open Sans", sans-serif;
-  font-size: $body-font-size;
-  color: $text;
-  background: $bg;
-  min-height: 100%;
+                             /* Font stack: browser tries Lato first, then
+                                IBM Plex Sans, then Open Sans, then any
+                                generic sans-serif. Add/remove/reorder to
+                                change the site's typeface. */
+  font-size: $body-font-size;  /* 15px from vars.scss */
+  color: $text;              /* Default text color for everything */
+  background: $bg;           /* Page background color */
+  min-height: 100%;          /* Body is at least as tall as the window */
 }
 
-/* Sticky-footer wrapper */
+/* Sticky-footer wrapper:
+   Makes the footer stick to the bottom of the viewport even when
+   the page content is short. Uses flexbox column layout. */
 .wrapper {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  min-height: 100vh;         /* vh = viewport height. 100vh = full screen. */
+  display: flex;             /* Enable flexbox layout */
+  flex-direction: column;    /* Stack children vertically (header → content → footer) */
 }
 
 /* =========================
-   Links & text
-   ========================= */
+   LINKS & TEXT
+   =========================
+*/
+
+/* All links (<a> tags) */
 a {
-  text-decoration: none;
-  color: $accent;
+  text-decoration: none;     /* Remove default underline. Change to "underline"
+                                if you want links always underlined. */
+  color: $accent;            /* Links use the green accent color */
+
+  /* & means "a" here, so this compiles to: a:hover { text-decoration: underline; }
+     :hover triggers when the user moves their mouse over the link. */
   &:hover { text-decoration: underline; }
 }
 
+/* All paragraphs */
 p {
-  text-align: justify;
+  text-align: justify;       /* Stretch text to fill both left and right edges.
+                                Change to "left" for ragged-right text. */
   color: $text;
 }
 
+/* All headings (h1 through h6) use the accent color */
 h1, h2, h3, h4, h5, h6 {
   color: $accent;
 }
 
 /* =========================
-   Navbar (fixed)
-   ========================= */
+   NAVBAR (fixed at top of page)
+   =========================
+
+   Structure in header.html:
+   .fixed-top
+     .navbar
+       .container.nav-inner
+         #author-name  (logo + site title)
+         .navbar-ul    (navigation links)
+*/
+
+/* Pins the navbar to the top of the viewport so it stays visible
+   as the user scrolls. */
 .fixed-top {
-  position: fixed;
-  z-index: 99;
-  top: 0;
+  position: fixed;           /* Remove from document flow, pin to viewport */
+  z-index: 99;               /* Stack above all other content. Higher number = closer
+                                to viewer. Increase if something overlaps the navbar. */
+  top: 0;                    /* Stick to the very top edge */
   width: 100%;
   margin: 0;
 }
 
+/* The visible navbar bar */
 .navbar {
   width: 100%;
-  background-color: $navbar-bg;
+  background-color: $navbar-bg;  /* Dark brown background */
   margin: 0;
   border-bottom: 2px solid darken(#fff, 20%);
-  padding: 12px 0;
+                             /* darken() is an SCSS function: darken(color, amount%).
+                                darken(#fff, 20%) = #cccccc (light gray).
+                                Change 2px to make the border thicker/thinner. */
+  padding: 12px 0;           /* 12px top & bottom, 0 left & right.
+                                Increase 12px → taller navbar. */
 }
 
+/* Inner container: holds logo on left, nav links on right */
 .nav-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
+  display: flex;             /* Flexbox: children sit side by side */
+  align-items: center;       /* Vertically center children */
+  justify-content: space-between;  /* Push logo to left, links to right */
+  gap: 16px;                 /* Space between logo and links if they wrap.
+                                Increase → more space between elements. */
 }
 
+/* Site title / logo link (left side of navbar) */
 #author-name {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+  display: inline-flex;      /* Inline flex: logo and text sit side by side */
+  align-items: center;       /* Vertically center logo with text */
+  gap: 8px;                  /* Space between the NT icon and the name text.
+                                Increase → icon and name spread apart. */
   color: $accent;
-  font-size: 22px !important;
-  line-height: 1.1;
-  white-space: nowrap;
+  font-size: 22px !important;  /* !important overrides any inherited font-size.
+                                   Change 22px → bigger/smaller site title. */
+  line-height: 1.1;          /* Tighten line spacing (1.0 = exact font height) */
+  white-space: nowrap;        /* Prevent the name from wrapping to a second line */
   margin: 0;
   padding: 0;
 }
 
+/* The text part of the author name link */
 .name-text { color: $accent; }
 
+/* The small NT icon in the navbar */
 .name-logo {
-  height: 24px;
-  width: auto;
+  height: 24px;              /* Icon height. Increase → bigger icon.
+                                Width scales automatically. */
+  width: auto;               /* Let width scale proportionally to height */
   display: inline-block;
 }
 
-/* Nav tabs */
+/* Navigation link list (right side of navbar) */
 .navbar-ul {
-  display: flex;
+  display: flex;             /* Links sit in a horizontal row */
   align-items: center;
-  gap: 16px;
+  gap: 16px;                 /* Space between each nav link.
+                                Increase → links spread further apart. */
   margin: 0;
   padding: 0;
-  list-style: none;
+  list-style: none;          /* Remove bullet points from the <ul> */
 
+  /* Each nav link (<a> tag inside the list) */
   a {
     display: inline-flex;
     align-items: center;
-    padding: 6px 8px;
+    padding: 6px 8px;        /* Inner spacing around link text.
+                                6px top/bottom, 8px left/right.
+                                Increase → bigger clickable area. */
     line-height: 1;
     font-weight: bold;
     color: $accent;
   }
 }
 
+/* Individual nav list item — zeroes out default <li> spacing */
 .nav-list {
   margin: 0;
   padding: 0;
 }
 
 /* =========================
-   Layout containers
-   ========================= */
+   LAYOUT CONTAINERS
+   =========================
+*/
+
+/* General container (used by navbar and footer) */
 .container {
-  max-width: 60%;
-  margin: auto;
+  max-width: 60%;            /* Content won't exceed 60% of the viewport width.
+                                Increase → wider layout. Decrease → narrower. */
+  margin: auto;              /* Center horizontally */
 }
 
-/* Main content — grows to push footer down */
+/* Main page content area */
 .body-container {
-  flex: 1;
-  max-width: 50%;
-  margin: auto;
-  padding-top: 80px;   /* space for fixed navbar */
+  flex: 1;                   /* Grow to fill available space (pushes footer down) */
+  max-width: 50%;            /* Content area is 50% of viewport width.
+                                Increase → wider content area.
+                                The wide.html layout overrides this to 90%. */
+  margin: auto;              /* Center horizontally */
+  padding-top: 80px;         /* Push content below the fixed navbar.
+                                If you change navbar height, adjust this to match.
+                                Increase → more space between navbar and content. */
 }
 
 /* =========================
-   Inline logo (used beside institution names)
-   ========================= */
+   INLINE LOGO
+   =========================
+   Small icon displayed next to institution names in text.
+   Used in CV.md and index.md (e.g., University of Idaho logo).
+*/
 .inline-logo {
-  max-height: 1em;
+  max-height: 1em;           /* Match the height of surrounding text.
+                                1em = current font size. Increase → bigger logo. */
   max-width: 1em;
   height: auto;
   width: auto;
-  vertical-align: -0.1em;
-  margin: 0 2px;
-  object-fit: contain;
+  vertical-align: -0.1em;   /* Nudge down slightly to align with text baseline.
+                                More negative → lower. 0 = sits on baseline. */
+  margin: 0 2px;             /* 2px horizontal spacing around the icon */
+  object-fit: contain;       /* Scale image to fit without cropping */
 }
 
 /* =========================
-   Social icons table (CV + Contact)
-   ========================= */
+   SOCIAL ICONS TABLE
+   =========================
+   Grid of logo links used on the CV page (Professional Profiles section)
+   and contact page. Each logo sits in a bordered table cell.
+*/
+
+/* The logo images inside the table */
 .social-icon-logo {
-  height: 2.5em !important;
+  height: 2.5em !important;  /* Logo size. Increase → bigger logos.
+                                 !important ensures this overrides the default
+                                 img { width:100% } rule from typography.scss. */
   width: 2.5em !important;
   max-width: none !important;
   display: block !important;
-  margin: 0 auto;
-  object-fit: contain;
+  margin: 0 auto;            /* Center logo inside its cell */
+  object-fit: contain;        /* Scale without cropping */
 }
 
+/* The table itself */
 .social-icons-table {
-  margin: 10px auto;
-  border-collapse: collapse;
+  margin: 10px auto;         /* 10px vertical spacing, centered horizontally */
+  border-collapse: collapse; /* Merge adjacent cell borders into one line */
 
+  /* Each table cell */
   td {
-    border: 1px solid darken(#fff, 20%);
-    padding: 10px 14px;
+    border: 1px solid darken(#fff, 20%);  /* Light gray border. Change 20% → darker. */
+    padding: 10px 14px;      /* Inner spacing. Increase → cells get bigger. */
     text-align: center;
     vertical-align: middle;
     background: #fff;
 
+    /* Hover effect: cell background darkens slightly */
     &:hover { background: darken(#fff, 5%); }
 
+    /* Center the link inside the cell */
     a {
       display: flex;
       justify-content: center;
@@ -189,26 +291,43 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* =========================
-   Social icon brand colors
-   ========================= */
-a .ai-google-scholar-square       { color: #4285F4; }
-a .fa-linkedin                     { color: #0A66C2; }
-a .fa-github                       { color: #333;    }
-a .ai-google-scholar-square:hover  { color: darken(#4285F4, 15%); }
+   SOCIAL ICON BRAND COLORS
+   =========================
+   Each icon uses its official brand color.
+   Change the hex codes to use different colors.
+*/
+a .ai-google-scholar-square       { color: #4285F4; }  /* Google blue */
+a .fa-linkedin                     { color: #0A66C2; }  /* LinkedIn blue */
+a .fa-github                       { color: #333;    }  /* GitHub dark gray */
+a .ai-google-scholar-square:hover  { color: darken(#4285F4, 15%); }  /* Darker on hover */
 a .fa-linkedin:hover               { color: darken(#0A66C2, 15%); }
-a .fa-github:hover                 { color: #000;    }
+a .fa-github:hover                 { color: #000;    }  /* Pure black on hover */
 
 /* =========================
-   Publications page (cards)
-   ========================= */
-.publications {
-  min-height: 60px;
-  width: 100%;
-  margin-bottom: 10px;
-  background-color: #fff;
-  border: 1px solid darken(#fff, 50%);
-  box-shadow: 2px 2px 5px gray;
+   PUBLICATIONS PAGE (cards)
+   =========================
+   Each publication is a card with a shadow, containing
+   a title, thumbnail image, description, authors, and links.
 
+   Structure in publications.html:
+   .publications
+     .publication-title   (linked heading)
+     .publication-picture (thumbnail, floated left)
+     .publication-text    (description + author + venue + links)
+*/
+.publications {
+  min-height: 60px;          /* Minimum card height. Prevents collapse if empty. */
+  width: 100%;
+  margin-bottom: 10px;       /* Space between stacked cards. Increase → more gap. */
+  background-color: #fff;
+  border: 1px solid darken(#fff, 50%);  /* darken(#fff, 50%) = medium gray border */
+  box-shadow: 2px 2px 5px gray;
+                             /* Drop shadow: 2px right, 2px down, 5px blur.
+                                Increase blur → softer shadow.
+                                Increase offsets → shadow moves further. */
+
+  /* Clearfix: ensures the card wraps around floated images.
+     Without this, the card might collapse if all content is floated. */
   &::after {
     content: "";
     display: table;
@@ -216,335 +335,475 @@ a .fa-github:hover                 { color: #000;    }
   }
 }
 
+/* Publication card title */
 .publication-title {
-  margin: 20px;
-  font-size: $publication-title-font-size;
+  margin: 20px;              /* Space around the title. Increase → more breathing room. */
+  font-size: $publication-title-font-size;  /* 20px from vars.scss */
   font-weight: bold;
   color: $accent;
 }
 
+/* Ensure title stays accent color even inside a link */
 a .publication-title { color: $accent; }
 
+/* Thumbnail image (floated left of the text) */
 .publication-picture {
-  object-fit: cover;
+  object-fit: cover;         /* Crop image to fill its box (no stretching) */
   display: block;
-  max-height: 30%;
-  max-width: 15%;
-  float: left;
+  max-height: 30%;           /* Maximum height relative to card */
+  max-width: 15%;            /* Maximum width relative to card.
+                                Increase → bigger thumbnail. */
+  float: left;               /* Push image to the left; text wraps around it */
   padding: 2px;
   border: 1px solid darken(#fff, 20%);
-  border-radius: 10%;
-  overflow: hidden;
-  margin: 0 20px 10px 20px;
+  border-radius: 10%;        /* Rounded corners. 0% = square. 50% = circle. */
+  overflow: hidden;           /* Clip anything outside the rounded corners */
+  margin: 0 20px 10px 20px;  /* top right bottom left spacing around image */
 }
 
+/* Text area (sits to the right of the floated thumbnail) */
 .publication-text {
-  margin: 0 20px 20px 25%;
+  margin: 0 20px 20px 25%;   /* Left margin at 25% keeps text clear of the thumbnail.
+                                 Increase left % → text starts further right. */
   color: $text;
-  p, em { color: $text; }
+  p, em { color: $text; }    /* Ensure paragraphs and italics inside use text color */
 }
 
 /* =========================
-   Collage grid (homepage projects)
-   ========================= */
+   COLLAGE GRID (homepage Projects & Builds)
+   =========================
+   A 3-column grid of clickable project thumbnails.
+   Each thumbnail opens a modal with a full image and description.
+
+   Structure in index.md:
+   .collage-grid
+     .collage-item (figure)
+       .collage-link (a)
+         img
+       figcaption
+*/
 .collage-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
+                             /* 3 equal-width columns.
+                                Change 3 → 2 for two columns, 4 for four, etc. */
+  gap: 14px;                 /* Space between grid items. Increase → more gap. */
   margin-top: 12px;
 }
 
+/* Each project card */
 .collage-item {
   margin: 0;
   background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  overflow: hidden;
+  border: 1px solid #ddd;    /* Light gray border */
+  border-radius: 10px;       /* Rounded corners. Increase → rounder. */
+  overflow: hidden;           /* Clip image corners to match the border-radius */
   box-shadow: 2px 2px 5px rgba(0,0,0,0.15);
+                             /* rgba = red, green, blue, alpha (opacity).
+                                0.15 = 15% opacity shadow. Increase → darker shadow. */
 
+  /* Thumbnail image inside the card */
   img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    display: block;
+    width: 100%;             /* Fill the card width */
+    height: 180px;           /* Fixed height. Increase → taller thumbnails.
+                                Use "auto" to let height match the image ratio. */
+    object-fit: cover;       /* Crop to fill (no stretching/distortion) */
+    display: block;          /* Remove the small gap below inline images */
   }
 
+  /* Caption below the thumbnail */
   figcaption {
-    padding: 8px 10px;
-    font-size: 0.9em;
+    padding: 8px 10px;      /* Inner spacing. Increase → more padding around text. */
+    font-size: 0.9em;       /* 90% of parent font size. Increase → bigger caption. */
     color: $text;
   }
 }
 
-/* Click-to-open modal links */
+/* Make the thumbnail link show a zoom cursor on hover */
 .collage-grid .collage-link {
   display: block;
-  cursor: zoom-in;
+  cursor: zoom-in;           /* Shows a magnifying glass cursor */
   img { display: block; }
 }
 
 /* =========================
-   CSS-only modal (no JS)
-   ========================= */
+   CSS-ONLY MODAL (no JavaScript needed)
+   =========================
+   How it works:
+   1. Each collage link has href="#modal-name"
+   2. The modal div has id="modal-name"
+   3. When the link is clicked, the URL becomes #modal-name
+   4. CSS :target selector activates → modal becomes visible
+   5. Clicking the overlay or × links to "#" → removes :target → modal hides
+
+   Structure:
+   .modal
+     .modal-overlay  (dark backdrop — click to close)
+     .modal-content  (white dialog box)
+       .modal-close  (× button)
+       .modal-img    (full-size image)
+       .modal-title  (heading)
+       .modal-text   (description)
+*/
+
 .modal {
-  position: fixed;
-  inset: 0;
-  display: none;
-  z-index: 9999;
+  position: fixed;           /* Cover the entire viewport */
+  inset: 0;                  /* Shorthand for top:0; right:0; bottom:0; left:0; */
+  display: none;             /* Hidden by default */
+  z-index: 9999;             /* Above everything else (even the navbar at z:99) */
+
+  /* :target activates when the URL hash matches this element's id.
+     So #modal-bioresin in the URL makes div#modal-bioresin visible. */
   &:target { display: block; }
 }
 
+/* Semi-transparent dark backdrop behind the modal */
 .modal-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.82);
+  background: rgba(0,0,0,0.82);  /* Black at 82% opacity.
+                                     Increase 0.82 → darker backdrop.
+                                     Decrease → more see-through. */
 }
 
+/* The white dialog box */
 .modal-content {
-  position: relative;
-  width: min(980px, 92vw);
-  margin: 5vh auto;
+  position: relative;        /* So the × close button positions relative to this */
+  width: min(980px, 92vw);   /* min() picks the smaller value:
+                                980px on large screens, 92% of viewport on small.
+                                Increase 980px → wider modal on desktops. */
+  margin: 5vh auto;          /* 5% from top, centered horizontally */
   background: #fff;
-  border-radius: 14px;
+  border-radius: 14px;       /* Rounded corners. Increase → rounder. */
   padding: 1.25rem 1.25rem 1.5rem;
-  max-height: 90vh;
-  overflow: auto;
-  box-shadow: 0 10px 35px rgba(0,0,0,0.35);
+                             /* rem = root em (relative to html font size).
+                                1rem ≈ 16px by default. */
+  max-height: 90vh;          /* Don't exceed 90% of viewport height */
+  overflow: auto;            /* Add scrollbar if content is taller than max-height */
+  box-shadow: 0 10px 35px rgba(0,0,0,0.35);  /* Large soft shadow for depth */
 }
 
+/* × close button (top-right corner of modal) */
 .modal-close {
-  position: absolute;
-  top: 0.6rem;
-  right: 0.85rem;
+  position: absolute;        /* Position relative to .modal-content */
+  top: 0.6rem;               /* Distance from top. Increase → lower. */
+  right: 0.85rem;            /* Distance from right edge. Increase → further left. */
   text-decoration: none;
-  font-size: 2rem;
+  font-size: 2rem;           /* Size of the × character. Increase → bigger button. */
   line-height: 1;
   color: #111;
   padding: 0.15rem 0.45rem;
   border-radius: 10px;
-  &:hover { background: rgba(0,0,0,0.06); }
+
+  &:hover { background: rgba(0,0,0,0.06); }  /* Subtle highlight on hover */
 }
 
+/* Full-size image inside the modal */
 .modal-img {
-  width: 100%;
-  height: auto;
+  width: 100%;               /* Fill the modal width */
+  height: auto;              /* Scale height proportionally */
   border-radius: 10px;
 }
 
+/* Modal title (below the image) */
 .modal-title { margin: 0.9rem 0 0.35rem; }
+
+/* Modal description text */
 .modal-text  { margin: 0; }
 
-/* Video in modal (Monster Book, etc.) */
+/* Video element inside a modal (Monster Book, etc.) */
 .modal-media {
   width: 100%;
   border-radius: 10px;
 }
 
 /* =========================
-   News feed (scrollable box on homepage)
-   ========================= */
+   NEWS FEED (scrollable box on homepage)
+   =========================
+   A bordered box with a fixed height that scrolls to show news items.
+
+   Structure in index.md:
+   .news-box
+     .news-list (ul)
+       .news-item (li)
+         .news-date  (span)
+         .news-text  (span)
+*/
 .news-box {
-  border: 1px solid rgba(0,0,0,0.12);
-  border-radius: 14px;
-  padding: 0.9rem 1rem;
-  max-height: 9.5rem;        /* ~2–3 items visible */
-  overflow-y: auto;
+  border: 1px solid rgba(0,0,0,0.12);  /* Very subtle border */
+  border-radius: 14px;       /* Rounded corners */
+  padding: 0.9rem 1rem;      /* Inner spacing */
+  max-height: 9.5rem;        /* Maximum visible height before scrolling.
+                                Increase → show more news items at once.
+                                Decrease → smaller visible area, scroll sooner. */
+  overflow-y: auto;          /* Add vertical scrollbar when content overflows */
   background: #fff;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);  /* Soft shadow for depth */
 }
 
+/* Remove default list styling */
 .news-list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
+/* Each news item: date on left, text on right */
 .news-item {
   display: grid;
   grid-template-columns: 10.5rem 1fr;
-  gap: 0.75rem;
-  padding: 0.55rem 0;
-  border-bottom: 1px solid rgba(0,0,0,0.08);
-  &:last-child { border-bottom: none; }
+                             /* First column: 10.5rem wide (for the date).
+                                Increase → wider date column.
+                                1fr = remaining space for the news text. */
+  gap: 0.75rem;              /* Space between date and text columns */
+  padding: 0.55rem 0;        /* Vertical padding above/below each item */
+  border-bottom: 1px solid rgba(0,0,0,0.08);  /* Separator line */
+
+  &:last-child { border-bottom: none; }  /* No line after the last item */
 }
 
+/* News date label (left column) */
 .news-date {
-  font-weight: 600;
-  white-space: nowrap;
+  font-weight: 600;          /* Semi-bold. 400 = normal, 700 = bold. */
+  white-space: nowrap;        /* Prevent date from wrapping to two lines */
 }
 
+/* Links inside news text are underlined for visibility */
 .news-text a { text-decoration: underline; }
 
 /* =========================
-   Experience boxes (media, mentoring pages)
-   ========================= */
+   EXPERIENCE BOXES (media, mentoring pages)
+   =========================
+   Bordered card used on the Media and Mentoring pages.
+*/
 .experience-box {
   width: 100%;
-  padding: 0 10px;
-  margin-bottom: 20px;
+  padding: 0 10px;           /* 10px left/right padding. Increase → more inner space. */
+  margin-bottom: 20px;       /* Space below each box. Increase → more gap between boxes. */
   background-color: #fff;
-  border: 1px solid darken(#fff, 50%);
+  border: 1px solid darken(#fff, 50%);  /* Medium gray border */
   box-shadow: 2px 2px 5px gray;
 
+  /* Text elements inside use the standard text color */
   p, li, span, div { color: $text; }
+
+  /* Headings inside use the accent color */
   h1, h2, h3, h4, h5, h6 { color: $accent; }
 }
 
 /* =========================
-   Footer
-   ========================= */
+   FOOTER
+   =========================
+   Sits at the bottom of every page. Contains copyright text
+   and social media icon links.
+
+   Structure in footer.html:
+   .footer
+     .container.footer-inner
+       .footer-text (p)
+       .footer-icons (ul)
+         li > a > i.fa-github / etc.
+*/
 .footer {
-  background-color: $footer-bg;
-  border-top: 2px solid darken(#fff, 20%);
-  padding: 10px 0;
-  font-size: $footer-font-size;
+  background-color: $footer-bg;  /* Light gray background */
+  border-top: 2px solid darken(#fff, 20%);  /* Thin line at top of footer */
+  padding: 10px 0;           /* 10px top/bottom. Increase → taller footer. */
+  font-size: $footer-font-size;  /* 14px from vars.scss */
   color: $text;
 
+  /* Social media icon size. 2.6em = 2.6× the footer font size.
+     Increase → bigger icons. */
   i { font-size: 2.6em; line-height: 1; }
 
+  /* Brand colors for footer icons */
   .fa-github                 { color: #333;    }
   .fa-linkedin               { color: #0A66C2; }
   .ai-google-scholar-square  { color: #4285F4; }
 }
 
+/* Footer inner layout: text left, icons right */
 .footer-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 12px;                 /* Fallback gap if items are close */
 }
 
+/* Footer text (copyright notice) */
 .footer-text {
   margin: 0;
   color: $text;
 }
 
+/* Footer icon list */
 .footer-icons {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 12px;                 /* Space between social icons. Increase → spread apart. */
   margin: 0;
   padding: 0;
-  list-style: none;
+  list-style: none;          /* Remove bullet points */
 }
 
 /* =========================
-   Contact form
-   ========================= */
+   CONTACT FORM
+   =========================
+   Styles for the form on the contact page (contact.md).
+*/
 .contact-form {
-  max-width: 720px;
+  max-width: 720px;          /* Form won't exceed this width.
+                                Increase → wider form. */
   display: grid;
-  gap: 0.9rem;
+  gap: 0.9rem;               /* Space between form fields. Increase → more spread. */
   margin-top: 1rem;
 
+  /* Each label (contains the text label + the input field) */
   label {
     display: grid;
-    gap: 0.4rem;
-    font-weight: 600;
+    gap: 0.4rem;             /* Space between label text and its input */
+    font-weight: 600;        /* Semi-bold label text */
   }
 
+  /* Text inputs and textareas */
   input, textarea {
-    width: 100%;
-    padding: 0.7rem 0.8rem;
-    border: 1px solid rgba(0,0,0,0.18);
-    border-radius: 12px;
-    font: inherit;
+    width: 100%;             /* Fill the form width */
+    padding: 0.7rem 0.8rem;  /* Inner spacing. Increase → taller/wider fields. */
+    border: 1px solid rgba(0,0,0,0.18);  /* Subtle border */
+    border-radius: 12px;     /* Rounded corners. Increase → rounder. 0 = square. */
+    font: inherit;           /* Use the same font as the rest of the page */
   }
 
+  /* Submit button */
   button {
-    width: fit-content;
-    padding: 0.65rem 1rem;
+    width: fit-content;      /* Button is only as wide as its text */
+    padding: 0.65rem 1rem;   /* Inner spacing. Increase → bigger button. */
     border-radius: 12px;
     border: 1px solid rgba(0,0,0,0.2);
-    cursor: pointer;
-    font-weight: 700;
+    cursor: pointer;         /* Show hand cursor on hover */
+    font-weight: 700;        /* Bold text */
   }
 }
 
 /* =========================
-   Buttons
-   ========================= */
+   BUTTONS (generic)
+   =========================
+   Default styling for any button or element with role="button".
+*/
 button,
 [role="button"] {
   padding: 3px;
   border: 1px solid #ccc;
 }
 
+/* Pressed/active state (e.g., toggle buttons) */
 button[aria-pressed="true"],
 [role="button"][aria-pressed="true"] {
-  border: 2px solid #000;
+  border: 2px solid #000;   /* Thicker black border when active */
 }
 
 /* =========================
-   Mobile
-   ========================= */
-@media (max-width: 800px) {
-  .container      { max-width: $med-width; }
-  .body-container { max-width: $med-width; padding-top: 120px; }
+   MOBILE RESPONSIVE BREAKPOINTS
+   =========================
+   @media rules apply styles ONLY when the screen is within a certain width.
+   The browser checks these conditions as the window resizes.
 
+   max-width: 800px  → tablets and small laptops
+   max-width: 650px  → large phones
+   max-width: 480px  → small phones
+*/
+
+/* ── Tablets (≤ 800px) ── */
+@media (max-width: 800px) {
+  /* Constrain layout containers */
+  .container      { max-width: $med-width; }             /* 600px from vars.scss */
+  .body-container { max-width: $med-width; padding-top: 120px; }
+                   /* padding-top increases because the navbar wraps to 2 rows */
+
+  /* Nav wraps to multiple rows on narrow screens */
   .nav-inner {
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: wrap;         /* Allow children to wrap to next line */
+    justify-content: center; /* Center everything */
   }
 
+  /* Nav links wrap and shrink */
   .navbar-ul {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 4px 10px;
-    a { padding: 4px 6px; font-size: 0.85em; }
+    gap: 4px 10px;           /* 4px row gap, 10px column gap */
+    a { padding: 4px 6px; font-size: 0.85em; }  /* Smaller link text */
   }
 
+  /* Smaller site title */
   #author-name { font-size: 18px !important; }
 
-  /* Scale non-icon images */
+  /* Scale all images (except specific ones) to fit the screen.
+     The :not() selectors exclude logos and other fixed-size images. */
   img:not(.social-icon-logo):not(.inline-logo):not(.publication-picture):not(.name-logo):not(.profile-picture),
   video {
     max-width: 100%;
     height: auto;
   }
 
+  /* Publication thumbnail: stop floating, center instead */
   .publication-picture {
     float: none;
     display: block;
-    max-width: 40%;
-    margin: 10px auto;
+    max-width: 40%;          /* Wider than desktop (15%) since there's less space */
+    margin: 10px auto;       /* Center the image */
   }
 
+  /* Publication text: remove the 25% left margin since image isn't floated anymore */
   .publication-text { margin: 0 10px 20px 10px; }
 
+  /* Data tables become horizontally scrollable instead of overflowing */
   table:not(.social-icons-table) {
     display: block;
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch;  /* Smooth scrolling on iOS */
   }
 
+  /* Prevent long words from breaking the layout */
   p { word-wrap: break-word; overflow-wrap: break-word; }
 
+  /* Shrink social icon logos */
   .social-icon-logo { height: 1.8em !important; width: 1.8em !important; }
   .social-icons-table td { padding: 8px 10px; }
 }
 
+/* ── Large phones (≤ 650px) ── */
 @media (max-width: 650px) {
   .container,
-  .body-container { max-width: 90%; }
+  .body-container { max-width: 90%; }  /* Nearly full-width layout */
 }
 
+/* ── Small phones (≤ 480px) ── */
 @media (max-width: 480px) {
   .container      { max-width: 95%; padding: 0 8px; }
   .body-container { max-width: 95%; padding-top: 140px; }
+                   /* Even more top padding for a 3-row navbar on tiny screens */
 
-  .navbar-ul a   { padding: 3px 4px; font-size: 0.75em; }
+  .navbar-ul a   { padding: 3px 4px; font-size: 0.75em; }  /* Even smaller nav text */
   #author-name   { font-size: 16px !important; }
-  .name-logo     { height: 18px; }
+  .name-logo     { height: 18px; }  /* Smaller NT icon */
 
+  /* Further shrink social icons */
   .social-icon-logo      { height: 1.5em !important; width: 1.5em !important; }
   .social-icons-table td { padding: 6px 8px; }
-  .publication-picture   { max-width: 50%; }
+  .publication-picture   { max-width: 50%; }  /* Even wider on small screens */
 
+  /* Footer stacks vertically */
   .footer-inner { flex-direction: column; gap: 6px; }
 }
 
-/* Partials */
+/* =========================
+   IMPORT PARTIALS
+   =========================
+   These @import statements pull in the other .scss files.
+   Order matters: they can use variables and styles defined above.
+   - typography: list styles, profile picture, blockquotes
+   - tables: default data table styling
+   - cv: the entire CV page layout
+*/
 @import "typography";
 @import "tables";
 @import "cv";

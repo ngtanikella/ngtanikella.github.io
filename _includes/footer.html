@@ -1,15 +1,65 @@
-<footer class="footer">
-  <div class="container footer-inner">
-    <p class="footer-text">
-      <span class="footer-text">Last updated: {{ site.time | date: "%B %Y" }}</span> <br>
-      © {{ "now" | date: "%Y" }} Nagendra Tanikella. Some materials may be subject to publisher copyright.
-      
-    </p>
+<!--
+  FOOTER.HTML — Page Footer
+  =========================
+  Appears at the bottom of every page via {% include footer.html %} in layouts.
+  Contains the copyright/update notice and social media icon links.
 
-    <ul class="footer-icons">
-      <li><a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener"><i class="fa fa-github"></i></a></li>
-      <li><a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank" rel="noopener"><i class="fa fa-linkedin"></i></a></li>
-      <li><a href="{{ site.google_scholar_url }}" target="_blank" rel="noopener"><i class="ai ai-google-scholar-square"></i></a></li>
-    </ul>
-  </div>
+  STRUCTURE:
+  footer.footer
+    .container.footer-inner   → centered, flexbox (text left, icons right)
+      p.footer-text           → copyright and last-updated text
+      ul.footer-icons         → horizontal list of social icon links
+
+  STYLES: Defined in _style.scss under the "Footer" section.
+
+  LIQUID TAGS:
+  {{ site.time | date: "%B %Y" }}  → outputs build date as "Month Year" (e.g., "February 2026").
+                                      %B = full month name, %Y = 4-digit year.
+                                      Change to "%b %d, %Y" for "Feb 28, 2026".
+  {{ "now" | date: "%Y" }}         → outputs the current year (e.g., "2026").
+  {{ site.github_username }}       → from _config.yml.
+-->
+
+<!-- <footer> is a semantic HTML5 element that tells browsers and screen readers
+     "this is the page footer". The .footer class applies styles from _style.scss. -->
+<footer class="footer">
+
+    <!-- footer-inner: flexbox container — text on left, icons on right.
+         .container limits the width to 60% and centers it. -->
+    <div class="container footer-inner">
+
+        <!-- Copyright text block -->
+        <p class="footer-text">
+            <!-- Last updated timestamp: automatically shows when Jekyll last built the site.
+                 site.time is set by Jekyll at build time.
+                 | date: "%B %Y" formats it as "Month Year". -->
+            <span class="footer-text">Last updated: {{ site.time | date: "%B %Y" }}</span>
+
+            <!-- <br> creates a line break (new line) within the paragraph -->
+            <br>
+
+            <!-- Copyright notice: year updates automatically via Liquid.
+                 "now" | date: "%Y" outputs the current year. -->
+            © {{ "now" | date: "%Y" }} Nagendra Tanikella. Some materials may be subject to publisher copyright.
+        </p>
+
+        <!-- Social media icon links.
+             <ul> = unordered list. list-style:none in CSS removes bullets.
+             Each <li> contains an <a> (link) wrapping an <i> (icon).
+
+             Icon classes:
+             "fa fa-github"                → Font Awesome GitHub icon
+             "fa fa-linkedin"              → Font Awesome LinkedIn icon
+             "ai ai-google-scholar-square" → Academicons Google Scholar icon
+
+             target="_blank"  → opens link in a new tab
+             rel="noopener"   → security: prevents the new page from accessing
+                                your page's window object -->
+        <ul class="footer-icons">
+            <li><a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener"><i class="fa fa-github"></i></a></li>
+            <li><a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank" rel="noopener"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="{{ site.google_scholar_url }}" target="_blank" rel="noopener"><i class="ai ai-google-scholar-square"></i></a></li>
+        </ul>
+
+    </div>
 </footer>

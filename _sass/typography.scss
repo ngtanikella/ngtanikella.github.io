@@ -1,92 +1,148 @@
-/* Typography & content element styles
-   (imported by _style.scss — no need to @import vars here) */
+/* =========================
+   TYPOGRAPHY & CONTENT ELEMENT STYLES
+   =========================
+
+   WHAT THIS FILE DOES:
+   Styles for text-related elements inside the main content area:
+   ordered/unordered lists, blockquotes, profile picture, and images.
+
+   This file is imported by _style.scss (line: @import "typography"),
+   so it has access to all variables from vars.scss and all styles
+   already defined in _style.scss. No need to @import "vars" again.
+
+   Everything here is nested inside ".content" — that class is applied
+   to the main content div in default.html and wide.html, so these
+   styles only apply inside the page body (not the navbar or footer).
+*/
 
 .content {
-  /* Ordered lists: bracketed numbering [1], [2], … */
+
+  /* ── Ordered lists (numbered) ──
+     Used for publication lists on the CV page.
+     Uses a CSS counter to display numbers as [1], [2], [3], etc.
+     instead of the default 1. 2. 3. style. */
   ol {
-    counter-reset: list;
-    padding: 0 30px;
+    counter-reset: list;     /* Initialize a counter named "list" starting at 0.
+                                Each <li> will increment it by 1. */
+    padding: 0 30px;         /* 30px left/right padding.
+                                Increase left → list indents further from the edge. */
   }
 
   ol > li {
-    list-style: none;
-    position: relative;
-    margin: 5px 0;
+    list-style: none;        /* Remove the browser's default numbering */
+    position: relative;      /* Needed so the ::before pseudo-element can be
+                                positioned absolutely within this li */
+    margin: 5px 0;           /* 5px vertical spacing between items.
+                                Increase → more space between list items. */
 
+    /* ::before creates a pseudo-element BEFORE the li content.
+       This is the bracketed number like [1], [2], etc. */
     &::before {
       content: "[" counter(list, decimal) "] ";
-      counter-increment: list;
+                             /* counter(list, decimal) outputs the current
+                                counter value as 1, 2, 3, etc.
+                                The brackets and space are literal text.
+                                Change "[" "]" to "(" ")" for (1), (2), etc. */
+      counter-increment: list;  /* Add 1 to the counter each time */
       position: absolute;
-      left: -30px;
+      left: -30px;           /* Position the number 30px to the left of the text.
+                                Should match the ol padding-left value. */
     }
   }
 
-  /* Unordered lists */
+  /* ── Unordered lists (bullet points) ── */
   ul {
-    padding: 0 20px;
+    padding: 0 20px;         /* 20px left/right padding.
+                                Increase left → bullets indent further. */
   }
 
   ul > li {
-    margin: 0 0 10px;
+    margin: 0 0 10px;        /* 10px below each bullet item.
+                                Increase → more space between bullets. */
   }
 
-  /* Publication card lists */
+  /* ── Publication card lists ──
+     Special styling for bullet lists inside publication cards. */
   .publications ul {
-    text-align: justify;
+    text-align: justify;     /* Justify text within publication bullets */
   }
 
   .publications ul > li {
-    margin-bottom: 5px;
+    margin-bottom: 5px;      /* Tighter spacing than regular bullets (5px vs 10px) */
+
+    /* On small screens, move bullets inside the text flow
+       so they don't overflow the card */
     @media (max-width: $max-width) {
       list-style-position: inside;
     }
   }
 
-  /* Block quotes */
+  /* ── Block quotes ──
+     Styled with a left border bar and italic text.
+     Used when quoting text with > in Markdown. */
   blockquote {
-    border-left: 5px solid #333;
-    margin: 20px 0;
-    padding: 2px 8px;
-    font-style: italic;
+    border-left: 5px solid #333;  /* Thick dark left border.
+                                     Change 5px → thicker/thinner bar.
+                                     Change #333 → different bar color. */
+    margin: 20px 0;          /* 20px above and below the quote */
+    padding: 2px 8px;        /* Inner spacing. Increase → more space inside. */
+    font-style: italic;      /* Italicize the quoted text */
   }
 
-  /* Profile picture (homepage) */
-  .profile-picture {
-    width: 25%;
-    position: relative;
-    margin: 10px 0 10px 60px;
-    float: right;
-    border-radius: 10%;
+  /* ── Profile picture (homepage) ──
+     The photo of you on the home page, floated to the right
+     so the "About me" text wraps around it.
 
+     Markdown in index.md creates:
+     <img class="profile-picture" src="..."> */
+  .profile-picture {
+    width: 25%;              /* 25% of the content area width on desktop.
+                                Increase → bigger photo. */
+    position: relative;
+    margin: 10px 0 10px 60px;  /* top right bottom left.
+                                   60px left margin pushes the photo away from text.
+                                   Increase left → more gap between text and photo. */
+    float: right;            /* Float to the right side; text wraps on the left */
+    border-radius: 10%;      /* Slightly rounded corners.
+                                0% = sharp corners. 50% = circular. */
+
+    /* When the image is inside a <p> tag, remove extra spacing */
     p & { padding: 0; margin: 0; }
 
-    @media (max-width: $max-width) {
-      width: 40%;
-      margin: 0 0 20px 20px;
+    /* On smaller screens, make the photo bigger since there's less space */
+    @media (max-width: $max-width) {  /* $max-width = 700px */
+      width: 40%;            /* 40% instead of 25% */
+      margin: 0 0 20px 20px; /* Less left margin on mobile */
     }
   }
 
-  /* Small logos inside experience boxes */
+  /* ── Experience picture ──
+     Small logos floated right inside experience/media page cards.
+     Smaller than the profile picture. */
   .experience-picture {
-    width: 8%;
+    width: 8%;               /* Very small on desktop. Increase → bigger logo. */
     position: relative;
-    margin: 0 0 10px 20px;
+    margin: 0 0 10px 20px;   /* Spacing around the logo */
     float: right;
     padding: 2px;
-    border: 1px solid darken(#fff, 20%);
+    border: 1px solid darken(#fff, 20%);  /* Light gray border */
     border-radius: 10%;
 
     p & { padding: 0; margin: 0; }
 
     @media (max-width: $max-width) {
-      width: 15%;
+      width: 15%;            /* Bigger on small screens */
       margin: 0 0 10px 10px;
     }
   }
 
-  /* Default content images */
+  /* ── Default content images ──
+     Any <img> inside .content that doesn't have a more specific class
+     will be full-width. This is a catch-all rule. */
   img {
     text-align: center;
-    width: 100%;
+    width: 100%;             /* Images fill their container by default.
+                                This is overridden by more specific classes like
+                                .inline-logo, .social-icon-logo, etc. */
   }
 }

@@ -1,22 +1,46 @@
+<!--
+  WIDE.HTML — Wide Page Layout
+  ============================
+  Identical to default.html except the content area is wider (90% instead of 50%).
+  Used for pages that need more horizontal space, like the publications page
+  or any page with wide images/tables.
+
+  To use: set "layout: wide" in a page's front matter (the --- block).
+
+  THE ONLY DIFFERENCE from default.html:
+  style="max-width: 90%;" on the .body-container div.
+  This inline style overrides the default max-width: 50% from CSS.
+  Change 90% → any percentage to control how wide the content area is.
+-->
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     {% include head.html %}
 </head>
+
 <body>
- <div class="wrapper">
-    {% include header.html %}
 
-    <div class="body-container content" style="max-width: 90%;">
+    <div class="wrapper">
 
-        {{ content }}
+        {% include header.html %}
+
+        <!-- The only change vs default.html: max-width: 90% instead of 50%.
+             This inline style overrides .body-container { max-width: 50% } from CSS.
+             Change 90% → smaller for narrower, larger for wider (max 100%). -->
+        <div class="body-container content" style="max-width: 90%;">
+
+            {{ content }}
+
+        </div>
+
+        {% include footer.html %}
 
     </div>
 
-    {% include footer.html %}
- </div>
     {% if jekyll.environment == 'production' %}
-    {% include analytics.html %}
+        {% include analytics.html %}
     {% endif %}
 
 </body>

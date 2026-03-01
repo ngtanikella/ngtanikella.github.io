@@ -1,24 +1,69 @@
+<!--
+  NEWS.HTML — News Feed Row Template
+  ===================================
+  This is an _includes partial used by the old table-based news feed.
+  It renders ONE row of a news table: a date cell and a content cell.
+
+  NOTE: The homepage (index.md) now uses a modern .news-box / .news-list
+  layout instead of this table approach. This template may still be used
+  by other pages or as a fallback.
+
+  CONTEXT:
+  This template expects a variable called "article" to be available,
+  which comes from the page that includes it using a {% for %} loop:
+    {% for article in site.data.news %}
+      <tr>{% include news.html %}</tr>
+    {% endfor %}
+
+  Each article object (from _data/news.yml) has fields like:
+    date:     "Jan 2026"
+    news:     "Published a new paper on..."
+    pdf:      "filename.pdf"        (optional)
+    url:      "https://example.com" (optional)
+    display:  "link text"           (optional, defaults to "url")
+    category: "publications"        (used to build the PDF path)
+
+  HTML TABLE CELLS:
+  <td> = table data cell. Each row has two cells: date and content.
+  width="160" sets the date column to 160 pixels wide.
+  <em> makes text italic (used for the date).
+  &nbsp; is a non-breaking space (prevents line break at that point).
+-->
+
+<!-- Date column: fixed width of 160px.
+     Change 160 → wider/narrower date column.
+     <em> makes the date italic. Remove <em> for normal weight. -->
 <td width="160">
-<em>{{ article.date }}</em>
+    <em>{{ article.date }}</em>
 </td>
 
+<!-- Content column: news text + optional PDF and URL links -->
 <td>
-{{ article.news }}
+    <!-- The news text from _data/news.yml -->
+    {{ article.news }}
 
-{% if article.pdf %}
-&nbsp;&nbsp;
+    <!-- Optional PDF link: only appears if article.pdf exists.
+         {% if article.pdf %} checks if the PDF field is set.
+         If the PDF value contains "://" it's treated as a full URL.
+         Otherwise, it's treated as a filename in /docs/{category}/. -->
+    {% if article.pdf %}
+        &nbsp;&nbsp;
 
-{% if article.pdf contains '://' %}
-[<a href="{{ article.pdf }}" target="_blank">pdf</a>]
-{% else %}
-[<a href="{{site.url}}{{site.baseurl}}/docs/{{ article.category }}/{{ article.pdf }}" target="_blank">pdf</a>]
-{% endif %}
+        {% if article.pdf contains '://' %}
+            <!-- Full URL: link directly -->
+            [<a href="{{ article.pdf }}" target="_blank">pdf</a>]
+        {% else %}
+            <!-- Local file: build the path from site URL + category folder.
+                 article.category comes from _data/news.yml (e.g., "publications").
+                 So the path becomes: /docs/publications/filename.pdf -->
+            [<a href="{{site.url}}{{site.baseurl}}/docs/{{ article.category }}/{{ article.pdf }}" target="_blank">pdf</a>]
+        {% endif %}
+    {% endif %}
 
-{% endif %}
-
-{% if article.url %}
-[<a href="{{ article.url }}" target="_blank">{% if article.display %}{{ article.display }}{% else %}url{% endif %}</a>]
-{% endif %}
-
+    <!-- Optional URL link: only appears if article.url exists.
+         If article.display is set, use it as the link text.
+         Otherwise, default to "url". -->
+    {% if article.url %}
+        [<a href="{{ article.url }}" target="_blank">{% if article.display %}{{ article.display }}{% else %}url{% endif %}</a>]
+    {% endif %}
 </td>
-

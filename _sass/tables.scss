@@ -1,28 +1,56 @@
-/* Default table styles (data tables, not social-icons-table) */
+/* =========================
+   DEFAULT TABLE STYLES
+   =========================
+
+   WHAT THIS FILE DOES:
+   Styles for regular data tables (like the news table or any Markdown table).
+   Does NOT affect .social-icons-table — that has its own styles in _style.scss.
+
+   This file is imported by _style.scss (@import "tables").
+
+   HTML TABLE STRUCTURE:
+   <table>
+     <tr>          ← table row
+       <th>...</th> ← table header cell (bold)
+       <td>...</td> ← table data cell
+     </tr>
+   </table>
+*/
 
 table {
-  margin: 15px 0;
-  border-collapse: collapse;
-  width: 100%;
+  margin: 15px 0;           /* 15px space above and below the table.
+                                Increase → more gap around the table. */
+  border-collapse: collapse; /* Merge adjacent cell borders into single lines.
+                                Without this, each cell has its own double border. */
+  width: 100%;              /* Table fills its container width */
 
+  /* ── Table rows ── */
   tr {
-    border-top: 1px solid #ccc;
-    background-color: #fff;
+    border-top: 1px solid #ccc;  /* Gray line above each row.
+                                     Change #ccc → darker/lighter line color. */
+    background-color: #fff;       /* White background by default */
     margin: 0;
     padding: 0;
 
+    /* Zebra striping: every even row (2nd, 4th, 6th, ...) gets
+       a slightly different background for readability.
+       2n means "every 2nd". Change #f8f8f8 → different stripe color. */
     &:nth-child(2n) { background-color: #f8f8f8; }
   }
 
+  /* ── Table cells (both header and data) ── */
   th, td {
-    font-weight: normal;
-    border: 1px solid #ccc;
-    text-align: left;
+    font-weight: normal;     /* Default to normal weight for both */
+    border: 1px solid #ccc;  /* Border around each cell */
+    text-align: left;        /* Left-align text. Change to "center" or "right". */
     margin: 0;
-    padding: 10px 15px;
+    padding: 10px 15px;      /* 10px top/bottom, 15px left/right.
+                                Increase → more spacious cells. */
 
+    /* First and last cells in a row: ensure no extra margin */
     &:first-child, &:last-child { margin: 0; }
   }
 
+  /* Header cells get bold text (overrides the normal weight above) */
   th { font-weight: bold; }
 }

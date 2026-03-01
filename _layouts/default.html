@@ -1,23 +1,83 @@
+<!--
+  DEFAULT.HTML — Main Page Layout
+  ================================
+  This is the primary layout template. When a Markdown page has
+  "layout: default" in its front matter, Jekyll wraps that page's
+  content with this HTML structure.
+
+  HOW JEKYLL LAYOUTS WORK:
+  1. You write a page (e.g., contact.md) with "layout: default" in the front matter
+  2. Jekyll converts the Markdown to HTML
+  3. Jekyll inserts that HTML where {{ content }} appears below
+  4. The result is a complete HTML page with navbar, content, and footer
+
+  {% include filename.html %} pulls in the contents of a file from
+  the _includes/ folder. This avoids duplicating code across layouts.
+
+  {{ content }} is replaced by the actual page content at build time.
+
+  STRUCTURE:
+  <html>
+    <head>        → head.html (metadata, CSS, fonts)
+    <body>
+      .wrapper    → flexbox column (pushes footer to bottom)
+        header    → header.html (navigation bar)
+        .body-container.content → the page's actual content
+        footer    → footer.html (copyright, icons)
+      analytics   → only in production builds
+  </html>
+-->
+
+<!-- DOCTYPE tells the browser this is an HTML5 document -->
 <!DOCTYPE html>
+
+<!-- lang="en" tells browsers and screen readers the page is in English.
+     Change to "es" for Spanish, "fr" for French, etc. -->
 <html lang="en">
+
 <head>
+    <!-- Include the <head> partial: meta tags, CSS links, fonts, favicon -->
     {% include head.html %}
 </head>
+
 <body>
- <div class="wrapper">
-    {% include header.html %}
 
-    <div class="body-container content">
+    <!-- .wrapper: flexbox column container that ensures the footer stays
+         at the bottom even when page content is short.
+         min-height: 100vh + flex-direction: column in CSS. -->
+    <div class="wrapper">
 
-        {{ content }}
+        <!-- Navigation bar (fixed to top of viewport) -->
+        {% include header.html %}
+
+        <!-- Main content area.
+             .body-container: max-width: 50%, centered, with top padding
+                              to clear the fixed navbar.
+             .content: scoping class for typography.scss styles
+                       (list formatting, image sizing, etc.).
+
+             {{ content }} is where Jekyll inserts the page's HTML.
+             For example, if CV.md uses "layout: default", the entire
+             CV page HTML appears here. -->
+        <div class="body-container content">
+
+            {{ content }}
+
+        </div>
+
+        <!-- Page footer (copyright, social icons) -->
+        {% include footer.html %}
 
     </div>
 
-    {% include footer.html %}
- </div>
- {% if jekyll.environment == 'production' %}
-    {% include analytics.html %}
- {% endif %}
+    <!-- Google Analytics: only loads in production to avoid tracking
+         during local development.
+         jekyll.environment is set by the JEKYLL_ENV environment variable.
+         On GitHub Pages, it defaults to "production".
+         Locally (jekyll serve), it defaults to "development" → analytics won't load. -->
+    {% if jekyll.environment == 'production' %}
+        {% include analytics.html %}
+    {% endif %}
 
 </body>
 </html>

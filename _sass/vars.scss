@@ -1,13 +1,47 @@
-/*
- * Site-wide variables
- * Imported first by _style.scss; available in all partials.
- */
+/* =========================
+   SITE-WIDE VARIABLES
+   =========================
 
-/* Typography */
+   WHAT THIS FILE DOES:
+   Defines reusable values (variables) that are shared across all .scss files.
+   Instead of typing "15px" in 20 places, you type "$body-font-size" — then
+   to change the font size everywhere, you only edit this ONE line.
+
+   HOW SCSS VARIABLES WORK:
+   $variable-name: value;
+   The $ prefix marks it as a variable. You can use it anywhere after this
+   file is imported. Change the value here → every file that uses it updates.
+
+   THIS FILE IS IMPORTED FIRST by _style.scss (line 1: @import "vars"),
+   so every partial (.scss file) has access to these variables.
+*/
+
+/* ── Typography ── */
+
+/* Base font size for all body text.
+   Increase → all text gets bigger; decrease → all text gets smaller.
+   Most other sizes are calculated relative to this. */
 $body-font-size: 15px;
+
+/* Publication card title size. Currently 15 + 5 = 20px.
+   The "+" is SCSS math — change the 5 to make titles bigger/smaller
+   relative to body text. */
 $publication-title-font-size: $body-font-size + 5;
+
+/* Footer text size. Currently 15 - 1 = 14px.
+   Slightly smaller than body text so the footer feels secondary. */
 $footer-font-size: $body-font-size - 1;
 
-/* Layout breakpoints & widths */
+/* ── Layout breakpoints & widths ── */
+
+/* $max-width: used inside typography.scss as a responsive breakpoint.
+   Below this width, profile pictures and experience logos get bigger.
+   Increase → responsive changes kick in on wider screens.
+   Decrease → responsive changes only apply on narrower screens. */
 $max-width: 700px;
+
+/* $med-width: used in _style.scss mobile breakpoints.
+   Sets the max-width of .container and .body-container on tablets.
+   Increase → content area wider on mid-size screens.
+   Decrease → content area narrower on mid-size screens. */
 $med-width: 600px;

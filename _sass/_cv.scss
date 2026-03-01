@@ -1,252 +1,396 @@
 /* =========================
-   CV PAGE
-   Two-column layout: sticky section titles left, content right.
-   ========================= */
+   CV PAGE LAYOUT
+   =========================
 
+   WHAT THIS FILE DOES:
+   Styles the entire CV page. The CV uses a two-column grid layout:
+   - LEFT column: section title (e.g., "Education") — sticky while scrolling
+   - RIGHT column: the actual content (degrees, jobs, publications, etc.)
+
+   Within the right column, entries like jobs and degrees use CSS SUBGRID
+   to align institution names, role titles, and dates into neat columns
+   that line up perfectly across all entries in a section.
+
+   This file is imported by _style.scss (@import "cv").
+
+   OVERALL STRUCTURE (in CV.md):
+   .cv-layout
+     .cv-content
+       .cv-section                     ← one per section (Education, Research, etc.)
+         .cv-section-grid              ← 2-column grid: title | content
+           .cv-section-heading         ← left column (sticky title)
+             h2.cv-section-title
+           .cv-section-body            ← right column (all content)
+             .cv-entry.cv-uniform      ← subgrid container for aligned entries
+               .cv-item               ← one entry (degree, job, etc.)
+                 .cv-item-head        ← header: institution | role | date
+                 .cv-item-body        ← bullets or thesis below header
+*/
+
+/* ── Outer wrappers ── */
+
+/* Main CV wrapper. overflow:visible is required for position:sticky
+   to work on the section titles. */
 .cv-layout {
   display: block;
-  overflow: visible;   /* required for position:sticky */
+  overflow: visible;
 }
 
+/* Full-width content area */
 .cv-content {
   width: 100%;
 }
 
-/* Two-column section grid: title (200px) | content (rest) */
+/* ── Two-column section grid ── */
+
+/* Creates the main 2-column layout for each section.
+   grid-template-columns defines column sizes:
+   200px = fixed-width left column for titles
+   1fr   = remaining space for content (1fr = 1 fraction of leftover space)
+
+   To make the title column wider, increase 200px.
+   To make the gap between columns bigger, increase column-gap. */
 .cv-section-grid {
   display: grid;
   grid-template-columns: 200px 1fr;
-  column-gap: 2px;
-  align-items: start;
+  column-gap: 2px;           /* Tiny gap between title and content.
+                                Increase → wider gap. */
+  align-items: start;        /* Align children to the top of each row */
 }
 
-/* Stretch so sticky title has room to scroll within the full section */
+/* Left column: stretches to full section height so the sticky title
+   has vertical room to scroll within. */
 .cv-section-heading {
-  min-width: 0;
-  align-self: stretch;
+  min-width: 0;             /* Prevent grid blowout from long text */
+  align-self: stretch;       /* Stretch to match the height of the right column.
+                                This is what gives the sticky title room to travel. */
 }
 
+/* Section title (e.g., "Education", "Research Experience") */
 .cv-section-title {
   margin: 0;
-  position: sticky;
-  top: 96px;           /* below fixed navbar */
+  position: sticky;          /* Stays visible while scrolling within its section.
+                                The title "sticks" at a fixed position and unsticks
+                                when you scroll past the section. */
+  top: 96px;                 /* Distance from the top of the viewport where
+                                the title sticks. Should be just below the navbar.
+                                If you change navbar height, adjust this.
+                                Increase → sticks lower. Decrease → sticks higher. */
   align-self: start;
-  z-index: 2;
+  z-index: 2;               /* Above content but below navbar (z:99) */
 }
 
+/* Right column: the content area */
 .cv-section-body {
-  min-width: 0;
+  min-width: 0;             /* Prevent grid blowout from long text */
 }
 
-/* Override justified text — left-align all CV paragraphs */
+/* Override the global "text-align: justify" for CV paragraphs.
+   CV text reads better left-aligned. */
 .cv-section-body p {
-  margin: 0 0 6px 0;
+  margin: 0 0 6px 0;        /* 6px bottom margin between paragraphs.
+                                Increase → more space between lines. */
   text-align: left;
 }
 
-/* Thin line between sections */
+/* ── Section dividers ── */
+
+/* Thin horizontal line between CV sections */
 .cv-divider {
   border: none;
   border-top: 1px solid rgba(0,0,0,0.1);
-  margin: 24px 0;
+                             /* Very faint line. Increase 0.1 → more visible.
+                                Change to 2px → thicker line. */
+  margin: 24px 0;           /* 24px space above and below the line.
+                                Increase → more breathing room between sections. */
 }
 
 /* =========================
-   Expertise: label–value pairs (dt/dd grid)
-   ========================= */
+   EXPERTISE SECTION: Label–Value Pairs
+   =========================
+   The Expertise section uses a <dl> (description list):
+   <dt> = label (e.g., "Materials Science")
+   <dd> = description text
+
+   Displayed as a 2-column grid: labels on left, descriptions on right.
+*/
 .cv-keyvals {
   display: grid;
   grid-template-columns: max-content 1fr;
-  column-gap: 14px;
-  row-gap: 6px;
+                             /* max-content = column is as wide as the longest label.
+                                1fr = remaining space for descriptions.
+                                This ensures all colons line up vertically. */
+  column-gap: 14px;          /* Space between label and description.
+                                Increase → wider gap. */
+  row-gap: 6px;              /* Space between rows. Increase → more spread out. */
   margin: 0;
 
+  /* Each label (dt) */
   dt {
     margin: 0;
-    font-weight: 700;
+    font-weight: 700;        /* Bold. 400 = normal, 600 = semi-bold, 700 = bold. */
     color: #111;
-    &::after { content: ":"; }  /* visual colon */
+
+    /* Automatically add a colon after each label via CSS.
+       This means you DON'T type ":" in the HTML — CSS adds it.
+       Change content to ": " or " —" for different separators. */
+    &::after { content: ":"; }
   }
 
+  /* Each description (dd) */
   dd {
-    margin: 0;
+    margin: 0;               /* Override browser default left margin on <dd> */
     color: #111;
   }
 }
 
 /* =========================
-   Uniform entry alignment (Education, Research, Teaching)
-   Uses CSS subgrid so ALL left labels share one max-content column.
-   Middle headings and dates align perfectly across items.
-   ========================= */
+   UNIFORM ENTRY ALIGNMENT (Education, Research, Teaching)
+   =========================
+
+   HOW CSS SUBGRID WORKS HERE:
+   1. .cv-uniform creates a 2-column grid: [max-content] [1fr]
+      - max-content = the width of the LONGEST institution name across ALL entries
+      - This means all entries share the same column widths
+   2. Each .cv-item spans both columns (grid-column: 1 / -1)
+      and uses "subgrid" to inherit the parent's column tracks
+   3. Result: "University of Idaho", "Michigan Technological University", etc.
+      all align their dashes, role titles, and dates in perfect columns
+
+   VISUAL:
+   | University of Idaho          - | Ph.D. Mechanical Engineering | Dec 2025    |
+   | Michigan Technological Univ. - | M.E. Materials Science       | Dec 2021    |
+   | Michigan Technological Univ. - | M.S. Mechanical Engineering  | Aug 2016    |
+   ← shared max-content width →   ← fills remaining space →       ← right edge →
+*/
+
 .cv-uniform {
   display: grid;
   grid-template-columns: max-content 1fr;
-  column-gap: 12px;
-  row-gap: 12px;
+                             /* max-content: the left column auto-sizes to the
+                                widest institution name. All entries share this width. */
+  column-gap: 12px;          /* Space between left label and right content.
+                                Increase → wider gap between institution and role. */
+  row-gap: 12px;             /* Space between entries (vertically).
+                                Increase → more gap between jobs/degrees. */
 }
 
-/* Each item inherits both parent columns */
+/* Each entry (one degree, one job, etc.) */
 .cv-item {
-  grid-column: 1 / -1;
+  grid-column: 1 / -1;      /* Span from column 1 to the last column (-1).
+                                This means each item takes the full width. */
   display: grid;
   grid-template-columns: subgrid;
+                             /* SUBGRID: inherit column tracks from the parent
+                                (.cv-uniform). This is what makes all left labels
+                                share the same width. */
   row-gap: 0;
 }
 
-/* Header row: left label | middle title + date */
+/* Header row of each entry: institution | role + date */
 .cv-item-head {
-  grid-column: 1 / -1;
+  grid-column: 1 / -1;      /* Span full width */
   display: grid;
-  grid-template-columns: subgrid;
-  align-items: baseline;
+  grid-template-columns: subgrid;  /* Inherit parent columns */
+  align-items: baseline;     /* Align text baselines across columns
+                                so institution name, role, and date sit on
+                                the same text line even if font sizes differ. */
 }
 
+/* Left column: institution name (e.g., "University of Idaho") */
 .cv-item-left {
-  grid-column: 1;
-  white-space: nowrap;
-  &::after { content: " -"; }   /* dash separator */
+  grid-column: 1;           /* Sits in the first (left) column */
+  white-space: nowrap;        /* Prevent the name from wrapping to two lines */
+
+  /* Add a dash separator after the institution name via CSS.
+     Change " -" to " |" or " •" for a different separator.
+     Remove content: ""; to show no separator. */
+  &::after { content: " -"; }
 }
 
-/* Right side: title fills space, date hugs right edge */
+/* Right column: role title + date side by side */
 .cv-item-right {
-  grid-column: 2;
+  grid-column: 2;           /* Sits in the second (right) column */
   display: grid;
   grid-template-columns: 1fr max-content;
-  column-gap: 12px;
+                             /* 1fr = role title fills available space.
+                                max-content = date is only as wide as needed.
+                                This pushes the date to the right edge. */
+  column-gap: 12px;          /* Space between role title and date.
+                                Increase → date moves further from title. */
   align-items: baseline;
-  min-width: 0;
+  min-width: 0;             /* Prevent grid blowout */
 }
 
+/* Role/degree title (e.g., "Ph.D. Mechanical Engineering") */
 .cv-item-mid {
-  font-weight: 600;
+  font-weight: 600;          /* Semi-bold */
   color: #111;
   text-align: left;
   min-width: 0;
 }
 
+/* Date (e.g., "December 2025") */
 .cv-item-date {
-  white-space: nowrap;
-  text-align: right;
-  font-size: 0.9em;
-  color: #666;
+  white-space: nowrap;        /* Never wrap the date to two lines */
+  text-align: right;         /* Align to the right edge */
+  font-size: 0.9em;          /* 90% of parent size. Increase → bigger date text. */
+  color: #666;               /* Gray. Change to #111 for black, $accent for green. */
   font-weight: 600;
 }
 
-/* Body (bullets, thesis) spans full width under the header */
+/* Body area below the header (bullets, thesis text) */
 .cv-item-body {
-  grid-column: 1 / -1;
-  padding-left: 0;
+  grid-column: 1 / -1;      /* Span the full width under the header */
+  padding-left: 0;           /* Increase → indent body content from the left edge. */
 }
 
 /* =========================
-   CV entry blocks & text elements
-   ========================= */
+   CV ENTRY BLOCKS & TEXT ELEMENTS
+   =========================
+*/
+
+/* Generic entry wrapper — adds bottom margin between entries */
 .cv-entry {
-  margin-bottom: 18px;
+  margin-bottom: 18px;       /* Space below each entry group.
+                                Increase → more gap between groups. */
+
+  /* Last entry in a section doesn't need extra margin */
   &:last-child { margin-bottom: 0; }
 }
 
+/* Detail/thesis line (e.g., "Thesis: Hemp reinforcement for...") */
 .cv-detail {
-  margin: 4px 0 0;
-  font-size: 0.92em;
-  color: #555;
+  margin: 4px 0 0;          /* Small top margin, no bottom */
+  font-size: 0.92em;         /* Slightly smaller than body text */
+  color: #555;               /* Medium gray */
   font-style: italic;
 }
 
+/* Bullet list inside an entry (e.g., job responsibilities) */
 .cv-bullets {
-  margin: 8px 0 0;
-  padding-left: 20px;
+  margin: 8px 0 0;          /* 8px above the bullet list */
+  padding-left: 20px;        /* Indent bullets from the left.
+                                Increase → bullets move further right. */
 
   li {
-    margin-bottom: 6px;
-    font-size: 0.94em;
-    line-height: 1.5;
+    margin-bottom: 6px;      /* Space between bullet items.
+                                Increase → more gap between bullets. */
+    font-size: 0.94em;       /* Slightly smaller text */
+    line-height: 1.5;        /* Line spacing. 1.0 = tight. 1.5 = comfortable.
+                                2.0 = double-spaced. */
   }
 }
 
-/* Numbered publication list (CV page) */
+/* Numbered publication list on the CV page */
 .cv-pub-list {
   margin: 0;
-  padding-left: 24px;
+  padding-left: 24px;        /* Indent for the bracketed numbers [1], [2], etc.
+                                Increase → numbers sit further from the left edge. */
 
   li {
-    margin-bottom: 14px;
+    margin-bottom: 14px;     /* Space between publications.
+                                Increase → more gap between pubs. */
     font-size: 0.94em;
     line-height: 1.5;
   }
 }
 
+/* Author names below each publication */
 .cv-authors {
-  font-size: 0.9em;
-  color: #444;
+  font-size: 0.9em;          /* Smaller than the publication title */
+  color: #444;               /* Dark gray. Change to #111 for black. */
 }
 
-/* References: 2-column grid */
+/* ── References section: 2-column grid ── */
 .cv-references-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  grid-template-columns: 1fr 1fr;  /* Two equal-width columns.
+                                       Change to "1fr 1fr 1fr" for 3 columns. */
+  gap: 20px;                 /* Space between reference cards.
+                                Increase → more gap between cards. */
 }
 
+/* Each reference card */
 .cv-ref {
   font-size: 0.94em;
-  line-height: 1.6;
+  line-height: 1.6;          /* Generous line spacing for readability.
+                                Increase → more space between lines. */
 }
 
-/* Skills section */
+/* ── Skills section ── */
+
+/* Skill category headings (e.g., "Material Characterization") */
 .cv-section h4 {
-  color: #289c01;
-  margin: 14px 0 4px;
-  font-size: 0.95em;
+  color: #289c01;            /* Same green as $accent.
+                                Change to match if you change $accent in _style.scss. */
+  margin: 14px 0 4px;        /* 14px above, 4px below.
+                                Increase top → more space before each category. */
+  font-size: 0.95em;         /* Slightly smaller than section titles */
+
+  /* First h4 in a section doesn't need extra top margin */
   &:first-child { margin-top: 0; }
 }
 
+/* Skill line items (each <p> under a skill category) */
 #skills .cv-entry p {
-  margin-bottom: 6px;          /* breathing room between skill lines */
+  margin-bottom: 6px;        /* Space between each skill line.
+                                Increase → more breathing room. */
 }
 
 /* =========================
-   Mobile: stack to single column
-   ========================= */
+   MOBILE: Stack to single column
+   =========================
+   On screens ≤ 800px, the two-column CV layout stacks vertically:
+   section title on top, content below.
+*/
 @media (max-width: 800px) {
+
   /* Section grid → single column */
   .cv-section-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr;  /* One column instead of two */
     row-gap: 12px;
   }
 
+  /* Section title becomes a sticky bar with background */
   .cv-section-title {
-    top: 120px;
-    z-index: 50;
+    top: 120px;              /* Lower than desktop (navbar wraps on mobile).
+                                Adjust if you change mobile navbar height. */
+    z-index: 50;             /* Below navbar (99) but above content */
     padding: 8px 0;
-    background: #fff;
-    border-bottom: 1px solid rgba(0,0,0,0.08);
+    background: #fff;        /* White background so title doesn't overlap content */
+    border-bottom: 1px solid rgba(0,0,0,0.08);  /* Subtle separator line */
   }
 
-  /* Uniform grid → single column */
+  /* Uniform grid → single column (no more side-by-side alignment) */
   .cv-uniform { grid-template-columns: 1fr; }
 
+  /* Items become simple block elements (no subgrid on mobile) */
   .cv-item { display: block; }
 
+  /* Item header stacks vertically: institution, then role, then date */
   .cv-item-head {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr;  /* Single column */
     row-gap: 2px;
   }
 
+  /* Institution name: allow wrapping, remove the dash separator */
   .cv-item-left {
     white-space: normal;
-    &::after { content: ""; }   /* drop dash */
+    &::after { content: ""; }    /* Remove the " -" separator */
   }
 
+  /* Role + date stack vertically instead of side by side */
   .cv-item-right {
     grid-template-columns: 1fr;
     row-gap: 2px;
   }
 
+  /* Date aligns left on mobile (no room for right-alignment) */
   .cv-item-date  { text-align: left; }
   .cv-item-body  { padding-left: 0; }
 
+  /* References: single column instead of 2-column grid */
   .cv-references-grid { grid-template-columns: 1fr; }
 }

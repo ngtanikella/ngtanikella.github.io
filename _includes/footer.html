@@ -1,4 +1,4 @@
-<!--
+{% raw %}<!--
   FOOTER.HTML — Page Footer
   =========================
   Appears at the bottom of every page via {% include footer.html %} in layouts.
@@ -18,7 +18,7 @@
                                       Change to "%b %d, %Y" for "Feb 28, 2026".
   {{ "now" | date: "%Y" }}         → outputs the current year (e.g., "2026").
   {{ site.github_username }}       → from _config.yml.
--->
+-->{% endraw %}
 
 <!-- <footer> is a semantic HTML5 element that tells browsers and screen readers
      "this is the page footer". The .footer class applies styles from _style.scss. -->

@@ -1,4 +1,4 @@
-<!--
+{% raw %}<!--
   HEADER.HTML — Navigation Bar
   ============================
   This file creates the fixed navigation bar at the top of every page.
@@ -17,7 +17,7 @@
   because the author-name logo already links to the homepage.
 
   STYLES: Defined in _style.scss under the "Navbar" section.
--->
+-->{% endraw %}
 
 <!-- fixed-top: position:fixed keeps this at the top of the viewport
      even when the user scrolls. z-index:99 ensures it's above content. -->
@@ -43,12 +43,12 @@
                 <span class="name-text">{{ site.title }}</span>
             </a>
 
-            <!-- Navigation links: loaded from _data/nav.yml.
+            {% raw %}<!-- Navigation links: loaded from _data/nav.yml.
                  {% for page in site.data.nav %} loops through each item in nav.yml.
                  Each item should have:
                    name: "Publications"
                    link: "/publications"
-                 The "Home" entry is skipped since the logo already links home. -->
+                 The "Home" entry is skipped since the logo already links home. -->{% endraw %}
             <ul class="navbar-ul">
                 {% for page in site.data.nav %}
                     {% if page.name != "Home" %}

@@ -60,7 +60,7 @@ I hold an M.E. in Material Science and an M.S. in Mechanical Engineering, both f
      .news-box: styled in _style.scss — max-height: 9.5rem with overflow-y: auto
      creates the scrollable container. Change max-height to show more/fewer items.
 
-     {% for item in site.data.news %} loops over entries in _data/news.yml.
+     {% raw %}{% for item in site.data.news %}{% endraw %} loops over entries in _data/news.yml.
      Each item has fields: date, news (and optionally pdf, url, etc.).
 -->
 <div class="news-box" role="region" aria-label="News">

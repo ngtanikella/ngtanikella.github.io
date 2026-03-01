@@ -1,4 +1,4 @@
-<!--
+{% raw %}<!--
   PUBLICATIONS.HTML — Publication Card Template
   ==============================================
   This is an _includes partial that renders ONE publication card.
@@ -35,7 +35,7 @@
   contains                   → checks if a string includes a substring
 
   STYLES: Defined in _style.scss under "Publications page (cards)".
--->
+-->{% endraw %}
 
 <!-- .publications: the card container with border + shadow -->
 <div class="publications">
@@ -106,8 +106,8 @@
     <!-- .publication-text: left margin of 25% clears the floated thumbnail -->
     <div class="publication-text">
 
-        <!-- Optional fields: only rendered if they exist in the YAML data.
-             {% if publication.description %} checks for the field. -->
+        {% raw %}<!-- Optional fields: only rendered if they exist in the YAML data.
+             {% if publication.description %} checks for the field. -->{% endraw %}
         {% if publication.description %}<p>{{ publication.description }}</p>{% endif %}
 
         <!-- Authors in italics (<em> = emphasis = italic) -->

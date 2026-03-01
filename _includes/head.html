@@ -1,4 +1,4 @@
-<!--
+{% raw %}<!--
   HEAD.HTML — Metadata & External Resources
   ==========================================
   This file is included in every page via {% include head.html %} in the
@@ -12,7 +12,7 @@
   {{ value | filter }} → applies a transformation (e.g., strip_html, truncate)
   site.xxx             → values from _config.yml
   page.xxx             → values from the current page's front matter (the --- block)
--->
+-->{% endraw %}
 
 <head>
 

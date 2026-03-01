@@ -1,4 +1,4 @@
-<!--
+{% raw %}<!--
   NEWS.HTML — News Feed Row Template
   ===================================
   This is an _includes partial used by the old table-based news feed.
@@ -28,7 +28,7 @@
   width="160" sets the date column to 160 pixels wide.
   <em> makes text italic (used for the date).
   &nbsp; is a non-breaking space (prevents line break at that point).
--->
+-->{% endraw %}
 
 <!-- Date column: fixed width of 160px.
      Change 160 → wider/narrower date column.
@@ -42,10 +42,10 @@
     <!-- The news text from _data/news.yml -->
     {{ article.news }}
 
-    <!-- Optional PDF link: only appears if article.pdf exists.
+    {% raw %}<!-- Optional PDF link: only appears if article.pdf exists.
          {% if article.pdf %} checks if the PDF field is set.
          If the PDF value contains "://" it's treated as a full URL.
-         Otherwise, it's treated as a filename in /docs/{category}/. -->
+         Otherwise, it's treated as a filename in /docs/{category}/. -->{% endraw %}
     {% if article.pdf %}
         &nbsp;&nbsp;
 

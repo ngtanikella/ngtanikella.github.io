@@ -11,7 +11,7 @@ permalink: /
 ---
 
 <!-- Include the social icons strip (from _includes/social-icons.html).
-     {% include %} pulls in a file from the _includes/ folder. -->
+     {% raw %}{% include %}{% endraw %} pulls in a file from the _includes/ folder. -->
 {% include social-icons.html %}
 
 <!-- <br/> is a line break. This one is commented out (inside <!-- -->).

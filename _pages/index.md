@@ -14,7 +14,7 @@ permalink: /
      {% raw %}{% include %}{% endraw %} pulls in a file from the _includes/ folder. -->
 {% include social-icons.html %}
 
-<!-- <br/> is a line break. This one is commented out (inside <!-- -->).
+<!-- <br/> is a line break. This one is commented out (inside <!-- -->
 <!-- <br/> -->
 
 <!-- Profile picture: floated right by CSS (.profile-picture in typography.scss).

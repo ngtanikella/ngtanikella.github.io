@@ -379,6 +379,8 @@ permalink: /CV
                             <a href="{{site.url}}{{site.baseurl}}/docs/cv/Reviewer_Certificate_17_November_2025.pdf" target="_blank" rel="noopener"><em>Scientific Reports</em></a>, and
                             <a href="{{site.url}}{{site.baseurl}}/docs/cv/Reviewer_Certificate_05_November_2025.pdf" target="_blank" rel="noopener"><em>Multiscale and Multidisciplinary Modeling, Experiments and Design</em></a>
                         </p>
+                        <p> Guest Editor for 
+                            <a href="{{site.url}}{{site.baseurl}}/docs/cv/Editor_Certificate_Coatings.pdf" target="_blank" rel="noopener"><em>Coatings</em></a>
                         <h4>Outreach</h4>
                         <p>Taught polymers deformation at Pullman High School (2023–2025) <br> Organized educational activities at Michigan Tech Summer Youth Program (2020–2021)</p>
                     </div>

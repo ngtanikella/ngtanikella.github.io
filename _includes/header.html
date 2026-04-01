@@ -32,14 +32,12 @@
                     {% endif %}
                 {% endfor %}
 
-                <!-- Dark mode toggle (clean version) -->
+                <!-- Dark mode toggle switch (clean slider) -->
                 <li class="nav-list">
-                    <button id="theme-toggle" 
-                            aria-label="Toggle dark mode" 
-                            title="Toggle dark mode"
-                            style="background:none;border:none;cursor:pointer;font-size:1.4rem;color:var(--accent);padding:6px 8px;">
-                        <i class="fa fa-sun-o" id="theme-icon"></i>
-                    </button>
+                    <label class="theme-switch" title="Toggle dark mode" style="margin:0 4px;">
+                        <input type="checkbox" id="theme-toggle" aria-label="Toggle dark mode">
+                        <span class="slider round"></span>
+                    </label>
                 </li>
             </ul>
 

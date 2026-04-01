@@ -82,14 +82,13 @@
        can show it in search results. Replace the content value with your own
        verification code from Google Search Console. -->
   <meta name="google-site-verification" content="googlec826cbb9b088e11d" />
- <script>
-  // Safe dark-mode script – waits until the whole page is loaded
+  <script>
+  // Fixed dark-mode script for the new checkbox toggle
   function initDarkMode() {
     const toggle = document.getElementById('theme-toggle');
-    const icon   = document.getElementById('theme-icon');
     const body   = document.body;
 
-    if (!toggle || !icon) return;   // safety check
+    if (!toggle) return;   // safety check
 
     // Load saved preference or respect system default
     function applyTheme() {
@@ -99,27 +98,20 @@
       } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
         body.classList.add('dark');
       }
-      updateIcon();
+      toggle.checked = body.classList.contains('dark');
     }
 
-    function updateIcon() {
-      const isDark = body.classList.contains('dark');
-      icon.classList.toggle('fa-sun-o', !isDark);
-      icon.classList.toggle('fa-moon-o', isDark);
-    }
-
-    // Click handler
-    toggle.addEventListener('click', () => {
+    // Toggle on click
+    toggle.addEventListener('change', () => {
       body.classList.toggle('dark');
       const isDark = body.classList.contains('dark');
       localStorage.setItem('theme', isDark ? 'dark' : 'light');
-      updateIcon();
     });
 
-    applyTheme();
+    // Run on page load
+    window.addEventListener('load', applyTheme);
   }
 
-  // Run when the page is fully ready
-  window.addEventListener('load', initDarkMode);
- </script>
+  initDarkMode();
+  </script>
 </head>

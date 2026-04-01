@@ -62,8 +62,11 @@
                 {% endfor %}
                 <!-- Dark mode toggle -->
                 <li class="nav-list">
-                    <button id="theme-toggle" aria-label="Toggle dark mode" style="background:none;border:none;cursor:pointer;font-size:1.4rem;color:var(--accent);padding:6px 8px;">
-                        <i class="fa fa-sun-o" id="theme-icon"></i>
+                    <button id="theme-toggle" 
+                        aria-label="Toggle dark mode" 
+                        title="Toggle dark mode"   <!-- ← this line adds the tooltip -->
+                        style="background:none;border:none;cursor:pointer;font-size:1.4rem;color:var(--accent);padding:6px 8px;">
+                      <i class="fa fa-sun-o" id="theme-icon"></i>
                     </button>
                 </li>
             </ul>

@@ -4,69 +4,41 @@
   This file creates the fixed navigation bar at the top of every page.
   It's included via {% include header.html %} in the layout files.
 
-  STRUCTURE:
-  .fixed-top          → pins the navbar to the top of the viewport
-    .navbar           → the colored bar itself (brown background)
-      .container.nav-inner → centers content, flexbox layout
-        #author-name  → logo icon + site title (links to homepage)
-        .navbar-ul    → list of navigation links
-
-  The nav links are loaded from _data/nav.yml (a YAML data file).
-  Each entry in nav.yml has a "name" and "link" field.
-  The "Home" link is filtered out ({% if page.name != "Home" %})
-  because the author-name logo already links to the homepage.
-
   STYLES: Defined in _style.scss under the "Navbar" section.
 -->{% endraw %}
 
-<!-- fixed-top: position:fixed keeps this at the top of the viewport
-     even when the user scrolls. z-index:99 ensures it's above content. -->
+<!-- fixed-top: position:fixed keeps this at the top of the viewport -->
 <div class="fixed-top">
 
-    <!-- navbar: the brown background bar. Padding and border are in _style.scss. -->
+    <!-- navbar: the colored bar -->
     <div class="navbar">
 
-        <!-- container nav-inner: limits width to 60% and uses flexbox to place
-             the site title on the left and nav links on the right. -->
+        <!-- container nav-inner -->
         <div class="container nav-inner">
 
-            {% raw %}<!-- Site title/logo: clicking this goes to the homepage.
-                 {{ site.url }}{{ site.baseurl }} builds the full URL to your site root.
-                 These values come from _config.yml. -->{% endraw %}
+            <!-- Site title/logo -->
             <a id="author-name" href="{{ site.url }}{{ site.baseurl }}">
-                <!-- name-logo: the small NT icon. Change the src path to use
-                     a different logo image. Size is controlled by .name-logo in CSS (24px). -->
                 <img class="name-logo" src="{{ site.url }}{{ site.baseurl }}/images/nticon_sparse.png" alt="NT logo">
-
-                {% raw %}<!-- name-text: the site title text from _config.yml (e.g., "Nagendra Tanikella").
-                     {{ site.title }} outputs whatever you set as "title:" in _config.yml. -->{% endraw %}
                 <span class="name-text">{{ site.title }}</span>
             </a>
 
-            {% raw %}<!-- Navigation links: loaded from _data/nav.yml.
-                 {% for page in site.data.nav %} loops through each item in nav.yml.
-                 Each item should have:
-                   name: "Publications"
-                   link: "/publications"
-                 The "Home" entry is skipped since the logo already links home. -->{% endraw %}
+            <!-- Navigation links + dark mode toggle -->
             <ul class="navbar-ul">
                 {% for page in site.data.nav %}
                     {% if page.name != "Home" %}
-                        {% raw %}<!-- nav-list: each <li> is one navigation tab.
-                             The <a> tag creates a clickable link.
-                             {{ page.link }} is the URL path (e.g., "/CV"). -->{% endraw %}
                         <li class="nav-list">
                             <a href="{{ site.url }}{{ site.baseurl }}{{ page.link }}">{{ page.name }}</a>
                         </li>
                     {% endif %}
                 {% endfor %}
-                <!-- Dark mode toggle -->
+
+                <!-- Dark mode toggle (clean version) -->
                 <li class="nav-list">
                     <button id="theme-toggle" 
-                        aria-label="Toggle dark mode" 
-                        title="Toggle dark mode"   <!-- ← this line adds the tooltip -->
-                        style="background:none;border:none;cursor:pointer;font-size:1.4rem;color:var(--accent);padding:6px 8px;">
-                      <i class="fa fa-sun-o" id="theme-icon"></i>
+                            aria-label="Toggle dark mode" 
+                            title="Toggle dark mode"
+                            style="background:none;border:none;cursor:pointer;font-size:1.4rem;color:var(--accent);padding:6px 8px;">
+                        <i class="fa fa-sun-o" id="theme-icon"></i>
                     </button>
                 </li>
             </ul>

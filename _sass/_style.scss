@@ -654,6 +654,29 @@ button[aria-pressed="true"],
 }
 
 /* =========================
+   CV PAGE DARK MODE FIXES
+   ========================= */
+.dark .cv-keyvals dt,
+.dark .cv-keyvals dd,
+.dark .cv-item-mid,
+.dark .cv-item-left,
+.dark .cv-detail,
+.dark .cv-authors,
+.dark .cv-ref,
+.dark .cv-section-body p,
+.dark .cv-bullets li {
+  color: var(--text) !important;
+}
+
+.dark .cv-item-date {
+  color: #bbbbbb !important;
+}
+
+.dark .cv-section h4 {
+  color: #5be05b !important;   /* slightly brighter green for skill headings */
+}
+
+/* =========================
    IMPORT PARTIALS
    ========================= */
 @import "typography";

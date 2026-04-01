@@ -201,7 +201,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;       /* Vertically center logo with text */
   gap: 8px;                  /* Space between the NT icon and the name text.
                                 Increase → icon and name spread apart. */
-  color: $accent;
+  color: var(--accent);
   font-size: 22px !important;  /* !important overrides any inherited font-size.
                                    Change 22px → bigger/smaller site title. */
   line-height: 1.1;          /* Tighten line spacing (1.0 = exact font height) */
@@ -240,7 +240,7 @@ h1, h2, h3, h4, h5, h6 {
                                 Increase → bigger clickable area. */
     line-height: 1;
     font-weight: bold;
-    color: $accent;
+    color: var(--accent);
   }
 }
 
@@ -318,11 +318,11 @@ h1, h2, h3, h4, h5, h6 {
 
   /* Each table cell */
   td {
-    border: 1px solid darken(#fff, 20%);  /* Light gray border. Change 20% → darker. */
+    border: 1px solid var(--border);  /* Light gray border. Change 20% → darker. */
     padding: 10px 14px;      /* Inner spacing. Increase → cells get bigger. */
     text-align: center;
     vertical-align: middle;
-    background: #fff;
+    background: var(--card-bg);
 
     /* Hover effect: cell background darkens slightly */
     &:hover { background: darken(#fff, 5%); }
@@ -365,9 +365,9 @@ a .fa-github:hover                 { color: #000;    }  /* Pure black on hover *
   min-height: 60px;          /* Minimum card height. Prevents collapse if empty. */
   width: 100%;
   margin-bottom: 10px;       /* Space between stacked cards. Increase → more gap. */
-  background-color: #fff;
-  border: 1px solid darken(#fff, 50%);  /* darken(#fff, 50%) = medium gray border */
-  box-shadow: 2px 2px 5px gray;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);  /* darken(#fff, 50%) = medium gray border */
+  box-shadow: 2px 2px 5px 2px 2px 8px var(--shadow);
                              /* Drop shadow: 2px right, 2px down, 5px blur.
                                 Increase blur → softer shadow.
                                 Increase offsets → shadow moves further. */
@@ -386,11 +386,11 @@ a .fa-github:hover                 { color: #000;    }  /* Pure black on hover *
   margin: 20px;              /* Space around the title. Increase → more breathing room. */
   font-size: $publication-title-font-size;  /* 20px from vars.scss */
   font-weight: bold;
-  color: $accent;
+  color: var(--accent);
 }
 
 /* Ensure title stays accent color even inside a link */
-a .publication-title { color: $accent; }
+a .publication-title { color: var(--accent); }
 
 /* Thumbnail image (floated left of the text) */
 .publication-picture {
@@ -440,8 +440,8 @@ a .publication-title { color: $accent; }
 /* Each project card */
 .collage-item {
   margin: 0;
-  background: #fff;
-  border: 1px solid #ddd;    /* Light gray border */
+  background: var(--card-bg);
+  border: 1px solid var(--border);    /* Light gray border */
   border-radius: 10px;       /* Rounded corners. Increase → rounder. */
   overflow: hidden;           /* Clip image corners to match the border-radius */
   box-shadow: 2px 2px 5px rgba(0,0,0,0.15);
@@ -519,7 +519,7 @@ a .publication-title { color: $accent; }
                                 980px on large screens, 92% of viewport on small.
                                 Increase 980px → wider modal on desktops. */
   margin: 5vh auto;          /* 5% from top, centered horizontally */
-  background: #fff;
+  background: var(--card-bg);
   border-radius: 14px;       /* Rounded corners. Increase → rounder. */
   padding: 1.25rem 1.25rem 1.5rem;
                              /* rem = root em (relative to html font size).
@@ -583,7 +583,7 @@ a .publication-title { color: $accent; }
                                 Increase → show more news items at once.
                                 Decrease → smaller visible area, scroll sooner. */
   overflow-y: auto;          /* Add vertical scrollbar when content overflows */
-  background: #fff;
+  background: var(--card-bg);
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);  /* Soft shadow for depth */
 }
 
@@ -626,9 +626,9 @@ a .publication-title { color: $accent; }
   width: 100%;
   padding: 0 10px;           /* 10px left/right padding. Increase → more inner space. */
   margin-bottom: 20px;       /* Space below each box. Increase → more gap between boxes. */
-  background-color: #fff;
-  border: 1px solid darken(#fff, 50%);  /* Medium gray border */
-  box-shadow: 2px 2px 5px gray;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);  /* Medium gray border */
+  box-shadow: 2px 2px 8px var(--shadow);
 
   /* Text elements inside use the standard text color */
   p, li, span, div { color: var(--text); }

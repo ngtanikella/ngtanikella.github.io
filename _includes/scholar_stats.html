@@ -1,0 +1,63 @@
+{% comment %}
+  scholar_stats.html — renders a four-tile summary of Google Scholar metrics.
+
+  Included by publications.md at the top of the page:
+      {% include scholar_stats.html %}
+
+  The data comes from _data/scholar.yml, which is refreshed weekly by the
+  GitHub Actions workflow at .github/workflows/update-scholar.yml. That
+  workflow runs scripts/fetch_scholar.py, which uses the `scholarly` Python
+  library to pull the numbers from https://scholar.google.com/citations?user=...
+
+  Each tile displays a big green number + a small uppercase label.
+  The whole block is wrapped in a link to the Scholar profile, and a tiny
+  footnote underneath shows the last-updated date and a source attribution.
+
+  Styling lives in _sass/_style.scss under "GOOGLE SCHOLAR STATS BLOCK".
+
+  Fallbacks:
+  - If _data/scholar.yml is missing entirely, we fall back to the size of
+    _data/papers.yml for the publication count and show em-dashes elsewhere.
+  - Any missing field shows "—" instead of 0, so a failed first run doesn't
+    mislead visitors.
+{% endcomment %}
+
+{% assign s = site.data.scholar %}
+{% assign scholar_url = "https://scholar.google.com/citations?user=" | append: s.scholar_id %}
+
+<div class="scholar-stats" aria-label="Google Scholar metrics">
+
+  <a class="scholar-stats-link" href="{{ scholar_url }}" target="_blank"
+     rel="noopener" title="View full profile on Google Scholar">
+
+    <div class="scholar-stat">
+      <span class="scholar-stat-number">
+        {{ s.publications | default: site.data.papers.size }}
+      </span>
+      <span class="scholar-stat-label">Publications</span>
+    </div>
+
+    <div class="scholar-stat">
+      <span class="scholar-stat-number">{{ s.citations | default: "—" }}</span>
+      <span class="scholar-stat-label">Citations</span>
+    </div>
+
+    <div class="scholar-stat">
+      <span class="scholar-stat-number">{{ s.h_index | default: "—" }}</span>
+      <span class="scholar-stat-label">h-index</span>
+    </div>
+
+    <div class="scholar-stat">
+      <span class="scholar-stat-number">{{ s.i10_index | default: "—" }}</span>
+      <span class="scholar-stat-label">i10-index</span>
+    </div>
+
+  </a>
+
+  <p class="scholar-stats-footnote">
+    Source:
+    <a href="{{ scholar_url }}" target="_blank" rel="noopener">Google Scholar</a>
+    {% if s.last_updated %} · Last updated {{ s.last_updated }}{% endif %}
+  </p>
+
+</div>

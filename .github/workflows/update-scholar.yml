@@ -1,0 +1,47 @@
+name: Update Google Scholar stats
+
+# Runs the fetcher weekly and on-demand. If Scholar data changed, commit the
+# new _data/scholar.yml. Jekyll will rebuild the site automatically on push.
+
+on:
+  schedule:
+    # Every Monday at 07:00 UTC. Adjust with https://crontab.guru/
+    - cron: "0 7 * * 1"
+  workflow_dispatch: {}  # Lets you trigger a run manually from the Actions tab.
+
+permissions:
+  contents: write  # Required to push the updated data file back to the repo.
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install scholarly==1.7.11 pyyaml
+
+      - name: Fetch Scholar stats
+        env:
+          SCHOLAR_ID: ZwY-zMgAAAAJ   # <-- your Google Scholar user id
+        run: python scripts/fetch_scholar.py
+
+      - name: Commit changes (if any)
+        run: |
+          if [[ -n "$(git status --porcelain _data/scholar.yml)" ]]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add _data/scholar.yml
+            git commit -m "chore: update Google Scholar stats [skip ci]"
+            git push
+          else
+            echo "scholar.yml unchanged; nothing to commit."
+          fi

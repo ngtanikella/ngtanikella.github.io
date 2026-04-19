@@ -742,6 +742,77 @@ input:checked + .slider::after {
   right: 8px;
 }
 
+
+/* =========================
+   GOOGLE SCHOLAR STATS BLOCK
+   =========================
+   Rendered by _includes/scholar_stats.html at the top of /publications.
+   Four tiles in a row (Publications, Citations, h-index, i10-index), each
+   styled like the .publications cards below them so the page feels unified.
+
+   The whole grid is wrapped in a single <a> pointing at the Scholar profile,
+   so a click anywhere on the row takes the visitor to the full profile.
+
+   On narrow screens the grid collapses to 2x2.
+*/
+.scholar-stats {
+  margin: 0 0 24px 0;
+}
+
+.scholar-stats-link {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  text-decoration: none !important;  /* override the site-wide underline-on-hover */
+  color: inherit;
+}
+
+.scholar-stat {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+  box-shadow: 2px 2px 8px var(--shadow);
+  padding: 14px 8px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 3px 3px 12px var(--shadow);
+  }
+}
+
+.scholar-stat-number {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accent);   /* same green as .publication-title */
+  line-height: 1.1;
+}
+
+.scholar-stat-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  opacity: 0.75;
+}
+
+.scholar-stats-footnote {
+  text-align: right;
+  font-size: 12px;
+  margin: 6px 2px 0;
+  opacity: 0.7;
+}
+
+/* Collapse to 2x2 on phones/tablets to keep numbers readable. */
+@media (max-width: 650px) {
+  .scholar-stats-link { grid-template-columns: repeat(2, 1fr); }
+  .scholar-stat-number { font-size: 24px; }
+}
+
+
 /* =========================
    IMPORT PARTIALS
    ========================= */

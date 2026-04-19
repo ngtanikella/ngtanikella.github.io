@@ -1,0 +1,15 @@
+# Google Scholar stats for display on /publications.
+# This file is auto-updated weekly by .github/workflows/update-scholar.yml,
+# which runs scripts/fetch_scholar.py. You can also hand-edit it any time;
+# the next scheduled run will overwrite your edits.
+scholar_id: ZwY-zMgAAAAJ
+citations: 0
+citations_5y: 0
+h_index: 0
+h_index_5y: 0
+i10_index: 0
+i10_index_5y: 0
+publications: 12
+last_updated: "2026-04-18"
+last_attempt: "2026-04-18"
+last_attempt_status: seed

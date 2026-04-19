@@ -4,7 +4,7 @@ layout: default
 permalink: /publications
 ---
 
-
+{% include scholar_stats.html %}
 
 {% for publication in site.data.papers %}
 

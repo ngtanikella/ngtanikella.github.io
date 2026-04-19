@@ -1,7 +1,3 @@
-# Google Scholar stats for display on /publications.
-# This file is auto-updated weekly by .github/workflows/update-scholar.yml,
-# which runs scripts/fetch_scholar.py. You can also hand-edit it any time;
-# the next scheduled run will overwrite your edits.
 scholar_id: ZwY-zMgAAAAJ
 citations: 1229
 citations_5y: 996
@@ -10,6 +6,6 @@ h_index_5y: 10
 i10_index: 11
 i10_index_5y: 10
 publications: 12
-last_updated: "2026-04-18"
-last_attempt: "2026-04-18"
-last_attempt_status: seed
+last_updated: '2026-04-18'
+last_attempt: '2026-04-19'
+last_attempt_status: failed

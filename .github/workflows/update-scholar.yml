@@ -45,3 +45,4 @@ jobs:
           else
             echo "scholar.yml unchanged; nothing to commit."
           fi
+

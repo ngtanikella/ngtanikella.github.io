@@ -3,7 +3,7 @@
 # which runs scripts/fetch_scholar.py. You can also hand-edit it any time;
 # the next scheduled run will overwrite your edits.
 scholar_id: ZwY-zMgAAAAJ
-citations: 1230
+citations: 1229
 citations_5y: 996
 h_index: 11
 h_index_5y: 10

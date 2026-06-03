@@ -5,7 +5,7 @@ permalink: /CV
 ---
 
 <!-- Inline style: one-off styling directly on an element (margin: top right bottom left) -->
-<p style="margin: 10px 0 16px 0;">
+<p style="margin: 10px 0 16px 0; text-align: center; font-size: 1.2em;">
     <a href="{{site.url}}{{site.baseurl}}/docs/cv/Nagendra_Tanikella_CV.pdf" target="_blank" rel="noopener">
         Download full CV (PDF)
     </a>
@@ -379,9 +379,13 @@ permalink: /CV
                             <a href="{{site.url}}{{site.baseurl}}/docs/cv/Reviewer_Certificate_17_November_2025.pdf" target="_blank" rel="noopener"><em>Scientific Reports</em></a>, and
                             <a href="{{site.url}}{{site.baseurl}}/docs/cv/Reviewer_Certificate_05_November_2025.pdf" target="_blank" rel="noopener"><em>Multiscale and Multidisciplinary Modeling, Experiments and Design</em></a>
                         </p>
+                        <h4>Editorial Roles</h4>
                         <p> Guest Editor for 
                             <a href="{{site.url}}{{site.baseurl}}/docs/cv/Editor_Certificate_Coatings.pdf" target="_blank" rel="noopener"><em>Coatings</em></a>
-                        </p>    
+                        </p> 
+                        <p> Topic Editor for 
+                            <a href="https://www.frontiersin.org/research-topics/80967/circular-supply-chains-for-plastic-waste-digital-innovation-and-sustainable-transitions" target="_blank" rel="noopener"><em>Frontiers in Sustainability</em></a>
+                        </p>                            
                         <h4>Outreach</h4>
                         <p>Taught polymers deformation at Pullman High School (2023–2025) <br> Organized educational activities at Michigan Tech Summer Youth Program (2020–2021)</p>
                     </div>

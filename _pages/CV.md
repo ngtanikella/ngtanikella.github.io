@@ -165,12 +165,31 @@ permalink: /CV
                         <div class="cv-item">
                             <div class="cv-item-head">
                                 <div class="cv-item-left">
+                                    <img src="{{site.url}}{{site.baseurl}}/images/experience/UTA.png" alt="University of Texas at Austin" class="inline-logo">
+                                    University of Texas at Austin
+                                </div>
+                                <div class="cv-item-right">
+                                    <div class="cv-item-mid">Postdoctoral Fellow</div>
+                                    <div class="cv-item-date">June 2026 - Present</div>
+                                </div>
+                            </div>
+                            <div class="cv-item-body">
+                                <!-- cv-bullets: indented bullet list under an entry -->
+                                <ul class="cv-bullets">
+                                    <li>Developing wet-spun, bio-functional fibers from regenerated cellulose and lignocellulosic biomass for medical-textile applications in the Renewable Fiber and Composite Laboratory.</li>
+                                    <li>Applying extrusion-based processing and material characterization expertise (rheology, FTIR, DSC, TGA, mechanical testing) to fiber formation and process optimization.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="cv-item">
+                            <div class="cv-item-head">
+                                <div class="cv-item-left">
                                     <img src="{{site.url}}{{site.baseurl}}/images/experience/uidaho.png" alt="University of Idaho" class="inline-logo">
                                     University of Idaho
                                 </div>
                                 <div class="cv-item-right">
                                     <div class="cv-item-mid">Graduate Research Assistant</div>
-                                    <div class="cv-item-date">June 2022 - Present</div>
+                                    <div class="cv-item-date">June 2022 - May 2026</div>
                                 </div>
                             </div>
                             <div class="cv-item-body">
